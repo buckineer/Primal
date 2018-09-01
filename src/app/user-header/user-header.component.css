@@ -1,0 +1,32 @@
+img {
+    border-radius: 50%;
+    border: 2px solid #ddd;
+    margin-top: 4%;
+    margin-left: 25%;
+    width: 70%;
+    height: 90%;
+    background-color: white;
+  }
+
+  #container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+  }
+
+  #avatar {
+    width: 30%;
+  }
+
+  #avatar-property {
+    width: 70%;
+  }
+
+  label {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    color: white;
+    font-weight: bold;
+    margin-left: 5%;
+
+  }

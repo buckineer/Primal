@@ -1,0 +1,26 @@
+button.launch{
+    width: 80%;
+    height: 60px;
+    border-radius: 40px;
+    opacity: 0.8;
+    font-size: 20px;
+    line-height: 20px;
+    font-weight: bold;
+}
+
+button.conquerred{
+    width: 80%;
+    height: 60px;
+    border-radius: 40px;
+    opacity: 0.8;
+    font-size: 20px;
+    line-height: 20px;
+    font-weight: bold;
+    color: #FF7F00;
+}
+
+div.overlay-lock{
+    position: absolute;
+    top: 50%;
+    left: 15%;
+}

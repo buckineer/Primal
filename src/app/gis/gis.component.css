@@ -1,0 +1,27 @@
+img {
+    border: 2px solid #ddd;
+    margin-top: 20%;
+    margin-left: 40%;
+    width:60%;
+    height: 60%;
+
+  }
+
+  #container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+  }
+
+  #gifts {
+    width: 20%;
+  }
+
+  #infos {
+    width: 20%;
+  }
+
+  #ranking {
+      width: 20%
+  }
