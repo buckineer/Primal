@@ -15,6 +15,7 @@ import { LoginModalComponent } from './login-modal/login-modal.component';
 import {TerritoryService} from './territory.service';
 import { ConquerComponent } from './conquer/conquer.component';
 import { AppRoutingModule } from './app-routing.module';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -27,11 +28,12 @@ import { AppRoutingModule } from './app-routing.module';
     TerritoryComponent,
     TerritoryViewComponent,
     LoginModalComponent,
-    ConquerComponent
+    ConquerComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
   ],
   providers: [TerritoryService],
   bootstrap: [AppComponent]
