@@ -1,8 +1,11 @@
 .main {
-    background: linear-gradient(rgba(255,255,255,.6), rgba(255,255,255,.4)), url(../assets/images/map/map.png);
-    background-size: 120%;
+    /*background: linear-gradient(rgba(255,255,255,.6), rgba(255,255,255,.4)), url(../assets/images/map/map-final-2x.png);*/
+    /*background: url(../assets/images/map/map-final-2x.png);*/
+    background-image: url(../assets/images/map/map-final-2x.png);
+    background-size: 100% 100%
+/*    background-size: 120%;
     background-repeat: no-repeat;
-    height: 1000px;
+    height: 1000px;*/
 }
 
 .hidden{

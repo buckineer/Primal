@@ -18,12 +18,6 @@ export class MapComponent implements OnInit {
       new Territory('Territory 4', '../assets/images/map/Territory 4.png', new Date(2018, 10, 13), false, false),
       new Territory('Territory 5', '../assets/images/map/Territory 5.png', new Date(2018, 6, 5), true, false),
       new Territory('Territory 6', '../assets/images/map/Territory 6.png', new Date(2018, 5, 18), true, false),
-      new Territory('Territory 7', '../assets/images/map/Territory 7.png', new Date(2018, 9, 11), true, true),
-      new Territory('Territory 8', '../assets/images/map/Territory 8.png', new Date(2018, 10, 11), true, true),
-      new Territory('Territory 1', '../assets/images/map/Territory 9.png', new Date(2018, 8, 11), false, false,),
-      new Territory('Territory 1', '../assets/images/map/Territory 10.png', new Date(2018, 8, 11), false, false,),
-      new Territory('Territory 1', '../assets/images/map/Territory 11.png', new Date(2018, 8, 11), false, false,),
-      new Territory('Territory 1', '../assets/images/map/Territory 12.png', new Date(2018, 8, 11), false, false,),
     ];
   }
 
@@ -38,5 +32,4 @@ export class MapComponent implements OnInit {
     var nth = Math.floor(index/4);
     return 16.34*(index % 4 + nth);
   }
-
 }

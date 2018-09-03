@@ -24,3 +24,11 @@ div.overlay-lock{
     top: 50%;
     left: 15%;
 }
+
+.territory-clan-avatar{
+    position:absolute;
+    width: 20%;
+    height: 40%;
+    left:5%;
+    top:20%;
+}
