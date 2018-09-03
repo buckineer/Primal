@@ -1,4 +1,6 @@
-<div>
-	<img src={{territory.image_url}} style="width: 100%;height: 100%;">
-	<img class="territory-clan-avatar" src="../assets/images/clans/object1.png">
+<div style="text-align: center;">
+	<img src={{territory.image_url}} [class.territory-outline]= "is_clan_exists()"  class="territory-image">
+	<img class="territory-clan-avatar"  src="../assets/images/clans/object1.png">
+	<img *ngIf="territory.lock_state" class="territory-lock-icon"  src="../assets/images/icons/lock small.png">
+	<span><strong *ngIf="is_conquering" class="territory-state-txt">¡CONQUISTAR!</strong></span>
 </div>

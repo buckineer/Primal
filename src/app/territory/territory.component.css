@@ -31,4 +31,27 @@ div.overlay-lock{
     height: 40%;
     left:5%;
     top:20%;
+    z-index: 1
+}
+.territory-lock-icon{
+    position:absolute;
+    width: 20%;
+    left:85%;
+    top:35%;
+    z-index: 3
+}
+.territory-state-txt{
+    color:rgb(216, 229, 241);
+    font-size: 18pt;  
+}
+.territory-image{
+    position:relative;
+    width: 100%;
+    height: 100%;
+    z-index: 2
+}
+.territory-outline{
+    -webkit-mask-image: url("/assets/images/outline-mask.png");
+    -webkit-mask-size: 100% 100%;
+    background-color: #f00;
 }
