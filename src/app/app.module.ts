@@ -12,7 +12,9 @@ import { MapComponent } from './map/map.component';
 import { TerritoryComponent } from './territory/territory.component';
 import { TerritoryViewComponent } from './territory-view/territory-view.component';
 import { LoginModalComponent } from './login-modal/login-modal.component';
-
+import {TerritoryService} from './territory.service';
+import { ConquerComponent } from './conquer/conquer.component';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -24,12 +26,14 @@ import { LoginModalComponent } from './login-modal/login-modal.component';
     MapComponent,
     TerritoryComponent,
     TerritoryViewComponent,
-    LoginModalComponent
+    LoginModalComponent,
+    ConquerComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule
   ],
-  providers: [],
+  providers: [TerritoryService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

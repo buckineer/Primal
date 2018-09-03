@@ -1,13 +1,14 @@
-<div>
-  <app-header></app-header>
-</div>
 <div class="container">
-  <div class="row">
-    <div class="col-sm-12 main">
-        <app-map></app-map>
-    </div>
-  </div>
-</div>
+	<div>
+	  <app-header></app-header>
+	</div>
+	<div class="main">
+	    <!-- <app-map></app-map> -->
+	    <router-outlet></router-outlet>
+	    <!-- <app-conquer></app-conquer> -->
+	    <img src="/assets/images/logo/logo-b&w.png" style="width: 15%;position: absolute;right: 15px;bottom: 5px;">
+	</div>
+<div>
 
 <div id="modal-container" class="hidden"></div>
 <div id="overlay" (click)="removeModal()" class="hidden"></div>
