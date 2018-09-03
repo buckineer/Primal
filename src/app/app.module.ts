@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 import { AppComponent } from './app.component';
@@ -16,7 +17,7 @@ import {TerritoryService} from './territory.service';
 import { ConquerComponent } from './conquer/conquer.component';
 import { AppRoutingModule } from './app-routing.module';
 import { LoginComponent } from './login/login.component';
-
+import { MatButtonModule, MatCheckboxModule } from '@angular/material';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,6 +35,9 @@ import { LoginComponent } from './login/login.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    MatButtonModule,
+    MatCheckboxModule,
+    BrowserAnimationsModule
   ],
   providers: [TerritoryService],
   bootstrap: [AppComponent]
