@@ -16,8 +16,8 @@ import { LoginModalComponent } from './login-modal/login-modal.component';
 import {TerritoryService} from './territory.service';
 import { ConquerComponent } from './conquer/conquer.component';
 import { AppRoutingModule } from './app-routing.module';
+import { LoginComponent } from './login/login.component';
 import { MatButtonModule, MatCheckboxModule } from '@angular/material';
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,7 +29,8 @@ import { MatButtonModule, MatCheckboxModule } from '@angular/material';
     TerritoryComponent,
     TerritoryViewComponent,
     LoginModalComponent,
-    ConquerComponent
+    ConquerComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

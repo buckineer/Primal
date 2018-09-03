@@ -7,7 +7,7 @@ import {territories} from './shared-dummy-mock';
 export class TerritoryService {
 
   constructor() { }
-  getTerritories():Observable<Territory[]> {
-  	return of(territories);
+  getTerritories(): Observable<Territory[]> {
+    return of(territories);
   }
 }
