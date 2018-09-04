@@ -1,6 +1,7 @@
 import {Territory} from './territory/territory.model';
 import {Clan} from './clan.model';
 import { Notification } from './notification.model';
+import {User} from './user.model';
 
 export const current_user_conquered_territory_id = 1;
 export const territories:Territory[]=[
@@ -28,3 +29,12 @@ export const clans:Clan[]=[
 export const notification: Notification[] = [
   { clan_id: 1, message: '¡Únete al clan de ELEFANTES! Te han invitado a participar en un clan.'}
 ];
+
+
+export const users:User[]=[
+  {id:1,first_name:"Cristina",last_name:"Rodriguez",points:1658,coins:1658,image_url:"/assets/images/avatars Final/T1h Sapiens Head.png"},
+  {id:2,first_name:"Cristina",last_name:"Rodriguez",points:1658,coins:1658,image_url:"/assets/images/avatars Final/T2h Sapiens Head.png"},
+  {id:3,first_name:"Cristina",last_name:"Rodriguez",points:1658,coins:1658,image_url:"/assets/images/avatars Final/T3h Sapiens Head.png"},
+  {id:4,first_name:"Cristina",last_name:"Rodriguez",points:1658,coins:1658,image_url:"/assets/images/avatars Final/T4h Sapiens Head.png"},
+  {id:5,first_name:"Cristina",last_name:"Rodriguez",points:1658,coins:1658,image_url:"/assets/images/avatars Final/T5h Sapiens Head.png"},
+]

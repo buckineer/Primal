@@ -7,13 +7,14 @@ import { LoginComponent } from './login/login.component';
 import {MainComponent} from './main/main.component';
 import { LoggedInGuard } from './logged-in.guard';
 import {ClanHomeComponent} from './clan-home/clan-home.component'
-
+import {RankingComponent} from './ranking/ranking.component';
 
 const mainRoutes: Routes = [
 	{ path: '', redirectTo: '/login', pathMatch: 'full' },
 	{ path: 'map', component: MapComponent },
 	{ path: 'conquer/:id', component: ConquerComponent },
-	{ path: 'clan/home',component:ClanHomeComponent}
+	{ path: 'clan/home',component:ClanHomeComponent},
+	{ path: 'ranking',component:RankingComponent}
 ];
 
 const routes: Routes = [

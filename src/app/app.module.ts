@@ -15,6 +15,7 @@ import { LoginModalComponent } from './login-modal/login-modal.component';
 import { ConquerComponent } from './conquer/conquer.component';
 import { LoginComponent } from './login/login.component';
 import { ClanHomeComponent } from './clan-home/clan-home.component';
+import { RankingComponent } from './ranking/ranking.component';
 
 import { AppRoutingModule } from './app-routing.module';
 import { MatButtonModule, MatCheckboxModule } from '@angular/material';
@@ -26,6 +27,8 @@ import { LoggedInGuard } from './logged-in.guard';
 import {TerritoryService} from './territory.service';
 import {ClanService} from './clan.service';
 import { NotificationComponent } from './notification/notification.component';
+import {UserService} from './user.service';
+
 
 @NgModule({
   declarations: [
@@ -41,7 +44,8 @@ import { NotificationComponent } from './notification/notification.component';
     ConquerComponent,
     LoginComponent,
     ClanHomeComponent,
-    NotificationComponent
+    NotificationComponent,
+    RankingComponent
   ],
   imports: [
     BrowserModule,
@@ -56,7 +60,8 @@ import { NotificationComponent } from './notification/notification.component';
     TerritoryService,
     AUTH_PROVIDERS,
     LoggedInGuard,
-    ClanService
+    ClanService,
+    UserService,
   ],
   bootstrap: [AppComponent]
 })
