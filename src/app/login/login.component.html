@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="main" style="width: 100%; height: 700px; background-color: #3F9D2F;">
+  <div class="main" style="width: 100%; height: 800px; background-color: #3F9D2F;">
       <div class="col-sm-6">
           <img class="login" src="../assets/images/login/login.png">
       </div>
@@ -9,13 +9,13 @@
               <img  class="user-icon" src="../assets/images/login/user_icon.png">
               <br>
               <label style="margin-top: 5%; margin-left: 37%;"><font size="4px" color="#8c8c8c">User Log in</font></label>
-              <form #f="ngForm" (ngSubmit)="onSubmit(f.value)"> 
+              <form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm.value)"> 
                 <div id="input_container">
-                    <input type="text" id="user_id" name="user_id" placeholder="User ID" ngModel>
+                    <input type="text" id="user_id" name="user_id" placeholder="User ID" [formControl]="myForm.controls['user_id']">
                     <img src="../assets/images/login/user_input_icon.png" id="input_img">
                 </div>
                 <div id="input_container">
-                    <input type="text" id="password" placeholder="Password" name="password" ngModel>
+                    <input type="password" id="password" placeholder="Password" name="password" [formControl]="myForm.controls['password']">
                     <img src="../assets/images/login/key_pwd.png" id="input_img">
                 </div>
                 <button type="submit" class="button-login" mat-raised-button>LOGIN</button>

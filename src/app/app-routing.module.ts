@@ -5,6 +5,8 @@ import { MapComponent } from './map/map.component';
 import { ConquerComponent } from './conquer/conquer.component';
 import { LoginComponent } from './login/login.component';
 import {MainComponent} from './main/main.component';
+import { LoggedInGuard } from './logged-in.guard';
+
 
 const mainRoutes: Routes = [
 	{ path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -14,7 +16,7 @@ const mainRoutes: Routes = [
 
 const routes: Routes = [
 	{ path: 'login', component: LoginComponent },
-	{ path: '',component:MainComponent, children:mainRoutes}
+	{ path: '', component:MainComponent, children:mainRoutes}
 ];
 
 @NgModule({
