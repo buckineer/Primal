@@ -1,9 +1,15 @@
-export class Notification {
-    clan_id: number;
-    message: string;
+import { Clan } from './clan.model';
 
-    constructor(clan_id?:number, message?: string) {
+export class Notification {
+    id: number;
+    clan_id: number;
+    clan_name: string;
+    clan_image: string;
+
+    constructor(id?: number, clan_id?: number, clan_name?: string, clan_image?: string) {
+        this.id = id;
         this.clan_id = clan_id;
-        this.message = message;
+        this.clan_name = clan_name;
+        this.clan_image = clan_image;        
     }
 }

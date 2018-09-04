@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../user.model';
 import {UserService} from '../user.service';
+
 @Component({
   selector: 'app-ranking',
   templateUrl: './ranking.component.html',
@@ -13,7 +14,7 @@ export class RankingComponent implements OnInit {
   constructor(public userService:UserService) { }
 
   ngOnInit() {
-  	this.userService.getUsers().subscribe(items=>this.users=items)
+  	this.userService.getUsers().subscribe(items=>this.users=items);
   }
 
 }

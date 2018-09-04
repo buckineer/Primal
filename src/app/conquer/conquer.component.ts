@@ -19,12 +19,14 @@ export class ConquerComponent implements OnInit {
   ngOnInit() {
   	this.getTerritory();
   	this.getLeftDay();
-  }
+	}
+	
   getTerritory():void {
   	const id:number = +this.route.snapshot.paramMap.get('id');
   	this.territoryService.getTerritory(id)
 		.subscribe(ret_item=>{this.territory=ret_item;console.log(ret_item)});
-  }
+	}
+	
   getLeftDay():void {
   	var now = new Date();
   	var start = new Date();

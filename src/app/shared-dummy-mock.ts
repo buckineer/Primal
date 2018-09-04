@@ -1,7 +1,7 @@
-import {Territory} from './territory/territory.model';
-import {Clan} from './clan.model';
+import { Territory } from './territory/territory.model';
+import { Clan } from './clan.model';
 import { Notification } from './notification.model';
-import {User} from './user.model';
+import { User } from './user.model';
 
 export const current_user_conquered_territory_id = 1;
 export const territories:Territory[]=[
@@ -20,14 +20,16 @@ export const territories:Territory[]=[
 ];
 
 export const clans:Clan[]=[
-  {id:1,clan_name:'CLAN A',max_members:5,joined_members:3,clan_color:"red",image_url:'/assets/images/clans/object8.png'},
-  {id:2,clan_name:'CLAN B',max_members:5,joined_members:5,clan_color:"coral",image_url:'/assets/images/clans/object10.png'},
-  {id:3,clan_name:'CLAN C',max_members:5,joined_members:4,clan_color:"orangered",image_url:'/assets/images/clans/object9.png'},
-  {id:4,clan_name:'CLAN D',max_members:5,joined_members:4,clan_color:"orange",image_url:'/assets/images/clans/object7.png'},
+  {id:1,clan_name:'CLAN A', max_members:5, joined_members:3,clan_color:"red",image_url:'/assets/images/clans/object8.png'},
+  {id:2,clan_name:'CLAN B', max_members:5, joined_members:5,clan_color:"coral",image_url:'/assets/images/clans/object10.png'},
+  {id:3,clan_name:'CLAN C', max_members:5, joined_members:4,clan_color:"orangered",image_url:'/assets/images/clans/object9.png'},
+  {id:4,clan_name:'CLAN D', max_members:5, joined_members:4,clan_color:"orange",image_url:'/assets/images/clans/object7.png'},
 ];
 
 export const notification: Notification[] = [
-  { clan_id: 1, message: '¡Únete al clan de ELEFANTES! Te han invitado a participar en un clan.'}
+  { id: 1, clan_id: 1, clan_name: 'CLAN A', clan_image: '/assets/images/clans/object8.png'},
+  { id: 2, clan_id: 2, clan_name: 'CLAN B', clan_image: '/assets/images/clans/object10.png'},
+  { id: 3, clan_id: 3, clan_name: 'CLAN C', clan_image: '/assets/images/clans/object9.png'},
 ];
 
 

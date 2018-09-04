@@ -29,6 +29,7 @@ import {TerritoryService} from './territory.service';
 import {ClanService} from './clan.service';
 import { NotificationComponent } from './notification/notification.component';
 import {UserService} from './user.service';
+import { NotificationService } from './notification.service';
 
 
 
@@ -65,6 +66,7 @@ import {UserService} from './user.service';
     LoggedInGuard,
     ClanService,
     UserService,
+    NotificationService,
   ],
   bootstrap: [AppComponent]
 })

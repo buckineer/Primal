@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Notification } from '../notification.model';
+import { NotificationService } from '../notification.service';
+import { Clan } from '../clan.model';
+import { ClanService } from '../clan.service';
 
 @Component({
   selector: 'app-notification',
@@ -7,9 +11,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NotificationComponent implements OnInit {
 
-  constructor() { }
+  notifications: Notification[];
+
+  constructor(public notificationService: NotificationService,
+              public clanService: ClanService) { }
 
   ngOnInit() {
+    this.notificationService.getNotifications().subscribe(items => this.notifications = items); 
   }
 
 }
