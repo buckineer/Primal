@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, AbstractControl } from '@angular/forms';
 import { AuthService } from '../auth.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -15,7 +16,7 @@ export class LoginComponent implements OnInit {
   user_id: AbstractControl;
   password: AbstractControl;
 
-  constructor(fb: FormBuilder, public authService: AuthService) {
+  constructor(fb: FormBuilder, public authService: AuthService, private router: Router) {
     this.myForm = fb.group({
         'user_id': ['', Validators.required],
         'password': ['', Validators.required]
@@ -33,7 +34,10 @@ export class LoginComponent implements OnInit {
       setTimeout(function() {
         this.message = '';
       }.bind(this), 2500);
+      
     }
+    
+    this.router.navigate(['map']);
     return false;
   }
 
@@ -46,6 +50,7 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit(form: any): void {
+    this.login(form.user_id, form.password);
     console.log('you submitted value', form);
   }
 

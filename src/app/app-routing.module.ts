@@ -16,7 +16,7 @@ const mainRoutes: Routes = [
 
 const routes: Routes = [
 	{ path: 'login', component: LoginComponent },
-	{ path: '', component:MainComponent, children:mainRoutes}
+	{ path: '', component:MainComponent, children:mainRoutes, canActivate: [LoggedInGuard]}
 ];
 
 @NgModule({
