@@ -16,7 +16,7 @@ const mainRoutes: Routes = [
 	{ path: 'conquer/:id', component: ConquerComponent },
 	{ path: 'clan/home',component:ClanHomeComponent},
 	{ path: 'ranking',component:RankingComponent},
-	{ path: 'clan/create',component:ClanCreateComponent};
+	{ path: 'clan/create',component:ClanCreateComponent},
 ];
 
 const routes: Routes = [
