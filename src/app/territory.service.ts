@@ -10,4 +10,7 @@ export class TerritoryService {
   getTerritories(): Observable<Territory[]> {
     return of(territories);
   }
+  getTerritory(id:number):Observable<Territory>{
+  	return of(territories.find(item => item.id === id))
+  }
 }

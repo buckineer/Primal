@@ -1,2 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+.material-icons.md-80 { font-size: 80px; }
+.material-icons.md-bold { font-weight: bold; }
+.material-icons.md-white { color: rgba(255, 255, 255, 1.0); }
+
+.background-fx {
+    background-image: url(/assets/images/map/map-final-2x.png);
+    background-size: 100% 100%;
+    position: relative;
+    width:100%;
+}
+.background-nofx {
+    background-image: url(/assets/images/map/map-final-2xNo_fx.png);
+    background-size: 100% 100%;
+    position: relative;
+    width:100%;
+    min-height: 700px;
+}

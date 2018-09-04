@@ -5,7 +5,7 @@
 	  		<div style="width:21.1%;height: 19.8%;position: absolute;" [style.left.%] = "get_left_position(i)" [style.top.%]="get_top_position(i)">
 	  			<a routerLink="/conquer/{{item.id}}" style="text-decoration: none">
 	  				<div>	  					
-	    				<app-territory [territory]="territories[i]"></app-territory>
+	    				<app-territory [territory]="territories[i]" [state]="true"></app-territory>
 	    			</div>
 	    		</a>
 	    	</div>

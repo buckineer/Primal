@@ -19,6 +19,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { LoginComponent } from './login/login.component';
 import { MatButtonModule, MatCheckboxModule } from '@angular/material';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ClanHomeComponent } from './clan-home/clan-home.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,7 +33,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     TerritoryViewComponent,
     LoginModalComponent,
     ConquerComponent,
-    LoginComponent
+    LoginComponent,
+    ClanHomeComponent
   ],
   imports: [
     BrowserModule,

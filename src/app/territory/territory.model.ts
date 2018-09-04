@@ -24,6 +24,7 @@ export class Territory {
         this.ending_date = ending_date;
         this.lock_state=lock_state;
         this.clan_info = clan_info;
+        this.reaching_min_points = reaching_min_points;
     }
 
 }

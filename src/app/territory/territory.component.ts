@@ -10,13 +10,14 @@ import {current_user_conquered_territory_id} from '../shared-dummy-mock'
 export class TerritoryComponent implements OnInit {
 
   @Input() territory: Territory;
+  @Input() state: boolean;
   is_conquering:boolean;
   constructor() {
   	this.is_conquering = false;
+    this.state = false;
   }
 
   ngOnInit() {
-  	console.log(current_user_conquered_territory_id)
   	if(current_user_conquered_territory_id ==this.territory.id){
   		this.is_conquering = true;
   	}
