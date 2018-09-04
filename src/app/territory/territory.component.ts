@@ -12,6 +12,7 @@ export class TerritoryComponent implements OnInit {
   @Input() territory: Territory;
   @Input() state: boolean;
   is_conquering:boolean;
+  
   constructor() {
   	this.is_conquering = false;
     this.state = false;
@@ -22,6 +23,7 @@ export class TerritoryComponent implements OnInit {
   		this.is_conquering = true;
   	}
   }
+
   is_clan_exists():boolean{
   	return this.territory.clan_info!=null;
   }
