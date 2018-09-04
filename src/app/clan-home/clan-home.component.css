@@ -5,11 +5,47 @@
 	float: left
 }
 .title-text {
-    line-height: 78px;
+    line-height: 60px;
     letter-spacing: 0px;
     color: rgb(255, 255, 255);
     /*font-family: Raleway;*/
     font-weight: 800;
-    font-size: 64px;
+    font-size: 54px;
     text-align: left;
+}
+.content-text {
+	line-height: 40px;
+    letter-spacing: 0px;
+    color: rgb(255, 255, 255);
+    /*font-family: Raleway;*/
+    font-weight: 800;
+    font-size: 30px;
+    text-align: left;
+}
+.ul.li-item{
+    min-height: 130px;
+}
+.ul{
+    height: 430px;
+    width: 100%;
+    border-bottom-style: solid;
+    border-bottom-color: #fff;
+    overflow-x:hidden;
+    overflow-y:auto;
+    box-sizing: content-box;     
+}
+.main-button span{
+    line-height: 29px;
+    letter-spacing: 0px;
+    color: rgb(255, 255, 255);
+    /*font-family: Raleway;*/
+    font-weight: 700;
+    font-size: 20px ;
+    text-align: left;
+    border-radius: 5px;
+}
+.join-clan-button{
+    background-color: #3F9D2F;
+    border: 0px solid #D1D1D1;
+    border-radius: 5px;
 }
