@@ -18,6 +18,8 @@ import { ConquerComponent } from './conquer/conquer.component';
 import { AppRoutingModule } from './app-routing.module';
 import { LoginComponent } from './login/login.component';
 import { MatButtonModule, MatCheckboxModule } from '@angular/material';
+import { ClanHomeComponent } from './clan-home/clan-home.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,7 +32,8 @@ import { MatButtonModule, MatCheckboxModule } from '@angular/material';
     TerritoryViewComponent,
     LoginModalComponent,
     ConquerComponent,
-    LoginComponent
+    LoginComponent,
+    ClanHomeComponent
   ],
   imports: [
     BrowserModule,

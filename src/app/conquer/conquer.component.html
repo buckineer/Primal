@@ -1,15 +1,34 @@
 <div class="background-nofx">
-	<div class="content">
-		<div class="col-sm-6" style="padding-top: 50px;padding-left: 100px;">
+	<div class="content" style="position: relative;">
+		<div style="position: absolute; right: -30px;top: -30px;">
+			<i class="material-icons md-bold md-80 md-white" >close</i>
+		</div>
+
+		<div class="col-sm-6" style="padding-top: 50px;padding-left: 80px;">
+			
 			<div >
 				<span class="title-text">ISLAND</span>
 			</div>
 			<div style="padding-top: 20px">
-				<span class="content-text">Inicio misión: 8 días<br><br>Recompensa: 2.000</span>
+				<span class="content-text">Inicio misión: {{getLeftDay()}} días<br><br>Recompensa: {{territory.reaching_min_points}}</span>
 			</div>
-			<button mat-raised-button color="primary">Primary</button>
+			<div style="line-height: 120px;margin-top:30px;">
+				<button mat-raised-button class="join-clan-button main-image-button " color="primary">
+					<img src="/assets/images/icons/lock small.png" width="40px">
+					<span>UNIRSE A CLAN</span>
+				</button>
+			</div>
+			
 		</div>
 		<div class="col-sm-6">
+			<div style="height: 80%;">
+				<app-territory [territory]="territory"></app-territory>
+			</div>
+			<div style="line-height: 120px;text-align: center;">
+				<button mat-raised-button class="conquer-button main-button" color="primary">
+					<span>CONQUISTAR</span>
+				</button>
+			</div>
 		</div>
 	</div>
 </div>
