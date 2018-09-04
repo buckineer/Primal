@@ -18,6 +18,7 @@ import { ConquerComponent } from './conquer/conquer.component';
 import { AppRoutingModule } from './app-routing.module';
 import { LoginComponent } from './login/login.component';
 import { MatButtonModule, MatCheckboxModule } from '@angular/material';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,7 +38,9 @@ import { MatButtonModule, MatCheckboxModule } from '@angular/material';
     AppRoutingModule,
     MatButtonModule,
     MatCheckboxModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [TerritoryService],
   bootstrap: [AppComponent]

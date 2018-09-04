@@ -3,5 +3,26 @@
       <div class="col-sm-6">
           <img class="login" src="../assets/images/login/login.png">
       </div>
+      <div class="col-sm-6">
+          <img class="top-logo" src="../assets/images/logo/logo-colour2.png">
+          <div class="login">
+              <img  class="user-icon" src="../assets/images/login/user_icon.png">
+              <br>
+              <label style="margin-top: 5%; margin-left: 37%;"><font size="4px" color="#8c8c8c">User Log in</font></label>
+              <form #f="ngForm" (ngSubmit)="onSubmit(f.value)"> 
+                <div id="input_container">
+                    <input type="text" id="user_id" name="user_id" placeholder="User ID" ngModel>
+                    <img src="../assets/images/login/user_input_icon.png" id="input_img">
+                </div>
+                <div id="input_container">
+                    <input type="text" id="password" placeholder="Password" name="password" ngModel>
+                    <img src="../assets/images/login/key_pwd.png" id="input_img">
+                </div>
+                <button type="submit" class="button-login" mat-raised-button>LOGIN</button>
+              </form>
+              <label class="notify"><font size="3px" color="#8c8c8c">Forgot</font> <font size="3px" color="#2E64FE">Password</font>
+                <font size="3px" color="#8c8c8c">?</font></label>
+          </div>
+      </div>
   </div>
 </div>
