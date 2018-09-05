@@ -1,3 +1,5 @@
+import { Progress } from './progress.model';
+
 export class Clan {
     id: number;
     clan_name:string;
@@ -6,8 +8,9 @@ export class Clan {
     image_url: string;
     clan_color:string;
     members:  string[];
+    points: number;
+    territory_info: Progress[];
     
-
     constructor(id?:number,title?: string, 
                 clan_name?:string,
                 max_members?: number, 
@@ -15,6 +18,8 @@ export class Clan {
                 image_url?: string,
                 clan_color?: string,
                 members?: string[],
+                points?: number,
+                territory_info: Progress[] = null
                 ){
         this.id = id;
         this.clan_name = clan_name;
@@ -23,6 +28,7 @@ export class Clan {
         this.image_url = image_url;
         this.clan_color = clan_color;
         this.members = members;
-        
+        this.points = points;
+        this.territory_info = territory_info;
     }
 }

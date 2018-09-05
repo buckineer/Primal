@@ -2,6 +2,7 @@ import { Territory } from './territory/territory.model';
 import { Clan } from './clan.model';
 import { Notification } from './notification.model';
 import { User } from './user.model';
+import { Progress } from './progress.model';
 
 export const current_user_conquered_territory_id = 1;
 export const territories:Territory[]=[
@@ -19,11 +20,23 @@ export const territories:Territory[]=[
   new Territory(12,'Tunadr Helada',1000, '../assets/images/map/Tunadr Helada.png', new Date(2018, 5, 18),null, true),
 ];
 
-export const clans:Clan[]=[
-  {id:1,clan_name:'CLAN A', max_members:5, joined_members:3,clan_color:"red",image_url:'/assets/images/clans/object6.png', members: ['Cristina Rodriguez', 'Amelian Rose']},
-  {id:2,clan_name:'CLAN B', max_members:5, joined_members:5,clan_color:"coral",image_url:'/assets/images/clans/object10.png', members: ['Cristina Rodriguez', 'Amelian Rose']},
-  {id:3,clan_name:'CLAN C', max_members:5, joined_members:4,clan_color:"orangered",image_url:'/assets/images/clans/object9.png', members: ['Cristina Rodriguez', 'Amelian Rose']},
-  {id:4,clan_name:'CLAN D', max_members:5, joined_members:4,clan_color:"orange",image_url:'/assets/images/clans/object7.png', members: ['Cristina Rodriguez', 'Amelian Rose']},
+export const clans: Clan[]=[
+  {id:1,clan_name:'CLAN A', max_members:5, joined_members:3,clan_color:"red",image_url:'/assets/images/clans/object6.png', members: ['Cristina Rodriguez', 'Amelian Rose'],
+    points: 115,
+    territory_info: [{territory_name: 'Cascada Encantada', territory_image_url: '../assets/images/map/Cascada Encantada.png'},
+                     {territory_name: 'Costa Pesca', territory_image_url: '../assets/images/map/Costa Pesca.png'}]},
+  {id:2,clan_name:'CLAN B', max_members:5, joined_members:5,clan_color:"coral",image_url:'/assets/images/clans/object10.png', members: ['Cristina Rodriguez', 'Amelian Rose'],
+  points: 175,
+  territory_info: [{territory_name: 'Cascada Encantada', territory_image_url: '../assets/images/map/Cascada Encantada.png'},
+                    {territory_name: 'Costa Pesca', territory_image_url: '../assets/images/map/Costa Pesca.png'}]},
+  {id:3,clan_name:'CLAN C', max_members:5, joined_members:4,clan_color:"orangered",image_url:'/assets/images/clans/object9.png', members: ['Cristina Rodriguez', 'Amelian Rose'],
+  points: 225,
+  territory_info: [{territory_name: 'Cascada Encantada', territory_image_url: '../assets/images/map/Cascada Encantada.png'},
+                    {territory_name: 'Costa Pesca', territory_image_url: '../assets/images/map/Costa Pesca.png'}]},
+  {id:4,clan_name:'CLAN D', max_members:5, joined_members:4,clan_color:"orange",image_url:'/assets/images/clans/object7.png', members: ['Cristina Rodriguez', 'Amelian Rose'],
+  points: 335,
+  territory_info: [{territory_name: 'Cascada Encantada', territory_image_url: '../assets/images/map/Cascada Encantada.png'},
+                    {territory_name: 'Costa Pesca', territory_image_url: '../assets/images/map/Costa Pesca.png'}]},
 ];
 
 export const notification: Notification[] = [

@@ -7,27 +7,39 @@
     display: inline-block;
 }
 .title-text {
-    line-height: 70px;
+    /* line-heigh */
     letter-spacing: 0px;
     color: rgb(255, 255, 255);
-    /*font-family: Raleway;*/
-    font-weight: 800;
-    font-size: 56px;
+    font-family: 'Raleway', serif;
+    font-weight: 750;
+    font-size: 40px;
     text-align: left;
     margin-left: 5%;
 }
+
+.points-text {
+    /* line-heigh */
+    letter-spacing: 0px;
+    color: rgb(255, 255, 255);
+    font-family: 'Raleway', serif;
+    /* font-weight: 500; */
+    font-size: 30px;
+    text-align: left;
+    margin-left: 5%;
+}
+
 .content {
 	margin: 50px;
 	margin-left: 5%;
 	margin-right: 5%;
 	height: 500px;
-	width: 90%;
+    width: 90%;
 }
 .content-text {
 	line-height: 44px;
     letter-spacing: 0px;
     color: rgb(255, 255, 255);
-    /*font-family: Raleway;*/
+    font-family: 'Raleway', serif;
     font-weight: 300;
     font-size: 30px;
     text-align: left;
@@ -43,10 +55,23 @@
     box-sizing: content-box;     
 }
 
-.button-join {
+.button-change {
     background-color: antiquewhite;
     color: #3F9D2F;
-    width: 150%;
+    width: 120%;
     height: 50px;
     text-align: left;
+}
+
+.clan-outline{
+    -webkit-mask-image: url("/assets/images/outline-mask.png");
+    -webkit-mask-size: 100% 100%;
+    background-color: #f00;
+}
+
+.clan-image{
+    /* position:relative; */
+    width: 120%;
+    margin-left: -10%;
+    margin-top: -10%;
 }
