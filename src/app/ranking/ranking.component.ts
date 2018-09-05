@@ -7,10 +7,13 @@ import {UserService} from '../user.service';
   styleUrls: ['./ranking.component.css']
 })
 export class RankingComponent implements OnInit {
+  
+  users:User[];
 
-  constructor() { }
+  constructor(public userService:UserService) { }
 
   ngOnInit() {
+  	this.userService.getUsers().subscribe(items=>this.users=items)
   }
 
 }

@@ -14,5 +14,4 @@ export class ClanHomeComponent implements OnInit {
   ngOnInit() {
   	this.clanService.getClans().subscribe(items=>this.clans=items)
   }
-
 }
