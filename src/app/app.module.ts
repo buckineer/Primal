@@ -13,13 +13,17 @@ import { MapComponent } from './map/map.component';
 import { TerritoryComponent } from './territory/territory.component';
 import { TerritoryViewComponent } from './territory-view/territory-view.component';
 import { LoginModalComponent } from './login-modal/login-modal.component';
-import {TerritoryService} from './territory.service';
 import { ConquerComponent } from './conquer/conquer.component';
-import { AppRoutingModule } from './app-routing.module';
 import { LoginComponent } from './login/login.component';
+import { ClanHomeComponent } from './clan-home/clan-home.component';
+
+import { AppRoutingModule } from './app-routing.module';
 import { MatButtonModule, MatCheckboxModule } from '@angular/material';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { ClanHomeComponent } from './clan-home/clan-home.component';
+
+
+import {TerritoryService} from './territory.service';
+import {ClanService} from './clan.service';
 
 @NgModule({
   declarations: [
@@ -45,7 +49,7 @@ import { ClanHomeComponent } from './clan-home/clan-home.component';
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [TerritoryService],
+  providers: [TerritoryService,ClanService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

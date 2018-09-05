@@ -1,11 +1,44 @@
 <div class="background-nofx">
-	<div class="content" style="position: relative;">
-		<div class="row">
+	<div class="content container" style="position: relative;">
+		<div class="row" style="margin-left: 10%;margin-top: 100px;">
 			<div >
-				<span class="title-text">ISLAND</span>
+				<span class="title-text">CLANES ISLAND</span>
 			</div>
 		</div>
-		<div class="row"></div>
+		<div style="width: 90%;overflow: hidden;">
+			<div style="padding-left: 12%;" class="ul">
+				<ng-template ngFor let-item [ngForOf]="clans" let-i="index">
+					<div class="row li-item align-items-center">
+						<div class="col-sm-2">
+							<img src={{item.image_url}} style="width: 100%;">
+						</div>
+						<div class="col-sm-4" style="padding-top: 20px;">
+							<span class="content-text" style="margin-top: 20px;" [style.color]="item.clan_color">{{item.clan_name}}</span>
+							<span ><br><br> </span>
+							<span class="content-text">{{item.max_members}}/{{item.joined_members}} COMPLETO </span>
+						</div>
+						<div class="col-sm-auto" style="">
+							<button style="height:50px;" mat-raised-button class="join-clan-button main-button	" color="primary">
+								<span>UNIRSE A CLAN</span>
+							</button>
+						</div>
+					</div>
+				</ng-template>
+				
+
+			</div>
+		</div>
+		
+		<div class="row" style="padding-left: 12%;margin-top: 30px;">
+			<div class="col-sm-6">
+				<span class="content-text" style="font-weight: 600;">O CREA TU PROPIO CLAN</span>
+			</div>
+			<div class="col-sm-2">
+				<button style="height:50px;background-color: #0B3E78;" mat-raised-button class="main-button" color="primary">
+					<span>CREAR CLAN</span>
+				</button>
+			</div>
+		</div>
 	</div>
 </div>
 

@@ -9,6 +9,7 @@
     background-size: 100% 100%;
     position: relative;
     width:100%;
+    display: inline-block;
 }
 .background-nofx {
     background-image: url(/assets/images/map/map-final-2xNo_fx.png);
@@ -16,4 +17,8 @@
     position: relative;
     width:100%;
     min-height: 700px;
+    display: inline-block;
+}
+button{
+    border-radius: 5px;
 }

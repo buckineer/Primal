@@ -11,7 +11,7 @@ import {TerritoryService} from '../territory.service';
 export class ConquerComponent implements OnInit {
 
   territory:Territory;
-
+  remain_days:number;
   constructor(private route: ActivatedRoute,
   			private territoryService: TerritoryService,
   ) { }
@@ -25,7 +25,7 @@ export class ConquerComponent implements OnInit {
   	this.territoryService.getTerritory(id)
 		.subscribe(ret_item=>{this.territory=ret_item;console.log(ret_item)});
   }
-  getLeftDay():number {
+  getLeftDay():void {
   	var now = new Date();
   	var start = new Date();
   	start.setDate(1);
@@ -34,8 +34,8 @@ export class ConquerComponent implements OnInit {
   	console.log(start);
   	console.log(start>now);
   	var timeDiff = Math.abs(now.getTime() - start.getTime());
-	var dayDifference = Math.ceil(timeDiff / (1000 * 3600 * 24));
-	return dayDifference;
+  	var dayDifference = Math.ceil(timeDiff / (1000 * 3600 * 24));
+    this.remain_days = dayDifference;
   }
 }
 

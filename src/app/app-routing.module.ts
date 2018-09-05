@@ -5,11 +5,13 @@ import { MapComponent } from './map/map.component';
 import { ConquerComponent } from './conquer/conquer.component';
 import { LoginComponent } from './login/login.component';
 import {MainComponent} from './main/main.component';
+import {ClanHomeComponent} from './clan-home/clan-home.component'
 
 const mainRoutes: Routes = [
 	{ path: '', redirectTo: '/login', pathMatch: 'full' },
 	{ path: 'map', component: MapComponent },
 	{ path: 'conquer/:id', component: ConquerComponent },
+	{ path: 'clan/home',component:ClanHomeComponent}
 ];
 
 const routes: Routes = [
