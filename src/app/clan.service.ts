@@ -3,6 +3,8 @@ import { Clan } from './clan.model';
 import { Observable } from 'rxjs/Observable';
 import { of } from 'rxjs/observable/of';
 import {clans} from './shared-dummy-mock';
+import { User } from './user.model';
+
 @Injectable()
 export class ClanService {
  
@@ -13,4 +15,5 @@ export class ClanService {
   getClan(id:number):Observable<Clan>{
   	return of(clans.find(item => item.id === id))
   }
+  
 }

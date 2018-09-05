@@ -5,25 +5,59 @@
           <span class="title-text">CLAN</span>
         </div>
         <div class="col-sm-4">
-          
+
         </div>
         <div class="col-sm-2" style="margin-left: 10%; margin-top: -5%;">
           <button type="submit" class="button-change" mat-raised-button><font size="5px">Cambiar clan</font></button>
         </div>
       </div>
-      <div style="width: 95%; overflow: hidden; margin-top: -1%;">
-        <div style="padding-left: 12%;" class="hidden-scroll">
+      <div style="width: 100%; overflow: hidden; margin-top: -1%;">
+        <div class="hidden-scroll">
             <div class="row align-items-center" style="padding-top: 20px;">
-              <div class="col-sm-2" style="margin-left: -10%">
-                <div style="width:80%; height: 110px; border-radius: 60%; background-color:antiquewhite; border: 2px solid rgb(54, 53, 53);">
+              <div class="col-sm-2">
+                <div class="clan-avatar">
                   <img src={{selected_clan.image_url}} class="clan-image">
                 </div>
               </div>
-              <div class="col-sm-10">
-                <span class="content-text"><font color=antiquewhite>Nombrell</font> {{ selected_clan.clan_name }}!</span>
-                <br>
-                <span class="content-text">Te han invitado a participar en un clan. </span>
-              </div>              
+              <div class="col-sm-8" style="margin-top: 0%; margin-left: -4%;">
+                <label class="content-text"><font color=antiquewhite>Nombre</font> {{ selected_clan.clan_name }}</label><br>
+                <label class="content-text"><font color=antiquewhite>Descripción</font> {{ selected_clan.description }}</label><br>
+                <label class="content-text"><font color=antiquewhite>Lema</font> {{ selected_clan.description }}</label>
+              </div>
+              <div class="col-sm-2" style="margin-left: -10%; margin-top: -7%;">
+                <span class="points-text">PUNTOS:{{ selected_clan.points }} </span>
+              </div>
+            </div>
+
+            <hr color=white>
+            
+            <label class="content-text"><font color=antiquewhite>Progreso</font></label>
+
+            <div class="row align-items-center" style="padding-top: 20px;">
+              <ng-template ngFor let-item [ngForOf]="selected_clan.territory_info" let-i="index">
+                <div class="col-sm-3 algin-items-center" style="margin-left: 0%">
+                  <img src={{item.territory_image_url}} style="width: 80%;">
+                  <label class="territory-name-text">{{ item.territory_name }}</label>
+                </div>
+              </ng-template>
+            </div>
+
+            <hr color=white>
+
+            <label class="content-text"><font color=antiquewhite>Miembros:</font></label>
+
+            <div class="row align-items-center" style="padding-top: 10px;">
+              <ng-template ngFor let-item [ngForOf]="joined_users" let-i="index">
+                <div class="col-sm-5 algin-items-center" style="margin-top: 1.5%;">
+                  <div class="col-sm-4 user-avatar">
+                    <img src={{item.image_url}} class="user-image"> 
+                  </div>
+                  <div class="col-sm-8">
+                    <label class="user-name-text">{{ item.first_name }} {{ item.last_name }}</label> 
+                  </div>
+            
+                </div>
+              </ng-template>
             </div>
         </div>
       </div>
