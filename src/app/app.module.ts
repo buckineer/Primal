@@ -25,6 +25,7 @@ import { LoggedInGuard } from './logged-in.guard';
 
 import {TerritoryService} from './territory.service';
 import {ClanService} from './clan.service';
+import { RankingComponent } from './ranking/ranking.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import {ClanService} from './clan.service';
     LoginModalComponent,
     ConquerComponent,
     LoginComponent,
-    ClanHomeComponent
+    ClanHomeComponent,
+    RankingComponent
   ],
   imports: [
     BrowserModule,

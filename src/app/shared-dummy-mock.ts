@@ -1,5 +1,6 @@
 import {Territory} from './territory/territory.model';
 import {Clan} from './clan.model';
+import {User} from './user.model';
 
 export const current_user_conquered_territory_id = 1;
 export const territories:Territory[]=[
@@ -21,4 +22,12 @@ export const clans:Clan[]=[
   {id:2,clan_name:'CLAN B',max_members:5,joined_members:5,clan_color:"coral",image_url:'/assets/images/clans/object10.png'},
   {id:3,clan_name:'CLAN C',max_members:5,joined_members:4,clan_color:"orangered",image_url:'/assets/images/clans/object9.png'},
   {id:4,clan_name:'CLAN D',max_members:5,joined_members:4,clan_color:"orange",image_url:'/assets/images/clans/object7.png'},
+]
+
+export const users:User[]=[
+  {id:1,first_name:"Cristina",last_name:"Rodriguez",points:1658,coins:1658,image_url:"/assets/images/avatars Final/T1h Sapiens Head.png"},
+  {id:2,first_name:"Cristina",last_name:"Rodriguez",points:1658,coins:1658,image_url:"/assets/images/avatars Final/T2h Sapiens Head.png"},
+  {id:3,first_name:"Cristina",last_name:"Rodriguez",points:1658,coins:1658,image_url:"/assets/images/avatars Final/T3h Sapiens Head.png"},
+  {id:4,first_name:"Cristina",last_name:"Rodriguez",points:1658,coins:1658,image_url:"/assets/images/avatars Final/T4h Sapiens Head.png"},
+  {id:5,first_name:"Cristina",last_name:"Rodriguez",points:1658,coins:1658,image_url:"/assets/images/avatars Final/T5h Sapiens Head.png"},
 ]
