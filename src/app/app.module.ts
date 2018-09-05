@@ -53,7 +53,8 @@ import {ClanService} from './clan.service';
   providers: [
     TerritoryService,
     AUTH_PROVIDERS,
-    LoggedInGuard
+    LoggedInGuard,
+    ClanService
   ],
   bootstrap: [AppComponent]
 })
