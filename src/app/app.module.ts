@@ -15,8 +15,14 @@ import { LoginModalComponent } from './login-modal/login-modal.component';
 import { ConquerComponent } from './conquer/conquer.component';
 import { LoginComponent } from './login/login.component';
 import { ClanHomeComponent } from './clan-home/clan-home.component';
+import { InviteComponent } from './invite/invite.component';
 import { RankingComponent } from './ranking/ranking.component';
 import { ClanCreateComponent } from './clan-create/clan-create.component';
+import { ClanComponent } from './clan/clan.component';
+import { NotificationComponent } from './notification/notification.component';
+
+import {CheckboxGroupComponent} from './component/checkbox-group.component';
+import {CheckboxComponent} from './component/checkbox.component';
 
 import { AppRoutingModule } from './app-routing.module';
 import { MatButtonModule, MatCheckboxModule } from '@angular/material';
@@ -27,10 +33,10 @@ import { LoggedInGuard } from './logged-in.guard';
 
 import {TerritoryService} from './territory.service';
 import {ClanService} from './clan.service';
-import { NotificationComponent } from './notification/notification.component';
 import {UserService} from './user.service';
 import { NotificationService } from './notification.service';
-import { ClanComponent } from './clan/clan.component';
+import {CommonService} from './common.service';
+import {GlobalState} from './state';
 
 
 
@@ -52,6 +58,10 @@ import { ClanComponent } from './clan/clan.component';
     RankingComponent,
     ClanCreateComponent,
     ClanComponent,
+    InviteComponent,
+    CheckboxGroupComponent,
+    CheckboxComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -69,6 +79,8 @@ import { ClanComponent } from './clan/clan.component';
     ClanService,
     UserService,
     NotificationService,
+    CommonService,
+    GlobalState,
   ],
   bootstrap: [AppComponent]
 })

@@ -1,0 +1,57 @@
+<div class="background-nofx">
+	<div class="content container" style="position: relative;">
+		<div style="position: absolute; right: -30px;top: -30px;">
+			<i class="material-icons md-bold md-80 md-white" >close</i>
+		</div>
+		<div style="padding-left: 50px;padding-right: 50px;padding-top: 10px;padding-bottom: 10px;">
+			<div class="title-text" style="padding-bottom: 20px;">INVITAR A LUCHADORES</div>
+			<div style="width: 90%;overflow: hidden;border-bottom-style: solid;border-bottom-color: #fff;">
+
+				<div style="padding-left: 15px;margin-bottom: 10px;" style="height: 360px;" class="hidden-scroll">
+					<checkbox-group [(ngModel)]="selectedUsers">										
+					<p>Selected items - {{selectedUsers | json}}</p>
+					<ng-template ngFor let-item [ngForOf]="users" let-i="index">
+						<div class="row align-items-center" style="padding-top: 20px;">
+							<div class="col-sm-4 row" style="padding-left: 30px;">
+								<div class="vertical-child-center" style="width: 50px; text-align: center;">
+									<checkbox value="{{item['id']}}"> </checkbox>	
+								</div>
+								<div class="circle-border vertical-child-center" style="position: relative;">
+									<img src="{{item['image_url']}}" style="width: 100px;">
+								</div>
+							</div>
+							<div class="col-sm-6">
+								<span class="content-text">{{item['first_name']}} {{item['last_name']}}</span>
+							</div>
+						</div>
+					</ng-template>
+				</checkbox-group>
+				</div>					
+			</div>
+			<div style="width: 90%;">
+				<div style="padding-left: 15px;">
+					<div class="row align-items-center" style="padding-top: 20px;">
+						
+						<div class="col-sm-6 row">
+							<div class="vertical-child-center" style="width: 50px; text-align: center;">
+								<mat-checkbox (change)="selectAll($event)" color="white" > </mat-checkbox> 
+							</div>
+							<span class="content-text">Seleccionar todos</span>
+						</div>
+					</div>
+					<div class="row align-items-center" style="padding-top: 20px;">
+						<div class="col-sm-8">
+							<span class="content-text"> TOTAL INVITADOS: {{selectedUsers.length}}/5</span>
+						</div>
+						<div class="col-sm-4">
+							<button type="submit" mat-raised-button style="float: right;background: none;color: #fff;" class="store-button" color="primary">
+								<span class="">GUARDAR</span>
+							</button>							
+						</div>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+</div>

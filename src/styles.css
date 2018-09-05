@@ -23,3 +23,8 @@
 button{
     border-radius: 5px;
 }
+.vertical-child-center{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}

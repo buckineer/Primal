@@ -5,6 +5,14 @@ import { User } from './user.model';
 import { Progress } from './progress.model';
 
 export const current_user_conquered_territory_id = 1;
+export const color_list=['red','orange','salmon','coral','cyan'];
+export const clan_avatar_list=['/assets/images/clans/object1.png',
+                                '/assets/images/clans/object2.png',
+                                '/assets/images/clans/object3.png',
+                                '/assets/images/clans/object4.png',
+                                '/assets/images/clans/object5.png',
+                                '/assets/images/clans/object6.png',
+                              ];
 export const territories:Territory[]=[
   {id:1,title:"Bosque Impenetrable",reaching_min_points:1000,image_url:"/assets/images/map/Bosque Impenetrable.png",starting_date:new Date(2018, 8, 11),ending_date:null,lock_state:false,clan_info:{'color':"red","avatar_image_url":"hoho"}},
   new Territory(2,'Cascada Encantada',1000, '../assets/images/map/Cascada Encantada.png', new Date(2018, 9, 20),null, false ),

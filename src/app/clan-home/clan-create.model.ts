@@ -1,5 +1,3 @@
-import { Url } from "url";
-
 export class Territory {
     id: number;
     title: string;
@@ -8,7 +6,7 @@ export class Territory {
     ending_date: Date;
     reaching_min_points: number;
     lock_state: boolean;    // if the territory locked or not
-    clan_info:{'color':string,'avatar_image_url':string};
+    clan_info:{'color':string,'avatar_image_url':string}
 
     constructor(id?:number,
                 title?: string, 

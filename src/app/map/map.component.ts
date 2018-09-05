@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Territory } from '../territory/territory.model';
 import {TerritoryService} from '../territory.service';
+import {GlobalState} from '../state';
 @Component({
   selector: 'app-map',
   templateUrl: './map.component.html',
@@ -10,11 +11,12 @@ export class MapComponent implements OnInit {
 
   territories: Territory[];
 
-  constructor(public territoryService:TerritoryService) {
+  constructor(public territoryService:TerritoryService,private state:GlobalState) {
   }
 
   ngOnInit() {
     this.territoryService.getTerritories().subscribe(territories=>this.territories=territories)
+    this.state.Current_Territory_Id = -1;
   }
 
   get_left_position(index: number):number{
