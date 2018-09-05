@@ -1,19 +1,19 @@
 img.login {
     width: 80%;
     height: 70%;
-    margin: 10%;
+    margin-top: 20%;
+    margin-left: 10%;
 }
 
 img.top-logo {
     width: 80%;
     height: 10%;
-    margin-top: -5%;
     margin-left: 5%;
 }
 
 div.login {
     width: 80%;
-    height: 430px;
+    height: 500px;
     background-color: #88C27E;
     margin-top: -8%;
     margin-left: 5%;
@@ -22,7 +22,7 @@ div.login {
 
 img.user-icon {
     width: 25%;
-    margin-top: 3%;
+    margin-top: 10%;
     margin-left: 35%;
 }
 
@@ -48,7 +48,7 @@ img.user-icon {
     height: 30%;
 }
 
-input[type=text], select {
+input, select {
     width: 80%;
     margin-top: 5%;
     margin-left: 10%;
@@ -60,6 +60,8 @@ input[type=text], select {
     color: #8c8c8c;
     font-size: 12px;
 }
+
+
 
 button.button-login {
     background-color: #3F9D2F;
