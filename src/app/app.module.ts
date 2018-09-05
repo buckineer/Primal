@@ -27,6 +27,7 @@ import { LoggedInGuard } from './logged-in.guard';
 
 import {TerritoryService} from './territory.service';
 import {ClanService} from './clan.service';
+import { NotificationComponent } from './notification/notification.component';
 import {UserService} from './user.service';
 
 
@@ -45,8 +46,9 @@ import {UserService} from './user.service';
     ConquerComponent,
     LoginComponent,
     ClanHomeComponent,
+    NotificationComponent,
     RankingComponent,
-    ClanCreateComponent
+    ClanCreateComponent,
   ],
   imports: [
     BrowserModule,

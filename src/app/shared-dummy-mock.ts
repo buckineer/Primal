@@ -1,5 +1,6 @@
 import {Territory} from './territory/territory.model';
 import {Clan} from './clan.model';
+import { Notification } from './notification.model';
 import {User} from './user.model';
 
 export const current_user_conquered_territory_id = 1;
@@ -16,13 +17,19 @@ export const territories:Territory[]=[
   new Territory(10,'Territory 10',1000, '../assets/images/map/Territory 5.png', new Date(2018, 6, 5), null,true),
   new Territory(11,'Territory 11',1000, '../assets/images/map/Territory 6.png', new Date(2018, 5, 18),null, true),
   new Territory(12,'Territory 12',1000, '../assets/images/map/Territory 6.png', new Date(2018, 5, 18),null, true),
-]
+];
+
 export const clans:Clan[]=[
   {id:1,clan_name:'CLAN A',max_members:5,joined_members:3,clan_color:"red",image_url:'/assets/images/clans/object8.png'},
   {id:2,clan_name:'CLAN B',max_members:5,joined_members:5,clan_color:"coral",image_url:'/assets/images/clans/object10.png'},
   {id:3,clan_name:'CLAN C',max_members:5,joined_members:4,clan_color:"orangered",image_url:'/assets/images/clans/object9.png'},
   {id:4,clan_name:'CLAN D',max_members:5,joined_members:4,clan_color:"orange",image_url:'/assets/images/clans/object7.png'},
-]
+];
+
+export const notification: Notification[] = [
+  { clan_id: 1, message: '¡Únete al clan de ELEFANTES! Te han invitado a participar en un clan.'}
+];
+
 
 export const users:User[]=[
   {id:1,first_name:"Cristina",last_name:"Rodriguez",points:1658,coins:1658,image_url:"/assets/images/avatars Final/T1h Sapiens Head.png"},
