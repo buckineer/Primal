@@ -8,13 +8,15 @@ import {MainComponent} from './main/main.component';
 import { LoggedInGuard } from './logged-in.guard';
 import {ClanHomeComponent} from './clan-home/clan-home.component'
 import {RankingComponent} from './ranking/ranking.component';
+import { ClanCreateComponent } from './clan-create/clan-create.component';
 
 const mainRoutes: Routes = [
 	{ path: '', redirectTo: '/login', pathMatch: 'full' },
 	{ path: 'map', component: MapComponent },
 	{ path: 'conquer/:id', component: ConquerComponent },
 	{ path: 'clan/home',component:ClanHomeComponent},
-	{ path: 'ranking',component:RankingComponent}
+	{ path: 'ranking',component:RankingComponent},
+	{ path: 'clan/create',component:ClanCreateComponent};
 ];
 
 const routes: Routes = [

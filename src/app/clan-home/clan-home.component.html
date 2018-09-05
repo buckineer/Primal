@@ -18,14 +18,14 @@
 							<span class="content-text">{{item.max_members}}/{{item.joined_members}} COMPLETO </span>
 						</div>
 						<div class="col-sm-auto" style="">
-							<button style="height:50px;" mat-raised-button class="join-clan-button main-button	" color="primary">
-								<span>UNIRSE A CLAN</span>
-							</button>
+							<a>
+								<button style="height:50px;" mat-raised-button class="join-clan-button main-button	" color="primary">
+									<span>UNIRSE A CLAN</span>
+								</button>
+							</a>
 						</div>
 					</div>
 				</ng-template>
-				
-
 			</div>
 		</div>
 		
@@ -34,9 +34,11 @@
 				<span class="content-text" style="font-weight: 600;">O CREA TU PROPIO CLAN</span>
 			</div>
 			<div class="col-sm-2">
-				<button style="height:50px;background-color: #0B3E78;" mat-raised-button class="main-button" color="primary">
-					<span>CREAR CLAN</span>
-				</button>
+				<a routerLink="/clan/create">
+					<button style="height:50px;background-color: #0B3E78;" mat-raised-button class="main-button" color="primary">
+						<span>CREAR CLAN</span>
+					</button>
+				</a>
 			</div>
 		</div>
 	</div>

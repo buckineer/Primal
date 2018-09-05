@@ -13,10 +13,12 @@
 				<span class="content-text">Inicio misión: {{remain_days}} días<br><br>Recompensa: {{territory.reaching_min_points}}</span>
 			</div>
 			<div style="line-height: 120px;margin-top:30px;">
-				<button mat-raised-button class="join-clan-button main-image-button " color="primary">
-					<img src="/assets/images/icons/lock small.png" width="40px">
-					<span>UNIRSE A CLAN</span>
-				</button>
+				<a routerLink="/clan/home">
+					<button mat-raised-button class="join-clan-button main-image-button " color="primary">
+						<img src="/assets/images/icons/lock small.png" width="40px">
+						<span>UNIRSE A CLAN</span>
+					</button>
+				</a>
 			</div>
 			
 		</div>
