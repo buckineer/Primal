@@ -30,6 +30,7 @@ import {ClanService} from './clan.service';
 import { NotificationComponent } from './notification/notification.component';
 import {UserService} from './user.service';
 import { NotificationService } from './notification.service';
+import { ClanComponent } from './clan/clan.component';
 
 
 
@@ -50,6 +51,7 @@ import { NotificationService } from './notification.service';
     NotificationComponent,
     RankingComponent,
     ClanCreateComponent,
+    ClanComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,28 @@
+<div class="background-green">
+    <div class="content">
+      <div class="row align-items-center" style="padding-top: 20px;">
+        <div class="col-sm-8">
+          <span class="title-text">CLAN</span>
+        </div>
+      </div>
+      <div style="width: 95%; overflow: hidden;">
+        <div style="padding-left: 12%;" class="hidden-scroll">
+          <ng-template ngFor let-item [ngForOf]="notifications" let-i="index">
+            <div class="row align-items-center" style="padding-top: 20px;">
+              <div class="col-sm-2" style="margin-left: -10%">
+                <img src={{item.clan_image}} style="width: 100%;">
+              </div>
+              <div class="col-sm-8">
+                <span class="content-text">¡Únete al clan de {{ item.clan_name }}!</span>
+                <br>
+                <span class="content-text">Te han invitado a participar en un clan. </span>
+              </div>
+              <div class="col-sm-2">
+                <button type="submit" class="button-join" mat-raised-button><font size="6px">Unirse</font></button>
+              </div>
+            </div>
+          </ng-template>
+        </div>
+      </div>
+    </div>
+  </div>
