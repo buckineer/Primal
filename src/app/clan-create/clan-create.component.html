@@ -2,7 +2,11 @@
 <div *ngIf="clan_added" class="background-nofx">
 	<div class="content container" style="position: relative;">
 		<div style="position: absolute; right: -30px;top: -30px;">
-			<i class="material-icons md-bold md-80 md-white" >close</i>
+			<a routerLink="/map">
+				<div>
+					<i class="material-icons md-bold md-80 md-white" >close</i>
+				</div>
+			</a>
 		</div>
 		<div style="padding-left: 50px;padding-right: 50px;">
 			<div class="title-text" style="padding-bottom: 40px;">CLANES ISLAND</div>
@@ -39,7 +43,12 @@
 <div *ngIf= "!clan_added" class="background-nofx">
 	<div class="content container" style="position: relative;">
 		<div style="position: absolute; right: -30px;top: -30px;">
-			<i class="material-icons md-bold md-80 md-white" >close</i>
+			<a routerLink="/map">
+				<div>
+					<i class="material-icons md-bold md-80 md-white" >close</i>
+				</div>
+			</a>
+			
 		</div>
 		<div style="padding-left: 50px;padding-right: 50px;">
 			<div class="title-text" style="padding-bottom: 20px;">CREAR CLAN</div>
