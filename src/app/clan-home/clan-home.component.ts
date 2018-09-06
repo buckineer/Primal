@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Clan } from '../clan.model';
 import {ClanService} from '../clan.service';
+
 @Component({
   selector: 'app-clan-home',
   templateUrl: './clan-home.component.html',

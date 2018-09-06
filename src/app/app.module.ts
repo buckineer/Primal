@@ -37,6 +37,9 @@ import {UserService} from './user.service';
 import { NotificationService } from './notification.service';
 import {CommonService} from './common.service';
 import {GlobalState} from './state';
+import { InfoComponent } from './info/info.component';
+import { GiftComponent } from './gift/gift.component';
+
 
 
 
@@ -61,7 +64,8 @@ import {GlobalState} from './state';
     InviteComponent,
     CheckboxGroupComponent,
     CheckboxComponent,
-
+    InfoComponent,
+    GiftComponent,
   ],
   imports: [
     BrowserModule,

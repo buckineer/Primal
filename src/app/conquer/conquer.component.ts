@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Territory } from '../territory/territory.model';
 import {TerritoryService} from '../territory.service';
 import {GlobalState} from '../state';
+
 @Component({
   selector: 'app-conquer',
   templateUrl: './conquer.component.html',
@@ -11,7 +12,8 @@ import {GlobalState} from '../state';
 export class ConquerComponent implements OnInit {
 
   territory:Territory;
-  remain_days:number;
+	remain_days:number;
+	
   constructor(private route: ActivatedRoute,
   			private territoryService: TerritoryService,
         private state:GlobalState,
