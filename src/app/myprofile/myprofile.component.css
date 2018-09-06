@@ -1,0 +1,65 @@
+.content {
+	margin: 50px;
+	margin-left: 5%;
+	margin-right: 5%;
+	min-height: 500px;
+	width: 90%;
+	float: left
+}
+.user-image{
+    /* position:absolute; */
+    width: 100%;
+}
+.user-avatar {
+    width:120px;
+    height: 120px;
+    border-radius: 60%;
+    background-color:antiquewhite;
+    border: 2px solid rgb(54, 53, 53);
+}
+.button-edit {
+    background-color: antiquewhite;
+    color: #3F9D2F;
+    height: 50px;
+    text-align: left;
+    font-family: Raleway;
+}
+.points-text {
+    line-height: 44px;
+    letter-spacing: 0px;
+    color: rgb(255, 255, 255);
+    font-family: 'Raleway', serif;
+    font-weight: 800;
+    font-size: 30px;
+    text-align: left;
+}
+.user-section{
+	margin-top: 30px;
+	border-bottom-style: solid;
+	border-bottom-color: #fff;
+}
+.map-badge{
+	width: 100px;
+	height: 100px;
+}
+.map-badge-text{
+    line-height: 34px;
+    letter-spacing: 0px;
+    color: rgb(255, 255, 255);
+    font-family: 'Raleway', serif;
+    font-weight: 800;
+    font-size: 20px;
+    text-align: left;
+}
+.clan-avatar{
+	width: 200px;
+}
+.clan-text{
+    line-height: 34px;
+    letter-spacing: 0px;
+    color: rgb(255, 255, 255);
+    font-family: 'Raleway', serif;
+    font-weight: 800;
+    font-size: 20px;
+    text-align: left;
+}

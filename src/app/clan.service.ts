@@ -20,4 +20,5 @@ export class ClanService {
     console.log(clans);
     return of(clan);
   }
+  
 }

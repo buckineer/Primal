@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { of } from 'rxjs/observable/of';
-import { color_list, clan_avatar_list, clans, info, gift } from './shared-dummy-mock';
+import { color_list, clan_avatar_list, clans, info, gift, user_avatar_list } from './shared-dummy-mock';
 
 import { Clan } from './clan.model';
 import { Info } from './info.model';
@@ -32,4 +32,7 @@ export class CommonService {
     return of(gift);
   }
 
+  getAvatarImages():Observable<string[]>{
+  	return of(user_avatar_list);
+  }
 }

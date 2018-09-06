@@ -7,29 +7,11 @@
 	background-color: rgba(0,0,0,0.30);
 	float: left
 }
-.title-text {
-    line-height: 78px;
-    letter-spacing: 0px;
-    color: rgb(255, 255, 255);
-    font-family: Raleway;
-    font-weight: 800;
-    font-size: 64px;
-    text-align: left;
-}
 .col-form-label{
     letter-spacing: 0px;
     color: rgb(255, 255, 255);
     font-family: Raleway;
     font-weight: 800;
-    font-size: 25px;
-    text-align: left;
-}
-.content-text{
-    letter-spacing: 0px;
-    color: rgb(255, 255, 255);
-    font-family: Raleway;
-    line-height: 30px;
-    font-weight: 600;
     font-size: 25px;
     text-align: left;
 }

@@ -20,12 +20,15 @@ import { RankingComponent } from './ranking/ranking.component';
 import { ClanCreateComponent } from './clan-create/clan-create.component';
 import { ClanComponent } from './clan/clan.component';
 import { NotificationComponent } from './notification/notification.component';
+import { MyProfileComponent } from './myprofile/myprofile.component';
+import { EditProfileComponent } from './edit-profile/edit-profile.component';
+import { UserAvatarSelectDialogBodyComponent } from './user-avatar-select-dialog-body/user-avatar-select-dialog-body.component';
 
 import {CheckboxGroupComponent} from './component/checkbox-group.component';
 import {CheckboxComponent} from './component/checkbox.component';
 
 import { AppRoutingModule } from './app-routing.module';
-import { MatButtonModule, MatCheckboxModule } from '@angular/material';
+import { MatButtonModule, MatCheckboxModule ,MatDialogModule } from '@angular/material';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AUTH_PROVIDERS } from './auth.service';
 import { LoggedInGuard } from './logged-in.guard';
@@ -39,6 +42,8 @@ import {CommonService} from './common.service';
 import {GlobalState} from './state';
 import { InfoComponent } from './info/info.component';
 import { GiftComponent } from './gift/gift.component';
+
+
 
 
 
@@ -66,15 +71,23 @@ import { GiftComponent } from './gift/gift.component';
     CheckboxComponent,
     InfoComponent,
     GiftComponent,
+    MyProfileComponent,
+    EditProfileComponent,
+    UserAvatarSelectDialogBodyComponent,
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     MatButtonModule,
     MatCheckboxModule,
+    MatDialogModule,
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule
+  ],
+  entryComponents: [
+    UserAvatarSelectDialogBodyComponent
   ],
   providers: [
     TerritoryService,
