@@ -1,0 +1,125 @@
+.content {
+	margin: 50px;
+	margin-left: 5%;
+	margin-right: 5%;
+	min-height: 500px;
+	width: 90%;
+	background-color: rgba(0,0,0,0.30);
+	float: left
+}
+.title-text {
+    line-height: 78px;
+    letter-spacing: 0px;
+    color: rgb(255, 255, 255);
+    font-family: Raleway;
+    font-weight: 800;
+    font-size: 64px;
+    text-align: left;
+}
+.col-form-label{
+    letter-spacing: 0px;
+    color: rgb(255, 255, 255);
+    font-family: Raleway;
+    font-weight: 800;
+    font-size: 25px;
+    text-align: left;
+}
+.content-text{
+    letter-spacing: 0px;
+    color: rgb(255, 255, 255);
+    font-family: Raleway;
+    line-height: 30px;
+    font-weight: 600;
+    font-size: 25px;
+    text-align: left;
+}
+.congratulation-text{
+  letter-spacing: 0px;
+  color: rgb(255, 255, 255);
+  font-family: Raleway;
+  font-weight: 600;
+  line-height: 30px;
+  font-size: 50px;
+  text-align: center;
+}
+form input{
+	background-color: #EDEDED;
+	border-radius: 5px;
+	padding: 5px;
+}
+.store-button{
+	background-color: #C1D4F1;
+	color: #0B3E78;  
+    letter-spacing: 0px;
+    font-family: Raleway;
+    font-weight: 600;
+    line-height: 50px;
+    font-size: 25px;
+    text-align: left;  
+}
+
+.clan-img{
+  margin-top: 5px;
+  margin-bottom: 5px;
+  width: 70%;
+}
+.clan-img.selected{
+  width: 70%;background-color: #333333a8;border-radius: 50%;
+}
+
+.custom-radios div {
+    align-items: center;
+    text-align: center;
+  display: inline-block;
+}
+.custom-radios input[type="radio"] {
+  display: none;
+}
+.custom-radios input[type="radio"] + label {
+  color: #333;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+}
+.custom-radios input[type="radio"] + label span {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  margin: -1px 4px 0 0;
+  vertical-align: middle;
+  cursor: pointer;
+  border-radius: 50%;
+  border: 2px solid #FFFFFF;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.33);
+  background-repeat: no-repeat;
+  background-position: center;
+  text-align: center;
+  line-height: 35px;
+}
+.custom-radios input[type="radio"] + label span img {
+  opacity: 0;
+  transition: all .3s ease;
+}
+
+.custom-radios input[type="radio"]:checked + label span img {
+  opacity: 1;
+}
+.is-invalid input{
+  border-color: #dc3545;
+  border-style: solid;
+  border-width: 2px;
+}
+.invalid-feedback{
+    display: none;
+    width: 100%;
+    margin-top: .25rem;
+    line-height: 25px;
+    font-size: 15px;
+    font-weight: 600;
+     /*font-family: Raleway;*/
+    color: #dc3545;
+    background-color: rgb(0,0,0,0.5);
+    margin-bottom: .25rem;
+}
+.is-invalid > .invalid-feedback{
+  display: block;
+}

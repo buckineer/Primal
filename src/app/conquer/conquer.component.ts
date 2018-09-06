@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Territory } from '../territory/territory.model';
 import {TerritoryService} from '../territory.service';
-
+import {GlobalState} from '../state';
 @Component({
   selector: 'app-conquer',
   templateUrl: './conquer.component.html',
@@ -14,6 +14,7 @@ export class ConquerComponent implements OnInit {
   remain_days:number;
   constructor(private route: ActivatedRoute,
   			private territoryService: TerritoryService,
+        private state:GlobalState,
   ) { }
 
   ngOnInit() {
@@ -24,7 +25,9 @@ export class ConquerComponent implements OnInit {
   getTerritory():void {
   	const id:number = +this.route.snapshot.paramMap.get('id');
   	this.territoryService.getTerritory(id)
-		.subscribe(ret_item=>{this.territory=ret_item;console.log(ret_item)});
+		.subscribe(ret_item=>{this.territory=ret_item;
+                          this.state.Current_Territory_Id = ret_item.id;
+    });
 	}
 	
   getLeftDay():void {
