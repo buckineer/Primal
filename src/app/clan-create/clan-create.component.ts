@@ -51,7 +51,9 @@ export class ClanCreateComponent implements OnInit {
                                 members:[],
                                 points:1000,
                                 territory_info:null,
-                                }).subscribe(ret_value=> this.clan = ret_value; this.clan_added=true;);
+                                description:form.description,                                
+                                motto:form.motto,
+                                }).subscribe(ret_value=> {this.clan = ret_value; this.clan_added=true;});
 
     }
   }
