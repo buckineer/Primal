@@ -16,8 +16,9 @@ export class ClanService {
   	return of(clans.find(item => item.id === id))
   }
   addClan(clan:Clan):Observable<Clan>{
-  	clan.id = clans.length;
+  	clan.id = clans.length+1;
   	clans.push(clan);
+    console.log(clans);
     return of(clan);
   }
 }

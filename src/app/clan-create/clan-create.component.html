@@ -22,9 +22,11 @@
 				</div>				
 			</div>
 			<div class="row justify-content-center">
-				<button mat-raised-button color="primary" style="height:50px;width: 160px;">
-					<span class="content-text">Ver clan</span>
-				</button>
+				<a routerLink="/clan/{{clan.id}}">
+					<button mat-raised-button color="primary" style="height:50px;width: 160px;">
+						<span class="content-text">Ver clan</span>
+					</button>
+				</a>
 				<div class="col-sm-2">
 					
 				</div>
@@ -33,9 +35,6 @@
 						<span class="content-text">Conquistar</span>
 					</button>
 				</a>
-
-
-
 			</div>
 		</div>
 	</div>
