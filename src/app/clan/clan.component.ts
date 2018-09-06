@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Clan } from '../clan.model';
 import { ClanService } from '../clan.service';
 import { ActivatedRoute } from '@angular/router';
+import { User } from '../user.model';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-clan',
@@ -11,12 +13,15 @@ import { ActivatedRoute } from '@angular/router';
 export class ClanComponent implements OnInit {
 
   selected_clan: Clan;
+  joined_users: User[] = [];
+
 
   constructor(private route: ActivatedRoute,
-    private clanService: ClanService,) { }
+    private clanService: ClanService, private userService: UserService) { }
 
   ngOnInit() {
     this.getClan();
+    this.getUsers();
   }
 
   getClan(): void {
@@ -25,4 +30,13 @@ export class ClanComponent implements OnInit {
 		.subscribe(ret_item=>{this.selected_clan = ret_item; console.log(ret_item)});
   }
 
+  getUsers(): void {
+    this.selected_clan.members.forEach(element => {
+      this.userService.getUser(element).subscribe(item=>{this.add_user(item); console.log(item)})
+    });
+  }
+
+  add_user(item: any): void{
+    this.joined_users.push(item);
+  }
 }

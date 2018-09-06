@@ -7,9 +7,12 @@ export class Clan {
     joined_members:number;  
     image_url: string;
     clan_color:string;
-    members:  string[];
+    members:  number[];
     points: number;
     territory_info: Progress[];
+    description: string;
+    motto: string;
+
     
     constructor(id?:number,title?: string, 
                 clan_name?:string,
@@ -17,9 +20,11 @@ export class Clan {
                 joined_members?: number,
                 image_url?: string,
                 clan_color?: string,
-                members?: string[],
+                members?:number[],
                 points?: number,
-                territory_info: Progress[] = null
+                territory_info: Progress[] = null,
+                description?: string,
+                motto?: string,
                 ){
         this.id = id;
         this.clan_name = clan_name;
@@ -30,5 +35,7 @@ export class Clan {
         this.members = members;
         this.points = points;
         this.territory_info = territory_info;
+        this.description = description;
+        this.motto = motto;
     }
 }
