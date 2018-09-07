@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { MapComponent } from './map/map.component';
@@ -13,6 +13,8 @@ import { InviteComponent } from './invite/invite.component';
 import { ClanCreateComponent } from './clan-create/clan-create.component';
 import { NotificationComponent } from './notification/notification.component';
 import { ClanComponent } from './clan/clan.component';
+import { InfoComponent } from './info/info.component';
+import { GiftComponent } from './gift/gift.component';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
 
 
@@ -22,11 +24,14 @@ const mainRoutes: Routes = [
 	{ path: 'profile', component: MyProfileComponent },
 	{ path: 'profile/edit',component:EditProfileComponent},
 	{ path: 'conquer/:id', component: ConquerComponent },
-	{ path: 'ranking',component:RankingComponent},
-	{ path: 'invite',component:InviteComponent},
+	{ path: 'ranking',component: RankingComponent},
+	{ path: 'invite',component: InviteComponent},
 	{ path: 'clan/home', component: ClanHomeComponent },
 	{ path: 'clan/create', component: ClanCreateComponent },
+	// { path: 'clan/join', component: ClanJoinComponent },
 	{ path: 'notification', component: NotificationComponent },
+	{ path: 'info', component: InfoComponent},
+	{ path: 'gift', component: GiftComponent},
 	{ path: 'clan/:id', component: ClanComponent },
 	];
 

@@ -3,6 +3,8 @@ import { Clan } from './clan.model';
 import { Notification } from './notification.model';
 import { User } from './user.model';
 import { Progress } from './progress.model';
+import { Info } from './info.model';
+import { Gift } from './gift.model';
 
 export const current_user_conquered_territory_id = 1;
 export const color_list=['red','orange','salmon','coral','cyan'];
@@ -74,6 +76,22 @@ export const notification: Notification[] = [
 ];
 
 
+
+ 
+export const info: Info[] = [
+  {item: "Lorem ipsum", description: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa."},
+  {item: "Lorem ipsum", description: "Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim."},
+  {item: "Lorem ipsum", description: "Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu."},
+  {item: "Lorem ipsum", description: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa."},
+  {item: "Lorem ipsum", description: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit."}
+]
+
+export const gift: Gift[] = [
+  { item: "REGALO 1", description: "500 monedas", purchasable: true},
+  { item: "REGALO 2", description: "750 monedas", purchasable: false},
+  { item: "REGALO 3", description: "1.000 monedas", purchasable: false},
+  { item: "REGALO 4", description: "2.500 monedas", purchasable: false},
+]
 export const users:User[]=[
   {id:1,first_name:"Cristina",last_name:"Rodriguez",points:1658,coins:1658,image_url:"/assets/images/avatars Final/T1h Sapiens Head.png",joined_clan_id:1,level:"1",email:"test@test.com",phone:"111-111-111"},
   {id:2,first_name:"Cristina",last_name:"Rodriguez",points:1658,coins:1658,image_url:"/assets/images/avatars Final/T2h Sapiens Head.png",joined_clan_id:2,level:"1",email:"test@test.com",phone:"111-111-111"},

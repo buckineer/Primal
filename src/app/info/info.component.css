@@ -1,0 +1,62 @@
+.background-green{
+	background-color: #3F9D2F;
+    background-size: 100% 100%;
+    position: relative;
+    width:100%;
+    min-height: 700px;
+    display: inline-block;
+}
+.title-text {
+    line-height: 70px;
+    letter-spacing: 0px;
+    color: rgb(255, 255, 255);
+    font-family: Raleway;
+    font-weight: 1000;
+    font-size: 40px;
+    text-align: left;
+    margin-left: 5%;
+}
+.content {
+	margin: 50px;
+	margin-left: 5%;
+	margin-right: 5%;
+	height: 500px;
+	width: 90%;
+}
+.content-text {
+    letter-spacing: 0px;
+    color: rgb(255, 255, 255);
+    font-family: Raleway;
+    font-weight: 300;
+    font-size: 25px;
+    text-align: left;
+}
+
+.item-title-text {
+    letter-spacing: 0px;
+    color: rgb(255, 255, 255);
+    font-family: Raleway;
+    font-weight: 800;
+    font-size: 30px;
+    text-align: left;
+}
+
+.hidden-scroll{
+    height: 430px;
+    width: 100%;
+/*    border-bottom-style: solid;
+    border-bottom-color: #fff;
+*/
+    overflow-x:hidden;
+    overflow-y:auto;
+    box-sizing: content-box;     
+}
+
+.button-join {
+    background-color: antiquewhite;
+    color: #3F9D2F;
+    width: 150%;
+    height: 50px;
+    text-align: left;
+    font-family: Raleway;
+}

@@ -1,0 +1,30 @@
+<div class="background-green">
+    <div class="content">
+      <div class="row align-items-center">
+        <div class="col-sm-8">
+          <span class="title-text">REGALOS</span>
+        </div>
+      </div>
+      <div style="width: 95%; overflow: hidden;">
+          <div style="padding-left: 5%;" class="hidden-scroll">
+            <ng-template ngFor let-item [ngForOf]="gift" let-i="index">
+              <div class="row align-items-center" style="width: 95%;margin-top: 3%">
+                <div class="col-sm-8">
+                  <label class="item-title-text"> {{ item.item }}</label>
+                  <br>
+                  <label class="content-text"> {{ item.description }}</label>
+                </div>            
+                <div *ngIf="item.purchasable" class="col-sm-2">
+                  <button type="submit" class="button-join" mat-raised-button>COMPRAR</button>
+                </div>
+                <div *ngIf="!item.purchasable" class="col-sm-2">
+                    <button type="submit" class="lock-button-join" mat-raised-button>COMPRAR</button>
+                    <img src="../assets/images/icons/lock small.png" id="input_img">
+                </div>
+
+            </div>
+          </ng-template>
+        </div>
+      </div>
+    </div>
+  </div>
