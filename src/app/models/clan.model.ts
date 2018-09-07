@@ -12,9 +12,10 @@ export class Clan {
     territory_info: Progress[];
     description: string;
     motto: string;
-
+    admin_user_id: number;
     
-    constructor(id?:number,title?: string, 
+    constructor(admin_user_id:number,
+                id?:number,
                 clan_name?:string,
                 max_members?: number, 
                 joined_members?: number,
@@ -25,6 +26,7 @@ export class Clan {
                 territory_info: Progress[] = null,
                 description?: string,
                 motto?: string,
+
                 ){
         this.id = id;
         this.clan_name = clan_name;

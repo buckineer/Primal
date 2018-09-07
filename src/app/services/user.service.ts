@@ -21,4 +21,9 @@ export class UserService {
   	var selected_user = users.find(item=>item.id===user.id);
   	selected_user.image_url = user.image_url;
   }
+  JoinClanToUser(user_id:number,clan_id:number){
+    var user = users.find(item => item.id === user_id);
+    user.joined_clan_id = clan_id;
+
+  }  
 }

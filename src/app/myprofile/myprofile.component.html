@@ -13,11 +13,11 @@
 		<div class="row align-items-center user-section" >
          	 <div class="col-sm-8" style="display: flex;">
                 <div class="user-avatar vertical-child-center">
-                	<img src="{{user.image_url}}" class="user-image">
+                	<img src="{{user?.image_url}}" class="user-image">
                 </div>
 				<div style="margin-top:30px;margin-left: 10px;">
 					<div>
-						<span class="content-text">{{user.first_name}} {{user.last_name}}</span>						
+						<span class="content-text">{{user?.first_name}} {{user?.last_name}}</span>						
 					</div>
 					<div style="margin-top: 10px;">
 						<a routerLink="/profile/edit">
@@ -28,13 +28,13 @@
             </div>
 			<div class="col-sm-4">
 				<div>
-					<span class="points-text">PUNTOS: {{user.points}} </span>	
+					<span class="points-text">PUNTOS: {{user?.points}} </span>	
 				</div>
 				<div>
-					<span class="points-text">MONEDAS: {{user.coins}} </span>	
+					<span class="points-text">MONEDAS: {{user?.coins}} </span>	
 				</div>
 				<div>
-					<span class="points-text">NIVEL: {{user.level}} </span>	
+					<span class="points-text">NIVEL: {{user?.level}} </span>	
 				</div>
 			</div>			
 		</div>
@@ -55,27 +55,29 @@
 				</div>				
 			</div>
 			<div class="col-sm-6">
-				<div class="row">
-					<label class="content-text"><font color=antiquewhite>Clan</font></label>
-				</div>
-				<div class="row align-items-center" style="margin-top:20px;" >
-					<div class="col-sm-6" style="text-align: center;">
-						<img src="/assets/images/clans/object6.png" class="clan-avatar">				
+				<ng-container *ngIf= "clan">
+					<div class="row">
+						<label class="content-text"><font color=antiquewhite>Clan</font></label>
 					</div>
-					<div class="col-sm-6" >
-						<div>
-							<span class="clan-text">{{clan.clan_name}}</span>	
+					<div class="row align-items-center" style="margin-top:20px;" >
+						<div class="col-sm-6" style="text-align: center;">
+							<img src="/assets/images/clans/object6.png" class="clan-avatar">				
 						</div>
-						<div>
-							<span class="clan-text">PUNTOS {{clan.points}}</span>	
-						</div>						
-					</div>	
-				</div>
-				<div class="row" style="margin-left: 10px;">
-						<a routerLink="/clan/{{clan.id}}">
-							<button class="button-edit" mat-raised-button><font size="5px">VER</font></button>
-						</a>						
-				</div>
+						<div class="col-sm-6" >
+							<div>
+								<span class="clan-text">{{clan?.clan_name}}</span>	
+							</div>
+							<div>
+								<span class="clan-text">PUNTOS {{clan?.points}}</span>	
+							</div>						
+						</div>	
+					</div>
+					<div class="row" style="margin-left: 10px;">
+							<a routerLink="/clan/{{clan?.id}}">
+								<button class="button-edit" mat-raised-button><font size="5px">VER</font></button>
+							</a>						
+					</div>
+				</ng-container>
 			</div>
 
 		</div>

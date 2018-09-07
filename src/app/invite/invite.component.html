@@ -9,7 +9,7 @@
 
 				<div style="padding-left: 15px;margin-bottom: 10px;" style="height: 360px;" class="hidden-scroll">
 					<checkbox-group [(ngModel)]="selectedUsers">										
-					<p>Selected items - {{selectedUsers | json}}</p>
+					<!-- <p>Selected items - {{selectedUsers | json}}</p> -->
 					<ng-template ngFor let-item [ngForOf]="users" let-i="index">
 						<div class="row align-items-center" style="padding-top: 20px;">
 							<div class="col-sm-4 row" style="padding-left: 30px;">

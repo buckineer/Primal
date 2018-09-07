@@ -1,6 +1,13 @@
 <div class="background-nofx">
 	<div class="content container" style="position: relative;">
-		<div class="row" style="margin-left: 10px;margin-top: 100px;">
+		<div style="position: absolute; right: -30px;top: -30px;">
+			<a routerLink="/map">
+				<div>
+					<i class="material-icons md-bold md-80 md-white" >close</i>
+				</div>				
+			</a>
+		</div>
+		<div class="row" style="margin-left: 10px;margin-top: 50px;margin-bottom: 50px;">
 			<div class="col">
 				<span class="title-text">CLANES ISLAND</span>
 			</div>
@@ -17,8 +24,8 @@
 							<span ><br><br> </span>
 							<span class="content-text">{{item.max_members}}/{{item.joined_members}} COMPLETO </span>
 						</div>
-						<div class="col-sm-auto">
-							<a>
+						<div class="col-sm-auto" *ngIf="item.max_members> item.joined_members">
+							<a routerLink="/clan/added/{{item.id}}">
 								<button style="height:50px;" mat-raised-button class="join-clan-button main-button	" color="primary">
 									<span>UNIRSE A CLAN</span>
 								</button>

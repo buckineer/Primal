@@ -18,25 +18,41 @@
 			</div>
 			<div style="line-height: 
 			120px;margin-top:30px;">
-				<a routerLink="/clan/home">
-					<button mat-raised-button class="join-clan-button main-image-button " color="primary">
+				<a *ngIf="user.joined_clan_id!=-1">
+					<button mat-raised-button class= "lock-button" color="primary">
 						<img src="/assets/images/icons/lock small.png" width="40px">
 						<span>UNIRSE A CLAN</span>
 					</button>
 				</a>
-			</div>
-			
+				<a routerLink="/clan/home" *ngIf="user.joined_clan_id==-1">
+					<button mat-raised-button class= "unlock-button" color="primary">
+						<img src="/assets/images/icons/lock small.png" width="40px">
+						<span>UNIRSE A CLAN</span>
+					</button>
+				</a>
+			</div>			
 		</div>
 		<div class="col-sm-6">
 			<div style="height: 80%;">
 				<app-territory [territory]="territory"></app-territory>
 			</div>
-			<div style="line-height: 120px;text-align: center;">
-				<button mat-raised-button class="conquer-button main-button" color="primary">
-					<span>CONQUISTAR</span>
-				</button>
+			<div style="line-height: 120px;text-align: center;" >
+
+				<a *ngIf="user.joined_clan_id==-1">
+					<button mat-raised-button class= "lock-button" color="primary">
+						<img src="/assets/images/icons/lock small.png" width="40px">
+						<span>CONQUISTAR</span>
+					</button>
+				</a>
+				<a routerLink="/clan/ranking" *ngIf="user.joined_clan_id!=-1">
+					<button mat-raised-button class= "unlock-button" color="primary">
+						<img src="/assets/images/icons/lock small.png" width="40px">
+						<span>CONQUISTAR</span>
+					</button>
+				</a>
 			</div>
 		</div>
 	</div>
 </div>
+
 

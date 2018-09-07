@@ -14,7 +14,10 @@ export class RankingComponent implements OnInit {
   constructor(public userService:UserService) { }
 
   ngOnInit() {
-  	this.userService.getUsers().subscribe(items=>this.users=items);
+  	this.userService.getUsers().subscribe(items=>{this.users=items;this.sort_user_by_point();});
   }
 
+  sort_user_by_point(){
+  	this.users.sort((a,b):number => {if(a.points>b.points) {return -1;} return 1;})
+  }
 }

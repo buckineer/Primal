@@ -15,7 +15,7 @@ export class User {
     			points?:number,
     			coins?:number,
     			image_url?:string,
-    			joined_clan_id:number =0,
+    			joined_clan_id:number =-1,        //not joined to any clan
                 level:string = "1",
                 email:string = "default@default.com",
                 phone:string = "000-000-000",

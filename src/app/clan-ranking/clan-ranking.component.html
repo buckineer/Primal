@@ -1,0 +1,58 @@
+<div class="background-nofx">
+	<div class="content container" style="position: relative;">
+		<div style="position: absolute; right: 0px;top: 0px;">
+			<a routerLink="/map">
+				<div>
+					<i class="material-icons md-bold md-80 md-white" >close</i>
+				</div>				
+			</a>
+		</div>
+		<div class="row" style="margin-left: 10px;margin-top: 50px;margin-bottom: 50px;">
+			<div class="col">
+				<span class="title-text">LIVE RANKING</span>
+			</div>
+		</div>
+		<div class="row" style="margin-left: 10px;">
+			<div class="col-sm-2" style="margin-left: 50px;">
+				<span class="header-text" >Clan</span>
+			</div>
+			<div class="col">
+				
+			</div>
+			<div class="col-sm-4">
+				<span class="header-text" >PUNTOS</span>
+			</div>	
+		</div>
+		<div style="width: 90%;overflow: hidden;">
+			<div style="padding-left: 70px;" class="ul">
+				<ng-template ngFor let-item [ngForOf]="clans" let-i="index">
+					<div class="row li-item align-items-center" style="margin-top: 10px;">
+						<div class="col-sm-1" style="text-align: right;">
+							<span class="rank-number">{{i+1}}</span>
+						</div>
+						<div class="row align-items-center col-sm-10 border-bottom">
+							<div class="col-sm-2 ">
+				                <div class="clan-avatar vertical-child-center">
+				                	<img src="{{item.image_url}}" class="clan-image">
+				                </div>
+							</div>
+							<div class="col-sm-4" style="padding-top: 20px;">
+								<span class="content-text" style="margin-top: 20px;" [style.color]="item.clan_color">{{item.clan_name}}</span>
+							</div>
+							<div class="col">
+
+							</div>
+							<div class="col-sm-2" >
+								<span class="header-text">{{item.points}}</span>
+							</div>							
+						</div>
+	
+					</div>
+				</ng-template>
+			</div>
+		</div>
+		
+	</div>
+</div>
+
+
