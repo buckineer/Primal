@@ -58,3 +58,6 @@ button{
 .select-avatar-dialog .mat-dialog-container{
     border-radius: 25px;
 }
+.dialog .mat-dialog-container{
+    border-radius: 25px;
+}

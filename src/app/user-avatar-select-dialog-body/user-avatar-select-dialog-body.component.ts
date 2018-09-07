@@ -12,8 +12,6 @@ export class UserAvatarSelectDialogBodyComponent implements OnInit {
   constructor(private commonService:CommonService,@Inject(MAT_DIALOG_DATA) public data: any) { }
 
   ngOnInit() {
-	console.log("==============")
-	console.log(this.data)
 	this.selected = this.data;
   	this.commonService.getAvatarImages().subscribe(ret_value=>this.avatars=ret_value);
   }

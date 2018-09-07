@@ -28,7 +28,7 @@ export class EditProfileComponent implements OnInit {
     const dialogRef = this.dialog.open(UserAvatarSelectDialogBodyComponent, {
       height: '380px',
       minWidth:"800px",
-      panelClass:'select-avatar-dialog',
+      panelClass:'dialog',
       data:this.user.image_url
     });
 

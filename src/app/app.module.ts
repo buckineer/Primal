@@ -23,6 +23,10 @@ import { NotificationComponent } from './notification/notification.component';
 import { MyProfileComponent } from './myprofile/myprofile.component';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
 import { UserAvatarSelectDialogBodyComponent } from './user-avatar-select-dialog-body/user-avatar-select-dialog-body.component';
+import { InfoComponent } from './info/info.component';
+import { GiftComponent } from './gift/gift.component';
+import { BuyDialogComponent } from './buy-dialog/buy-dialog.component';
+
 
 import {CheckboxGroupComponent} from './component/checkbox-group.component';
 import {CheckboxComponent} from './component/checkbox.component';
@@ -40,8 +44,6 @@ import {UserService} from './user.service';
 import { NotificationService } from './notification.service';
 import {CommonService} from './common.service';
 import {GlobalState} from './state';
-import { InfoComponent } from './info/info.component';
-import { GiftComponent } from './gift/gift.component';
 
 
 
@@ -74,6 +76,7 @@ import { GiftComponent } from './gift/gift.component';
     MyProfileComponent,
     EditProfileComponent,
     UserAvatarSelectDialogBodyComponent,
+    BuyDialogComponent,
 
   ],
   imports: [
@@ -87,7 +90,8 @@ import { GiftComponent } from './gift/gift.component';
     ReactiveFormsModule
   ],
   entryComponents: [
-    UserAvatarSelectDialogBodyComponent
+    UserAvatarSelectDialogBodyComponent,
+    BuyDialogComponent,
   ],
   providers: [
     TerritoryService,
