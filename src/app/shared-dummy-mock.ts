@@ -37,14 +37,14 @@ export const territories:Territory[]=[
 ];
 
 export const clans: Clan[]=[
-  {id:1,clan_name:'Elefantes', max_members:5, joined_members:3,clan_color:"red",image_url:'/assets/images/clans/object6.png',
+  {admin_user_id:1,id:1,clan_name:'Elefantes', max_members:5, joined_members:3,clan_color:"red",image_url:'/assets/images/clans/object6.png',
     members: [1,2,3],
     points: 115,
     territory_info: [{territory_name: 'Cascada Encantada', territory_image_url: '../assets/images/map/Cascada Encantada.png'},
                      {territory_name: 'Costa Pesca', territory_image_url: '../assets/images/map/Costa Pesca.png'}],
                     description: 'El clan de norte con mucha gente',
                   motto: 'A POR ELLOS!'},
-  {id:2,clan_name:'CLAN B', max_members:5, joined_members:5,clan_color:"coral",image_url:'/assets/images/clans/object10.png', 
+  {admin_user_id:2,id:2,clan_name:'CLAN B', max_members:5, joined_members:5,clan_color:"coral",image_url:'/assets/images/clans/object10.png', 
   members: [1,2,3,4,5],
   points: 175,
   territory_info: [{territory_name: 'Cascada Encantada', territory_image_url: '../assets/images/map/Cascada Encantada.png'},
@@ -53,14 +53,14 @@ export const clans: Clan[]=[
                     {territory_name: 'Tunadr Helada', territory_image_url: '../assets/images/map/Tunadr Helada.png'}],
                     description: 'El clan de norte con mucha gente',
                     motto: 'A POR ELLOS!'},
-  {id:3,clan_name:'CLAN C', max_members:5, joined_members:4,clan_color:"orangered",image_url:'/assets/images/clans/object9.png',
+  {admin_user_id:3,id:3,clan_name:'CLAN C', max_members:5, joined_members:4,clan_color:"orangered",image_url:'/assets/images/clans/object9.png',
   members: [1,2,3,4],
   points: 225,
   territory_info: [{territory_name: 'Cascada Encantada', territory_image_url: '../assets/images/map/Cascada Encantada.png'},
                     {territory_name: 'Costa Pesca', territory_image_url: '../assets/images/map/Costa Pesca.png'}],
                     description: 'El clan de norte con mucha gente',
                     motto: 'A POR ELLOS!'},
-  {id:4,clan_name:'CLAN D', max_members:5, joined_members:4,clan_color:"orange",image_url:'/assets/images/clans/object7.png',
+  {admin_user_id:1,id:4,clan_name:'CLAN D', max_members:5, joined_members:4,clan_color:"orange",image_url:'/assets/images/clans/object7.png',
   members: [1,2,3,4],
   points: 335,
   territory_info: [{territory_name: 'Cascada Encantada', territory_image_url: '../assets/images/map/Cascada Encantada.png'},
@@ -93,9 +93,9 @@ export const gift: Gift[] = [
   { item: "REGALO 4", description: "2.500 monedas", purchasable: false},
 ]
 export const users:User[]=[
-  {id:1,first_name:"Cristina",last_name:"Rodriguez",points:1658,coins:1658,image_url:"/assets/images/avatars Final/T1h Sapiens Head.png",joined_clan_id:1,level:"1",email:"test@test.com",phone:"111-111-111"},
-  {id:2,first_name:"Cristina",last_name:"Rodriguez",points:1658,coins:1658,image_url:"/assets/images/avatars Final/T2h Sapiens Head.png",joined_clan_id:2,level:"1",email:"test@test.com",phone:"111-111-111"},
-  {id:3,first_name:"Cristina",last_name:"Rodriguez",points:1658,coins:1658,image_url:"/assets/images/avatars Final/T3h Sapiens Head.png",joined_clan_id:3,level:"1",email:"test@test.com",phone:"111-111-111"},
-  {id:4,first_name:"Cristina",last_name:"Rodriguez",points:1658,coins:1658,image_url:"/assets/images/avatars Final/T4h Sapiens Head.png",joined_clan_id:4,level:"1",email:"test@test.com",phone:"111-111-111"},
-  {id:5,first_name:"Cristina",last_name:"Rodriguez",points:1658,coins:1658,image_url:"/assets/images/avatars Final/T5h Sapiens Head.png",joined_clan_id:5,level:"1",email:"test@test.com",phone:"111-111-111"},
+  {id:1,first_name:"Cristina",last_name:"Rodriguez",points:1658,coins:1658,image_url:"/assets/images/avatars Final/T1h Sapiens Head.png",joined_clan_id:-1,level:"1",email:"test@test.com",phone:"111-111-111"},
+  {id:2,first_name:"Cristina",last_name:"Rodriguez",points:1658,coins:1658,image_url:"/assets/images/avatars Final/T2h Sapiens Head.png",joined_clan_id:1,level:"1",email:"test@test.com",phone:"111-111-111"},
+  {id:3,first_name:"Cristina",last_name:"Rodriguez",points:1658,coins:1658,image_url:"/assets/images/avatars Final/T3h Sapiens Head.png",joined_clan_id:0,level:"1",email:"test@test.com",phone:"111-111-111"},
+  {id:4,first_name:"Cristina",last_name:"Rodriguez",points:1658,coins:1658,image_url:"/assets/images/avatars Final/T4h Sapiens Head.png",joined_clan_id:-1,level:"1",email:"test@test.com",phone:"111-111-111"},
+  {id:5,first_name:"Cristina",last_name:"Rodriguez",points:1658,coins:1658,image_url:"/assets/images/avatars Final/T5h Sapiens Head.png",joined_clan_id:-1,level:"1",email:"test@test.com",phone:"111-111-111"},
 ]

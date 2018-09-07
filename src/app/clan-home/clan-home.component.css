@@ -1,27 +1,10 @@
 .content {
+    margin: 50px;
 	min-height: 700px;
-	width: 100%;
+	width: 90%;
 	background-color: rgba(0,0,0,0.30);
 	float: left
 }
-/*.title-text {
-    line-height: 60px;
-    letter-spacing: 0px;
-    color: rgb(255, 255, 255);
-    font-family: Raleway;
-    font-weight: 800;
-    font-size: 44px;
-    text-align: left;
-}
-.content-text {
-	line-height: 40px;
-    letter-spacing: 0px;
-    color: rgb(255, 255, 255);
-    font-family: Raleway;
-    font-weight: 800;
-    font-size: 30px;
-    text-align: left;
-}*/
 .ul.li-item{
     min-height: 130px;
 }

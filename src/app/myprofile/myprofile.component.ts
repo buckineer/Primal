@@ -36,10 +36,14 @@ export class MyProfileComponent implements OnInit {
   										this.getClanByUser(ret_value.joined_clan_id);
   									});
   	this.territoryService.getTerritoriesByUser(this.globalState.Current_User_Id)
-  							.subscribe(ret_value=> this.territories = ret_value);
+  							.subscribe(ret_value=> {this.territories = ret_value;console.log(ret_value);});
   }
 
   getClanByUser(clan_id:number){
-  	this.clanService.getClan(clan_id).subscribe(ret_value=>this.clan = ret_value);
+    if(clan_id != -1){
+      this.clanService.getClan(clan_id).subscribe(ret_value=>this.clan = ret_value);  
+    }else{
+      this.clan = null;
+    }  	
   }
 }

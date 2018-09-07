@@ -4,6 +4,9 @@ import {CommonService} from '../services/common.service';
 import {ClanService} from '../services/clan.service';
 import {Clan} from '../models/clan.model';
 import {GlobalState} from '../state';
+import {UserService} from '../services/user.service';
+import {User} from '../models/user.model';
+
 @Component({
   selector: 'app-clan-create',
   templateUrl: './clan-create.component.html',
@@ -16,6 +19,7 @@ export class ClanCreateComponent implements OnInit {
   clan_images:string[];
   clan_added:boolean;
   clan:Clan;
+  current_user:User;
   constructor(fb: FormBuilder,public commonService:CommonService,
               public clanService:ClanService,private state:GlobalState) {
 
@@ -48,19 +52,9 @@ export class ClanCreateComponent implements OnInit {
   onSubmit(form:any){
     console.log(this.myForm);
     if(this.myForm.valid){
-
-      this.clanService.addClan({id:-1,
-                                clan_name:form.name,
-                                max_members:5,
-                                joined_members:0,
-                                image_url:form.avatar,
-                                clan_color:form.color,
-                                members:[],
-                                points:1000,
-                                territory_info:null,
-                                description:form.description,                                
-                                motto:form.motto,
-                                }).subscribe(ret_value=> {this.clan = ret_value; this.clan_added=true;});
+      this.clan = new Clan(this.state.Current_User_Id,-1,form.name,5,0,form.avatar,form.color,
+                [],1000,null,form.description,form.notto);
+      this.clanService.addClan(this.clan).subscribe(ret_value=> {this.clan = ret_value; this.clan_added=true;});
 
     }else{
        this.validateAllFormFields(this.myForm);

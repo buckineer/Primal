@@ -3,7 +3,8 @@ import { ActivatedRoute } from '@angular/router';
 import { Territory } from '../models/territory.model';
 import {TerritoryService} from '../services/territory.service';
 import {GlobalState} from '../state';
-
+import {User} from '../models/user.model';
+import {UserService} from '../services/user.service';
 @Component({
   selector: 'app-conquer',
   templateUrl: './conquer.component.html',
@@ -13,15 +14,19 @@ export class ConquerComponent implements OnInit {
 
   territory:Territory;
 	remain_days:number;
-	
+	user:User;
+
   constructor(private route: ActivatedRoute,
   			private territoryService: TerritoryService,
         private state:GlobalState,
+        private userService:UserService,
   ) { }
 
   ngOnInit() {
   	this.getTerritory();
   	this.getLeftDay();
+    this.userService.getUser(this.state.Current_User_Id)
+                      .subscribe(ret_value=>{this.user = ret_value;console.log(ret_value)});
 	}
 	
   getTerritory():void {

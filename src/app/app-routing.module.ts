@@ -16,7 +16,7 @@ import { ClanComponent } from './clan/clan.component';
 import { InfoComponent } from './info/info.component';
 import { GiftComponent } from './gift/gift.component';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
-
+import { ClanRankingComponent } from './clan-ranking/clan-ranking.component';
 
 const mainRoutes: Routes = [
 	{ path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -28,6 +28,7 @@ const mainRoutes: Routes = [
 	{ path: 'invite',component: InviteComponent},
 	{ path: 'clan/home', component: ClanHomeComponent },
 	{ path: 'clan/create', component: ClanCreateComponent },
+	{ path: 'clan/ranking',component:ClanRankingComponent},
 	// { path: 'clan/join', component: ClanJoinComponent },
 	{ path: 'notification', component: NotificationComponent },
 	{ path: 'info', component: InfoComponent},
