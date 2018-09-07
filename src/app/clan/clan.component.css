@@ -27,6 +27,15 @@
     font-family: Raleway;
 }
 
+.button-invite {
+    background-color: antiquewhite;
+    color: #3F9D2F;
+    width: 170%;
+    height: 50px;
+    text-align: center;
+    font-family: Raleway;
+}
+
 .clan-image{
     /* position:absolute; */
     width: 120%;
