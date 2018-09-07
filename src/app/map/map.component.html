@@ -8,7 +8,7 @@
 	    				<app-territory [territory]="territories[i]" [state]="true"></app-territory>
 	    			</div>
 				</a>
-				<div>
+				<div *ngIf="i != is_conquering_id - 1">
 					<app-territory [territory]="territories[i]" [state]="true"></app-territory>
 				</div>
 	    	</div>
