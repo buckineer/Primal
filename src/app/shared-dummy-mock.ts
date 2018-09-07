@@ -22,15 +22,15 @@ export const user_avatar_list=[
                               '/assets/images/avatars Final/T4h Sapiens Head.png',
 ]
 export const territories:Territory[]=[
-  {id:1,title:"Bosque Impenetrable",reaching_min_points:1000,image_url:"/assets/images/map/Bosque Impenetrable.png",starting_date:new Date(2018, 8, 11),ending_date:null,lock_state:false,clan_info:{'color':"red","avatar_image_url":"hoho"},badge_url:"/assets/images/map/badge1.png",badge_text:"This is test"},
-  new Territory(2,'Cascada Encantada',1000, '../assets/images/map/Cascada Encantada.png', new Date(2018, 9, 20),null, false ),
-  new Territory(3,'Costa Pesca',1000, '../assets/images/map/Costa Pesca.png', new Date(2018, 8, 5),null, false ),
-  new Territory(4,'Delat de los Manglares',1000, '../assets/images/map/Delat de los Manglares.png', new Date(2018, 10, 13), null,false ),
-  new Territory(5,'Hielo Polar',1000, '../assets/images/map/Hielo Polar.png', new Date(2018, 6, 5), null,true),
-  new Territory(6,'Isla del Volcán',1000, '../assets/images/map/Isla del Volcán.png', new Date(2018, 5, 18),null, true),
-  new Territory(7,'Nieves Eternas',1000, '../assets/images/map/Nieves Eternas.png', new Date(2018, 9, 20),null, false ),
-  new Territory(8,'Páramo Árido',1000, '../assets/images/map/Páramo Árido.png', new Date(2018, 8, 5),null, false ),
-  new Territory(9,'Ribera Rica',1000, '../assets/images/map/Ribera Rica.png', new Date(2018, 10, 13), null,false ),
+  {id:1,title:"Bosque Impenetrable",reaching_min_points:1000,image_url:"/assets/images/map/Costa Pesca.png",starting_date:new Date(2018, 8, 11),ending_date:null,lock_state:true,clan_info:{'color':"red","avatar_image_url":"hoho"},badge_url:"/assets/images/map/badge1.png",badge_text:"This is test"},
+  new Territory(2,'Cascada Encantada',1000, '../assets/images/map/Cascada Encantada.png', new Date(2018, 9, 20),null, true ),
+  new Territory(3,'Costa Pesca',1000, '../assets/images/map/Hielo Polar.png', new Date(2018, 8, 5),null, true ),
+  new Territory(4,'Delat de los Manglares',1000, '../assets/images/map/Delat de los Manglares.png', new Date(2018, 10, 13), null,true ),
+  new Territory(5,'Hielo Polar',1000, '../assets/images/map/Isla del Volcán.png', new Date(2018, 6, 5), null,true),
+  new Territory(6,'Isla del Volcán',1000, '../assets/images/map/Bosque Impenetrable.png', new Date(2018, 5, 18),null, true),
+  new Territory(7,'Nieves Eternas',1000, '../assets/images/map/Nieves Eternas.png', new Date(2018, 9, 20),null, true ),
+  new Territory(8,'Páramo Árido',1000, '../assets/images/map/Páramo Árido.png', new Date(2018, 8, 5),null, true ),
+  new Territory(9,'Ribera Rica',1000, '../assets/images/map/Ribera Rica.png', new Date(2018, 10, 13), null,true ),
   new Territory(10,'Sabana Grande',1000, '../assets/images/map/Sabana Grande.png', new Date(2018, 6, 5), null,true),
   new Territory(11,'Sierra Rocosa',1000, '../assets/images/map/Sierra Rocosa.png', new Date(2018, 5, 18),null, true),
   new Territory(12,'Tunadr Helada',1000, '../assets/images/map/Tunadr Helada.png', new Date(2018, 5, 18),null, true),
@@ -75,9 +75,6 @@ export const notification: Notification[] = [
   { id: 3, clan_id: 3, clan_name: 'CLAN C', clan_image: '/assets/images/clans/object9.png'},
 ];
 
-
-
- 
 export const info: Info[] = [
   {item: "Lorem ipsum", description: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa."},
   {item: "Lorem ipsum", description: "Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim."},
