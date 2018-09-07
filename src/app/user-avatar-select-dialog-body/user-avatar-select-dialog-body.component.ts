@@ -1,6 +1,6 @@
 import { Component, OnInit,Inject } from '@angular/core';
 import {CommonService} from '../services/common.service';
-import {MAT_DIALOG_DATA} from '@angular/material';
+import {MAT_DIALOG_DATA,MatDialogRef} from '@angular/material';
 @Component({
   selector: 'app-user-avatar-select-dialog-body',
   templateUrl: './user-avatar-select-dialog-body.component.html',
@@ -9,7 +9,12 @@ import {MAT_DIALOG_DATA} from '@angular/material';
 export class UserAvatarSelectDialogBodyComponent implements OnInit {
   avatars:string[];
   selected:string;
-  constructor(private commonService:CommonService,@Inject(MAT_DIALOG_DATA) public data: any) { }
+  constructor(private commonService:CommonService,@Inject(MAT_DIALOG_DATA) public data: any,public matDialogRef: MatDialogRef<UserAvatarSelectDialogBodyComponent>) { 
+    matDialogRef.disableClose = true;//disable default close operation
+    matDialogRef.backdropClick().subscribe(result => {
+      matDialogRef.close(this.selected);
+    });
+  }
 
   ngOnInit() {
 	this.selected = this.data;

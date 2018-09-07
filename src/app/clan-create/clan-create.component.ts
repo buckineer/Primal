@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators, AbstractControl } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, AbstractControl,FormControl } from '@angular/forms';
 import {CommonService} from '../services/common.service';
 import {ClanService} from '../services/clan.service';
 import {Clan} from '../models/clan.model';
@@ -27,17 +27,26 @@ export class ClanCreateComponent implements OnInit {
   		'color':['red',Validators.required],
 		  'avatar':['/assets/images/clans/object1.png',Validators.required]
   	})
-    console.log(this.myForm);    
+    console.log(this.myForm);
   }
 
   ngOnInit() {
     this.commonService.getColors().subscribe(ret_value=> this.colors = ret_value);
     this.commonService.getClanImages().subscribe(ret_value=> this.clan_images = ret_value);
     this.clan_added = false;
-    console.log("on init =====================")
-    console.log(this.myForm);
+  }
+  validateAllFormFields(formGroup: FormGroup) {         //{1}
+    Object.keys(formGroup.controls).forEach(field => {  //{2}
+      const control = formGroup.get(field);             //{3}
+      if (control instanceof FormControl) {             //{4}
+        control.markAsTouched({ onlySelf: true });
+      } else if (control instanceof FormGroup) {        //{5}
+        this.validateAllFormFields(control);            //{6}
+      }
+    });
   }
   onSubmit(form:any){
+    console.log(this.myForm);
     if(this.myForm.valid){
 
       this.clanService.addClan({id:-1,
@@ -53,6 +62,8 @@ export class ClanCreateComponent implements OnInit {
                                 motto:form.motto,
                                 }).subscribe(ret_value=> {this.clan = ret_value; this.clan_added=true;});
 
+    }else{
+       this.validateAllFormFields(this.myForm);
     }
   }
 }
