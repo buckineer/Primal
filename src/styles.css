@@ -55,3 +55,6 @@ button{
     font-size: 30px;
     text-align: left;
 }
+.select-avatar-dialog .mat-dialog-container{
+    border-radius: 25px;
+}

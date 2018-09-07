@@ -13,12 +13,14 @@ import { InviteComponent } from './invite/invite.component';
 import { ClanCreateComponent } from './clan-create/clan-create.component';
 import { NotificationComponent } from './notification/notification.component';
 import { ClanComponent } from './clan/clan.component';
+import { EditProfileComponent } from './edit-profile/edit-profile.component';
 
 
 const mainRoutes: Routes = [
 	{ path: '', redirectTo: '/login', pathMatch: 'full' },
 	{ path: 'map', component: MapComponent },
-	{ path: 'myprofile', component: MyProfileComponent },
+	{ path: 'profile', component: MyProfileComponent },
+	{ path: 'profile/edit',component:EditProfileComponent},
 	{ path: 'conquer/:id', component: ConquerComponent },
 	{ path: 'ranking',component:RankingComponent},
 	{ path: 'invite',component:InviteComponent},

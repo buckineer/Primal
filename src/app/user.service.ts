@@ -17,4 +17,8 @@ export class UserService {
   getUser(id: number): Observable<User>{
   	return of(users.find(item => item.id === id))
   }
+  putUser(user:User):void{
+  	var selected_user = users.find(item=>item.id===user.id);
+  	selected_user.image_url = user.image_url;
+  }
 }

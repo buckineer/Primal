@@ -12,8 +12,6 @@ import {GlobalState} from '../state';
 export class ClanCreateComponent implements OnInit {
 
   myForm: FormGroup;
-  user_id: AbstractControl;
-  password: AbstractControl;
   colors: string[];
   clan_images:string[];
   clan_added:boolean;

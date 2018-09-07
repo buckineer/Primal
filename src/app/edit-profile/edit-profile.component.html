@@ -1,0 +1,76 @@
+<div class="background-green">
+	<div class="content container" style="position: relative;">
+		<a routerLink="/map">
+			<div style="position: absolute; right: -30px;top: -30px;">
+				<i class="material-icons md-bold md-80 md-white" >close</i>
+			</div>
+		</a>
+		<div class="row align-items-center">
+	        <div class="col-sm-4">
+	          <span class="title-text" style="margin-left: 0px;">MI PERFIL</span>
+	        </div>
+		</div>
+		<div class="row" style="margin-top: 50px;border-bottom-style: solid;border-bottom-color: #fff;padding-bottom: 50px">
+			<div class="col-sm-6">
+				<form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm.value)">
+					<div class="row">
+						<label for="name" class="col-sm-4 col-form-label">Nombre</label>
+						<div class="col-sm-8" [class.is-invalid]="!myForm.controls['first_name'].valid && myForm.controls['first_name'].touched">
+							<input type="text" class="form-control" [formControl]="myForm.controls['first_name']" name="name">
+							<div class="invalid-feedback">
+								required
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<label for="last-name" class="col-sm-4 col-form-label">Apellido</label>
+						<div class="col-sm-8" [class.is-invalid]="!myForm.controls['last_name'].valid && myForm.controls['last_name']. touched">
+					    	<input type="text" class="form-control " [formControl]="myForm.controls['last_name']" >
+							<div class="invalid-feedback">
+								required
+							</div>
+						</div>
+					</div>
+					<div class="row" style="margin-top: 20px;">
+						<label for="email" class="col-sm-4 col-form-label">Estado</label>
+						<div class="col-sm-8" [class.is-invalid]="!myForm.controls['email'].valid && myForm.controls['email']. touched">
+					    	<input type="text" class="form-control" [formControl]="myForm.controls['email']">
+							<div class="invalid-feedback">
+								required
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<label for="email" class="col-sm-4 col-form-label">Telefono</label>
+						<div class="col-sm-8" [class.is-invalid]="!myForm.controls['phone'].valid && myForm.controls['phone']. touched">
+					    	<input type="text" class="form-control" [formControl]="myForm.controls['phone']">
+							<div class="invalid-feedback">
+								required
+							</div>
+						</div>
+					</div>
+					<div style="margin-top: 50px;">
+						<button class="button-store" mat-raised-button type="submit"><font size="5px">GUARDAR</font></button>
+					</div>
+				</form>
+			</div>
+			<div class="col-sm-2">
+				
+			</div>
+			<div class="col-sm-4">
+                <div class="user-avatar vertical-child-center">
+                	<img src="{{user.image_url}}" class="user-image">
+                </div>
+                <div style="margin-top: 20px;">
+					<button (click)="openDialog()" class="button-store" mat-raised-button><font size="5px">EDITAR</font></button>
+                </div>
+			</div>
+		</div>
+		<div class="row">
+			<span class="title-text" style="font-weight: 500;line-height: 44px;margin-left: 0px">Cambiar la contraseña</span>
+		</div>
+		<div class="row" style="margin-top: 20px;">
+			<span class="title-text" style="font-weight: 500;line-height: 44px;margin-left: 0px">Desconectar</span>
+		</div>
+	</div>
+</div>

@@ -13,16 +13,16 @@
 		<div class="row align-items-center user-section" >
          	 <div class="col-sm-8" style="display: flex;">
                 <div class="user-avatar vertical-child-center">
-                	<img src="/assets/images/avatars Final/T1h Sapiens Head.png" class="user-image">
+                	<img src="{{user.image_url}}" class="user-image">
                 </div>
 				<div style="margin-top:30px;margin-left: 10px;">
 					<div>
 						<span class="content-text">{{user.first_name}} {{user.last_name}}</span>						
 					</div>
 					<div style="margin-top: 10px;">
-						<a>
+						<a routerLink="/profile/edit">
 							<button class="button-edit" mat-raised-button><font size="5px">EDITAR</font></button>
-						</a>						
+						</a>
 					</div>
 				</div>
             </div>
