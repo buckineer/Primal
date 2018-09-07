@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { of } from 'rxjs/observable/of';
-import { color_list, clan_avatar_list, clans, info, gift, user_avatar_list } from './shared-dummy-mock';
+import { color_list, clan_avatar_list, clans, info, gift, user_avatar_list } from '../shared-dummy-mock';
 
-import { Clan } from './clan.model';
-import { Info } from './info.model';
-import { Gift } from './gift.model';
+import { Clan } from '../models/clan.model';
+import { Info } from '../models/info.model';
+import { Gift } from '../models/gift.model';
 
 @Injectable()
 export class CommonService {

@@ -1,5 +1,5 @@
 import { Component, OnInit,Inject } from '@angular/core';
-import {CommonService} from '../common.service';
+import {CommonService} from '../services/common.service';
 import {MAT_DIALOG_DATA} from '@angular/material';
 @Component({
   selector: 'app-user-avatar-select-dialog-body',

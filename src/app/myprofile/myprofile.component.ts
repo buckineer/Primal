@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 
-import {User} from '../user.model';
-import {UserService} from '../user.service';
+import {User} from '../models/user.model';
+import {UserService} from '../services/user.service';
 
-import {Territory} from '../territory/territory.model';
-import {TerritoryService} from '../territory.service';
+import {Territory} from '../models/territory.model';
+import {TerritoryService} from '../services/territory.service';
 
-import {Clan} from '../clan.model';
-import {ClanService} from '../clan.service';
+import {Clan} from '../models/clan.model';
+import {ClanService} from '../services/clan.service';
 
 
 import {GlobalState} from '../state';

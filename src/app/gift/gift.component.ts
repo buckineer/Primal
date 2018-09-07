@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Gift } from '../gift.model';
-import { CommonService } from '../common.service';
+import { Gift } from '../models/gift.model';
+import { CommonService } from '../services/common.service';
 import {MatDialog} from '@angular/material';
 import {BuyDialogComponent} from '../buy-dialog/buy-dialog.component';
 

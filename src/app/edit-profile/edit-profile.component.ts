@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, AbstractControl } from '@angular/forms';
 import {MatDialog} from '@angular/material';
 import {UserAvatarSelectDialogBodyComponent} from '../user-avatar-select-dialog-body/user-avatar-select-dialog-body.component';
-import { UserService } from '../user.service';
-import {User} from '../user.model';
+import { UserService } from '../services/user.service';
+import {User} from '../models/user.model';
 import {GlobalState} from '../state';
 import { Router } from '@angular/router';
 @Component({

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Territory } from '../territory/territory.model';
-import {TerritoryService} from '../territory.service';
+import { Territory } from '../models/territory.model';
+import {TerritoryService} from '../services/territory.service';
 import {GlobalState} from '../state';
 
 @Component({

@@ -1,10 +1,10 @@
-import { Territory } from './territory/territory.model';
-import { Clan } from './clan.model';
-import { Notification } from './notification.model';
-import { User } from './user.model';
-import { Progress } from './progress.model';
-import { Info } from './info.model';
-import { Gift } from './gift.model';
+import { Territory } from './models/territory.model';
+import { Clan } from './models/clan.model';
+import { Notification } from './models/notification.model';
+import { User } from './models/user.model';
+import { Progress } from './models/progress.model';
+import { Info } from './models/info.model';
+import { Gift } from './models/gift.model';
 
 export const current_user_conquered_territory_id = 1;
 export const color_list=['red','orange','salmon','coral','cyan'];

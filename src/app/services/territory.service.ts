@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import {Territory} from './territory/territory.model';
+import {Territory} from '../models/territory.model';
 import { Observable } from 'rxjs/Observable';
 import { of } from 'rxjs/observable/of';
-import {territories} from './shared-dummy-mock';
+import {territories} from '../shared-dummy-mock';
 @Injectable()
 export class TerritoryService {
 

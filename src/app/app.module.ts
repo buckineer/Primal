@@ -34,15 +34,15 @@ import {CheckboxComponent} from './component/checkbox.component';
 import { AppRoutingModule } from './app-routing.module';
 import { MatButtonModule, MatCheckboxModule ,MatDialogModule } from '@angular/material';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { AUTH_PROVIDERS } from './auth.service';
+import { AUTH_PROVIDERS } from './services/auth.service';
 import { LoggedInGuard } from './logged-in.guard';
 
 
-import {TerritoryService} from './territory.service';
-import {ClanService} from './clan.service';
-import {UserService} from './user.service';
-import { NotificationService } from './notification.service';
-import {CommonService} from './common.service';
+import {TerritoryService} from './services/territory.service';
+import {ClanService} from './services/clan.service';
+import {UserService} from './services/user.service';
+import { NotificationService } from './services/notification.service';
+import {CommonService} from './services/common.service';
 import {GlobalState} from './state';
 
 
