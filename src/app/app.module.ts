@@ -37,6 +37,7 @@ import {UserService} from './user.service';
 import { NotificationService } from './notification.service';
 import {CommonService} from './common.service';
 import {GlobalState} from './state';
+import { MyProfileComponent } from './myprofile/myprofile.component';
 
 
 
@@ -61,6 +62,7 @@ import {GlobalState} from './state';
     InviteComponent,
     CheckboxGroupComponent,
     CheckboxComponent,
+    MyProfileComponent,
 
   ],
   imports: [

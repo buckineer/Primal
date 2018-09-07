@@ -14,7 +14,7 @@ export const clan_avatar_list=['/assets/images/clans/object1.png',
                                 '/assets/images/clans/object6.png',
                               ];
 export const territories:Territory[]=[
-  {id:1,title:"Bosque Impenetrable",reaching_min_points:1000,image_url:"/assets/images/map/Bosque Impenetrable.png",starting_date:new Date(2018, 8, 11),ending_date:null,lock_state:false,clan_info:{'color':"red","avatar_image_url":"hoho"}},
+  {id:1,title:"Bosque Impenetrable",reaching_min_points:1000,image_url:"/assets/images/map/Bosque Impenetrable.png",starting_date:new Date(2018, 8, 11),ending_date:null,lock_state:false,clan_info:{'color':"red","avatar_image_url":"hoho"},badge_url:"/assets/images/map/badge1.png",badge_text:"This is test"},
   new Territory(2,'Cascada Encantada',1000, '../assets/images/map/Cascada Encantada.png', new Date(2018, 9, 20),null, false ),
   new Territory(3,'Costa Pesca',1000, '../assets/images/map/Costa Pesca.png', new Date(2018, 8, 5),null, false ),
   new Territory(4,'Delat de los Manglares',1000, '../assets/images/map/Delat de los Manglares.png', new Date(2018, 10, 13), null,false ),
@@ -69,9 +69,9 @@ export const notification: Notification[] = [
 
 
 export const users:User[]=[
-  {id:1,first_name:"Cristina",last_name:"Rodriguez",points:1658,coins:1658,image_url:"/assets/images/avatars Final/T1h Sapiens Head.png"},
-  {id:2,first_name:"Cristina",last_name:"Rodriguez",points:1658,coins:1658,image_url:"/assets/images/avatars Final/T2h Sapiens Head.png"},
-  {id:3,first_name:"Cristina",last_name:"Rodriguez",points:1658,coins:1658,image_url:"/assets/images/avatars Final/T3h Sapiens Head.png"},
-  {id:4,first_name:"Cristina",last_name:"Rodriguez",points:1658,coins:1658,image_url:"/assets/images/avatars Final/T4h Sapiens Head.png"},
-  {id:5,first_name:"Cristina",last_name:"Rodriguez",points:1658,coins:1658,image_url:"/assets/images/avatars Final/T5h Sapiens Head.png"},
+  {id:1,first_name:"Cristina",last_name:"Rodriguez",points:1658,coins:1658,image_url:"/assets/images/avatars Final/T1h Sapiens Head.png",joined_clan_id:1,level:"1"},
+  {id:2,first_name:"Cristina",last_name:"Rodriguez",points:1658,coins:1658,image_url:"/assets/images/avatars Final/T2h Sapiens Head.png",joined_clan_id:2,level:"1"},
+  {id:3,first_name:"Cristina",last_name:"Rodriguez",points:1658,coins:1658,image_url:"/assets/images/avatars Final/T3h Sapiens Head.png",joined_clan_id:3,level:"1"},
+  {id:4,first_name:"Cristina",last_name:"Rodriguez",points:1658,coins:1658,image_url:"/assets/images/avatars Final/T4h Sapiens Head.png",joined_clan_id:4,level:"1"},
+  {id:5,first_name:"Cristina",last_name:"Rodriguez",points:1658,coins:1658,image_url:"/assets/images/avatars Final/T5h Sapiens Head.png",joined_clan_id:5,level:"1"},
 ]

@@ -20,6 +20,14 @@
     min-height: 700px;
     display: inline-block;
 }
+.background-green{
+    background-color: #3F9D2F;
+    background-size: 100% 100%;
+    position: relative;
+    width:100%;
+    min-height: 700px;
+    display: inline-block;
+}
 button{
     border-radius: 5px;
 }
@@ -27,4 +35,23 @@ button{
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+.title-text {
+    /* line-heigh */
+    letter-spacing: 0px;
+    color: rgb(255, 255, 255);
+    font-family: Raleway;
+    font-weight: 750;
+    font-size: 40px;
+    text-align: left;
+    margin-left: 5%;
+}
+.content-text {
+    /* line-height: 44px; */
+    letter-spacing: 0px;
+    color: rgb(255, 255, 255);
+    font-family: 'Raleway', serif;
+    font-weight: 400;
+    font-size: 30px;
+    text-align: left;
 }

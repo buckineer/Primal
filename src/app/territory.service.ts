@@ -13,4 +13,10 @@ export class TerritoryService {
   getTerritory(id:number):Observable<Territory>{
   	return of(territories.find(item => item.id === id))
   }
+  getTerritoriesByUser(user_id:number):Observable<Territory[]>{
+  	var results:Territory[];
+  	results = territories.filter(territory=> territory.id===user_id);
+  	return of(results);
+  }
+
 }
