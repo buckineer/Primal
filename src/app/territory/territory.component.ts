@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 
-import { Territory } from './territory.model';
+import { Territory } from '../models/territory.model';
 import {current_user_conquered_territory_id} from '../shared-dummy-mock'
 @Component({
   selector: 'app-territory',

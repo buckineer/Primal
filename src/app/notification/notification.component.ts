@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Notification } from '../notification.model';
-import { NotificationService } from '../notification.service';
-import { Clan } from '../clan.model';
-import { ClanService } from '../clan.service';
+import { Notification } from '../models/notification.model';
+import { NotificationService } from '../services/notification.service';
+import { Clan } from '../models/clan.model';
+import { ClanService } from '../services/clan.service';
 
 @Component({
   selector: 'app-notification',

@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import { Clan } from './clan.model';
+import { Clan } from '../models/clan.model';
 import { Observable } from 'rxjs/Observable';
 import { of } from 'rxjs/observable/of';
-import { clans } from './shared-dummy-mock';
+import { clans } from '../shared-dummy-mock';
 
 @Injectable()
 export class ClanService {

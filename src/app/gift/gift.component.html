@@ -15,7 +15,7 @@
                   <label class="content-text"> {{ item.description }}</label>
                 </div>            
                 <div *ngIf="item.purchasable" class="col-sm-2">
-                  <button type="submit" class="button-join" mat-raised-button>COMPRAR</button>
+                  <button (click)="openDialog(item.item)" class="button-join" mat-raised-button>COMPRAR</button>
                 </div>
                 <div *ngIf="!item.purchasable" class="col-sm-2">
                     <button type="submit" class="lock-button-join" mat-raised-button>COMPRAR</button>

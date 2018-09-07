@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 
-import { User } from './user.model';
+import { User } from '../models/user.model';
 
 import { Observable } from 'rxjs/Observable';
 import { of } from 'rxjs/observable/of';
-import { users } from './shared-dummy-mock';
+import { users } from '../shared-dummy-mock';
 @Injectable()
 export class UserService {
 

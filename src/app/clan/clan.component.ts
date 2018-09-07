@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Clan } from '../clan.model';
-import { ClanService } from '../clan.service';
+import { Clan } from '../models/clan.model';
+import { ClanService } from '../services/clan.service';
 import { ActivatedRoute } from '@angular/router';
-import { User } from '../user.model';
-import { UserService } from '../user.service';
+import { User } from '../models/user.model';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-clan',

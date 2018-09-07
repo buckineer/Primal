@@ -8,8 +8,10 @@
 				</div>
 			</a>
 		</div>
+		<div class="row" style="margin-top: 50px;">
+			<span class="title-text" style="padding-bottom: 40px;">CLANES ISLAND</span>
+		</div>
 		<div style="padding-left: 50px;padding-right: 50px;">
-			<div class="title-text" style="padding-bottom: 40px;">CLANES ISLAND</div>
 			<div class="row justify-content-center">
 				<span class="congratulation-text">¡Felicidades! <br><br> Acabas de crear un clan </span>
 			</div>
@@ -31,7 +33,7 @@
 					
 				</div>
 				<a routerLink="/conquer/{{state.Current_Territory_Id}}">
-					<button mat-raised-button color="primary" style="height:50px;width: 160px;">
+					<button mat-raised-button color="primary" style="height:50px;width: 200px;">
 						<span class="content-text">Conquistar</span>
 					</button>
 				</a>
@@ -49,8 +51,10 @@
 			</a>
 			
 		</div>
+		<div class="row" style="margin-top: 50px;">
+			<span class="title-text" style="padding-bottom: 20px;">CREAR CLAN</span>
+		</div>
 		<div style="padding-left: 50px;padding-right: 50px;">
-			<div class="title-text" style="padding-bottom: 20px;">CREAR CLAN</div>
 			<form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm.value)">
 				
 				<div class="row">

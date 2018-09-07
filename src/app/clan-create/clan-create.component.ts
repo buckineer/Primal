@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, AbstractControl } from '@angular/forms';
-import {CommonService} from '../common.service';
-import {ClanService} from '../clan.service';
-import {Clan} from '../clan.model';
+import {CommonService} from '../services/common.service';
+import {ClanService} from '../services/clan.service';
+import {Clan} from '../models/clan.model';
 import {GlobalState} from '../state';
 @Component({
   selector: 'app-clan-create',
