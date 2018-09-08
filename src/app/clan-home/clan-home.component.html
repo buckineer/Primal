@@ -22,11 +22,12 @@
 						<div class="col-sm-4" style="padding-top: 20px;">
 							<span class="content-text" style="margin-top: 20px;" [style.color]="item.clan_color">{{item.clan_name}}</span>
 							<span ><br><br> </span>
-							<span class="content-text">{{item.max_members}}/{{item.joined_members}} COMPLETO </span>
+							<span class="content-text">{{item.joined_members}}/{{item.max_members}}</span>
+							<span *ngIf="item.joined_members == item.max_members" class="content-text">COMPLETO</span>
 						</div>
-						<div class="col-sm-auto" *ngIf="item.max_members> item.joined_members">
+						<div class="col-sm-auto" *ngIf="item.max_members> item.joined_members" style="margin-left: 10%;">
 							<a routerLink="/clan/added/{{item.id}}">
-								<button style="height:50px;" mat-raised-button class="join-clan-button main-button	" color="primary">
+								<button style="height:50px; font-weight: 1200;" mat-raised-button class="join-clan-button main-button	" color="primary">
 									<span>UNIRSE A CLAN</span>
 								</button>
 							</a>
@@ -42,7 +43,7 @@
 			</div>
 			<div class="col-sm-2">
 				<a routerLink="/clan/create">
-					<button style="height:50px;background-color: #0B3E78;" mat-raised-button class="main-button" color="primary">
+					<button style="width: 150%; height:50px;background-color: #0B3E78; margin-left: 70%;" mat-raised-button class="main-button" color="primary">
 						<span>CREAR CLAN</span>
 					</button>
 				</a>
