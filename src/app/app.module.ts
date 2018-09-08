@@ -27,6 +27,7 @@ import { InfoComponent } from './info/info.component';
 import { GiftComponent } from './gift/gift.component';
 import { BuyDialogComponent } from './buy-dialog/buy-dialog.component';
 import { ClanRankingComponent } from './clan-ranking/clan-ranking.component';
+import { ClanAddedComponent } from './clan-added/clan-added.component';
 
 import {CheckboxGroupComponent} from './component/checkbox-group.component';
 import {CheckboxComponent} from './component/checkbox.component';
@@ -44,6 +45,7 @@ import {UserService} from './services/user.service';
 import { NotificationService } from './services/notification.service';
 import {CommonService} from './services/common.service';
 import {GlobalState} from './state';
+
 
 
 
@@ -76,6 +78,7 @@ import {GlobalState} from './state';
     UserAvatarSelectDialogBodyComponent,
     BuyDialogComponent,
     ClanRankingComponent,
+    ClanAddedComponent,
 
   ],
   imports: [

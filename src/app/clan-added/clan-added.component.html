@@ -1,0 +1,42 @@
+<div class="background-nofx">
+	<div class="content container" style="position: relative;">
+		<div style="position: absolute; right: -30px;top: -30px;">
+			<a routerLink="/map">
+				<div>
+					<i class="material-icons md-bold md-80 md-white" >close</i>
+				</div>
+			</a>
+		</div>
+		<div class="row" style="margin-top: 50px;">
+			<span class="title-text" style="padding-bottom: 40px;">CLANES ISLAND</span>
+		</div>
+		<div style="padding-left: 50px;padding-right: 50px;">
+			<div class="row justify-content-center">
+				<span class="congratulation-text">¡Felicidades! <br><br> Acabas de crear un clan </span>
+			</div>
+			<div class="row justify-content-center">
+				<div class="col-sm-6">
+					<!-- <img src="/assets/images/clans/object6.png" style="width: 40%;"> -->
+					<img src="{{clan.image_url}}" style="width: 40%;">
+					<span class="congratulation-text">{{clan.clan_name}}</span>
+					<!-- <span class="congratulation-text"> Elefantes </span> -->
+				</div>				
+			</div>
+			<div class="row justify-content-center">
+				<a routerLink="/clan/{{clan.id}}">
+					<button mat-raised-button color="primary" style="height:50px;width: 160px;">
+						<span class="content-text">Ver clan</span>
+					</button>
+				</a>
+				<div class="col-sm-2">
+					
+				</div>
+				<a routerLink="/conquer/{{globalState.Current_Territory_Id}}">
+					<button mat-raised-button color="primary" style="height:50px;width: 200px;">
+						<span class="content-text">Conquistar</span>
+					</button>
+				</a>
+			</div>
+		</div>
+	</div>
+</div>

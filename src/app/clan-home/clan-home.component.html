@@ -24,8 +24,8 @@
 							<span ><br><br> </span>
 							<span class="content-text">{{item.max_members}}/{{item.joined_members}} COMPLETO </span>
 						</div>
-						<div class="col-sm-auto">
-							<a>
+						<div class="col-sm-auto" *ngIf="item.max_members> item.joined_members">
+							<a routerLink="/clan/added/{{item.id}}">
 								<button style="height:50px;" mat-raised-button class="join-clan-button main-button	" color="primary">
 									<span>UNIRSE A CLAN</span>
 								</button>
