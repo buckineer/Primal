@@ -10,7 +10,7 @@ export class Territory {
     lock_state: boolean;    // if the territory locked or not
     badge_url:string;
     badge_text:string;
-    clan_info:{'color':string,'avatar_image_url':string};
+    clan_info: string;
 
     constructor(id?:number,
                 title?: string, 
@@ -19,8 +19,8 @@ export class Territory {
                 starting_date?: Date,
                 ending_date?: Date,
                 lock_state?: boolean, 
-                clan_info:{'color':string,'avatar_image_url':string}=null,
-                badge_url="/assets/images/map/badge1.png",
+                clan_info: string = null,
+                badge_url: string = null,
                 badge_text="Isigna Land"){
         this.id = id;
         this.title=title;

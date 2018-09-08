@@ -6,7 +6,7 @@ import { Progress } from './models/progress.model';
 import { Info } from './models/info.model';
 import { Gift } from './models/gift.model';
 
-export const current_user_conquered_territory_id = 1;
+export const current_user_conquered_territory_id = 6;
 export const color_list=['red','orange','salmon','coral','cyan'];
 export const clan_avatar_list=['/assets/images/clans/object1.png',
                                 '/assets/images/clans/object2.png',
@@ -22,12 +22,12 @@ export const user_avatar_list=[
                               '/assets/images/avatars Final/T4h Sapiens Head.png',
 ]
 export const territories:Territory[]=[
-  {id:1,title:"Bosque Impenetrable",reaching_min_points:1000,image_url:"/assets/images/map/Costa Pesca.png",starting_date:new Date(2018, 8, 11),ending_date:null,lock_state:true,clan_info:{'color':"red","avatar_image_url":"hoho"},badge_url:"/assets/images/map/badge1.png",badge_text:"This is test"},
-  new Territory(2,'Cascada Encantada',1000, '../assets/images/map/Cascada Encantada.png', new Date(2018, 9, 20),null, true ),
-  new Territory(3,'Costa Pesca',1000, '../assets/images/map/Hielo Polar.png', new Date(2018, 8, 5),null, true ),
-  new Territory(4,'Delat de los Manglares',1000, '../assets/images/map/Delat de los Manglares.png', new Date(2018, 10, 13), null,true ),
-  new Territory(5,'Hielo Polar',1000, '../assets/images/map/Isla del Volcán.png', new Date(2018, 6, 5), null,true),
-  new Territory(6,'Isla del Volcán',1000, '../assets/images/map/Bosque Impenetrable.png', new Date(2018, 5, 18),null, true),
+  {id:1,title:"Bosque Impenetrable",reaching_min_points:1000,image_url:"/assets/images/map/Costa Pesca.png",starting_date:new Date(2018, 8, 11),ending_date:null,lock_state:true,clan_info:"orange",badge_url:"/assets/images/clans/object6.png",badge_text:"This is test"},
+  new Territory(2,'Cascada Encantada',1000, '../assets/images/map/Cascada Encantada.png', new Date(2018, 9, 20),null, true, "red", "/assets/images/clans/object2.png" ),
+  new Territory(3,'Costa Pesca',1000, '../assets/images/map/Hielo Polar.png', new Date(2018, 8, 5),null, true, 'salmon', "/assets/images/clans/object3.png" ),
+  new Territory(4,'Delat de los Manglares',1000, '../assets/images/map/Delat de los Manglares.png', new Date(2018, 10, 13), null,true, "cyan", "/assets/images/clans/object4.png" ),
+  new Territory(5,'Hielo Polar',1000, '../assets/images/map/Isla del Volcán.png', new Date(2018, 6, 5), null,true, "coral", "/assets/images/clans/object5.png"),
+  new Territory(6,'Isla del Volcán',1000, '../assets/images/map/Bosque Impenetrable.png', new Date(2018, 5, 18),null, false),
   new Territory(7,'Nieves Eternas',1000, '../assets/images/map/Nieves Eternas.png', new Date(2018, 9, 20),null, true ),
   new Territory(8,'Páramo Árido',1000, '../assets/images/map/Páramo Árido.png', new Date(2018, 8, 5),null, true ),
   new Territory(9,'Ribera Rica',1000, '../assets/images/map/Ribera Rica.png', new Date(2018, 10, 13), null,true ),

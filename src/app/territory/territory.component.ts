@@ -27,4 +27,5 @@ export class TerritoryComponent implements OnInit {
   is_clan_exists():boolean{
   	return this.territory.clan_info!=null;
   }
+
 }

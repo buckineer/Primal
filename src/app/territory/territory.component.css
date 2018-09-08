@@ -27,11 +27,11 @@ div.overlay-lock{
 
 .territory-clan-avatar{
     position:absolute;
-    width: 20%;
-    height: 40%;
-    left:5%;
-    top:20%;
-    z-index: 1
+    width: 40%;
+    height: 60%;
+    left:-5%;
+    top:-5%;
+    z-index: 2;
 }
 .territory-lock-icon{
     position:absolute;
@@ -41,8 +41,16 @@ div.overlay-lock{
     z-index: 3
 }
 .territory-state-txt{
-    color:rgb(216, 229, 241);
-    font-size: 18pt;  
+    position: absolute;
+    top: 80%;
+    left: 9%;
+    color:rgb(60, 58, 189);
+    font-size: 18pt;
+    z-index: 3;
+    background-color: rgb(209, 206, 221);
+    height: 20%;
+    border-radius: 30%;
+    font-family: Raleway;
 }
 .territory-image{
     position:relative;
