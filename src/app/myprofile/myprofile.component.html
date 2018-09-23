@@ -13,7 +13,7 @@
 		<div class="row align-items-center user-section" >
          	 <div class="col-sm-8" style="display: flex;">
                 <div class="user-avatar vertical-child-center">
-                	<img src="{{user?.image_url}}" class="user-image">
+                	<img src="{{environment.asset_base_url}}{{user?.avatar}}" class="user-image">
                 </div>
 				<div style="margin-top:30px;margin-left: 10px;">
 					<div>
@@ -44,11 +44,11 @@
 						<label class="content-text"><font color=antiquewhite>Progreso Personal</font></label>
 				</div>
 				<div class="row" style="margin-top:20px; border-right-style: solid;border-right-color: #fff;min-height: 300px;">
-					<ng-template ngFor let-item [ngForOf]="territories" let-i="index">
+					<ng-template ngFor let-item [ngForOf]="user.badge_list" let-i="index">
 						<div class="col-sm-4" style="text-align: center;">
-							<img src="{{item.badge_url}}" class="map-badge">
+							<img src="{{item.icon}}" class="map-badge">
 							<div>
-								<span class="map-badge-text">{{item.badge_text}}</span>	
+								<span class="map-badge-text">{{item.title}}</span>	
 							</div>						
 						</div>
 					</ng-template>
@@ -61,11 +61,11 @@
 					</div>
 					<div class="row align-items-center" style="margin-top:20px;" >
 						<div class="col-sm-6" style="text-align: center;">
-							<img src="/assets/images/clans/object6.png" class="clan-avatar">				
+							<img src="{{environment.asset_base_url}}{{clan?.image}}" class="clan-avatar">				
 						</div>
 						<div class="col-sm-6" >
 							<div>
-								<span class="clan-text">{{clan?.clan_name}}</span>	
+								<span class="clan-text">{{clan?.name}}</span>	
 							</div>
 							<div>
 								<span class="clan-text">PUNTOS {{clan?.points}}</span>	

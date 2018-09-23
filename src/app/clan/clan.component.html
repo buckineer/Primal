@@ -4,13 +4,13 @@
         <div class="col-sm-4">
           <span class="title-text">CLAN</span>
         </div>
-        <div class="col-sm-2" style="margin-left: 10%; margin-top: -5%;">
+        <div *ngIf="is_admin_clan()" class="col-sm-2" style="margin-left: 35%; margin-top: -5%;">
           <a routerLink = "/invite">
             <button class="button-invite" mat-raised-button><font size="5px">Invitar Luchadores</font></button>
           </a>
         </div>
 
-        <div class="col-sm-2" style="margin-left: 15%; margin-top: -5%;">
+        <div *ngIf="!is_admin_clan()" class="col-sm-2" style="margin-left: 35%; margin-top: -5%;">
           <a routerLink = "/clan/home">
             <button class="button-change" mat-raised-button><font size="5px">Cambiar clan</font></button>
           </a> 
@@ -21,11 +21,11 @@
             <div class="row align-items-center" style="padding-top: 20px;">
               <div class="col-sm-2">
                 <div class="clan-avatar">
-                  <img src={{selected_clan.image_url}} class="clan-image">
+                  <img src={{environment.asset_base_url}}{{selected_clan.image}} class="clan-image">
                 </div>
               </div>
               <div class="col-sm-8" style="margin-top: 0%; margin-left: -4%;">
-                <label class="content-text"><font color=antiquewhite>Nombre</font> {{ selected_clan.clan_name }}</label><br>
+                <label class="content-text"><font color=antiquewhite>Nombre</font> {{ selected_clan.name }}</label><br>
                 <label class="content-text"><font color=antiquewhite>Descripción</font> {{ selected_clan.description }}</label><br>
                 <label class="content-text"><font color=antiquewhite>Lema</font> {{ selected_clan.description }}</label>
               </div>
@@ -52,15 +52,22 @@
             <label class="content-text"><font color=antiquewhite>Miembros:</font></label>
 
             <div class="row align-items-center" style="padding-top: 10px;">
+              <div class="col-sm-5 algin-items-center" style="margin-top: 1.5%;">
+                <div class="col-sm-4 user-avatar">
+                  <img src={{environment.asset_base_url}}{{admin_user.avatar}} class="user-image"> 
+                </div>
+                <div class="col-sm-8">
+                  <label class="user-name-text">{{ admin_user.first_name }} {{ admin_user.last_name }}<br><br> Admin</label> 
+                </div>
+              </div>
               <ng-template ngFor let-item [ngForOf]="joined_users" let-i="index">
                 <div class="col-sm-5 algin-items-center" style="margin-top: 1.5%;">
                   <div class="col-sm-4 user-avatar">
-                    <img src={{item.image_url}} class="user-image"> 
+                    <img src={{environment.asset_base_url}}{{item.avatar}} class="user-image"> 
                   </div>
                   <div class="col-sm-8">
                     <label class="user-name-text">{{ item.first_name }} {{ item.last_name }}</label> 
                   </div>
-            
                 </div>
               </ng-template>
             </div>

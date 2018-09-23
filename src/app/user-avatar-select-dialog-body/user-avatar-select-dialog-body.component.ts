@@ -1,6 +1,7 @@
 import { Component, OnInit,Inject } from '@angular/core';
 import {CommonService} from '../services/common.service';
 import {MAT_DIALOG_DATA,MatDialogRef} from '@angular/material';
+import {environment} from '../../environments/environment';
 @Component({
   selector: 'app-user-avatar-select-dialog-body',
   templateUrl: './user-avatar-select-dialog-body.component.html',
@@ -9,6 +10,7 @@ import {MAT_DIALOG_DATA,MatDialogRef} from '@angular/material';
 export class UserAvatarSelectDialogBodyComponent implements OnInit {
   avatars:string[];
   selected:string;
+  environment = environment
   constructor(private commonService:CommonService,@Inject(MAT_DIALOG_DATA) public data: any,public matDialogRef: MatDialogRef<UserAvatarSelectDialogBodyComponent>) { 
     matDialogRef.disableClose = true;//disable default close operation
     matDialogRef.backdropClick().subscribe(result => {
@@ -23,6 +25,5 @@ export class UserAvatarSelectDialogBodyComponent implements OnInit {
   set_selected(value:string){
   	console.log("selecdte=======",value);
   	this.selected = value;
-
   }
 }

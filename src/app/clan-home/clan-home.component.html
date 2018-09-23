@@ -17,10 +17,10 @@
 				<ng-template ngFor let-item [ngForOf]="clans" let-i="index">
 					<div class="row li-item align-items-center">
 						<div class="col-sm-2">
-							<img src={{item.image_url}} style="width: 100%;">
+							<img *ngIf="item.image" src={{environment.asset_base_url}}{{item.image}} style="width: 100%;">
 						</div>
 						<div class="col-sm-4" style="padding-top: 20px;">
-							<span class="content-text" style="margin-top: 20px;" [style.color]="item.clan_color">{{item.clan_name}}</span>
+							<span class="content-text" style="margin-top: 20px;" [style.color]="item.clan_color">{{item.name}}</span>
 							<span ><br><br> </span>
 							<span class="content-text">{{item.joined_members}}/{{item.max_members}}</span>
 							<span *ngIf="item.joined_members == item.max_members" class="content-text">COMPLETO</span>

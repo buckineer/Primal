@@ -32,9 +32,12 @@ import { ClanAddedComponent } from './clan-added/clan-added.component';
 import {CheckboxGroupComponent} from './component/checkbox-group.component';
 import {CheckboxComponent} from './component/checkbox.component';
 
+
 import { AppRoutingModule } from './app-routing.module';
 import { MatButtonModule, MatCheckboxModule ,MatDialogModule } from '@angular/material';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule }    from '@angular/common/http';
+
 import { AUTH_PROVIDERS } from './services/auth.service';
 import { LoggedInGuard } from './logged-in.guard';
 
@@ -46,6 +49,8 @@ import { NotificationService } from './services/notification.service';
 import {CommonService} from './services/common.service';
 import {GlobalState} from './state';
 
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { TokenInterceptor } from './token.interceptor';
 
 
 
@@ -89,7 +94,8 @@ import {GlobalState} from './state';
     MatDialogModule,
     BrowserAnimationsModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   entryComponents: [
     UserAvatarSelectDialogBodyComponent,
@@ -104,6 +110,11 @@ import {GlobalState} from './state';
     NotificationService,
     CommonService,
     GlobalState,
+    {
+        provide: HTTP_INTERCEPTORS,
+        useClass: TokenInterceptor,
+        multi: true
+    },
   ],
   bootstrap: [AppComponent]
 })

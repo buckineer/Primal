@@ -9,7 +9,12 @@
               <img  class="user-icon" src="../assets/images/login/user_icon.png">
               <br>
               <label style="margin-top: 5%; margin-left: 37%;"><font size="4px" color="#8c8c8c">User Log in</font></label>
+
+
               <form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm.value)"> 
+                <div *ngIf="message" style="color: #f00; margin-left: 10%;font-size: 14px;">
+                  <strong>{{ message }}</strong>
+                </div>
                 <div id="input_container">
                     <input type="text" id="user_id" name="user_id" placeholder="User ID" [formControl]="myForm.controls['user_id']">
                     <img src="../assets/images/login/user_input_icon.png" id="input_img">

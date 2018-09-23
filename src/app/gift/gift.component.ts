@@ -3,8 +3,7 @@ import { Gift } from '../models/gift.model';
 import { CommonService } from '../services/common.service';
 import {MatDialog} from '@angular/material';
 import {BuyDialogComponent} from '../buy-dialog/buy-dialog.component';
-
-
+import {GlobalState} from '../state';
 @Component({
   selector: 'app-gift',
   templateUrl: './gift.component.html',
@@ -12,19 +11,26 @@ import {BuyDialogComponent} from '../buy-dialog/buy-dialog.component';
 })
 export class GiftComponent implements OnInit {
 
-  gift: Gift[];
+  gifts: Gift[];
 
-  constructor(public commonService: CommonService,public dialog: MatDialog) { }
+  constructor(public commonService: CommonService,public dialog: MatDialog,private globalState:GlobalState) { }
 
   ngOnInit() {
-    this.commonService.getGift().subscribe(item=> this.gift = item);
+    this.commonService.getGifts().subscribe(item=> this.gifts = item);
   }
-  openDialog(data) {
-    const dialogRef = this.dialog.open(BuyDialogComponent, {
-      height: '380px',
-      minWidth:"800px",
-      panelClass:'select-avatar-dialog',
-      data:data
+  openDialog(gift:Gift) {
+    this.commonService.buyGifts(gift['id']).subscribe(resp=>{
+      if(resp=="success")
+      {
+        this.globalState.current_user.coins -= gift.points;
+        gift.state = "already bought";
+        const dialogRef = this.dialog.open(BuyDialogComponent, {
+          height: '380px',
+          minWidth:"800px",
+          panelClass:'select-avatar-dialog',
+          data:gift['title']
+        });
+      }
     });
   }
 }

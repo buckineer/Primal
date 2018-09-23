@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 
 import { Territory } from '../models/territory.model';
 import {current_user_conquered_territory_id} from '../shared-dummy-mock'
+import { environment } from '../../environments/environment';
 @Component({
   selector: 'app-territory',
   templateUrl: './territory.component.html',
@@ -12,7 +13,7 @@ export class TerritoryComponent implements OnInit {
   @Input() territory: Territory;
   @Input() state: boolean;
   is_conquering:boolean;
-  
+  environment = environment;
   constructor() {
   	this.is_conquering = false;
     this.state = false;
@@ -25,7 +26,7 @@ export class TerritoryComponent implements OnInit {
   }
 
   is_clan_exists():boolean{
-  	return this.territory.clan_info!=null;
+  	return this.territory.clan_color!=null;
   }
 
 }
