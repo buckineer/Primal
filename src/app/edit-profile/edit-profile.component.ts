@@ -6,6 +6,8 @@ import { UserService } from '../services/user.service';
 import {User} from '../models/user.model';
 import {GlobalState} from '../state';
 import { Router } from '@angular/router';
+import { AuthService } from '../services/auth.service';
+import {environment} from '../../environments/environment';
 @Component({
   selector: 'app-edit-profile',
   templateUrl: './edit-profile.component.html',
@@ -14,14 +16,14 @@ import { Router } from '@angular/router';
 export class EditProfileComponent implements OnInit {
 
   myForm: FormGroup;
-  user: User;
-
-  constructor(fb: FormBuilder,public userService:UserService,public globalState:GlobalState,public dialog: MatDialog,private router: Router) { 
+  user: User = new User;
+  environment = environment
+  constructor(fb: FormBuilder,private authService: AuthService,public userService:UserService,public globalState:GlobalState,public dialog: MatDialog,private router: Router) { 
   	this.myForm = fb.group({
   		'first_name': ['',Validators.required],
   		'last_name': ['',Validators.required],
-  		'email': ['',Validators.required],
-  		'phone':['',Validators.required],
+  		'email': ['',Validators.required],      
+  		'phone':['',[Validators.required,Validators.pattern('^\\+?1?\\d{9,15}$')]],
   	})
   }
   openDialog() {
@@ -29,36 +31,60 @@ export class EditProfileComponent implements OnInit {
       height: '380px',
       minWidth:"800px",
       panelClass:'dialog',
-      data:this.user.image_url
+      data:this.user.avatar
     });
 
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);
-      this.user.image_url = result;
-      this.userService.putUser(this.user);
+      this.user.avatar = result;
+      var data = {'avatar':result}
+
+      this.userService.updateUser(this.user.id, data)
+        .subscribe(resp=>{
+          if(resp=="success")
+            this.globalState.current_user.avatar = this.user.avatar;
+        });
 
     });
+  }
+  logout(){
+    this.authService.logout();
   }
   ngOnInit() {
   	this.userService.getUser(this.globalState.Current_User_Id)
   									.subscribe(ret_value=> {this.user = ret_value;this.InitForm(ret_value)});
   }
   InitForm(user:User){
+    console.log("Init form ",user)
     this.myForm.setValue({'first_name':user.first_name,
                            'last_name':user.last_name,
                            'email':user.email,
-                           'phone':user.phone
+                           'phone':user.phone_number
     })
   }
   onSubmit(form:any){
   	console.log("Submit");
+    console.log(this.myForm);
     if(this.myForm.valid){
       this.user.first_name = form.first_name;
       this.user.last_name = form.last_name;
       this.user.email = form.email;
-      this.user.phone = form.phone;
-      this.userService.putUser(this.user);
-      this.router.navigate(['/profile']);
+      this.user.phone_number = form.phone;
+      var data = {
+        'first_name':form.first_name,
+        'last_name': form.last_name,
+        'email': form.email,
+        'phone_number':form.phone
+      }
+      this.userService.updateUser(this.user.id, data)
+        .subscribe( resp=>{
+          if(resp=="success")
+            this.globalState.current_user.first_name = this.user.first_name
+          this.globalState.current_user.last_name = this.user.last_name
+          this.globalState.current_user.email = this.user.email
+          this.globalState.current_user.phone_number = this.user.phone_number
+            this.router.navigate(['/profile']);
+        });
     }
   }
 }

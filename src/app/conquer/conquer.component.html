@@ -18,13 +18,13 @@
 			</div>
 			<div style="line-height: 
 			120px;margin-top:30px;">
-				<a *ngIf="user.joined_clan_id!=-1">
+				<a *ngIf="is_joined()">
 					<button mat-raised-button class= "lock-button" color="primary">
 						<img src="/assets/images/icons/lock small.png" width="40px">
 						<span>UNIRSE A CLAN</span>
 					</button>
 				</a>
-				<a routerLink="/clan/home" *ngIf="user.joined_clan_id==-1">
+				<a routerLink="/clan/home" *ngIf="!is_joined()">
 					<button mat-raised-button class= "unlock-button" color="primary">
 						<img src="/assets/images/icons/lock small.png" width="40px">
 						<span>UNIRSE A CLAN</span>
@@ -38,13 +38,13 @@
 			</div>
 			<div style="line-height: 120px;text-align: center;" >
 
-				<a *ngIf="user.joined_clan_id==-1">
+				<a *ngIf="!is_joined()">
 					<button mat-raised-button class= "lock-button" color="primary">
 						<img src="/assets/images/icons/lock small.png" width="40px">
 						<span>CONQUISTAR</span>
 					</button>
 				</a>
-				<a routerLink="/clan/ranking" *ngIf="user.joined_clan_id!=-1">
+				<a routerLink="/clan/ranking" *ngIf="is_joined()">
 					<button mat-raised-button class= "unlock-button" color="primary">
 						<img src="/assets/images/icons/lock small.png" width="40px">
 						<span>CONQUISTAR</span>

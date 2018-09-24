@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../services/user.service';
 import {User} from '../models/user.model';
+import { Router } from '@angular/router';
+import {environment} from '../../environments/environment';
+import {CommonService} from '../services/common.service';
 @Component({
   selector: 'app-invite',
   templateUrl: './invite.component.html',
@@ -9,7 +12,8 @@ import {User} from '../models/user.model';
 export class InviteComponent implements OnInit {
   selectedUsers: any[];
   users:User[];
-  constructor(public userService:UserService) { 
+  environment = environment;
+  constructor(private commonService:CommonService,public userService:UserService,private router: Router) { 
   	this.selectedUsers=[];
   }
 
@@ -22,6 +26,11 @@ export class InviteComponent implements OnInit {
   	}else{
   		this.selectedUsers=[];
   	}
-  	
+  }
+  store(){
+    this.commonService.sendInvite(this.selectedUsers).subscribe(resp=>{
+      if(resp=="success")
+        this.router.navigate(['map']);
+    });
   }
 }

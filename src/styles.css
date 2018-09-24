@@ -46,6 +46,7 @@ button{
     text-align: left;
     margin-left: 50px;
 }
+.pointer {cursor: pointer;}
 .content-text {
     /* line-height: 44px; */
     letter-spacing: 0px;

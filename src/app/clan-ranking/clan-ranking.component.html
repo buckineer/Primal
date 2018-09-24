@@ -33,11 +33,11 @@
 						<div class="row align-items-center col-sm-10 border-bottom">
 							<div class="col-sm-2 ">
 				                <div class="clan-avatar vertical-child-center">
-				                	<img src="{{item.image_url}}" class="clan-image">
+				                	<img src="{{environment.asset_base_url}}{{item.image}}" class="clan-image">
 				                </div>
 							</div>
 							<div class="col-sm-4" style="padding-top: 20px;">
-								<span class="content-text" style="margin-top: 20px;" [style.color]="item.clan_color">{{item.clan_name}}</span>
+								<span class="content-text" style="margin-top: 20px;" [style.color]="item.clan_color">{{item.name}}</span>
 							</div>
 							<div class="col">
 

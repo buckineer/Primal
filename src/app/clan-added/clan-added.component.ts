@@ -5,6 +5,7 @@ import { ActivatedRoute } from '@angular/router';
 import { User } from '../models/user.model';
 import { UserService } from '../services/user.service';
 import {GlobalState} from '../state';
+import { environment } from '../../environments/environment';
 @Component({
   selector: 'app-clan-added',
   templateUrl: './clan-added.component.html',
@@ -13,9 +14,11 @@ import {GlobalState} from '../state';
 export class ClanAddedComponent implements OnInit {
   
   clan:Clan;
-
+  environment = environment
   constructor(private route: ActivatedRoute,
-    private clanService: ClanService, private userService: UserService,private globalState:GlobalState) { }
+    private clanService: ClanService, private userService: UserService,private globalState:GlobalState) { 
+    this.clan = new Clan()
+  }
 
   ngOnInit() {
   	this.getClan();
@@ -24,7 +27,7 @@ export class ClanAddedComponent implements OnInit {
   getClan(): void {
     const id:number = +this.route.snapshot.paramMap.get('id');
   	this.clanService.getClan(id)
-		.subscribe(ret_item=>{this.clan = ret_item; console.log(ret_item)});
+		.subscribe(ret_item=>{this.clan = ret_item;});
   }
   JoinClanToCurrentUser(){
   	const id:number = +this.route.snapshot.paramMap.get('id');

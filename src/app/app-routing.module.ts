@@ -20,7 +20,7 @@ import { ClanRankingComponent } from './clan-ranking/clan-ranking.component';
 import { ClanAddedComponent } from './clan-added/clan-added.component';
 
 const mainRoutes: Routes = [
-	{ path: '', redirectTo: '/login', pathMatch: 'full' },
+	{ path: '', redirectTo: '/map', pathMatch: 'full' },
 	{ path: 'map', component: MapComponent },
 	{ path: 'profile', component: MyProfileComponent },
 	{ path: 'profile/edit',component:EditProfileComponent},

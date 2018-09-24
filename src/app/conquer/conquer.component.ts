@@ -15,39 +15,47 @@ export class ConquerComponent implements OnInit {
   territory:Territory;
 	remain_days:number;
 	user:User;
-
   constructor(private route: ActivatedRoute,
   			private territoryService: TerritoryService,
         private state:GlobalState,
         private userService:UserService,
-  ) { }
+  ) { 
+    this.territory = new Territory;
+    this.user = new User;
+  }
 
   ngOnInit() {
   	this.getTerritory();
-  	this.getLeftDay();
     this.userService.getUser(this.state.Current_User_Id)
-                      .subscribe(ret_value=>{this.user = ret_value;console.log(ret_value)});
+                      .subscribe(ret_value=>{this.user = ret_value;});
 	}
 	
   getTerritory():void {
   	const id:number = +this.route.snapshot.paramMap.get('id');
   	this.territoryService.getTerritory(id)
 		.subscribe(ret_item=>{this.territory=ret_item;
-                          this.state.Current_Territory_Id = ret_item.id;
+                          this.state.Current_Territory_Id = ret_item.id; this.getLeftDay();
     });
 	}
 	
   getLeftDay():void {
+    console.log(this.territory)
   	var now = new Date();
-  	var start = new Date();
-  	start.setDate(1);
+  	var end = new Date(this.territory.ending_date);  	
   	console.log("=========");
   	console.log(now);
-  	console.log(start);
-  	console.log(start>now);
-  	var timeDiff = Math.abs(now.getTime() - start.getTime());
+  	console.log(end);
+  	console.log(end>now);
+  	var timeDiff = Math.abs(end.getTime() - now.getTime());
   	var dayDifference = Math.ceil(timeDiff / (1000 * 3600 * 24));
     this.remain_days = dayDifference;
+    console.log("remain days",this.remain_days)
+  }
+  is_joined():boolean{
+    if(this.user){
+      return  ((this.user.joined_clan!=-1 && this.user.joined_clan != null ) || (this.user.admin_clan!=-1 && this.user.admin_clan!=null));
+    }
+    return false;
   }
 }
 

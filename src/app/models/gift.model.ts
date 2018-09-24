@@ -1,5 +1,8 @@
 export class Gift {
-    item: string;
+	id:string;
+    title: string;
     description: string;
-    purchasable: boolean;
+    points:number;
+    image:string;
+    state:string;
 }

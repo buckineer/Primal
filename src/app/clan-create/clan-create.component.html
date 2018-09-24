@@ -18,8 +18,8 @@
 			<div class="row justify-content-center">
 				<div class="col-sm-6">
 					<!-- <img src="/assets/images/clans/object6.png" style="width: 40%;"> -->
-					<img src="{{clan.image_url}}" style="width: 40%;">
-					<span class="congratulation-text">{{clan.clan_name}}</span>
+					<img src="{{environment.asset_base_url}}{{clan.image}}" style="width: 40%;">
+					<span class="congratulation-text">{{clan.name}}</span>
 					<!-- <span class="congratulation-text"> Elefantes </span> -->
 				</div>				
 			</div>
@@ -34,7 +34,7 @@
 				</div>
 				<a routerLink="/conquer/{{state.Current_Territory_Id}}">
 					<button mat-raised-button color="primary" style="height:50px;width: 200px;">
-						<span class="content-text">Conquistar</span>
+						<span class="content-text">Invitar</span>
 					</button>
 				</a>
 			</div>
@@ -119,7 +119,7 @@
 								<div class="col-sm-2 vertical-child-center">
 									<input type="radio" [checked] = "i==0" id='{{"avatar" + i}}' formControlName="avatar" value="{{item}}">
 									<label for='{{"avatar"+i}}'>
-										<img class="clan-img selected" [class.selected]= "item === myForm.value.avatar" src={{item}}>
+										<img class="clan-img selected" [class.selected]= "item === myForm.value.avatar" src={{environment.asset_base_url}}{{item}}>
 									</label>
 								</div>	
 							</ng-template>				

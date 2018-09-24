@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, AbstractControl } from '@angular/forms';
 import { AuthService } from '../services/auth.service';
 import { Router } from '@angular/router';
-
+import {GlobalState} from '../state';
 
 @Component({
   selector: 'app-login',
@@ -16,7 +16,7 @@ export class LoginComponent implements OnInit {
   user_id: AbstractControl;
   password: AbstractControl;
 
-  constructor(fb: FormBuilder, public authService: AuthService, private router: Router) {
+  constructor(fb: FormBuilder, public authService: AuthService, private router: Router,private globalState:GlobalState) {
     this.myForm = fb.group({
         'user_id': ['', Validators.required],
         'password': ['', Validators.required]
@@ -27,22 +27,30 @@ export class LoginComponent implements OnInit {
     this.password = this.myForm.controls['password'];
   }
 
-  login(user_id: string, password: string): boolean {
+  login(user_id: string, password: string) {
     this.message = '';
-    if (!this.authService.login(user_id, password)){
-      this.message = 'Incorrect credentials.';
-      setTimeout(function() {
-        this.message = '';
-      }.bind(this), 2500);
-      
-    }
-    
-    this.router.navigate(['map']);
-    return false;
+    this.authService.login(user_id,password)
+      .subscribe( resp => {
+        if(resp == "error") {
+          this.message = 'Invalid Credentials';
+        }else{
+          console.log(resp)
+          localStorage.setItem('token', resp.token);
+          this.authService.get_current_user().subscribe(
+            resp => {
+              this.globalState.Current_User_Id = resp.profile;
+              this.globalState.current_user = resp;
+              localStorage.setItem('currentUser',resp.profile);
+            }
+            )
+          this.router.navigate(['map'])
+        }
+      })
   }
 
   logout(): boolean {
     this.authService.logout();
+
     return false;
   }
 

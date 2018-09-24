@@ -17,7 +17,7 @@
 									<checkbox value="{{item['id']}}"> </checkbox>	
 								</div>
 								<div class="circle-border vertical-child-center" style="position: relative;">
-									<img src="{{item['image_url']}}" style="width: 100px;">
+									<img src="{{environment.asset_base_url}}{{item['avatar']}}" style="width: 100px;">
 								</div>
 							</div>
 							<div class="col-sm-6">
@@ -44,11 +44,17 @@
 							<span class="content-text"> TOTAL INVITADOS: {{selectedUsers.length}}/5</span>
 						</div>
 						<div class="col-sm-4">
+<<<<<<< HEAD
 							<a routerLink='/map'>
 								<button type="submit" mat-raised-button style="float: right;background: none;color: #fff;" class="store-button" color="primary">
 									<span class="">GUARDAR</span>
 								</button>
 							</a>						
+=======
+							<button (click) = "store()" mat-raised-button style="float: right;background: none;color: #fff;" class="store-button" color="primary">
+								<span class="">GUARDAR</span>
+							</button>							
+>>>>>>> 87dede5c99ba5886fcd3a6ac157437455bf0d215
 						</div>
 					</div>
 				</div>

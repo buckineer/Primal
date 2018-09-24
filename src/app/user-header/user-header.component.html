@@ -9,7 +9,7 @@
 <div id="container">
   <div id="avatar">
     <a routerLink="/profile">
-      <img src="{{user.image_url}}"> 
+      <img *ngIf= "user.avatar" src="{{environment.asset_base_url}}{{user.avatar}}" alt="blank"> 
     </a>
       
   </div>
