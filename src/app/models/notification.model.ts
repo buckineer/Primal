@@ -13,3 +13,7 @@ export class Notification {
         this.clan_image = clan_image;        
     }
 }
+// export class Notification_info{
+//       notifications:Notification[];
+//       last_id:0;
+// }

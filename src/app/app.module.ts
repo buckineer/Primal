@@ -102,6 +102,7 @@ import { TokenInterceptor } from './token.interceptor';
     BuyDialogComponent,
   ],
   providers: [
+    GlobalState,
     TerritoryService,
     AUTH_PROVIDERS,
     LoggedInGuard,
@@ -109,7 +110,6 @@ import { TokenInterceptor } from './token.interceptor';
     UserService,
     NotificationService,
     CommonService,
-    GlobalState,
     {
         provide: HTTP_INTERCEPTORS,
         useClass: TokenInterceptor,

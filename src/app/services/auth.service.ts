@@ -6,10 +6,11 @@ import { catchError, map, tap } from 'rxjs/operators';
 
 import { environment } from '../../environments/environment';
 import { Router } from '@angular/router';
+import { NotificationService } from './notification.service';
 @Injectable()
 export class AuthService {
   private api_base_url = environment.api_base_url;
-  constructor(private http: HttpClient,private router: Router) { }
+  constructor(private http: HttpClient,private router: Router,private notificationService:NotificationService) { }
 
   login(user_id: string, password: string):Observable<any> {
     var reqHeader = new HttpHeaders({ 'No-Auth':'True' });
@@ -23,8 +24,10 @@ export class AuthService {
       )     
   }
   logout(): any {
+
     localStorage.removeItem('token');
     localStorage.removeItem('currentUser');
+    this.notificationService.closeStream();
     this.router.navigate([''])
   }
 

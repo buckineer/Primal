@@ -38,9 +38,9 @@ export class LoginComponent implements OnInit {
           localStorage.setItem('token', resp.token);
           this.authService.get_current_user().subscribe(
             resp => {
-              localStorage.setItem('currentUser',resp.profile);
               this.globalState.Current_User_Id = resp.profile;
               this.globalState.current_user = resp;
+              localStorage.setItem('currentUser',resp.profile);
             }
             )
           this.router.navigate(['map'])

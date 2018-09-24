@@ -17,6 +17,11 @@ export class CommonService {
 
   constructor(private globalState:GlobalState,private http: HttpClient) { }
 
+  sendInvite(data):Observable<string>{
+      return this.http.post<string>(this.api_base_url+"/send_invites/"+this.globalState.Current_User_Id+"/",data).pipe(
+    catchError(this.handleError('Send Invite',"error"))
+    );
+  }
   getColors(): Observable<string[]> {
     return of(color_list);
   }
