@@ -1,22 +1,19 @@
-<div style="height: 80px;">
-    <div class="col-sm-1">
-    </div>
-    <div class="col-sm-6">
-        <a routerLink="/map">
-            <img src="/assets/images/logo/logo-b&w.png" style="width: 25%; height: 80px; margin-left: -30px; margin-top: -5px;">
-        </a>
-    </div>
-</div> -->
+
 
 <div class="row align-items-center" style="height: 100%;">
-	<div class="col-sm-3"></div>
-    <div class="col-sm-2">
+        <div class="col-sm-1">
+            
+        </div>
+        <div class="col-sm-6">
+            <a routerLink="/map">
+                <img src="/assets/images/logo/logo-b&w.png" style="width: 25%; height: 80px; margin-left: -30px; margin-top: -5px;">
+            </a>
+        </div>
+    
+    <div class="col-sm-1">
         <a routerLink="/notification" (click)="go_notification()">
             <div style="position: relative;">
-                <img src="../assets/images/icons/notification.png"> 
-                <div *ngIf="alarmCount > 0" class ="vertical-child-center" style="position: absolute;right: 5px;top: 0;color: #fff;width: 30px;height: 30px;border-radius: 50%;background-color: #f00;text-align: center;font-size: 15px;">
-                    <span>{{alarmCount}}</span>
-                </div>
+                <img src="../assets/images/icons/notification.png">
             </div>
         </a>
     </div>	
