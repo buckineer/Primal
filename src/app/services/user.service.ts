@@ -37,12 +37,15 @@ export class UserService {
     this.http.post(this.api_base_url+"/join_user_to_clan/"+user_id+"/",{'joined_clan':clan_id}).subscribe(
       resp => console.log(resp)
       )
-
-
     // var user = users.find(item => item.id === user_id);
     // user.joined_clan = clan_id;
-  }  
-
+  }
+  JoinClanToUserFromNotification(user_id:number,clan_id:number):Observable<any>{
+    return this.http.post<any>(this.api_base_url+"/join_user_to_clan/"+user_id+"/",{'joined_clan':clan_id}).pipe(
+      catchError(this.handleError('JoinClanToUserFromNotification','error')))
+    // var user = users.find(item => item.id === user_id);
+    // user.joined_clan = clan_id;
+  }
   private handleError<T> (operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
 

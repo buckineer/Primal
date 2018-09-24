@@ -1,8 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { Notification } from '../models/notification.model';
 import { NotificationService } from '../services/notification.service';
+import {MatDialog} from '@angular/material';
+import {JoinMessageDialogComponent} from '../join-message-dialog/join-message-dialog.component';
 import { Clan } from '../models/clan.model';
 import { ClanService } from '../services/clan.service';
+import { UserService } from '../services/user.service';
+import {GlobalState} from '../state';
 import { environment } from '../../environments/environment';
 @Component({
   selector: 'app-notification',
@@ -14,7 +18,10 @@ export class NotificationComponent implements OnInit {
   notifications: Notification[];
 
   constructor(public notificationService: NotificationService,
-              public clanService: ClanService) { }
+              public clanService: ClanService,
+              private userService: UserService,
+              private globalState:GlobalState,
+              public dialog: MatDialog) { }
 
   ngOnInit() {
     this.notificationService.getNotifications()
@@ -29,5 +36,25 @@ export class NotificationComponent implements OnInit {
       this.notificationService.markAsReadNotification(data)
         .subscribe()
     }
+  }
+  join(item:Notification){
+    var clanId = item.clan_id;
+    //         const dialogRef = this.dialog.open(JoinMessageDialogComponent, {
+    //       height: '380px',
+    //       minWidth:"800px",
+    //       panelClass:'select-avatar-dialog',
+    //       data:item
+    //     })
+    this.userService.JoinClanToUserFromNotification(this.globalState.Current_User_Id,clanId)
+    .subscribe(resp=>{
+      if(resp!="error"){
+        const dialogRef = this.dialog.open(JoinMessageDialogComponent, {
+          height: '380px',
+          minWidth:"800px",
+          panelClass:'select-avatar-dialog',
+          data:item
+        })
+      }
+    })
   }
 }

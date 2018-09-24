@@ -51,6 +51,7 @@ import {GlobalState} from './state';
 
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TokenInterceptor } from './token.interceptor';
+import { JoinMessageDialogComponent } from './join-message-dialog/join-message-dialog.component';
 
 
 
@@ -84,6 +85,7 @@ import { TokenInterceptor } from './token.interceptor';
     BuyDialogComponent,
     ClanRankingComponent,
     ClanAddedComponent,
+    JoinMessageDialogComponent,
 
   ],
   imports: [
@@ -100,6 +102,7 @@ import { TokenInterceptor } from './token.interceptor';
   entryComponents: [
     UserAvatarSelectDialogBodyComponent,
     BuyDialogComponent,
+    JoinMessageDialogComponent,
   ],
   providers: [
     GlobalState,
