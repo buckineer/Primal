@@ -1,27 +1,38 @@
-<div class="background-green">
-		<div class="row align-items-center" style="padding-top: 20px;">
-			<div class="col-sm-8">
-				<span class="title-text">RANKING</span>
-			</div>
-			<div class="col-sm-4">
-				<span class="content-text">PUNTOS</span>
-			</div>
+<div class="background-fx">
+	<app-user-header></app-user-header>
+	<div class="row align-items-center" style="padding-top: 20px;">
+		<div class="col-sm-8">
+			<span class="title-text">RANKING</span>
 		</div>
-		<div style="margin: 10px;">
-			<ng-template ngFor let-item [ngForOf]="users| slice :0 : 5" let-i="index">
-				<div class="row align-items-center" [class.selected]="item.id === current_user_id" style="margin-top: 20px;padding-left: 20px;">
-						<div class="col-sm-2 first">
-							<img src={{environment.asset_base_url}}{{item.avatar}} style="width: 80%;">
-						</div>
-						<div class="col-sm-6">
-							<span class="content-text">{{item.first_name}} {{item.last_name}}</span>
-						</div>
-						<div class="col-sm-4">
-							<span class="content-text">{{item.points}}</span>
-						</div>
+		<div class="col-sm-3" style="margin-left: 20px;">
+			<span class="content-text">PUNTOS</span>
+		</div>
+		<div class="col-sm-1" style="margin-top: -10px; margin-left: -50px;">
+			<a routerLink="/map">
+				<div>
+					<i class="material-icons md-bold md-60 md-white">close</i>
+				</div>				
+			</a>
+		</div>
+	</div>
+	<div style="margin: 10px;">
+		<ng-template ngFor let-item [ngForOf]="users| slice :0 : 5" let-i="index">
+			<div class="row align-items-center" [class.selected]="item.id === current_user_id" style="margin-top: 10px;">
+				<div class="col-sm-1" style="margin-left: 50px;">
+					<span class="content-text"><font size="6px">{{i+1}}.</font></span>
+				</div>	
+				<div class="col-sm-2" style="margin-left: -25px;">
+					<img src={{environment.asset_base_url}}{{item.avatar}} style="width: 60%;">
 				</div>
-			</ng-template>
+				<div class="col-sm-6" style="margin-left: -25px;">
+					<span class="content-text">{{item.first_name}} {{item.last_name}}</span>
+				</div>
+				<div class="col-sm-2">
+					<span class="content-text">{{item.points}}</span>
+				</div>
+			</div>
+		</ng-template>
 
-		</div>
+	</div>
 
 </div>

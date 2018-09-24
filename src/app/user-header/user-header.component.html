@@ -1,26 +1,29 @@
-<!-- <div class="container">
+<div style="position:relative;">
+  <div class="row header" style="height: 80px; width: 100%;opacity: 0.7;">
+  </div>
   <div class="row">
-    <div class="col-sm-2" style="border:3px solid green">
-      <img src="../assets/images/avatars/bronnikov for vs.png" style="width: 100px; height: 100px;">
+    <div class="col-sm-1">
     </div>
-  </div>
-</div> -->
-
-<div id="container">
-  <div id="avatar">
-    <a routerLink="/profile">
-      <img *ngIf= "user.avatar" src="{{environment.asset_base_url}}{{user.avatar}}" alt="blank"> 
-    </a>
-      
-  </div>
-  <div id="avatar-property" style="margin-top: 20px;">
-    <div style="float: left;">
-      <label >PUNTOS:&nbsp;{{user.points}}</label><br>
-      <label>NIVEL:&nbsp;{{user.level}}</label>     
+    <div class="col-sm-1">
+      <a routerLink="/profile">
+        <img *ngIf= "user.avatar" src="{{environment.asset_base_url}}{{user.avatar}}" alt="blank"> 
+      </a>
     </div>
-    <div style="margin-left: 45px;float: left;">
-      <label>MONEDAS:&nbsp;{{user.coins}}</label>
+    <div class="col-sm-2">
+      <div style="float: left;">
+        <br />
+        <label>{{user.first_name}} {{user.last_name}}</label>
+        <label><font color=#FE8D00>user.level_name</font></label>     
+      </div>
+    </div>
+    <div class="col-sm-5">
+    </div>
+    <div class="col-sm-2">
+      <div style="float: left;">
+        <br />
+        <label>PUNTOS&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color=#FE8D00>{{user.points}}</font></label><br>
+        <label>MONEDAS&nbsp;&nbsp;<font color=#FE8D00>{{user.coins}}</font></label>
+      </div>
     </div>
   </div>
 </div>
-

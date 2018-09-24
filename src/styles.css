@@ -1,6 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 .material-icons.md-80 { font-size: 80px; }
+.material-icons.md-60 { font-size: 60px; }
 .material-icons.md-bold { font-weight: bold; }
 .material-icons.md-white { color: rgba(255, 255, 255, 1.0); }
 
@@ -10,7 +11,7 @@
     position: relative;
     width:100%;
     min-height: 700px;
-    display: inline-block;
+    /* display: inline-block; */
 }
 .background-nofx {
     background-image: url(/assets/images/map/map-final-2xNo_fx.png);
@@ -18,7 +19,7 @@
     position: relative;
     width:100%;
     min-height: 700px;
-    display: inline-block;
+    /* display: inline-block; */
 }
 .background-green{
     background-color: #3F9D2F;
@@ -26,7 +27,7 @@
     position: relative;
     width:100%;
     min-height: 700px;
-    display: inline-block;
+    /* display: inline-block; */
 }
 button{
     border-radius: 5px;
@@ -55,7 +56,6 @@ button{
     font-weight: 400;
     font-size: 30px;
     text-align: left;
-    margin-left: 
 }
 .select-avatar-dialog .mat-dialog-container{
     border-radius: 25px;

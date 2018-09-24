@@ -1,4 +1,5 @@
-<div class="background-green">
+<div class="background-fx">
+	<app-user-header></app-user-header>
 	<div class="content container" style="position: relative;">
 		<a routerLink="/map">
 			<div style="position: absolute; right: -30px;top: -30px;">
@@ -21,7 +22,7 @@
 					</div>
 					<div style="margin-top: 10px;">
 						<a routerLink="/profile/edit">
-							<button class="button-edit" mat-raised-button><font size="5px">EDITAR</font></button>
+							<button class="button-edit" mat-raised-button><font size="5px" color="#FE8D00"><strong>EDITAR</strong></font></button>
 						</a>
 					</div>
 				</div>
@@ -74,7 +75,7 @@
 					</div>
 					<div class="row" style="margin-left: 10px;">
 							<a routerLink="/clan/{{clan?.id}}">
-								<button class="button-edit" mat-raised-button><font size="5px">VER</font></button>
+								<button class="button-edit" mat-raised-button><font size="5px" color="#FE8D00"><strong>VER</strong></font></button>
 							</a>						
 					</div>
 				</ng-container>

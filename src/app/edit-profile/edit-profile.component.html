@@ -1,4 +1,5 @@
-<div class="background-green">
+<div class="background-fx">
+	<app-user-header></app-user-header>
 	<div class="content container" style="position: relative;">
 		<a routerLink="/map">
 			<div style="position: absolute; right: -30px;top: -30px;">
@@ -55,7 +56,7 @@
 						</div>
 					</div>
 					<div style="margin-top: 50px;">
-						<button class="button-store" mat-raised-button type="submit"><font size="5px">GUARDAR</font></button>
+						<button class="button-store" mat-raised-button type="submit"><font size="5px" color="#FE8D00"><strong>GUARDAR</strong></font></button>
 					</div>
 				</form>
 			</div>
@@ -67,7 +68,7 @@
                 	<img src="{{environment.asset_base_url}}{{user.avatar}}" class="user-image">
                 </div>
                 <div style="margin-top: 20px;">
-					<button (click)="openDialog()" class="button-store" mat-raised-button><font size="5px">EDITAR</font></button>
+					<button (click)="openDialog()" class="button-store" mat-raised-button><font size="5px" color="#FE8D00"><strong>EDITAR</strong></font></button>
                 </div>
 			</div>
 		</div>

@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {EventSourcePolyfill} from 'ng-event-source';
 import { NotificationService } from '../services/notification.service';
 @Component({
   selector: 'app-header',
@@ -9,8 +8,7 @@ import { NotificationService } from '../services/notification.service';
 export class HeaderComponent implements OnInit {
 
   alarmCount:number;
-  constructor(public notificationService: NotificationService) { 
-  	
+  constructor(public notificationService: NotificationService) {
   }
 
   ngOnInit() {

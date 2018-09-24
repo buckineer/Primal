@@ -1,29 +1,40 @@
-<div class="background-green">
-    <div class="content">
-      <div class="row align-items-center">
-        <div class="col-sm-8">
-          <span class="title-text">REGALOS</span>
-        </div>
+<div class="background-fx">
+  <app-user-header></app-user-header>
+  <div class="content">
+    <div class="row align-items-center">
+      <div class="col-sm-8">
+        <span class="title-text">REGALOS</span>
       </div>
-      <div style="width: 95%; overflow: hidden;">
-          <div style="padding-left: 5%;" class="hidden-scroll">
-            <ng-template ngFor let-item [ngForOf]="gifts" let-i="index">
-              <div class="row align-items-center" style="width: 95%;margin-top: 3%">
-                <div class="col-sm-8">
-                  <label class="item-title-text"> {{ item.title }}</label>
-                  <br>
-                  <label class="content-text"> {{ item.points }} monedas </label>
-                </div>     
-                <div *ngIf=" (item.state == 'can buy') " class="col-sm-2">
-                  <button (click)="openDialog(item)" class="button-join" mat-raised-button>COMPRAR</button>
-                </div>
-                <div *ngIf=" (item.state == 'can\'t buy' || item.state == 'already bought') " class="col-sm-2"> 
-                    <button type="submit" class="lock-button-join" mat-raised-button>COMPRAR</button>
-                    <img src="../assets/images/icons/lock small.png" id="input_img">
-                </div>
-            </div>
-          </ng-template>
-        </div>
+      <div class="col-sm-2">
+        
+      </div>
+      <div class="col-sm-2" style="margin-top: -20px;">
+        <a routerLink="/map">
+          <div>
+            <i class="material-icons md-bold md-60 md-white">close</i>
+          </div>				
+        </a>
+      </div>
+    </div>
+    <div style="width: 95%; overflow: hidden;">
+        <div style="padding-left: 5%;" class="hidden-scroll">
+          <ng-template ngFor let-item [ngForOf]="gifts" let-i="index">
+            <div class="row align-items-center" style="width: 95%;margin-top: 3%">
+              <div class="col-sm-8">
+                <label class="item-title-text"> {{ item.title }}</label>
+                <br>
+                <label class="content-text"> {{ item.points }} monedas </label>
+              </div>     
+              <div *ngIf=" (item.state == 'can buy') " class="col-sm-2">
+                <button (click)="openDialog(item)" class="button-join" mat-raised-button>COMPRAR</button>
+              </div>
+              <div *ngIf=" (item.state == 'can\'t buy' || item.state == 'already bought') " class="col-sm-2"> 
+                  <button type="submit" class="lock-button-join" mat-raised-button>COMPRAR</button>
+                  <img src="../assets/images/icons/lock small.png" id="input_img">
+              </div>
+          </div>
+        </ng-template>
       </div>
     </div>
   </div>
+</div>

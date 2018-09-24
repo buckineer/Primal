@@ -1,4 +1,5 @@
-<div class="background-green">
+<div class="background-fx">
+    <app-user-header></app-user-header>
     <div class="content">
       <div class="row align-items-center" style="padding-top: 0%;">
         <div class="col-sm-4">
@@ -6,13 +7,13 @@
         </div>
         <div *ngIf="is_admin_clan()" class="col-sm-2" style="margin-left: 35%; margin-top: -5%;">
           <a routerLink = "/invite">
-            <button class="button-invite" mat-raised-button><font size="5px">Invitar Luchadores</font></button>
+            <button class="button-invite" mat-raised-button><font size="5px" color="#FE8D00"><strong>Invitar Luchadores</strong></font></button>
           </a>
         </div>
 
         <div *ngIf="!is_admin_clan()" class="col-sm-2" style="margin-left: 35%; margin-top: -5%;">
           <a routerLink = "/clan/home">
-            <button class="button-change" mat-raised-button><font size="5px">Cambiar clan</font></button>
+            <button class="button-change" mat-raised-button><font size="5px" color="#FE8D00"><strong>Cambiar clan</strong></font></button>
           </a> 
         </div>
       </div>
