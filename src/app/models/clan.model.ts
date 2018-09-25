@@ -15,7 +15,7 @@ export class Clan {
     admin_user: number;
     
     constructor(admin_user_id?:number,
-                id?:number,
+                id:number = -1,
                 clan_name?:string,
                 max_members?: number, 
                 joined_members?: number,

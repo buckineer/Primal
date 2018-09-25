@@ -16,5 +16,4 @@ export class GisComponent implements OnInit {
   		this.alarmCount = resp;
   	})
   }
-
 }

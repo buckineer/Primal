@@ -16,10 +16,10 @@
 <div class="row align-items-center" style="height: 100%;">
 	<div class="col-sm-3"></div>
     <div class="col-sm-2">
-        <a routerLink="/notification">
+        <a routerLink="/notification" (click)="go_notification()">
             <div style="position: relative;">
                 <img src="../assets/images/icons/notification.png"> 
-                <div *ngIf="alarmCount>0" class ="vertical-child-center" style="position: absolute;right: 5px;top: 0;color: #fff;width: 30px;height: 30px;border-radius: 50%;background-color: #f00;text-align: center;font-size: 15px;">
+                <div *ngIf="alarmCount > 0" class ="vertical-child-center" style="position: absolute;right: 5px;top: 0;color: #fff;width: 30px;height: 30px;border-radius: 50%;background-color: #f00;text-align: center;font-size: 15px;">
                     <span>{{alarmCount}}</span>
                 </div>
             </div>

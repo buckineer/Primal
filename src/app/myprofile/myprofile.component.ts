@@ -44,10 +44,10 @@ export class MyProfileComponent implements OnInit {
       clan_id = user.admin_clan
     else 
       clan_id = user.joined_clan
-    if(clan_id != -1){
+    if(clan_id != -1 && clan_id!=null){
       this.clanService.getClan(clan_id).subscribe(ret_value=>this.clan = ret_value);  
     }else{
-      this.clan = null;
+      this.clan = new Clan;
     }  	
   }
 }
