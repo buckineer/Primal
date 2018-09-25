@@ -36,6 +36,8 @@ export class LoginComponent implements OnInit {
         }else{
           console.log(resp)
           localStorage.setItem('token', resp.token);
+          this.globalState.Current_User_Id = resp.user_id;
+          console.log(resp.user_id);
           this.authService.get_current_user().subscribe(
             resp => {
               this.globalState.Current_User_Id = resp.profile;
