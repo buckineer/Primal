@@ -9,6 +9,7 @@ export class User {
     avatar:string;
     joined_clan : number;        //clan id
     level:string;
+    level_name:string;
     admin_clan:number;
     badge_list:any[];
 
@@ -20,6 +21,7 @@ export class User {
     			image_url:string="",
     			joined_clan:number =-1,        //not joined to any clan
                 level:string = "1",
+                level_name:string = "Unknown",
                 email:string = "default@default.com",
                 phone:string = "000-000-000",
                 admin_clan:number =-1,
@@ -33,6 +35,7 @@ export class User {
         this.avatar = image_url;
         this.joined_clan = joined_clan;
         this.level = level;
+        this.level_name = level_name
         this.email = email;
         this.phone_number = phone;
         this.admin_clan = admin_clan
