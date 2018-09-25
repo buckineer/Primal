@@ -1,6 +1,6 @@
 <div class="background-nofx">
 	<app-user-header></app-user-header>
-	<div class="content container" style="position: relative;">
+	<div class="content" style="position: relative;">
 		<div style="position: absolute; right: -30px;top: -30px;">
 			<a routerLink="/map">
 				<div>
@@ -12,7 +12,7 @@
 			<div class="col">
 				<span class="title-text">CLANES ISLAND</span>
 			</div>
-		</div>
+		
 		<div style="width: 90%;overflow: hidden;">
 			<div style="padding-left: 12%;" class="ul">
 				<ng-template ngFor let-item [ngForOf]="clans" let-i="index">
@@ -37,14 +37,15 @@
 				</ng-template>
 			</div>
 		</div>
+		</div>
 		
-		<div class="row" style="padding-left: 12%;margin-top: 30px;">
-			<div class="col-sm-6">
+		<div class="row" style="padding-left: 12%;margin-top: 0px;">
+			<div class="col-sm-8">
 				<span class="content-text" style="font-weight: 600;">O CREA TU PROPIO CLAN</span>
 			</div>
 			<div class="col-sm-2">
 				<a routerLink="/clan/create">
-					<button style="width: 150%; height:50px;background-color: #0B3E78; margin-left: 70%;" mat-raised-button class="main-button" color="primary">
+					<button style="width: 150%; height:50px; margin-top: -10px; background-color: #FE8D00;" mat-raised-button class="main-button" color="primary">
 						<span>CREAR CLAN</span>
 					</button>
 				</a>
