@@ -1,6 +1,6 @@
 .content {
     margin: 50px;
-	min-height: 700px;
+	min-height: 550px;
 	width: 90%;
 	background-color: rgba(0, 0, 0, 0.3);
 	float: left
@@ -9,7 +9,7 @@
     min-height: 130px;
 }
 .ul{
-    height: 430px;
+    height: 370px;
     width: 100%;
     border-bottom-style: solid;
     border-bottom-color: #fff;
