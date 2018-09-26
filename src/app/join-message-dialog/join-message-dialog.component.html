@@ -1,5 +1,5 @@
 <div class="container">
-	<div class="row align-items-center" style="margin-top: 50px;position: relative;">
+	<div class="row align-items-center" style="margin-top: 30px;position: relative;">
 			<div style="position: absolute; right: 10px;top: 0px;color: #efba1f;z-index: 1" (click)="close()">
 				<i class="pointer material-icons md-bold md-80"   >close</i>	
 			</div>
@@ -12,7 +12,7 @@
 	<div class="row">
 		
 	</div>
-	<div class="row justify-content-center" style="margin-top: 40px;margin-bottom: 20px;">
+	<div class="row justify-content-center" style="margin-top: 20px;margin-bottom: 10px;">
 			<div class="vertical-child-center" >
 				<img src="{{environment.asset_base_url}}{{notification.clan_image}}" style="width: 130px;">
 <!-- 				<img src="/assets/images/icons/present.png" style="width: 150px;background-color: #2d7022"> -->
@@ -23,8 +23,8 @@
 	</div>
 	<div class="row justify-content-center" style="margin-bottom: 20px;">
 		<a routerLink="/clan/{{notification.clan_id}}">
-			<button mat-raised-button [mat-dialog-close]="closed" color="primary" style="height:50px;width: 160px;">
-				<span class="content-text">Ver clan</span>
+			<button mat-raised-button [mat-dialog-close]="closed" color="primary" style="height:50px;width: 160px;border-radius:25px;background-color:#FE8D00;">
+				<span class="content-text"><font color="white">Ver clan</font></span>
 			</button>
 		</a>
 	</div>
