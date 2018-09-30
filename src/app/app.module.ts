@@ -31,6 +31,8 @@ import { ClanAddedComponent } from './clan-added/clan-added.component';
 
 import {CheckboxGroupComponent} from './component/checkbox-group.component';
 import {CheckboxComponent} from './component/checkbox.component';
+import { JoinMessageDialogComponent } from './join-message-dialog/join-message-dialog.component';
+import { ResetPasswordComponent } from './reset-password/reset-password.component';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -51,7 +53,6 @@ import {GlobalState} from './state';
 
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TokenInterceptor } from './token.interceptor';
-import { JoinMessageDialogComponent } from './join-message-dialog/join-message-dialog.component';
 
 
 
@@ -86,6 +87,7 @@ import { JoinMessageDialogComponent } from './join-message-dialog/join-message-d
     ClanRankingComponent,
     ClanAddedComponent,
     JoinMessageDialogComponent,
+    ResetPasswordComponent,
 
   ],
   imports: [

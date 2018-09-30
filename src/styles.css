@@ -4,7 +4,9 @@
 .material-icons.md-60 { font-size: 60px; }
 .material-icons.md-bold { font-weight: bold; }
 .material-icons.md-white { color: rgba(255, 255, 255, 1.0); }
-
+.container-fluid{
+    padding: 0px;
+}
 .background-fx {
     background-image: url(/assets/images/map/map-final-2x.png);
     background-size: 100% 100%;

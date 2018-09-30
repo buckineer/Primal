@@ -18,6 +18,7 @@ import { GiftComponent } from './gift/gift.component';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
 import { ClanRankingComponent } from './clan-ranking/clan-ranking.component';
 import { ClanAddedComponent } from './clan-added/clan-added.component';
+import { ResetPasswordComponent } from './reset-password/reset-password.component';
 
 const mainRoutes: Routes = [
 	{ path: '', redirectTo: '/map', pathMatch: 'full' },
@@ -40,6 +41,7 @@ const mainRoutes: Routes = [
 
 const routes: Routes = [
 	{ path: 'login', component: LoginComponent },
+	{ path: 'reset_password', component: ResetPasswordComponent },
 	{ path: '', component:MainComponent, children:mainRoutes, canActivate: [LoggedInGuard]}
 ];
 

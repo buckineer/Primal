@@ -1,92 +1,91 @@
-img.login {
-    width: 80%;
-    height: 70%;
-    margin-top: 20%;
-    margin-left: 10%;
+.login{
+    width: 33.2%;
+    height: 80%;
+    left: 5.3%;
+    top: 12%;
+    position: absolute;
 }
-
-img.top-logo {
-    width: 80%;
-    height: 10%;
-    margin-left: 5%;
+.logo{
+    width: 36.3%;
+    height: 41%;
+    left: 51%;
+    top: -5%;
+    position: absolute;
 }
-
-div.login {
-    width: 80%;
-    height: 500px;
+.login-form{
+    width: 34.7%;
+    height: 64.1%;
+    left:52.85%;
+    top: 29%;
     background-color: #88C27E;
-    margin-top: -8%;
-    margin-left: 5%;
-    border-radius: 3%;
+    border-radius: 10px;
+    position: absolute;
+
+}
+.login img{
+    width: 100%;
+    height: 100%;
+}
+.logo img{
+    width: 100%;
+    height: 100%;
 }
 
 img.user-icon {
-    width: 25%;
-    margin-top: 10%;
-    margin-left: 35%;
+    width: 134px;
+    height: 134px;
+    display: block;
+    margin: auto;
 }
-
-#input_container { 
-    position:relative;
-    padding:0;
-    margin:0;
+.login-form-content{
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-top: 15px;
 }
-
-#input {
-    width: 80%; 
-    height:40px;
-    margin-left: 10%;
-    margin-top: 5%;
-    border-radius: 5%;
+.comment-text{
+    margin-top: 30px;
+    margin-bottom: 30px;
+    text-align: center;
 }
-
-#input_img {
-    position:absolute;
-    bottom: 20%;
-    left: 80%;
-    width: 5%;
-    height: 30%;
+.comment-text-span{
+    font-size: 20px;
+    color: #5c5c5c;
+    line-height: 20px;
 }
-
-input, select {
-    width: 80%;
-    margin-top: 5%;
-    margin-left: 10%;
-    padding: 3%;
-    display: inline-block;
+.input_container{
+    margin-top: 20px;
+    position: relative;
+}
+.input_container input{
+    padding-right: 45px;
+    padding-left: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-radius: 5px;
     border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-    color: #8c8c8c;
-    font-size: 12px;
+    font-size: 15px;
+    height: 30px;
+    width: 100%;
 }
-
-button.button-login {
+.input_container span{
+    position: absolute;
+    height: 100%;
+    width: 30px;
+    right: 5px;
+    top: 0;
+    align-items: center;
+}
+.input_container .material-icons{
+    font-size: 20px;
+    color: #666666;
+}
+.submit-btn{
     background-color: #3F9D2F;
     color: white;
-    margin-top: 5%;
-    margin-left: 10%;
-    width: 80%;
+    margin-top: 15px;
+    width: 100%;    
 }
-
 label.notify {
     margin-top: 5%;
     margin-left: 35%;    
 }
-
-::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-    color:#8c8c8c;
-    font-size: 12px;
-  }
-  ::-moz-placeholder { /* Firefox 19+ */
-    color: #8c8c8c;
-    font-size: 12px;
-  }
-  :-ms-input-placeholder { /* IE 10+ */
-    color: #8c8c8c;
-    font-size: 12px;
-  }
-  :-moz-placeholder { /* Firefox 18- */
-    color: #8c8c8c;
-    font-size: 12px;
-  }

@@ -18,6 +18,12 @@ export class AuthService {
       catchError(this.handleError('login',['error']))
       )      
   }
+  reset_password(email:string):Observable<any>{
+    var reqHeader = new HttpHeaders({ 'No-Auth':'True' });
+    return this.http.post(this.api_base_url+"/reset_password/",{'email':email}, { headers: reqHeader }).pipe(
+      catchError(this.handleError('reset_password',{'type':'error','message':'unknown'}))
+      )
+  }
   get_current_user():Observable<any>{
     return this.http.get(this.api_base_url+"/current_user/").pipe(
       catchError(this.handleError('login',['error']))
@@ -46,7 +52,7 @@ export class AuthService {
 
       // TODO: better job of transforming error for user consumption
       console.log(`${operation} failed: ${error.message}`);
-
+      console.log(error);
       // Let the app keep running by returning an empty result.
       return of(result as T);
     };

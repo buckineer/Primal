@@ -55,7 +55,9 @@ export class LoginComponent implements OnInit {
 
     return false;
   }
-
+  go_to_forgot(){
+    this.router.navigate(['/reset_password']);
+  }
   ngOnInit() {
   }
 
