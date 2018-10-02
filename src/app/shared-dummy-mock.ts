@@ -17,10 +17,14 @@ export const clan_avatar_list=['/images/clans/object1.png',
                                 '/images/clans/object6.png',
                               ];
 export const user_avatar_list=[
-                              '/images/avatars Final/T1h Sapiens Head.png',
-                              '/images/avatars Final/T2h Sapiens Head.png',
-                              '/images/avatars Final/T3h Sapiens Head.png',
-                              '/images/avatars Final/T4h Sapiens Head.png',
+  { 'value': 'T1',
+    'image':'/images/avatars Final/T1h Sapiens Head.png'},
+  { 'value': 'T2',
+    'image':'/images/avatars Final/T2h Sapiens Head.png'},
+  { 'value': 'T3',
+    'image':'/images/avatars Final/T3h Sapiens Head.png'},
+  { 'value': 'T4',
+    'image':'/images/avatars Final/T4h Sapiens Head.png'},
 ]
 export const territories:Territory[]=[
   // {id:1,title:"Bosque Impenetrable",reaching_min_points:1000,image_url:"/assets/images/map/Costa Pesca.png",starting_date:new Date(2018, 8, 11),ending_date:null,lock_state:true,clan_info:"orange",badge_url:"/assets/images/clans/object6.png",badge_text:"This is test"},

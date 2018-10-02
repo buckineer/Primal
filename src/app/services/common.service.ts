@@ -50,7 +50,7 @@ export class CommonService {
 
   }
 
-  getAvatarImages():Observable<string[]>{
+  getAvatarImages():Observable<any[]>{
   	return of(user_avatar_list);
   }
 

@@ -19,6 +19,7 @@ import { EditProfileComponent } from './edit-profile/edit-profile.component';
 import { ClanRankingComponent } from './clan-ranking/clan-ranking.component';
 import { ClanAddedComponent } from './clan-added/clan-added.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
+import { UpdatePasswordComponent } from './update-password/update-password.component';
 
 const mainRoutes: Routes = [
 	{ path: '', redirectTo: '/map', pathMatch: 'full' },
@@ -37,6 +38,7 @@ const mainRoutes: Routes = [
 	{ path: 'info', component: InfoComponent},
 	{ path: 'gift', component: GiftComponent},
 	{ path: 'clan/:id', component: ClanComponent },
+	{ path: 'update_password',component:UpdatePasswordComponent}
 	];
 
 const routes: Routes = [

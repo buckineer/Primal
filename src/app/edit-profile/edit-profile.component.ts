@@ -8,6 +8,18 @@ import {GlobalState} from '../state';
 import { Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
 import {environment} from '../../environments/environment';
+
+var AVATAR_IMAGE_NAMES={
+  1:'a Autralophitecus Head',
+  2:'b Hábilis Head',
+  3:'c Ergaster Head',
+  4:'d Erectus Head',
+  5:'e Antecessor Head',
+  6:'f Heidelbergenis Head',
+  7:'g Neanderthal Head',
+  8:'h Sapiens Head',
+};
+
 @Component({
   selector: 'app-edit-profile',
   templateUrl: './edit-profile.component.html',
@@ -36,13 +48,15 @@ export class EditProfileComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);
-      this.user.avatar = result;
+      this.user.avatar_type = result;
       var data = {'avatar':result}
 
       this.userService.updateUser(this.user.id, data)
         .subscribe(resp=>{
           if(resp=="success")
-            this.globalState.current_user.avatar = this.user.avatar;
+            this.globalState.current_user.avatar_type = this.user.avatar_type;
+            this.globalState.current_user.avatar = "/images/avatars Final/"+this.user.avatar_type+AVATAR_IMAGE_NAMES[this.user.level]+".png";
+            this.user.avatar = this.globalState.current_user.avatar;
         });
 
     });

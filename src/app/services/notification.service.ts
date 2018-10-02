@@ -47,7 +47,8 @@ export class NotificationService {
   	})
   }
   closeStream(){
-    this.eventSource.close();
+    if(this.eventSource)
+      this.eventSource.close();
   }
   getNotifications(): Observable<Notification[]> {
     return this.http.get<Notification[]>(this.api_base_url+"/read_notifications/"+this.globalState.Current_User_Id+"/").pipe(

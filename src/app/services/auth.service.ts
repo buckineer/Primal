@@ -24,6 +24,12 @@ export class AuthService {
       catchError(this.handleError('reset_password',{'type':'error','message':'unknown'}))
       )
   }
+  update_password(old_pwd , new_pwd:string):Observable<any>{
+    var data={'old_pwd':old_pwd,'new_pwd':new_pwd};
+    return this.http.post(this.api_base_url+"/update_password/",data).pipe(
+      catchError(this.handleError('update_password',{'type':'error','message':'unknown'}))
+      )
+  }
   get_current_user():Observable<any>{
     return this.http.get(this.api_base_url+"/current_user/").pipe(
       catchError(this.handleError('login',['error']))

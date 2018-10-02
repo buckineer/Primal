@@ -19,11 +19,11 @@ export class UserAvatarSelectDialogBodyComponent implements OnInit {
   }
 
   ngOnInit() {
-	this.selected = this.data;
+	  this.selected = this.data;
   	this.commonService.getAvatarImages().subscribe(ret_value=>this.avatars=ret_value);
   }
-  set_selected(value:string){
-  	console.log("selecdte=======",value);
-  	this.selected = value;
+  set_selected(item:any){
+  	console.log("selected=======",item);
+  	this.selected = item.value;
   }
 }

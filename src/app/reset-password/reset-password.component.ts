@@ -33,7 +33,6 @@ export class ResetPasswordComponent implements OnInit {
             this.is_reset_done = true;
     			}
     		});
-    	console.log('you submitted value', form);
     }else{
   		if (this.myForm.controls['email'].errors.required){
   			this.message="required";

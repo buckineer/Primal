@@ -1,5 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import "css.css";
+
 .material-icons.md-80 { font-size: 80px; }
 .material-icons.md-60 { font-size: 60px; }
 .material-icons.md-bold { font-weight: bold; }
@@ -77,4 +79,18 @@ button{
 .dialog .mat-dialog-container{
     border-radius: 25px;
 }
-
+.btn-font1{
+    font-size: 24px;
+    font-family: Raleway;
+    font-weight: 600;
+}
+.content-font1{
+    font-size: 32px;
+    font-family: Raleway;
+    font-weight: 800;
+}
+.content-font2{
+    font-size: 24px;
+    font-family: Raleway;
+    font-weight: 300;
+}

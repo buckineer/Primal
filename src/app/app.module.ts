@@ -33,7 +33,7 @@ import {CheckboxGroupComponent} from './component/checkbox-group.component';
 import {CheckboxComponent} from './component/checkbox.component';
 import { JoinMessageDialogComponent } from './join-message-dialog/join-message-dialog.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
-
+import { UpdatePasswordComponent } from './update-password/update-password.component';
 
 import { AppRoutingModule } from './app-routing.module';
 import { MatButtonModule, MatCheckboxModule ,MatDialogModule } from '@angular/material';
@@ -53,6 +53,7 @@ import {GlobalState} from './state';
 
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TokenInterceptor } from './token.interceptor';
+
 
 
 
@@ -88,6 +89,7 @@ import { TokenInterceptor } from './token.interceptor';
     ClanAddedComponent,
     JoinMessageDialogComponent,
     ResetPasswordComponent,
+    UpdatePasswordComponent,
 
   ],
   imports: [

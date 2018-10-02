@@ -12,7 +12,7 @@ export class User {
     level_name:string;
     admin_clan:number;
     badge_list:any[];
-
+    avatar_type:string;
     constructor(id: number=0,
     			first_name: string="",
     			last_name:string="",
