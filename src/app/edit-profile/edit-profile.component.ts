@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators, AbstractControl } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, AbstractControl,FormControl } from '@angular/forms';
 import {MatDialog} from '@angular/material';
 import {UserAvatarSelectDialogBodyComponent} from '../user-avatar-select-dialog-body/user-avatar-select-dialog-body.component';
 import { UserService } from '../services/user.service';
@@ -76,6 +76,16 @@ export class EditProfileComponent implements OnInit {
                            'phone':user.phone_number
     })
   }
+  validateAllFormFields(formGroup: FormGroup) {         //{1}
+    Object.keys(formGroup.controls).forEach(field => {  //{2}
+      const control = formGroup.get(field);             //{3}
+      if (control instanceof FormControl) {             //{4}
+        control.markAsTouched({ onlySelf: true });
+      } else if (control instanceof FormGroup) {        //{5}
+        this.validateAllFormFields(control);            //{6}
+      }
+    });
+  }
   onSubmit(form:any){
   	console.log("Submit");
     console.log(this.myForm);
@@ -94,11 +104,13 @@ export class EditProfileComponent implements OnInit {
         .subscribe( resp=>{
           if(resp=="success")
             this.globalState.current_user.first_name = this.user.first_name
-          this.globalState.current_user.last_name = this.user.last_name
-          this.globalState.current_user.email = this.user.email
-          this.globalState.current_user.phone_number = this.user.phone_number
+            this.globalState.current_user.last_name = this.user.last_name
+            this.globalState.current_user.email = this.user.email
+            this.globalState.current_user.phone_number = this.user.phone_number
             this.router.navigate(['/profile']);
         });
+    }else{
+      this.validateAllFormFields(this.myForm);
     }
   }
 }
