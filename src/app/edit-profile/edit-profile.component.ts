@@ -30,6 +30,7 @@ export class EditProfileComponent implements OnInit {
   myForm: FormGroup;
   user: User = new User;
   environment = environment
+  user_image_url:string;
   constructor(fb: FormBuilder,private authService: AuthService,public userService:UserService,public globalState:GlobalState,public dialog: MatDialog,private router: Router) { 
   	this.myForm = fb.group({
   		'first_name': ['',Validators.required],
@@ -43,20 +44,20 @@ export class EditProfileComponent implements OnInit {
       height: '380px',
       minWidth:"800px",
       panelClass:'dialog',
-      data:this.user.avatar
+      data:{'avatar':this.user.avatar,'level':this.user.level}
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
-      this.user.avatar_type = result;
-      var data = {'avatar':result}
+      var data = {'avatar':result['avatar']}
 
       this.userService.updateUser(this.user.id, data)
         .subscribe(resp=>{
           if(resp=="success")
-            this.globalState.current_user.avatar_type = this.user.avatar_type;
-            this.globalState.current_user.avatar = "/images/avatars Final/"+this.user.avatar_type+AVATAR_IMAGE_NAMES[this.user.level]+".png";
-            this.user.avatar = this.globalState.current_user.avatar;
+            this.globalState.current_user.avatar = data['avatar'];
+            this.globalState.current_user.image_url = this.userService.get_avatar_url(this.globalState.current_user)
+            this.user = this.globalState.current_user
+            this.user_image_url = this.globalState.current_user.image_url
+            
         });
 
     });
@@ -70,6 +71,7 @@ export class EditProfileComponent implements OnInit {
   }
   InitForm(user:User){
     console.log("Init form ",user)
+    this.user_image_url = this.userService.get_avatar_url(user)
     this.myForm.setValue({'first_name':user.first_name,
                            'last_name':user.last_name,
                            'email':user.email,

@@ -9,7 +9,7 @@ import {environment} from '../../environments/environment';
 })
 export class UserAvatarSelectDialogBodyComponent implements OnInit {
   avatars:string[];
-  selected:string;
+  selected:{};
   environment = environment
   constructor(private commonService:CommonService,@Inject(MAT_DIALOG_DATA) public data: any,public matDialogRef: MatDialogRef<UserAvatarSelectDialogBodyComponent>) { 
     matDialogRef.disableClose = true;//disable default close operation
@@ -23,7 +23,6 @@ export class UserAvatarSelectDialogBodyComponent implements OnInit {
   	this.commonService.getAvatarImages().subscribe(ret_value=>this.avatars=ret_value);
   }
   set_selected(item:any){
-  	console.log("selected=======",item);
-  	this.selected = item.value;
+  	this.selected['avatar'] = item.value;
   }
 }

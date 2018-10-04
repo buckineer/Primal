@@ -8,19 +8,19 @@ export class User {
     coins: number;
     avatar:string;
     joined_clan : number;        //clan id
-    level:string;
+    level:number;
     level_name:string;
     admin_clan:number;
     badge_list:any[];
-    avatar_type:string;
+    image_url:string;
     constructor(id: number=0,
     			first_name: string="",
     			last_name:string="",
     			points:number=0,
     			coins:number=0,
-    			image_url:string="",
+    			image_url:string="",    // avatar_type
     			joined_clan:number =-1,        //not joined to any clan
-                level:string = "1",
+                level:number = 1,
                 level_name:string = "Unknown",
                 email:string = "default@default.com",
                 phone:string = "000-000-000",
@@ -41,4 +41,5 @@ export class User {
         this.admin_clan = admin_clan
         this.badge_list = badge_list
     }
+
 }

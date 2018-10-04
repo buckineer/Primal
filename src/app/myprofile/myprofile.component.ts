@@ -22,8 +22,7 @@ export class MyProfileComponent implements OnInit {
   territories:Territory[];
   clan:Clan = new Clan;
   environment = environment
-
-
+  user_image_url:string;
   constructor(private globalState:GlobalState,
   				private userService:UserService,
   				private territoryService:TerritoryService,
@@ -34,6 +33,7 @@ export class MyProfileComponent implements OnInit {
   								subscribe(ret_value=>
   									{	
   										this.user = ret_value;
+                      this.user_image_url = this.userService.get_avatar_url(this.user)
   										this.getClanByUser(ret_value);
   									});
   }

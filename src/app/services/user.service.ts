@@ -9,6 +9,16 @@ import { users } from '../shared-dummy-mock';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError, map, tap } from 'rxjs/operators';
 import { environment } from '../../environments/environment';
+const AVATAR_IMAGE_NAMES={
+    1:'a Autralophitecus Head',
+    2:'b Hábilis Head',
+    3:'c Ergaster Head',
+    4:'d Erectus Head',
+    5:'e Antecessor Head',
+    6:'f Heidelbergenis Head',
+    7:'g Neanderthal Head',
+    8:'h Sapiens Head',
+}
 
 @Injectable()
 export class UserService {
@@ -21,7 +31,16 @@ export class UserService {
       catchError(this.handleError('Get users',[]))
       );
   }
+  get_avatar_url(user:User):string{
 
+        if(user.level<0){
+            console.log(",1111111111111111111111111111222222");
+            return "";
+        }
+        var url = "/images/avatars Final/"+user.avatar + AVATAR_IMAGE_NAMES[user.level]+".png"
+        console.log(",1111111111111111111111111111",url);
+        return url;
+    }
   getUser(id: number): Observable<User>{    
     return this.http.get<User>(this.api_base_url+"/user/"+id).pipe(
       catchError(this.handleError('get_user_by_id',new User))

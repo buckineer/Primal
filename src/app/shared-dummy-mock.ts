@@ -16,15 +16,105 @@ export const clan_avatar_list=['/images/clans/object1.png',
                                 '/images/clans/object5.png',
                                 '/images/clans/object6.png',
                               ];
+
+
 export const user_avatar_list=[
   { 'value': 'T1',
-    'image':'/images/avatars Final/T1h Sapiens Head.png'},
+    'images':{
+      1:'/images/avatars Final/T1a Autralophitecus Head.png',
+      2:'/images/avatars Final/T1b Hábilis Head.png',
+      3:'/images/avatars Final/T1c Ergaster Head.png',
+      4:'/images/avatars Final/T1d Erectus Head.png',
+      5:'/images/avatars Final/T1e Antecessor Head.png',
+      6:'/images/avatars Final/T1f Heidelbergenis Head.png',
+      7:'/images/avatars Final/T1g Neanderthal Head.png',
+      8:'/images/avatars Final/T1h Sapiens Head.png'
+    }
+  },
   { 'value': 'T2',
-    'image':'/images/avatars Final/T2h Sapiens Head.png'},
+    'images':{
+      1:'/images/avatars Final/T2a Autralophitecus Head.png',
+      2:'/images/avatars Final/T2b Hábilis Head.png',
+      3:'/images/avatars Final/T2c Ergaster Head.png',
+      4:'/images/avatars Final/T2d Erectus Head.png',
+      5:'/images/avatars Final/T2e Antecessor Head.png',
+      6:'/images/avatars Final/T2f Heidelbergenis Head.png',
+      7:'/images/avatars Final/T2g Neanderthal Head.png',
+      8:'/images/avatars Final/T2h Sapiens Head.png'
+    }
+  },
   { 'value': 'T3',
-    'image':'/images/avatars Final/T3h Sapiens Head.png'},
+    'images':{
+      1:'/images/avatars Final/T3a Autralophitecus Head.png',
+      2:'/images/avatars Final/T3b Hábilis Head.png',
+      3:'/images/avatars Final/T3c Ergaster Head.png',
+      4:'/images/avatars Final/T3d Erectus Head.png',
+      5:'/images/avatars Final/T3e Antecessor Head.png',
+      6:'/images/avatars Final/T3f Heidelbergenis Head.png',
+      7:'/images/avatars Final/T3g Neanderthal Head.png',
+      8:'/images/avatars Final/T3h Sapiens Head.png'
+    }
+  },
   { 'value': 'T4',
-    'image':'/images/avatars Final/T4h Sapiens Head.png'},
+    'images':{
+      1:'/images/avatars Final/T4a Autralophitecus Head.png',
+      2:'/images/avatars Final/T4b Hábilis Head.png',
+      3:'/images/avatars Final/T4c Ergaster Head.png',
+      4:'/images/avatars Final/T4d Erectus Head.png',
+      5:'/images/avatars Final/T4e Antecessor Head.png',
+      6:'/images/avatars Final/T4f Heidelbergenis Head.png',
+      7:'/images/avatars Final/T4g Neanderthal Head.png',
+      8:'/images/avatars Final/T4h Sapiens Head.png'
+    }
+  },
+  { 'value': 'T5',
+    'images':{
+      1:'/images/avatars Final/T5a Autralophitecus Head.png',
+      2:'/images/avatars Final/T5b Hábilis Head.png',
+      3:'/images/avatars Final/T5c Ergaster Head.png',
+      4:'/images/avatars Final/T5d Erectus Head.png',
+      5:'/images/avatars Final/T5e Antecessor Head.png',
+      6:'/images/avatars Final/T5f Heidelbergenis Head.png',
+      7:'/images/avatars Final/T5g Neanderthal Head.png',
+      8:'/images/avatars Final/T5h Sapiens Head.png'
+    }
+  },
+  { 'value': 'T6',
+    'images':{
+      1:'/images/avatars Final/T6a Autralophitecus Head.png',
+      2:'/images/avatars Final/T6b Hábilis Head.png',
+      3:'/images/avatars Final/T6c Ergaster Head.png',
+      4:'/images/avatars Final/T6d Erectus Head.png',
+      5:'/images/avatars Final/T6e Antecessor Head.png',
+      6:'/images/avatars Final/T6f Heidelbergenis Head.png',
+      7:'/images/avatars Final/T6g Neanderthal Head.png',
+      8:'/images/avatars Final/T6h Sapiens Head.png'
+    }
+  },
+  { 'value': 'T7',
+    'images':{
+      1:'/images/avatars Final/T7a Autralophitecus Head.png',
+      2:'/images/avatars Final/T7b Hábilis Head.png',
+      3:'/images/avatars Final/T7c Ergaster Head.png',
+      4:'/images/avatars Final/T7d Erectus Head.png',
+      5:'/images/avatars Final/T7e Antecessor Head.png',
+      6:'/images/avatars Final/T7f Heidelbergenis Head.png',
+      7:'/images/avatars Final/T7g Neanderthal Head.png',
+      8:'/images/avatars Final/T7h Sapiens Head.png'
+    }
+  },
+  { 'value': 'T8',
+    'images':{
+      1:'/images/avatars Final/T8a Autralophitecus Head.png',
+      2:'/images/avatars Final/T8b Hábilis Head.png',
+      3:'/images/avatars Final/T8c Ergaster Head.png',
+      4:'/images/avatars Final/T8d Erectus Head.png',
+      5:'/images/avatars Final/T8e Antecessor Head.png',
+      6:'/images/avatars Final/T8f Heidelbergenis Head.png',
+      7:'/images/avatars Final/T8g Neanderthal Head.png',
+      8:'/images/avatars Final/T8h Sapiens Head.png'
+    }
+  },
 ]
 export const territories:Territory[]=[
   // {id:1,title:"Bosque Impenetrable",reaching_min_points:1000,image_url:"/assets/images/map/Costa Pesca.png",starting_date:new Date(2018, 8, 11),ending_date:null,lock_state:true,clan_info:"orange",badge_url:"/assets/images/clans/object6.png",badge_text:"This is test"},
