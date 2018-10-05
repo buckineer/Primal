@@ -1,41 +1,38 @@
-
-<div class="row align-items-center">
-        <div class="col-sm-1 col-header">
-
-        </div>
-        <div class="col-sm-7">
-            <a routerLink="/map">
-                <img src="/assets/images/logo/logo-b&w.png" style="height: 30px; margin-left: -30px; margin-top: -5px;">
-
-            </a>
-        </div>
-    
-    <div class="col-sm-1 col-header vertical-child-center">
-        <a routerLink="/notification" >
-            <div style="position: relative;">
-                <img src="../assets/images/icons/notification.png">
-                <div class ="vertical-child-center" style="position: absolute;right: 5px;top: 0;color: #fff;width: 30px;height: 30px;border-radius: 50%;background-color: #f00;text-align: center;font-size: 15px;" *ngIf="alarmCount > 0">
-                    <span>{{alarmCount}}</span>
-                </div>
+<div style="height: 100%;"  >
+    <div style="float: left; height: 100%;margin-left: 8.2%;" class="vertical-child-center">
+        <a routerLink="/map">
+            <img src="/assets/images/logo/logo-b&w.png " class="logo-img">
+        </a>
+    </div>
+    <div style="float: right;height: 100%;margin-right: 8.2%;"  class="vertical-child-center">
+        <div>
+            <div style="display: inline-block;">
+                <a routerLink="/notification" >
+                    <div style="position: relative;" class="header-icon">
+                        <img src="../assets/images/icons/notification.png" style="height: 100%;">
+                        <div class ="vertical-child-center" style="position: absolute;right: 0;top: 5%;color: #fff;width: 60%;height: 60%;border-radius: 50%;background-color: #f00;text-align: center;font-size: 12px;" *ngIf="alarmCount > 0">
+                            <span>{{alarmCount}}</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div style="display: inline-block;">
+                <a routerLink="/gift">
+                    <img src="../assets/images/icons/present.png" class="header-icon">
+                </a>
+            </div>
+            <div style="display: inline-block;">
+                <a routerLink="/info">
+                    <img src="../assets/images/icons/info.png" class="header-icon">
+                </a>
             </div>
 
-        </a>
-    </div>	
-    <div class="col-sm-1 col-header vertical-child-center" >
-        <a routerLink="/gift">
-            <img src="../assets/images/icons/present.png">
-        </a>
-        
-    </div>
-    <div class="col-sm-1 col-header vertical-child-center" >
-        <a routerLink="/info">
-            <img src="../assets/images/icons/info.png">
-        </a>
+            <div style="display: inline-block;">
+                <a routerLink="/ranking">
+                    <img src="../assets/images/icons/ranking.png" class="header-icon">
+                </a>
+            </div>
+        </div>
     </div>
 
-    <div class="col-sm-1 col-header vertical-child-center">
-        <a routerLink="/ranking">
-            <img src="../assets/images/icons/ranking.png">
-        </a>
-    </div>
 </div>

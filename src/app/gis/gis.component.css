@@ -1,9 +1,37 @@
-img {
-    height: 30px;
+  .logo-img{
+    height: 37px;
   }
-  .col-header{
-    height: 40px;
+  .header-icon{
+    height: 26px;
+    margin-left: 12px;
+    margin-right: 12px;
   }
+
+@media only screen and (min-width:1024px){
+  .logo-img{
+    height: 32px;
+  }
+  .header-icon{
+    height: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+}
+
+@media only screen and (min-width:1280px){
+  .logo-img{
+    height: 37px;
+  }
+  .header-icon{
+    height: 26px;
+    margin-left: 12px;
+    margin-right: 12px;
+  }
+}
+
+
+
+
 /*  #gifts {
     width: 20%;
   }

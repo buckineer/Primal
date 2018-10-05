@@ -11,6 +11,7 @@ export class GisComponent implements OnInit {
   constructor(public notificationService: NotificationService) { this.alarmCount = 0;}
 
   ngOnInit() {
+    this.alarmCount=3;
   	// this.notificationService.getNotificationStream()
    //  	.subscribe(resp=>{
    //  		this.alarmCount = resp;

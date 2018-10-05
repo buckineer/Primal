@@ -12,14 +12,14 @@
       </ng-container>
       <ng-template #forgot_form_content>
         <div class="comment-text">
-          <span class="comment-text-span">User Log in</span>
+          <span class="comment-text-span">Iniciar sesión</span>
         </div>
         <form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm.value)">
           <div style="color: #f00;font-size: 14px;margin-bottom: 5px;">
             <strong>{{ message }}</strong>
           </div>
           <div class="input_container">
-              <input type="text" id="user_id" name="user_id" placeholder="User ID" [formControl]="myForm.controls['user_id']">
+              <input type="text" id="user_id" name="user_id" placeholder="Email" [formControl]="myForm.controls['user_id']">
               <span class="email-span vertical-child-center">
                   <i class="material-icons">person</i>
               </span>
@@ -30,10 +30,9 @@
                   <i class="material-icons">vpn_key</i>
               </span>
           </div>
-          <button type="submit" class="submit-btn" mat-raised-button>LOGIN</button>
+          <button type="submit" class="submit-btn" mat-raised-button>Iniciar sesión</button>
         </form>
-          <label class="notify pointer" (click)="go_to_forgot()" ><font size="3px" color="#8c8c8c">Forgot</font> <font size="3px" color="#2E64FE">Password</font>
-                <font size="3px" color="#8c8c8c">?</font></label>
+          <label class="notify pointer" (click)="go_to_forgot()" ><font size="3px" color="#fff">Has olvidado la contraseña?</font></label>
       </ng-template>
     </div>
   </div>

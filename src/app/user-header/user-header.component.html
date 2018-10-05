@@ -1,28 +1,31 @@
-<div style="position:relative;">
-  <div class="row header" style="height: 80px; width: 100%;opacity: 0.7;">
+<div style="position:relative;" class="top">
+  <div class="row header">
   </div>
-  <div class="row">
+  <div class="row" style="height: 100%;">
     <div class="col-sm-1">
     </div>
-    <div class="col-sm-1">
+    <div class="col-sm-1 vertical-child-center">
       <a routerLink="/profile">
-        <img *ngIf= "user.image_url" src="{{environment.asset_base_url}}{{user.image_url}}" alt="blank"> 
+        <img *ngIf= "user.image_url" src="{{environment.asset_base_url}}{{user.image_url}}" alt="blank" class="avatar-img"> 
       </a>
     </div>
-    <div class="col-sm-2">
-      <div style="float: left;">
-        <br />
-        <label>{{user.first_name}} {{user.last_name}}</label>
-        <label><font color=#FE8D00>{{user.level_name}}</font></label>     
+    <div class="col-sm-2 vertical-child-center">
+      <div style="float: left;margin-left: -10px;">
+        <label class="username">{{user.first_name}} {{user.last_name}}</label>
+        <br>
+        <label class="levelname">{{user.level_name}}</label>     
       </div>
     </div>
     <div class="col-sm-5">
     </div>
-    <div class="col-sm-2">
+    <div class="col vertical-child-center" style="margin-left: -1%;">
       <div style="float: left;">
         <br />
-        <label>PUNTOS&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color=#FE8D00>{{user.points}}</font></label><br>
-        <label>MONEDAS&nbsp;&nbsp;<font color=#FE8D00>{{user.coins}}</font></label>
+        <label class="key">Puntos&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+        <label class="value"> {{user.points}} </label>
+        <br>
+        <label class="key">Monedas&nbsp;&nbsp;</label>
+        <label class="value"> {{user.coins}} </label>
       </div>
     </div>
   </div>
