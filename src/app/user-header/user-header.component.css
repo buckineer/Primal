@@ -1,3 +1,6 @@
+div.top{
+  height: 88px;
+}
 .avatar-img {
     border-radius: 50%;
     border: 3px solid #ddd;
@@ -62,5 +65,8 @@ div.header {
   }
   label.key{
     font-size: 24px;
+  }
+  div.top{
+    height: 108px;
   }
 }
