@@ -125,6 +125,13 @@ label.value{
         height: 70px;
     }
 }
+@media only screen and (min-width:1400px){
+    .user-avatar{
+        width: 80px;
+        height:80px;
+    }
+}
+
 
 
 .points-text .key{
@@ -145,6 +152,19 @@ label.value{
     }
     .points-text .value{
         font-size: 36px;
+        font-weight: 800;
+        color: #fe8d00;
+    }
+}
+
+@media only screen and (min-width:1400px){
+    .points-text .key{
+        font-size: 32px;
+        font-weight: 600;
+        color: white;
+    }
+    .points-text .value{
+        font-size: 40px;
         font-weight: 800;
         color: #fe8d00;
     }
@@ -202,6 +222,15 @@ label.value{
     display: none;
 }
 @media only screen and (min-width:1280px){
+
+    .members-sm-show{
+        display: none;
+    }
+    .members-show{
+        display: block;
+    }
+}
+@media only screen and (min-width:1400px){
 
     .members-sm-show{
         display: none;

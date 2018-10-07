@@ -1,29 +1,28 @@
 <div class="container">
-	<div class="row align-items-center" style="margin-top: 30px;position: relative;">
-			<div style="position: absolute; right: 10px;top: 0px;color: #efba1f;z-index: 1" (click)="close()">
-				<i class="pointer material-icons md-bold md-80"   >close</i>	
-			</div>
+	<div class="row align-items-center" style="position: relative;">
+		<div style="position: absolute;top: 2%;right: 2%;z-index: 2">
+			<i (click)="close()" class="pointer material-icons md-bold cross-size md-white" style="color: #fe8d00;">close</i>
+		</div>
 		<div class="col" style="text-align: center;">
-			<span class="head-text">¡Felicidades!<br><br></span>
+			<span class="head-text">¡Felicidades!<br></span>
 
-			<span class="head-text" style="font-size: 36px;">Te has unido al clan de </span>				
+			<span class="head-text">Te has unido al clan de </span>				
 		</div>
 	</div>
 	<div class="row">
 		
 	</div>
-	<div class="row justify-content-center" style="margin-top: 20px;margin-bottom: 10px;">
+	<div class="row justify-content-center top">
 			<div class="vertical-child-center" >
-				<img src="{{environment.asset_base_url}}{{notification.clan_image}}" style="width: 130px;">
-<!-- 				<img src="/assets/images/icons/present.png" style="width: 150px;background-color: #2d7022"> -->
+				<img class="clan-img" src="{{environment.asset_base_url}}{{notification.clan_image}}">
 			</div>
 			<div class="vertical-child-center" >
 				<span class="head-text" style="margin-left:20px; color: #000">{{notification.clan_name}}</span>
 			</div>
 	</div>
-	<div class="row justify-content-center" style="margin-bottom: 20px;">
+	<div class="row justify-content-center" >
 		<a routerLink="/clan/{{notification.clan_id}}">
-			<button mat-raised-button [mat-dialog-close]="closed" color="primary" style="height:50px;width: 160px;border-radius:25px;background-color:#FE8D00;">
+			<button mat-raised-button class="view-button" [mat-dialog-close]="closed" color="primary" style="border-radius:25px;background-color:#FE8D00;">
 				<span class="content-text"><font color="white">Ver clan</font></span>
 			</button>
 		</a>

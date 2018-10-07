@@ -16,7 +16,6 @@ import { environment } from '../../environments/environment';
 export class NotificationComponent implements OnInit {
   environment = environment
   notifications: Notification[];
-
   constructor(public notificationService: NotificationService,
               public clanService: ClanService,
               private userService: UserService,
@@ -39,12 +38,6 @@ export class NotificationComponent implements OnInit {
   }
   join(item:Notification){
     var clanId = item.clan_id;
-    //         const dialogRef = this.dialog.open(JoinMessageDialogComponent, {
-    //       height: '380px',
-    //       minWidth:"800px",
-    //       panelClass:'select-avatar-dialog',
-    //       data:item
-    //     })
     this.userService.JoinClanToUserFromNotification(this.globalState.Current_User_Id,clanId)
     .subscribe(resp=>{
       if(resp!="error"){
