@@ -25,4 +25,7 @@ export class UserAvatarSelectDialogBodyComponent implements OnInit {
   set_selected(item:any){
   	this.selected['avatar'] = item.value;
   }
+  close(){
+    this.matDialogRef.close(this.selected);
+  }
 }

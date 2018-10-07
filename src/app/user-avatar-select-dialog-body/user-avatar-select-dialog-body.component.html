@@ -1,4 +1,7 @@
-<div class="container">
+<div class="container" style="position: relative;">
+	<div style="position: absolute;top: 2%;right: 2%;z-index: 2">
+		<i (click)="close()" class="pointer material-icons md-bold cross-size md-white" style="color: #fe8d00;">close</i>
+	</div>
 	<div class="row align-items-center">
 		<div class="col" style="text-align: center;">
 			<span class="head-text"><font color="#FE8D00">Selecciona un avatar</font></span>	
@@ -7,10 +10,10 @@
 	<div class="row">
 		
 	</div>
-	<div class="row justify-content-center" style="margin-top: 40px;margin-bottom: 40px;">
+	<div class="row justify-content-center top scroll">
 		<ng-template ngFor let-item [ngForOf]="avatars" let-i="index">
 			<div class="vertical-child-center user-avatar" (click)="set_selected(item)" [class.selected]="item.value==selected.avatar">
-				<img src="{{environment.asset_base_url}}{{item.images[selected.level]}}" style="width: 150px;">
+				<img src="{{environment.asset_base_url}}{{item.images[selected.level]}}" style="width: 100%;">
 			</div>
 		</ng-template>
 	</div>

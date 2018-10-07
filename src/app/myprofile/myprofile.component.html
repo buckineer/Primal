@@ -1,14 +1,14 @@
 <div class="background-fx">
 	<app-user-header></app-user-header>
 	<div class="content container" style="position: relative;">
-		<a routerLink="/map">
-			<div style="position: absolute; right: -30px;top: -30px;">
-				<i class="material-icons md-bold md-80 md-white" >close</i>
-			</div>
-		</a>
 		<div class="row align-items-center">
-	        <div class="col-sm-4">
-	          <span class="title-text">MI PERFIL</span>
+			<div class="col">
+				<span class="title-text">MI PERFIL</span>	
+			</div>
+	        <div style="float: right;">
+	        	<a routerLink="/map">
+	        		<i class="material-icons md-bold cross-size md-white" >close</i>
+	        	</a>
 	        </div>
 		</div>
 		<div class="row align-items-center user-section" >
@@ -16,26 +16,47 @@
                 <div class="user-avatar vertical-child-center">
                 	<img src="{{environment.asset_base_url}}{{user_image_url}}" class="user-image">
                 </div>
-				<div style="margin-top:30px;margin-left: 10px;">
+				<div class="vertical-child-center" style="margin-left: 3%;">
 					<div>
-						<span class="content-text">{{user?.first_name}} {{user?.last_name}}</span>						
+						<span class="first-name-text">{{user?.first_name}} </span>
+						<span class="second-name-text">
+							{{user?.last_name}}
+						</span>
 					</div>
 					<div style="margin-top: 10px;">
 						<a routerLink="/profile/edit">
-							<button class="button-edit" mat-raised-button><font size="5px" color="#FE8D00"><strong>EDITAR</strong></font></button>
+							<button class="button-edit" mat-raised-button><strong>EDITAR</strong></button>
 						</a>
 					</div>
 				</div>
             </div>
 			<div class="col-sm-4">
 				<div>
-					<span class="points-text">PUNTOS: {{user?.points}} </span>	
+					<span class="points-text">
+						<span class="key">PUNTOS: </span>
+						<span class="value">{{user?.points}} </span>
+					</span>	
 				</div>
 				<div>
-					<span class="points-text">MONEDAS: {{user?.coins}} </span>	
+					<span class="points-text">
+						<span class="key">
+							MONEDAS: 	
+						</span>
+						<span class="value">
+							{{user?.coins}} 	
+						</span>
+					</span>
 				</div>
 				<div>
-					<span class="points-text">NIVEL: {{user?.level}} </span>	
+					<span class="points-text">
+						<span class="key">
+							NIVEL: 	
+						</span>
+						<span class="value">
+							{{user?.level}} 	
+						</span>
+						
+					</span>	
 				</div>
 			</div>			
 		</div>
@@ -44,7 +65,14 @@
 				<div class="row">
 						<label class="content-text"><font color=antiquewhite>Progreso Personal</font></label>
 				</div>
-				<div class="row" style="margin-top:20px; border-right-style: solid;border-right-color: #fff;min-height: 300px;">
+				<div class="row" style="margin-top:20px; border-right-style: solid;border-right-color: #fff;min-height: 80%;">
+
+					<div class="col-sm-6" style="text-align: center;">
+						<img src="/assets/images/icons/badge9.png" class="map-badge">
+						<div>
+							<span class="map-badge-text">Insignia LAND</span>	
+						</div>						
+					</div>
 					<ng-template ngFor let-item [ngForOf]="user.badge_list" let-i="index">
 						<div class="col-sm-4" style="text-align: center;">
 							<img src="{{item.icon}}" class="map-badge">
@@ -61,21 +89,22 @@
 						<label class="content-text"><font color=antiquewhite>Clan</font></label>
 					</div>
 					<div class="row align-items-center" style="margin-top:20px;" >
-						<div class="col-sm-6" style="text-align: center;">
-							<img src="{{environment.asset_base_url}}{{clan?.image}}" class="clan-avatar">				
-						</div>
-						<div class="col-sm-6" >
+						<div class="col-sm-6" style="text-align: left;">
+							<img src="{{environment.asset_base_url}}{{clan?.image}}" class="clan-avatar">
 							<div>
 								<span class="clan-text">{{clan?.name}}</span>	
 							</div>
 							<div>
-								<span class="clan-text">PUNTOS {{clan?.points}}</span>	
+								<span class="clan-text">
+									<span class="key">PUNTOS </span>
+									<span class="value">{{clan?.points}}</span>
+								</span>	
 							</div>						
 						</div>	
 					</div>
 					<div class="row" style="margin-left: 10px;">
 							<a routerLink="/clan/{{clan?.id}}">
-								<button class="button-edit" mat-raised-button><font size="5px" color="#FE8D00"><strong>VER</strong></font></button>
+								<button class="button-edit" mat-raised-button style="text-align: center;"><font color="#FE8D00"><strong>VER</strong></font></button>
 							</a>						
 					</div>
 				</ng-container>

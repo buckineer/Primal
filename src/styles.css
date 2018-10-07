@@ -94,9 +94,18 @@ button{
 }
 .select-avatar-dialog .mat-dialog-container{
     border-radius: 25px;
+
 }
 .dialog .mat-dialog-container{
     border-radius: 25px;
+    width: 577px;
+    height: 240px;
+}
+@media only screen and (min-width:1280px){
+    .dialog .mat-dialog-container{
+        width: 800px;
+        height: 350px;
+    }
 }
 .btn-font1{
     font-size: 24px;

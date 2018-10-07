@@ -1,18 +1,18 @@
 <div class="background-fx">
 	<app-user-header></app-user-header>
 	<div class="content container" style="position: relative;">
-		<a routerLink="/map">
-			<div style="position: absolute; right: -30px;top: -30px;">
-				<i class="material-icons md-bold md-80 md-white" >close</i>
-			</div>
-		</a>
 		<div class="row align-items-center">
-	        <div class="col-sm-4">
-	          <span class="title-text" style="margin-left: 0px;">MI PERFIL</span>
+			<div class="col">
+				<span class="title-text">MI PERFIL</span>	
+			</div>
+	        <div style="float: right;">
+	        	<a routerLink="/map">
+	        		<i class="material-icons md-bold cross-size md-white" >close</i>
+	        	</a>
 	        </div>
 		</div>
-		<div class="row" style="margin-top: 50px;border-bottom-style: solid;border-bottom-color: #fff;padding-bottom: 50px">
-			<div class="col-sm-6">
+		<div class="row" style="margin-top: 20px;border-bottom-style: solid;border-bottom-color: #fff;padding-bottom:5px">
+			<div class="col-sm-7">
 				<form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm.value)">
 					<div class="row">
 						<label for="name" class="col-sm-4 col-form-label">Nombre</label>
@@ -55,12 +55,12 @@
 							</div>
 						</div>
 					</div>
-					<div style="margin-top: 50px;">
-						<button class="button-store" mat-raised-button type="submit"><font size="5px" color="#FE8D00"><strong>GUARDAR</strong></font></button>
+					<div style="margin-top: 20px;">
+						<button class="button-store" mat-raised-button type="submit"><font size="5px" color="#fff"><strong>GUARDAR</strong></font></button>
 					</div>
 				</form>
 			</div>
-			<div class="col-sm-2">
+			<div class="col-sm-1">
 				
 			</div>
 			<div class="col-sm-4">
@@ -68,15 +68,15 @@
                 	<img src="{{environment.asset_base_url}}{{user_image_url}}" class="user-image">
                 </div>
                 <div style="margin-top: 20px;">
-					<button (click)="openDialog()" class="button-store" mat-raised-button><font size="5px" color="#FE8D00"><strong>EDITAR</strong></font></button>
+					<button (click)="openDialog()" class="button-store" mat-raised-button><font size="5px" color="#fff"><strong>EDITAR</strong></font></button>
                 </div>
 			</div>
 		</div>
 		<div class="row">
-			<span class="title-text pointer" style="font-weight: 500;line-height: 44px;margin-left: 0px" [routerLink]="['/update_password']">Cambiar la contraseña</span>
+			<span class="my-text pointer" [routerLink]="['/update_password']">Cambiar la contraseña</span>
 		</div>
-		<div class="row" style="margin-top: 20px;">
-			<span (click)="logout()" class="title-text pointer" style="font-weight: 500;line-height: 44px;margin-left: 0px">Desconectar</span>
+		<div class="row" class="top">
+			<span (click)="logout()" class="my-text pointer" >Desconectar</span>
 		</div>
 	</div>
 </div>

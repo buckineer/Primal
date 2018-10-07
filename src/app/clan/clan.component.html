@@ -5,39 +5,46 @@
         <div class="col-sm-4">
           <span class="title-text">CLAN</span>
         </div>
-        <div *ngIf="is_admin_clan()" class="col-sm-2" style="margin-left: 35%; margin-top: -5%;">
+        <div *ngIf="is_admin_clan()" class="col-sm-2" style="margin-left: 35%;">
           <a routerLink = "/invite">
-            <button class="button-invite" mat-raised-button><font size="5px" color="#FE8D00"><strong>Invitar Luchadores</strong></font></button>
+            <button class="button-invite" mat-raised-button>Invitar Luchadores</button>
           </a>
         </div>
 
-        <div *ngIf="!is_admin_clan()" class="col-sm-2" style="margin-left: 35%; margin-top: -5%;">
+        <div *ngIf="!is_admin_clan()" class="col-sm-2" style="margin-left: 35%;">
           <a routerLink = "/clan/home">
-            <button class="button-change" mat-raised-button><font size="5px" color="#FE8D00"><strong>Cambiar clan</strong></font></button>
+            <button class="button-change" mat-raised-button>Cambiar clan</button>
           </a> 
         </div>
       </div>
       <div style="width: 100%; overflow: hidden; margin-top: -1%;">
         <div class="hidden-scroll">
-            <div class="row align-items-center" style="padding-top: 20px;">
+            <div class="row " style="padding-top: 25px;">
               <div class="col-sm-2">
                 <div class="clan-avatar">
                   <img src={{environment.asset_base_url}}{{selected_clan.image}} class="clan-image">
                 </div>
               </div>
               <div class="col-sm-8" style="margin-top: 0%; margin-left: -4%;">
-                <label class="content-text"><font color=antiquewhite>Nombre</font> {{ selected_clan.name }}</label><br>
-                <label class="content-text"><font color=antiquewhite>Descripción</font> {{ selected_clan.description }}</label><br>
-                <label class="content-text"><font color=antiquewhite>Lema</font> {{ selected_clan.description }}</label>
+                <label class="key">Nombre &nbsp;</label>
+                <label class="value">{{ selected_clan.name }} </label><br>
+
+                <label class="key">Descripción &nbsp;</label>
+                <label class="value">{{ selected_clan.description }}</label><br>
+                <label class="key">Lema &nbsp;</label>
+                <label class="value"> {{ selected_clan.description }}</label>
               </div>
-              <div class="col-sm-2" style="margin-left: -10%; margin-top: -7%;">
-                <span class="points-text">PUNTOS:{{ selected_clan.points }} </span>
+              <div class="col-sm-2" style="margin-left: -10%;">
+                <span class="points-text">
+                  <span class="key">Puntos:</span>
+                  <span class="value">{{ selected_clan.points }}</span>
+                </span>
               </div>
             </div>
 
             <hr color=white>
             
-            <label class="content-text"><font color=antiquewhite>Progreso</font></label>
+            <label class="content-text"><font color="white">Progreso</font></label>
 
             <div class="row align-items-center" style="padding-top: 20px;">
               <ng-template ngFor let-item [ngForOf]="selected_clan.territory_info" let-i="index">
@@ -46,6 +53,10 @@
                   <label class="territory-name-text">{{ item.territory_name }}</label>
                 </div>
               </ng-template>
+                <div class="col-2 algin-items-center" style="margin-left: 0%">
+                  <img src="assets/images/map/Isla del Volcán.png" class="territory-img" >
+                  <label class="territory-name-text">345345345</label>
+                </div>
             </div>
 
             <hr color=white>
