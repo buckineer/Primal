@@ -42,26 +42,25 @@
 		</div>
 	</div>
 </div>
-<div *ngIf= "!clan_added" class="background-nofx">
+<div *ngIf= "!clan_added" class="background-fx">
 	<app-user-header></app-user-header>
-	<div class="content container" style="position: relative;">
-		<div style="position: absolute; right: -30px;top: -30px;">
+	<div class="content" style="position: relative;">
+		<div style="position: absolute; right: 2.5%;top: 3%;">
 			<a routerLink="/map">
 				<div>
-					<i class="material-icons md-bold md-80 md-white" >close</i>
-				</div>
+					<i class="material-icons md-bold md-white cross-size" >close</i>
+				</div>				
 			</a>
-			
 		</div>
-		<div class="row" style="margin-top: 50px;">
-			<span class="title-text" style="padding-bottom: 20px;">CREAR CLAN</span>
+		<div class="row" style="padding-top: 5.6%;padding-left: 2.22%;position: relative;">
+			<span class="title-text" >CREAR CLAN</span>
 		</div>
-		<div style="padding-left: 50px;padding-right: 50px;">
+		<div style="position: relative;margin-top: 4%;">
 			<form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm.value)">
 				
 				<div class="row">
 					<div class="col-sm-8">
-						<div class="row">
+						<div class="row align-items-center">
 							<label for="name" class="col-sm-4 col-form-label">NOMBRE</label>
 							<div class="col-sm-8" [class.is-invalid]="!myForm.controls['name'].valid && myForm.controls['name']. touched">
 						    	<input type="text" class="form-control" [formControl]="myForm.controls['name']" name="name">
@@ -70,7 +69,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="row">
+						<div class="row align-items-center">
 							<label for="description" class="col-sm-4 col-form-label">DESCRIPTION</label>
 							<div class="col-sm-8" [class.is-invalid]="!myForm.controls['description'].valid && myForm.controls['description']. touched">
 						    	<input type="text" class="form-control " [formControl]="myForm.controls['description']" >
@@ -79,7 +78,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="row">
+						<div class="row align-items-center">
 							<label for="lema" class="col-sm-4 col-form-label">LEMA</label>
 							<div class="col-sm-8" [class.is-invalid]="!myForm.controls['motto'].valid && myForm.controls['motto']. touched">
 						    	<input type="text" class="form-control" [formControl]="myForm.controls['motto']">
@@ -93,9 +92,9 @@
 						<mat-checkbox [formControl]="myForm.controls['open']" style="width: 100px;" color="white" ><span class="col-form-label">ABIERTO</span></mat-checkbox>		
 					</div>
 				</div>
-				<div class="row">
-					<label for="select-color" class="col-sm-4 col-form-label">ELEGIR COLOR</label>
-					<div class="col-sm-8 align-items-center row" style="margin-left: -50px;" >
+				<div class="row" style="padding-left: 15px">
+					<label for="select-color" class="col-sm-3 col-form-label">ELEGIR COLOR</label>
+					<div class="col-sm-8 align-items-center row" >
 						<div class="custom-radios">
  							<ng-template ngFor let-item [ngForOf]="colors" let-i="index">
 								<div class="form-div">
@@ -110,26 +109,32 @@
 						</div>
 					</div>
 				</div>
-				<div style="padding-left: 15px">
-					<div class="row">
-						<label for="select-avatar" class="row col-sm-4 col-form-label">ELEGIR ESCUDO</label>
-					</div>
-					
-					<div class="row" style="background-color:#e0e0ef54;border-bottom-color: #fff;border-bottom-style: solid;border-radius: 5px;">
-						<div class="custom-radios row">
-							<ng-template ngFor let-item [ngForOf]="clan_images" let-i="index">
-								<div class="col-sm-2 vertical-child-center">
-									<input type="radio" [checked] = "i==0" id='{{"avatar" + i}}' formControlName="avatar" value="{{item}}">
-									<label for='{{"avatar"+i}}'>
-										<img class="clan-img selected" [class.selected]= "item === myForm.value.avatar" src={{environment.asset_base_url}}{{item}}>
-									</label>
-								</div>	
-							</ng-template>				
-							
+				<div style="margin-left: 15px">
+					<div class="row align-items-center" >
+						<label for="select-avatar" class="row col-sm-3 col-form-label">ELEGIR ESCUDO</label>
+						<div class="col-sm-8">
+							<div class="row" style="background-color:#e0e0ef54;border-radius: 5px;">
+								<div class="custom-radios row no-gutters">
+									<ng-template ngFor let-item [ngForOf]="clan_images" let-i="index">
+										<div class="col vertical-child-center" style="padding-left:2px;">
+											<input type="radio" [checked] = "i==0" id='{{"avatar" + i}}' formControlName="avatar" value="{{item}}">
+											<label for='{{"avatar"+i}}'>
+												<img class="clan-img selected" [class.selected]= "item === myForm.value.avatar" src={{environment.asset_base_url}}{{item}}>
+											</label>
+										</div>	
+									</ng-template>				
+									
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
-				<div class="row" style="padding-top: 15px;">
+				<div class="row justify-content-center w-100">
+					<div class="col-sm-12" style="border-bottom-color: #fff;border-bottom-style: solid; margin-top: 5px;" >
+					</div>
+					
+				</div>
+				<div class="row" style="padding-top: 15px;margin-right: 5%;">
 					<div class="col">
 						<button type="submit" mat-raised-button style="float: right;background: none;color: #fff;" class="store-button" color="primary">
 							<span class="">GUARDAR</span>

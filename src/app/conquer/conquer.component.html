@@ -4,7 +4,7 @@
 		<div style="position: absolute; right: 2.5%;top: 3%;">
 			<a routerLink="/map">
 				<div>
-					<i class="material-icons md-bold md-white size" >close</i>
+					<i class="material-icons md-bold md-white cross-size" >close</i>
 				</div>				
 			</a>
 		</div>
@@ -32,9 +32,9 @@
 		<div class="w-100" style="position: absolute;bottom: 13.2%;">
 			<div class="col-sm-6 h-100" style="padding-left: 5.22%;position: relative;">
 				<a *ngIf="is_joined()">
-					<button mat-raised-button class= "lock-button" color="primary">
+					<button mat-raised-button class= "lock-button" style="padding-left: 2px" color="primary">
 						<img src="/assets/images/icons/lock small.png">
-						<span>UNIRSE A CLAN</span>
+						<span style="padding-left: 0px;">UNIRSE A CLAN</span>
 					</button>
 				</a>
 				<a routerLink="/clan/home" *ngIf="!is_joined()">

@@ -15,6 +15,8 @@ export const clan_avatar_list=['/images/clans/object1.png',
                                 '/images/clans/object4.png',
                                 '/images/clans/object5.png',
                                 '/images/clans/object6.png',
+                                '/images/clans/object7.png',
+                                '/images/clans/object8.png',
                               ];
 
 

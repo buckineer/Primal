@@ -9,14 +9,10 @@
 .container-fluid{
     padding: 0px;
 }
-.background-fx {
-    /*background-image: url(/assets/images/map/map-final-2x.png);*/
-    /*background-size: 100% 100%;*/
+.background-fx,.background-nofx {
     position: relative;
     width:100%;
     height: 100%;
-    min-height: 400px;
-    /* display: inline-block; */
 }
 .background-fx::after {
     width: 100%;
@@ -27,7 +23,20 @@
     position: absolute;
     content: "";
 
-    min-height: 400px;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    opacity: 0.9;
+}
+.background-nofx::after {
+    width: 100%;
+    height: 100%;
+    background-image: url(/assets/images/map/map-final-2xNo_fx.png);
+    background-size: 100% 100%;
+
+    position: absolute;
+    content: "";
+
     left: 0;
     top: 0;
     z-index: -1;
@@ -44,28 +53,8 @@
     opacity: 0.95;
     /* display: inline-block; */
 }
-.background-nofx {
-    /*background-image: url(/assets/images/map/map-final-2xNo_fx.png);*/
-    /*background-size: 100% 100%;*/
-    position: relative;
-    width:100%;
-    min-height: 400px;
-    /* display: inline-block; */
-}
-.background-nofx::after {
-    background-image: url(/assets/images/map/map-final-2xNo_fx.png);
-    background-size: 100% 100%;
-    position: absolute;
-    content: "";
-    width: 100%;
-    height: 100%;
-    min-height: 400px;
-    left: 0;
-    top: 0;
-    z-index: -2;
-    opacity: 0.5;
-    /* display: inline-block; */
-}
+
+
 .background-green{
     background-color: #3F9D2F;
     background-size: 100% 100%;
@@ -97,9 +86,9 @@ button{
     /* line-height: 44px; */
     letter-spacing: 0px;
     color: rgb(255, 255, 255);
-    font-family: 'Raleway', serif;
-    font-weight: 400;
-    font-size: 30px;
+    font-family: Raleway;
+    font-weight: 800;
+    font-size: 22px;
     text-align: left;
 }
 .select-avatar-dialog .mat-dialog-container{
@@ -122,4 +111,38 @@ button{
     font-size: 24px;
     font-family: Raleway;
     font-weight: 300;
+}
+
+
+/*Responsive CSS */
+.title-text {
+    color: rgb(255, 255, 255);
+    font-family: Raleway;
+    font-weight: 800;
+    font-size: 28px;
+    text-align: left;
+}
+.cross-size{
+    font-size: 40px;
+}
+@media only screen and (min-width:1024px){
+    .title-text {
+        font-size: 28px;
+    }
+    .cross-size{
+        font-size: 40px;
+    }
+
+}
+@media only screen and (min-width:1280px){
+     .title-text {
+        font-size: 36px;
+    }
+    .cross-size{
+        font-size: 45px;
+    }
+    .content-text {
+        /* line-height: 44px; */
+        font-size: 28px;
+    }
 }

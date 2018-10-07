@@ -1,34 +1,86 @@
 .content {
-    margin: 50px;
-	min-height: 550px;
-	width: 90%;
-	background-color: rgba(0, 0, 0, 0.3);
-	float: left
+    margin-top: 2%;
+    margin-left: 9.2%;
+    margin-right: 9.2%;
+    /*height: 500px;*/
+    height: 78.55%;
+    width: 82.5%;
+    background-color: rgba(0,0,0,0.60);
 }
 .ul.li-item{
     min-height: 130px;
 }
 .ul{
-    height: 370px;
+    /*height: 285.39px;*/
+    height: 100%;
     width: 100%;
     border-bottom-style: solid;
     border-bottom-color: #fff;
     overflow-x:hidden;
     overflow-y:auto;
-    box-sizing: content-box;     
+    box-sizing: content-box;
+}
+.main-button {
+    height: 50px;
 }
 .main-button span{
-    line-height: 29px;
-    letter-spacing: 0px;
     color: rgb(255, 255, 255);
     font-family: Raleway;
-    font-weight: 700;
-    font-size: 20px ;
+    font-weight: 600;
+    font-size: 16px ;
     text-align: left;
     border-radius: 5px;
 }
 .join-clan-button{
-    background-color: #3F9D2F;
+    background-color: #fe8d00;
     border: 0px solid #D1D1D1;
-    border-radius: 5px;
+    border-radius: 3px;
+}
+
+.lock-join-clan-button{
+    font-size: 20px;
+    background-color: #555555;
+    padding-left:7px;
+}
+.lock-join-clan-button span{
+    font-size: 14px;
+}
+
+.clan-img{
+    height: 70px;
+    width: 70px;
+}
+
+.lock-join-clan-button img{
+    width: 20px;
+}
+.create_btn{
+    width: 152.73px;
+}
+@media only screen and (min-width:1280px){
+
+    .clan-img{
+        height: 80px;
+        width: 80px;
+    }
+    .main-button {
+        height: 50px;
+    }
+    .main-button span{
+        font-size: 24px;
+        font-weight: 700;
+    }
+    .lock-join-clan-button{
+        background-color: #555555;
+        padding-left:15px;
+    }
+    .lock-join-clan-button span{
+        font-size: 20px;
+    }
+    .lock-join-clan-button img{
+        width: 25px;
+    }
+    .create_btn{
+        width: 212.84px;
+    }
 }

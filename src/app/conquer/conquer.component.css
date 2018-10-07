@@ -5,7 +5,7 @@
 	/*height: 500px;*/
     height: 60.6%;
 	width: 76.6%;
-	background-color: rgba(0,0,0,0.30);
+	background-color: rgba(0,0,0,0.60);
 	float: left
 }
 .title-text {
@@ -15,9 +15,7 @@
     font-size: 28px;
     text-align: left;
 }
-.size{
-    font-size: 40px;
-}
+
 @media only screen and (min-width:1024px){
     .title-text {
         font-size: 28px;
@@ -26,9 +24,8 @@
 }
 @media only screen and (min-width:1280px){
     .title-text {
-        font-size: 64px;
+        font-size: 36px;
     }
-
 }
 .content-text {
 	line-height: 39px;
@@ -69,7 +66,7 @@
 }
 @media only screen and (min-width:1280px){
     .unlock-button,.lock-button{
-        height: 100px;
+        height: 71px;
     }
 
 }
@@ -97,4 +94,16 @@
     font-weight: 700;
     font-size: 18px !important;
     text-align: left;
+}
+
+@media only screen and (min-width:1280px){
+    .unlock-button span,.lock-button span{
+        font-size: 24px !important;
+    }
+    .content-text .key{
+        font-size: 32px;
+    }
+    .content-text .value{
+        font-size: 36px;
+    }
 }
