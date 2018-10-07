@@ -1,7 +1,7 @@
 <div class="background-fx">
 	<app-user-header></app-user-header>
 	<div class="content" style="position: relative;">
-		<div style="position: absolute; right: 2.5%;top: 3%;">
+		<div style="position: absolute; right: 2.5%;top: 3%;z-index: 2">
 			<a routerLink="/map">
 				<div>
 					<i class="material-icons md-bold md-white cross-size" >close</i>
@@ -27,15 +27,14 @@
 								<span class="content-text">{{item.joined_members}}/{{item.max_members}}</span>
 								<span *ngIf="item.joined_members == item.max_members" class="content-text">COMPLETO</span>
 							</div>
-<!-- 							<div class="col" *ngIf="item.max_members> item.joined_members">
+							<div class="col" *ngIf="item.max_members> item.joined_members">
 								<a routerLink="/clan/added/{{item.id}}" style="float: right;">
 									<button mat-raised-button class="join-clan-button main-button	" color="primary">
 										<span>UNIRSE A CLAN</span>
 									</button>
 								</a>
-							</div> -->
-							<!-- <div class="col" *ngIf="item.max_members == item.joined_members"> -->
-							<div class="col" >
+							</div>
+							<div class="col" *ngIf="item.max_members == item.joined_members">
 								<a style="float: right;">
 									<button mat-raised-button class=" lock-join-clan-button main-button">
 										<img src="/assets/images/icons/lock small.png">
@@ -45,80 +44,7 @@
 							</div>
 						</div>
 					</ng-template>
-					<ng-template ngFor let-item [ngForOf]="clans" let-i="index">
-						<div class="row li-item align-items-center">
-							<div class="col-sm-2">
-								<img *ngIf="item.image" class="clan-img" src={{environment.asset_base_url}}{{item.image}}>
-							</div>
-							<div class="col-sm-6" style="margin-left: -4%;">
-								<span class="content-text" style="margin-top: 20px;" [style.color]="item.clan_color">{{item.name}}</span>
-								<span ><br><br> </span>
-								<span class="content-text">{{item.joined_members}}/{{item.max_members}}</span>
-								<span *ngIf="item.joined_members == item.max_members" class="content-text">COMPLETO</span>
-							</div>
-							<div class="col" *ngIf="item.max_members> item.joined_members">
-								<a routerLink="/clan/added/{{item.id}}" style="float: right;">
-									<button mat-raised-button class="join-clan-button main-button	" color="primary">
-										<span>UNIRSE A CLAN</span>
-									</button>
-								</a>
-							</div>
-						</div>
-						<div class="row li-item align-items-center">
-							<div class="col-sm-2">
-								<img *ngIf="item.image" class="clan-img" src={{environment.asset_base_url}}{{item.image}}>
-							</div>
-							<div class="col-sm-6" style="margin-left: -4%;">
-								<span class="content-text" style="margin-top: 20px;" [style.color]="item.clan_color">{{item.name}}</span>
-								<span ><br><br> </span>
-								<span class="content-text">{{item.joined_members}}/{{item.max_members}}</span>
-								<span *ngIf="item.joined_members == item.max_members" class="content-text">COMPLETO</span>
-							</div>
-							<div class="col" *ngIf="item.max_members> item.joined_members">
-								<a routerLink="/clan/added/{{item.id}}" style="float: right;">
-									<button mat-raised-button class="join-clan-button main-button	" color="primary">
-										<span>UNIRSE A CLAN</span>
-									</button>
-								</a>
-							</div>
-						</div>
-						<div class="row li-item align-items-center">
-							<div class="col-sm-2">
-								<img *ngIf="item.image" class="clan-img" src={{environment.asset_base_url}}{{item.image}}>
-							</div>
-							<div class="col-sm-6" style="margin-left: -4%;">
-								<span class="content-text" style="margin-top: 20px;" [style.color]="item.clan_color">{{item.name}}</span>
-								<span ><br><br> </span>
-								<span class="content-text">{{item.joined_members}}/{{item.max_members}}</span>
-								<span *ngIf="item.joined_members == item.max_members" class="content-text">COMPLETO</span>
-							</div>
-							<div class="col" *ngIf="item.max_members> item.joined_members">
-								<a routerLink="/clan/added/{{item.id}}" style="float: right;">
-									<button mat-raised-button class="join-clan-button main-button	" color="primary">
-										<span>UNIRSE A CLAN</span>
-									</button>
-								</a>
-							</div>
-						</div>
-						<div class="row li-item align-items-center">
-							<div class="col-sm-2">
-								<img *ngIf="item.image" class="clan-img" src={{environment.asset_base_url}}{{item.image}}>
-							</div>
-							<div class="col-sm-6" style="margin-left: -4%;">
-								<span class="content-text" style="margin-top: 20px;" [style.color]="item.clan_color">{{item.name}}</span>
-								<span ><br><br> </span>
-								<span class="content-text">{{item.joined_members}}/{{item.max_members}}</span>
-								<span *ngIf="item.joined_members == item.max_members" class="content-text">COMPLETO</span>
-							</div>
-							<div class="col" *ngIf="item.max_members> item.joined_members">
-								<a routerLink="/clan/added/{{item.id}}" style="float: right;">
-									<button mat-raised-button class="join-clan-button main-button	" color="primary">
-										<span>UNIRSE A CLAN</span>
-									</button>
-								</a>
-							</div>
-						</div>
-					</ng-template>
+
 				</div>
 			</div>
 		</div>

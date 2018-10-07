@@ -7,6 +7,16 @@
   width: 82.5%;
   background-color: rgba(0,0,0,0.60);
 }
+.content-created {
+  margin: 5.39%;
+  margin-left: 11.2%;
+  margin-right: 11.2%;
+  /*height: 500px;*/
+    height: 60.6%;
+  width: 76.6%;
+  background-color: rgba(0,0,0,0.60);
+  float: left
+}
 .col-form-label{
     letter-spacing: 0px;
     color: rgb(255, 255, 255);
@@ -27,8 +37,15 @@
   font-family: Raleway;
   font-weight: 600;
   line-height: 30px;
-  font-size: 50px;
+  font-size: 28px;
   text-align: center;
+}
+@media only screen and (min-width:1280px){
+  .congratulation-text{
+    font-weight: 600;
+    font-size: 36px;
+    text-align: center;
+  }
 }
 form input{
 	background-color: #EDEDED;
