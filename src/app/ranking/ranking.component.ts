@@ -27,4 +27,7 @@ export class RankingComponent implements OnInit {
       this.users[4] = this.users[index];
     this.users = this.users.slice(0,5);
   }
+  get_image_url(user:User){
+    return this.userService.get_avatar_url(user);
+  }
 }

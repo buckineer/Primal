@@ -22,7 +22,7 @@
 					<span class="content-text"><font size="6px">{{i+1}}.</font></span>
 				</div>	
 				<div class="col-sm-2" style="margin-left: -25px;">
-					<img src={{environment.asset_base_url}}{{item.avatar}} style="width: 60%;">
+					<img src={{environment.asset_base_url}}{{get_image_url(item)}} style="width:80%;">
 				</div>
 				<div class="col-sm-6" style="margin-left: -25px;">
 					<span class="content-text">{{item.first_name}} {{item.last_name}}</span>
@@ -32,7 +32,5 @@
 				</div>
 			</div>
 		</ng-template>
-
 	</div>
-
 </div>
