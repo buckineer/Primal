@@ -33,4 +33,7 @@ export class InviteComponent implements OnInit {
         this.router.navigate(['map']);
     });
   }
+  get_image_url(user:User){
+    return this.userService.get_avatar_url(user);
+  }
 }

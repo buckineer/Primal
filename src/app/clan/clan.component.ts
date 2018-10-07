@@ -46,4 +46,7 @@ export class ClanComponent implements OnInit {
   is_admin_clan():boolean{
     return this.selected_clan.admin_user == this.globalState.Current_User_Id
   }
+  get_user_image(user:User):string{
+    return this.userService.get_avatar_url(user);
+  }
 }

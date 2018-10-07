@@ -1,14 +1,13 @@
 
 .content {
-	margin: 50px;
-	margin-left: 5%;
-	margin-right: 5%;
-	height: 500px;
+    margin-top: 2%;
+    margin-left: 5%;
+    margin-right: 5%;
     width: 90%;
 }
 
 .hidden-scroll{
-    height: 620px;
+    height: 100%;
     width: 105%;
 /*    border-bottom-style: solid;
     border-bottom-color: #fff;
@@ -19,22 +18,32 @@
 }
 
 .button-change {
-    background-color: antiquewhite;
-    color: #3F9D2F;
+    background-color: #fe8d00;
+    color: #fff;
     width: 120%;
-    height: 50px;
+    /*height: 50px;*/
     text-align: left;
     font-family: Raleway;
-}
-
+    font-size: 20px;
+    font-weight: 600;
+    }
 .button-invite {
-    background-color: antiquewhite;
-    color: #3F9D2F;
+    background-color: #fe8d00;
+    color: #fff;
     width: 170%;
-    height: 50px;
+    /*height: 50px;*/
     text-align: center;
+    font-size: 20px;
+    font-weight: 600;
     font-family: Raleway;
 }
+@media only screen and (min-width:1280px){
+    .button-change,.button-invite{
+        font-size: 24px;
+        height: 50px;
+    }
+}
+
 
 .clan-image{
     /* position:absolute; */
@@ -44,35 +53,81 @@
 }
 
 .clan-avatar {
-    width:80%;
-    height: 110px;
+    width:70px;
+    height: 70px;
     border-radius: 60%;
     background-color:antiquewhite;
     border: 2px solid rgb(54, 53, 53);
 }
+@media only screen and (min-width:1280px){
+    .clan-avatar{
+        width: 100px;
+        height: 100px;
+    }
+}
+label.key{
+  font-family: Raleway;
+  font-size: 18px;
+  color:#e2e2e2;
+  font-weight: 300;
+}
+label.value{
+  font-family: Raleway;
+  font-size: 20px;
+  color:#fff;
+  font-weight: 500;
+
+}
+@media only screen and (min-width:1280px){
+    label.key{
+      font-size: 24px;
+    }
+    label.value{
+      font-size: 26px;
+    }
+}
 
 .user-avatar {
-    width: 18%;
-    height: 70px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     background-color:antiquewhite;
-    margin-left: 10%;
+    margin-left: 0%;
 }
-
 .user-image {
-    width: 200%;
-    margin-left: -50%;
-    margin-top: -10%;
+    max-width: 100%;
+    height: 100%;
 }
 
-.points-text {
-    line-height: 44px;
-    letter-spacing: 0px;
-    color: rgb(255, 255, 255);
-    font-family: 'Raleway', serif;
-    font-weight: 800;
+@media only screen and (min-width:1280px){
+    .user-avatar{
+        width: 70px;
+        height: 70px;
+    }
+}
+
+
+.points-text .key{
+    font-size: 20px;
+    font-weight: 600;
+    color: white;
+}
+.points-text .value{
     font-size: 30px;
-    text-align: left;
+    font-weight: 800;
+    color: #fe8d00;
+}
+@media only screen and (min-width:1280px){
+    .points-text .key{
+        font-size: 28px;
+        font-weight: 600;
+        color: white;
+    }
+    .points-text .value{
+        font-size: 36px;
+        font-weight: 800;
+        color: #fe8d00;
+    }
 }
 
 .territory-name-text {
@@ -80,17 +135,49 @@
     color: rgb(255, 255, 255);
     font-family: 'Raleway', serif;
     font-weight: 400;
-    font-size: 20px;
+    font-size: 16px;
     text-align: center;
     width: 80%;
 }
+.territory-img{
+    width: 100px;
+    height: 67px;
+}
 
+@media only screen and (min-width:1280px){
+    .territory-name-text{
+        font-size: 20px;
+    }
+}
 .user-name-text {
     letter-spacing: 0px;
     color: rgb(255, 255, 255);
     font-family: 'Raleway', serif;
-    font-weight: 800;
-    font-size: 20px;
+    font-weight: 500;
+    line-height: 17px;
+    font-size: 14px;
     text-align: center;
-    width: 80%;
+}
+@media only screen and (min-width:1280px){
+    .user-name-text {
+        font-weight: 800;
+        font-size: 20px;
+        line-height: 24px;
+        text-align: center;
+    }
+}
+.members-sm-show{
+    display: block;
+}
+.members-show{
+    display: none;
+}
+@media only screen and (min-width:1280px){
+
+    .members-sm-show{
+        display: none;
+    }
+    .members-show{
+        display: block;
+    }
 }
