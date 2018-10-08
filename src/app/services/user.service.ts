@@ -34,11 +34,9 @@ export class UserService {
   get_avatar_url(user:User):string{
 
         if(user.level<0){
-            console.log(",1111111111111111111111111111222222");
             return "";
         }
         var url = "/images/avatars Final/"+user.avatar + AVATAR_IMAGE_NAMES[user.level]+".png"
-        console.log(",1111111111111111111111111111",url);
         return url;
     }
   getUser(id: number): Observable<User>{    
