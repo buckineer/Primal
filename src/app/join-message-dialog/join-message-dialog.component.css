@@ -1,10 +1,58 @@
 .head-text{
-	line-height: 4px;
-    letter-spacing: 0px;
+	line-height: 36px;
+    color: #fe8d00;
     font-family: Raleway;
-    font-weight: 700;
-    font-size: 48px;
+    font-weight: 600;
+    font-size: 30px;
     text-align: left;
-    color: #FE8D00;
+}
+.top{
+    margin-top: 10px;
+}
+.clan-img{
+    width: 80px;
+    height: 80px;
+}
+.view-button{
+    height: 40px;
+    width: 160px;
+}
+@media only screen and (min-width:1280px){
+    .head-text {
+        line-height: 44px;
+        font-weight: 600;
+        font-size: 36px;
+    }
+    .top{
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    .clan-img{
+        width: 100px;
+        height: 100px;
+    }
+    .view-button{
+        height: 50px;
+        width: 160px;
+    }
 
 }
+@media only screen and (min-width:1400px){
+    .head-text {
+        line-height: 49px;
+        font-size: 40px;
+    }
+    .top{
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    .clan-img{
+        width: 160px;
+        height: 160px;
+    }
+    .view-button{
+        height: 60px;
+        width: 180px;
+    }
+}
+

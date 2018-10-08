@@ -6,27 +6,39 @@
 	/*height: 500px;*/
 	width: 90%;
 }
-.content-text {
-    letter-spacing: 0px;
-    color: rgb(255, 255, 255);
-    font-family: Raleway;
-    font-weight: 300;
-    font-size: 25px;
-    text-align: left;
-}
 
 .item-title-text {
     letter-spacing: 0px;
     color: #fe8d00;
     font-family: Raleway;
     font-weight: 800;
-    font-size: 28px;
+    font-size: 24px;
     text-align: left;
 }
 .item-title-value{
     font-weight: 600;
-    font-size: 24px;
+    font-size: 20px;
     color: white;
+}
+@media only screen and (min-width: 1280px)
+{
+    .item-title-text {
+        font-size: 28px;
+        text-align: left;
+    }
+    .item-title-value{
+        font-size: 24px;
+    }
+}
+@media only screen and (min-width: 1400px)
+{
+    .item-title-text {
+        font-size: 32px;
+        text-align: left;
+    }
+    .item-title-value{
+        font-size: 28px;
+    }
 }
 .hidden-scroll{
     height: 100%;
@@ -65,6 +77,16 @@
     text-align: center;
     padding: 0 0 0 30px;
     line-height: 50px;
+}
+@media only screen and (min-width: 1280px){
+    .lock-button-join,.button-join{
+        font-size: 24px;
+    }
+}
+@media only screen and (min-width: 1400px){
+    .lock-button-join,.button-join{
+        font-size: 28px;
+    }
 }
 
 #input_img {
