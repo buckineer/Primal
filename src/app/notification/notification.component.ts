@@ -38,20 +38,16 @@ export class NotificationComponent implements OnInit {
   }
   join(item:Notification){
     var clanId = item.clan_id;
-          const dialogRef = this.dialog.open(JoinMessageDialogComponent, {
+    this.userService.JoinClanToUserFromNotification(this.globalState.Current_User_Id,clanId)
+    .subscribe(resp=>{
+      if(resp!="error"){
+        const dialogRef = this.dialog.open(JoinMessageDialogComponent, {
+          height: '380px',
+          minWidth:"800px",
           panelClass:'select-avatar-dialog',
           data:item
         })
-    // this.userService.JoinClanToUserFromNotification(this.globalState.Current_User_Id,clanId)
-    // .subscribe(resp=>{
-    //   if(resp!="error"){
-    //     const dialogRef = this.dialog.open(JoinMessageDialogComponent, {
-    //       height: '380px',
-    //       minWidth:"800px",
-    //       panelClass:'select-avatar-dialog',
-    //       data:item
-    //     })
-    //   }
-    // })
+      }
+    })
   }
 }
