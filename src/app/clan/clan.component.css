@@ -43,6 +43,12 @@
         height: 50px;
     }
 }
+@media only screen and (min-width:1400px){
+    .button-change,.button-invite{
+        font-size: 28px;
+        height: 66px;
+    }
+}
 
 
 .clan-image{
@@ -65,6 +71,12 @@
         height: 100px;
     }
 }
+@media only screen and (min-width:1400px){
+    .clan-avatar{
+        width: 112px;
+        height: 112px;
+    }
+}
 label.key{
   font-family: Raleway;
   font-size: 18px;
@@ -84,6 +96,14 @@ label.value{
     }
     label.value{
       font-size: 26px;
+    }
+}
+@media only screen and (min-width:1400px){
+    label.key{
+      font-size: 28px;
+    }
+    label.value{
+      font-size: 30px;
     }
 }
 
@@ -149,6 +169,11 @@ label.value{
         font-size: 20px;
     }
 }
+@media only screen and (min-width:1400px){
+    .territory-name-text{
+        font-size: 24px;
+    }
+}
 .user-name-text {
     letter-spacing: 0px;
     color: rgb(255, 255, 255);
@@ -160,10 +185,14 @@ label.value{
 }
 @media only screen and (min-width:1280px){
     .user-name-text {
-        font-weight: 800;
         font-size: 20px;
         line-height: 24px;
-        text-align: center;
+    }
+}
+@media only screen and (min-width:1400px){
+    .user-name-text {
+        font-size: 24px;
+        line-height: 29px;
     }
 }
 .members-sm-show{

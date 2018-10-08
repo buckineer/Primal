@@ -30,6 +30,18 @@
 }
 
 
+@media only screen and (min-width:1400px){
+  .logo-img{
+    height: 42px;
+  }
+  .header-icon{
+    height: 29px;
+    margin-left: 12px;
+    margin-right: 12px;
+  }
+}
+
+
 
 
 /*  #gifts {

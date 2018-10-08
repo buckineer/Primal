@@ -19,18 +19,17 @@ export class GiftComponent implements OnInit {
     this.commonService.getGifts().subscribe(item=> this.gifts = item);
   }
   openDialog(gift:Gift) {
-    this.commonService.buyGifts(gift['id']).subscribe(resp=>{
-      if(resp=="success")
-      {
-        this.globalState.current_user.coins -= gift.points;
+            this.globalState.current_user.coins -= gift.points;
         gift.state = "already bought";
         const dialogRef = this.dialog.open(BuyDialogComponent, {
-          height: '380px',
-          minWidth:"800px",
           panelClass:'select-avatar-dialog',
           data:gift['title']
         });
-      }
-    });
+    // this.commonService.buyGifts(gift['id']).subscribe(resp=>{
+    //   if(resp=="success")
+    //   {
+
+    //   }
+    // });
   }
 }

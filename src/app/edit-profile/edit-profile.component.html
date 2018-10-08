@@ -56,7 +56,8 @@
 						</div>
 					</div>
 					<div style="margin-top: 20px;">
-						<button class="button-store" mat-raised-button type="submit"><font size="5px" color="#fff"><strong>GUARDAR</strong></font></button>
+						<button class="button-store" mat-raised-button type="submit">
+						GUARDAR</button>
 					</div>
 				</form>
 			</div>
@@ -68,11 +69,11 @@
                 	<img src="{{environment.asset_base_url}}{{user_image_url}}" class="user-image">
                 </div>
                 <div style="margin-top: 20px;">
-					<button (click)="openDialog()" class="button-store" mat-raised-button><font size="5px" color="#fff"><strong>EDITAR</strong></font></button>
+					<button (click)="openDialog()" class="button-store" mat-raised-button>EDITAR</button>
                 </div>
 			</div>
 		</div>
-		<div class="row">
+		<div class="row second-top">
 			<span class="my-text pointer" [routerLink]="['/update_password']">Cambiar la contraseña</span>
 		</div>
 		<div class="row" class="top">

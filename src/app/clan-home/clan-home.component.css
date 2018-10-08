@@ -60,11 +60,38 @@
 @media only screen and (min-width:1280px){
 
     .clan-img{
-        height: 80px;
-        width: 80px;
+        height: 100px;
+        width: 100px;
     }
     .main-button {
         height: 50px;
+    }
+    .main-button span{
+        font-size: 20px;
+        font-weight: 700;
+    }
+    .lock-join-clan-button{
+        background-color: #555555;
+        padding-left:3px;
+    }
+    .lock-join-clan-button span{
+        font-size: 18px;
+    }
+    .lock-join-clan-button img{
+        width: 25px;
+    }
+    .create_btn{
+        width: 182.7px;
+    }
+}
+@media only screen and (min-width:1400px){
+
+    .clan-img{
+        height: 118px;
+        width: 118px;
+    }
+    .main-button {
+        height: 55px;
     }
     .main-button span{
         font-size: 24px;

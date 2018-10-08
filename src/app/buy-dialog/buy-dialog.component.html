@@ -1,24 +1,24 @@
 <div class="container">
-	<div class="row align-items-center" style="margin-top: 50px;position: relative;">
+	<div class="row align-items-center top" style="position: relative;">
 			<div style="position: absolute; right: 10px;top: 0px;color: #efba1f;z-index: 1" (click)="close()">
-				<i class="pointer material-icons md-bold md-80"   >close</i>	
+				<i class="pointer material-icons md-bold cross-size"   >close</i>	
 			</div>
 		<div class="col" style="text-align: center;">
 			<span class="head-text">¡Felicidades!<br><br></span>
 
-			<span class="head-text" style="font-size: 36px;">Has comprado un regalo</span>				
+			<span class="head-text">Has comprado un regalo</span>				
 		</div>
 		
 	</div>
 	<div class="row">
 		
 	</div>
-	<div class="row justify-content-center" style="margin-top: 40px;margin-bottom: 20px;">
+	<div class="row justify-content-center" style="margin-top: 40px;">
 			<div class="vertical-child-center" >
-				<img src="/assets/images/icons/present.png" style="width: 150px;background-color: #2d7022">
+				<img class="gift-img" src="/assets/images/icons/gift.svg">
 			</div>
 			<div class="vertical-child-center" >
-				<span class="head-text" style="margin-left:20px; color: #000">{{gift_name}}</span>
+				<span class="head-text" style="margin-left:20px; font-weight:700;color: #000">{{gift_name}}</span>
 			</div>
 	</div>
 </div>

@@ -18,6 +18,12 @@
   font-size: 24px;  
  } 
 }
+@media only screen and (min-width:1400px){
+ .col-form-label{
+  font-weight: 800;
+  font-size: 32px;  
+ } 
+}
 form input{
 	background-color: #EDEDED;
 	border-radius: 5px;
@@ -31,7 +37,7 @@ form input{
     font-family: Raleway;
     font-weight: 600;
 }
-.button-store strong{
+.button-store{
     font-size: 18px;
 }
 @media only screen and (min-width:1280px){
@@ -40,8 +46,18 @@ form input{
         text-align: left;
         font-family: Raleway;
     }
-    .button-store strong{
+    .button-store{
         font-size: 20px;
+    }
+}
+@media only screen and (min-width:1400px){
+    .button-store {
+        height: 54px;
+        text-align: left;
+        font-family: Raleway;
+    }
+    .button-store{
+        font-size: 28px;
     }
 }
 .user-image{
@@ -59,6 +75,12 @@ form input{
     .user-avatar {
         width:120px;
         height: 120px;
+    }
+}
+@media only screen and (min-width:1400px){
+    .user-avatar {
+        width:160px;
+        height: 160px;
     }
 }
 .is-invalid input{
@@ -95,7 +117,19 @@ form input{
         font-size: 30px;
         line-height: 36px;
     }
+    .second-top{
+        margin-top: 10px;
+    }
     .top{
+        margin-top: 30px;
+    }
+}
+@media only screen and (min-width:1400px){
+    .my-text{
+        font-size: 34px;
+        line-height: 36px;
+    }
+    .second-top{
         margin-top: 50px;
     }
 }

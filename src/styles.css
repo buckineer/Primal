@@ -102,7 +102,8 @@ button{
 }
 .select-avatar-dialog .mat-dialog-container{
     border-radius: 25px;
-
+    width: 577px;
+    height: 240px;
 }
 .dialog .mat-dialog-container{
     border-radius: 25px;
@@ -113,6 +114,20 @@ button{
     .dialog .mat-dialog-container{
         width: 800px;
         height: 350px;
+    }
+    .select-avatar-dialog .mat-dialog-container{
+        width: 653px;
+        height: 330px;
+    }
+}
+@media only screen and (min-width:1400px){
+    .dialog .mat-dialog-container{
+        width: 1102px;
+        height: 449px;
+    }
+    .select-avatar-dialog .mat-dialog-container{
+        width: 800px;
+        height: 399px;
     }
 }
 .btn-font1{
@@ -167,5 +182,17 @@ button{
     .content-text {
         /* line-height: 44px; */
         font-size: 28px;
+    }
+}
+@media only screen and (min-width:1400px){
+     .title-text {
+        font-size: 40px;
+    }
+    .cross-size{
+        font-size: 50px;
+    }
+    .content-text {
+        /* line-height: 44px; */
+        font-size: 32px;
     }
 }

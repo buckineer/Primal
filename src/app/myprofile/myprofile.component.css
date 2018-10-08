@@ -12,20 +12,19 @@
 .user-avatar {
     width:80px;
     height: 80px;
-    border-radius: 60%;
-    background-color:antiquewhite;
-    border: 2px solid rgb(54, 53, 53);
 }
 @media only screen and (min-width:1280px){
     .user-avatar {
         width:120px;
         height: 120px;
-        border-radius: 60%;
-        background-color:antiquewhite;
-        border: 2px solid rgb(54, 53, 53);
     }
 }
-
+@media only screen and (min-width:1400px){
+    .user-avatar {
+        width:144px;
+        height: 144px;
+    }
+}
 .button-edit {
     background-color: #fe8d00;
     color: white;
@@ -44,6 +43,14 @@
     }
     .button-edit strong{
         font-size: 24px;
+    }
+}
+@media only screen and (min-width:1400px){
+    .button-edit {
+        height: 55x;
+    }
+    .button-edit strong{
+        font-size: 28px;
     }
 }
 .points-text{
@@ -75,6 +82,14 @@
         color: #fe8d00;
     }
 }
+@media only screen and (min-width:1400px){
+    .points-text .key{
+        font-size: 32px;
+    }
+    .points-text .value{
+        font-size: 40px;
+    }
+}
 .user-section{
 	margin-top: 30px;
 	border-bottom-style: solid;
@@ -102,6 +117,11 @@
         font-size: 24px;
     }
 }
+@media only screen and (min-width:1400px){
+    .map-badge-text{
+        font-size: 28px;
+    }
+}
 .clan-avatar{
 	width: 80px;
     height: 80px;
@@ -110,6 +130,12 @@
     .clan-avatar{
         width: 100px;
         height: 100px;
+    }
+}
+@media only screen and (min-width:1400px){
+    .clan-avatar{
+        width: 125px;
+        height: 125px;
     }
 }
 .clan-text{
@@ -135,6 +161,14 @@
         font-size: 36px;
     }
 }
+@media only screen and (min-width:1400px){
+    .clan-text{
+        font-size: 28px;
+    }
+    .clan-text .value{
+        font-size: 40px;
+    }
+}
 .first-name-text{
     font-family: Raleway;
     font-size: 24px;
@@ -150,5 +184,10 @@
 @media only screen and (min-width:1280px){
     .first-name-text,.second-name-text{
         font-size: 28px;
+    }
+}
+@media only screen and (min-width:1400px){
+    .first-name-text,.second-name-text{
+        font-size: 32px;
     }
 }

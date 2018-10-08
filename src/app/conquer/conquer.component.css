@@ -27,6 +27,11 @@
         font-size: 36px;
     }
 }
+@media only screen and (min-width:1400px){
+    .title-text {
+        font-size: 36px;
+    }
+}
 .content-text {
 	line-height: 39px;
     font-family: Raleway;

@@ -63,3 +63,9 @@
         height: 100px;
     }
 }
+@media only screen and (min-width: 1400px){
+    .clan-img{
+        width: 112px;
+        height: 112px;
+    }
+}

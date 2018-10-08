@@ -94,3 +94,24 @@
     padding-bottom: 20px;
   }
 }
+@media only screen and (min-width:1400px){
+  .header-text{
+    font-size: 32px;
+  }
+  .rank-number{
+    font-size: 40px;
+  }
+  .clan-image{
+    width: 105px;
+    height: 105px;
+  }
+  .points-text{
+    font-size: 40px;
+  }
+  .top{
+    margin-top: 60px;
+  }
+  .border-bottom{
+    padding-bottom: 20px;
+  }
+}

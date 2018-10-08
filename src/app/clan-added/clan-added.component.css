@@ -17,17 +17,18 @@
     text-align: left;
 }
 
-@media only screen and (min-width:1024px){
-    .title-text {
-        font-size: 28px;
-    }
 
-}
 @media only screen and (min-width:1280px){
     .title-text {
         font-size: 36px;
     }
 }
+@media only screen and (min-width:1400px){
+    .title-text {
+        font-size: 40px;
+    }
+}
+
 .congratulation-text{
   letter-spacing: 0px;
   color: rgb(255, 255, 255);
@@ -44,7 +45,11 @@
 	  text-align: center;
 	}
 }
-
+@media only screen and (min-width:1400px){
+  .congratulation-text{
+    font-size: 40px;
+  }
+}
 button{
 	background-color: #fe8d00 !important;
 	border-radius: 40px;

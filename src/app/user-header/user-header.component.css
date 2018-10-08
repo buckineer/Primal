@@ -70,3 +70,24 @@ div.header {
     height: 108px;
   }
 }
+@media only screen and (min-width:1400px){
+  .avatar-img{
+    width: 90px;
+    height: 90px;
+  }
+  label.username{
+  font-size: 34px;
+  }
+  label.levelname{
+    font-size: 28px;
+  }
+  label.value{
+    font-size: 40px;
+  }
+  label.key{
+    font-size: 28px;
+  }
+  div.top{
+    height: 115px;
+  }
+}
