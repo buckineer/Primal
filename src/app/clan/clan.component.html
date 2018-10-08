@@ -63,26 +63,48 @@
 
             <label class="content-text"><font color=antiquewhite>Miembros:</font></label>
 
-            <div class="row align-items-center" style="padding-top: 10px;">
-              <div class="col-sm-5 algin-items-center" style="margin-top: 1.5%;">
-                <div class="col-sm-4 user-avatar">
-                  <img src={{environment.asset_base_url}}{{admin_user.avatar}} class="user-image"> 
+            <div class="row align-items-center members-show" style="padding-top: 5px;">
+                <div class="col-sm-4 row algin-items-center" style="margin-top: 1%;">
+                  <div class="col-3">
+                    <div class="user-avatar">
+                      <img src={{environment.asset_base_url}}{{get_user_image(admin_user)}} class="user-image"> 
+                    </div>
+                  </div>
+                  <div class="col-3 vertical-child-center">
+                    <label class="user-name-text">{{ admin_user.first_name }} {{ admin_user.last_name }}<br> Admin</label>
+                  </div>
                 </div>
-                <div class="col-sm-8">
-                  <label class="user-name-text">{{ admin_user.first_name }} {{ admin_user.last_name }}<br><br> Admin</label> 
-                </div>
+                <ng-template ngFor let-item [ngForOf]="joined_users" let-i="index">  
+                  <div class="col-sm-4 row algin-items-center" style="margin-top: 1%;">
+                    <div class="col-3">
+                      <div class="user-avatar">
+                        <img src={{environment.asset_base_url}}{{get_user_image(item)}} class="user-image"> 
+                      </div>
+                    </div>
+                    <div class="col-3 vertical-child-center">
+                      <label class="user-name-text">{{ item.first_name }} {{ item.last_name }}</label> 
+                    </div>
+                  </div>
+                    
+                </ng-template>
               </div>
-              <ng-template ngFor let-item [ngForOf]="joined_users" let-i="index">
-                <div class="col-sm-5 algin-items-center" style="margin-top: 1.5%;">
-                  <div class="col-sm-4 user-avatar">
-                    <img src={{environment.asset_base_url}}{{item.avatar}} class="user-image"> 
+
+              <div class="align-items-center members-sm-show" style="padding-top: 1px;">
+                  <div style="float: left;">
+                    <div class="user-avatar">
+                      <img src={{environment.asset_base_url}}{{get_user_image(admin_user)}} class="user-image"> 
+                    </div>
+                    <label class="user-name-text">{{ admin_user.first_name }} {{ admin_user.last_name }}<br> Admin</label> 
                   </div>
-                  <div class="col-sm-8">
-                    <label class="user-name-text">{{ item.first_name }} {{ item.last_name }}</label> 
-                  </div>
-                </div>
-              </ng-template>
-            </div>
+                  <ng-template ngFor let-item [ngForOf]="joined_users" let-i="index">
+                    <div style="float: left;margin-left: 2%;text-align: center;">
+                      <div class="user-avatar">
+                        <img src={{environment.asset_base_url}}{{get_user_image(item)}} class="user-image"> 
+                      </div>
+                      <label class="user-name-text">{{ item.first_name }} {{ item.last_name }}</label> 
+                    </div>
+                  </ng-template>
+              </div>
         </div>
       </div>
     </div>

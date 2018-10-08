@@ -1,12 +1,21 @@
-<div class="background-nofx">
+<div class="background-fx">
 	<app-user-header></app-user-header>
-	<div class="content container" style="position: relative;">
-		<div style="position: absolute; right: -30px;top: -30px;">
-			<i class="material-icons md-bold md-80 md-white" >close</i>
+	<div class="content container" style="position: relative;overflow: hidden;">
+		<div style="position: absolute; right: 2.5%;top: 3%;z-index: 2">
+			<a routerLink="/map">
+				<div>
+					<i class="material-icons md-bold md-white cross-size" >close</i>
+				</div>				
+			</a>
 		</div>
-		<div>
-			<span class="title-text">INVITAR A LUCHADORES</span>
-			<div style="width: 90%;overflow: hidden;border-bottom-style: solid;border-bottom-color: #fff;">
+		<div class="row" style="padding-top: 3.6%;padding-left: 2.22%;position: relative;">
+			<div class="col">
+				<span class="title-text">INVITAR A LUCHADORES</span>
+			</div>
+		</div>
+
+		<div class="h-100">
+			<div class="scroll-height" style="width: 90%;overflow: hidden;border-bottom-style: solid;border-bottom-color: #fff;">
 
 				<div style="padding-left: 15px;margin-bottom: 10px;" style="height: 360px;" class="hidden-scroll">
 					<checkbox-group [(ngModel)]="selectedUsers">										
@@ -18,7 +27,7 @@
 									<checkbox value="{{item['id']}}"> </checkbox>	
 								</div>
 								<div class="circle-border vertical-child-center" style="position: relative;">
-									<img src="{{environment.asset_base_url}}{{item['avatar']}}" style="width: 100px;">
+									<img src="{{environment.asset_base_url}}{{get_image_url(item)}}" style="width: 100%;height: 100%;">
 								</div>
 							</div>
 							<div class="col-sm-6">
@@ -39,9 +48,9 @@
 							<span class="content-text">Seleccionar todos</span>
 						</div>
 					</div>
-					<div class="row align-items-center" style="padding-top: 20px;">
+					<div class="row align-items-center top">
 						<div class="col-sm-8">
-							<span class="content-text"> TOTAL INVITADOS: {{selectedUsers.length}}/5</span>
+							<span class="total-text"> TOTAL INVITADOS: {{selectedUsers.length}}/5</span>
 						</div>
 						<div class="col-sm-4">
 							<button (click) = "store()" mat-raised-button style="float: right;background: none;color: #fff; margin-top: -20px;" class="store-button" color="primary">

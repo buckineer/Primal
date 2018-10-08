@@ -7,7 +7,7 @@
 }
 
 .hidden-scroll{
-    height: 620px;
+    height: 100%;
     width: 105%;
 /*    border-bottom-style: solid;
     border-bottom-color: #fff;
@@ -33,6 +33,8 @@
     width: 170%;
     /*height: 50px;*/
     text-align: center;
+    font-size: 20px;
+    font-weight: 600;
     font-family: Raleway;
 }
 @media only screen and (min-width:1280px){
@@ -86,17 +88,22 @@ label.value{
 }
 
 .user-avatar {
-    width: 18%;
-    height: 70px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     background-color:antiquewhite;
-    margin-left: 10%;
+    margin-left: 0%;
+}
+.user-image {
+    max-width: 100%;
+    height: 100%;
 }
 
-.user-image {
-    width: 200%;
-    margin-left: -50%;
-    margin-top: -10%;
+@media only screen and (min-width:1280px){
+    .user-avatar{
+        width: 70px;
+        height: 70px;
+    }
 }
 
 
@@ -146,9 +153,31 @@ label.value{
     letter-spacing: 0px;
     color: rgb(255, 255, 255);
     font-family: 'Raleway', serif;
-    font-weight: 800;
-    font-size: 20px;
+    font-weight: 500;
+    line-height: 17px;
+    font-size: 14px;
     text-align: center;
-    width: 80%;
 }
+@media only screen and (min-width:1280px){
+    .user-name-text {
+        font-weight: 800;
+        font-size: 20px;
+        line-height: 24px;
+        text-align: center;
+    }
+}
+.members-sm-show{
+    display: block;
+}
+.members-show{
+    display: none;
+}
+@media only screen and (min-width:1280px){
 
+    .members-sm-show{
+        display: none;
+    }
+    .members-show{
+        display: block;
+    }
+}
