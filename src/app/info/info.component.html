@@ -1,22 +1,24 @@
 <div class="background-fx">
   <app-user-header></app-user-header>
-  <div class="content">
+  <div class="content" style="position: relative;">
+    <div style="position: absolute; right: 2.5%;top: 0px;z-index: 2">
+      <a routerLink="/map">
+        <div>
+          <i class="material-icons md-bold md-white cross-size" >close</i>
+        </div>        
+      </a>
+    </div>
     <div class="row align-items-center">
       <div class="col-sm-8">
         <span class="title-text">INFORMACIÓN</span>
       </div>
     </div>
-    <div style="width: 95%; overflow: hidden;">
+    <div style="width: 95%; overflow: hidden;height: 88%;">
       <div style="padding-left: 5%;" class="hidden-scroll">
         <ng-template ngFor let-item [ngForOf]="info" let-i="index">
-          <div class="row align-items-center" style="width: 95%;margin-top: 2%">
-            <div>
-              <label class="item-title-text"> {{ item.item }}</label>
-            </div>
-            <div>
-              <label class="content-text" style="margin-top: 0%;"> {{ item.description }}</label>
-            </div>            
-            
+          <div style="width: 95%;margin-top: 2%">
+              <span class="item-title-text"> {{ item.item }}<br> </span>
+              <span class="content-text" style="margin-top: 0%;"> {{ item.description }}</span>
           </div>
         </ng-template>
       </div>

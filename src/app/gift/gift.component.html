@@ -1,29 +1,30 @@
 <div class="background-fx">
   <app-user-header></app-user-header>
-  <div class="content">
-    <div class="row align-items-center">
-      <div class="col-sm-8">
+  <div class="dark-effect">
+  </div>
+  <div class="content" style="position: relative;">
+    <div style="position: absolute; right: 2.5%;top: 3%;z-index: 2">
+      <a routerLink="/map">
+        <div>
+          <i class="material-icons md-bold md-white cross-size" >close</i>
+        </div>        
+      </a>
+    </div>
+    <div class="row" style="padding-top: 3.6%;padding-left: 2.22%;position: relative;">
+      <div class="col">
         <span class="title-text">REGALOS</span>
       </div>
-      <div class="col-sm-2">
-        
-      </div>
-      <div class="col-sm-2" style="margin-top: -20px;">
-        <a routerLink="/map">
-          <div>
-            <i class="material-icons md-bold md-60 md-white">close</i>
-          </div>				
-        </a>
-      </div>
     </div>
-    <div style="width: 95%; overflow: hidden;">
+
+    <div class="scroll-height" style="width: 95%; overflow: hidden;">
         <div style="padding-left: 5%;" class="hidden-scroll">
           <ng-template ngFor let-item [ngForOf]="gifts" let-i="index">
             <div class="row align-items-center" style="width: 95%;margin-top: 3%">
               <div class="col-sm-8">
-                <label class="item-title-text"> {{ item.title }}</label>
+                <label class="content-text"> {{ item.title }} </label>
                 <br>
-                <label class="content-text"> {{ item.points }} monedas </label>
+                <label class="item-title-text"> {{ item.points }} &nbsp;</label>
+                <label class="item-title-value"> monedas </label>
               </div>     
               <div *ngIf=" (item.state == 'can buy') " class="col-sm-2">
                 <button (click)="openDialog(item)" class="button-join" mat-raised-button>COMPRAR</button>

@@ -1,26 +1,32 @@
 <div class="background-fx">
   <app-user-header></app-user-header>
-  <div class="content">
+  <div class="content" style="position: relative;">
+    <div style="position: absolute; right: 2.5%;top: 0px;z-index: 2">
+      <a routerLink="/map">
+        <div>
+          <i class="material-icons md-bold md-white cross-size" >close</i>
+        </div>        
+      </a>
+    </div>
     <div class="row align-items-center" style="padding-top: 20px;">
       <div class="col-sm-8">
         <span class="title-text">NOTIFICACIONES</span>
       </div>
     </div>
-    <div style="width: 95%; overflow: hidden;">
+    <div style="width: 95%; overflow: hidden;height: 88%;">
       <div style="padding-left: 12%;" class="hidden-scroll">
         <ng-template ngFor let-item [ngForOf]="notifications" let-i="index">
           <div class="row align-items-center" style="padding-top: 20px;">
             <div class="col-sm-2" style="margin-left: -10%">
-              <img src={{environment.asset_base_url}}{{item.clan_image}} style="width: 100%;">
+              <img class="clan-img" src={{environment.asset_base_url}}{{item.clan_image}}>
             </div>
             <div class="col-sm-8">
               <span class="content-text">¡Únete al clan de {{ item.clan_name }}!</span>
               <br>
-              <br>
               <span class="content-text">Te han invitado a participar en un clan. </span>
             </div>
             <div class="col-sm-2">
-              <button (click)="join(item)"class="button-join" mat-raised-button><font size="5px" color="#FE8D00">Unirse</font></button>
+              <button (click)="join(item)" class="button-join content-text" mat-raised-button >Unirse</button>
             </div>
           </div>
         </ng-template>
