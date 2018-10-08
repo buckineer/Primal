@@ -3,7 +3,7 @@
 @import "css.css";
 
 .material-icons.md-80 { font-size: 80px; }
-.material-icons.md-60 { font-size: 60px; }
+.material-icons.md-60 { font-size: 40px; }
 .material-icons.md-bold { font-weight: bold; }
 .material-icons.md-white { color: rgba(255, 255, 255, 1.0); }
 .container-fluid{
