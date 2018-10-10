@@ -36,7 +36,7 @@ export class EditProfileComponent implements OnInit {
   		'first_name': ['',Validators.required],
   		'last_name': ['',Validators.required],
   		'email': ['',Validators.required],      
-  		'phone':['',[Validators.required,Validators.pattern('^\\+?1?\\d{9,15}$')]],
+  		'phone':['',[Validators.pattern('^\\+?1?\\d{9,15}$')]],
   	})
   }
   openDialog() {
