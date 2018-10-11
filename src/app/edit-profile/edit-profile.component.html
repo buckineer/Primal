@@ -43,16 +43,19 @@
 					</div>
 					<div class="row">
 						<label for="email" class="col-sm-4 col-form-label">Telefono</label>
-						<div class="col-sm-8" [class.is-invalid]="!myForm.controls['phone'].valid && myForm.controls['phone'].touched">
+						<div class="col-sm-8">
+						<!--<div class="col-sm-8" [class.is-invalid]="!myForm.controls['phone'].valid && myForm.controls['phone'].touched"> -->
 					    	<input type="text" class="form-control" [formControl]="myForm.controls['phone']">
-					    	<div *ngIf="(!myForm.controls['phone'].valid && myForm.controls['phone'].touched)" class="is-invalid">
+							<!--
+							<div *ngIf="(!myForm.controls['phone'].valid && myForm.controls['phone'].touched)" class="is-invalid">
 								<div *ngIf="myForm.controls['phone'].errors.required"  class="invalid-feedback">
 									required
 								</div>
 								<div *ngIf="myForm.controls['phone'].errors.pattern" class="invalid-feedback">
-									"Phone number must be entered in the format: '+999999999'. Up to 15 digits allowed."
+									"El número de teléfono debe ser ingresado en el formato: '+999999999'. Se permiten hasta 15 dígitos."
 								</div>
 							</div>
+							-->
 						</div>
 					</div>
 					<div style="margin-top: 20px;">

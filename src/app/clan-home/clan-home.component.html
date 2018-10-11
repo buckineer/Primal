@@ -24,7 +24,7 @@
 							<div class="col-sm-6" style="margin-left: -4%;">
 								<span class="content-text" style="margin-top: 20px;" [style.color]="item.clan_color">{{item.name}}</span>
 								<span ><br><br> </span>
-								<span class="content-text">{{item.joined_members}}/{{item.max_members}}</span>
+								<span class="content-text">{{item.joined_members + 1}}/{{item.max_members}}</span>
 								<span *ngIf="item.joined_members == item.max_members" class="content-text">COMPLETO</span>
 							</div>
 							<div class="col" *ngIf="item.max_members> item.joined_members">
