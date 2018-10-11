@@ -16,7 +16,7 @@ export class ClanAddedComponent implements OnInit {
   clan:Clan;
   environment = environment
   constructor(private route: ActivatedRoute,
-    private clanService: ClanService, private userService: UserService,private globalState:GlobalState) { 
+    private clanService: ClanService, private userService: UserService,public globalState:GlobalState) { 
     this.clan = new Clan()
   }
 

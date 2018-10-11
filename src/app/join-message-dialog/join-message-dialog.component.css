@@ -9,6 +9,9 @@
 .top{
     margin-top: 10px;
 }
+.error-top{
+    margin-top: 40px;
+}
 .clan-img{
     width: 80px;
     height: 80px;
@@ -26,6 +29,9 @@
     .top{
         margin-top: 20px;
         margin-bottom: 20px;
+    }
+    .error-top{
+        margin-top: 70px;
     }
     .clan-img{
         width: 100px;
@@ -45,6 +51,9 @@
     .top{
         margin-top: 20px;
         margin-bottom: 20px;
+    }
+    .error-top{
+        margin-top: 100px;
     }
     .clan-img{
         width: 160px;
