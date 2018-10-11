@@ -4,6 +4,7 @@ import {User} from '../models/user.model';
 import { Router } from '@angular/router';
 import {environment} from '../../environments/environment';
 import {CommonService} from '../services/common.service';
+import {GlobalState} from '../state';
 @Component({
   selector: 'app-invite',
   templateUrl: './invite.component.html',
@@ -13,7 +14,10 @@ export class InviteComponent implements OnInit {
   selectedUsers: any[];
   users:User[];
   environment = environment;
-  constructor(private commonService:CommonService,public userService:UserService,private router: Router) { 
+  constructor(private commonService:CommonService,
+    public userService:UserService,
+    public globalState:GlobalState,
+    private router: Router) { 
   	this.selectedUsers=[];
   }
 

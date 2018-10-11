@@ -22,7 +22,7 @@ export class ClanService {
       );
   }
   addClan(clan:Clan):Observable<Clan>{
-    return this.http.post<Clan>(this.api_base_url+"/clan/",clan).pipe(
+    return this.http.post<Clan>(this.api_base_url+"/create_clan/",clan).pipe(
       catchError(this.handleError('addClan',new Clan(-1,)))
       )
   }

@@ -8,9 +8,6 @@
   <div class="login-form">
     <div class="login-form-content">
       <img  class="user-icon" src="../assets/images/login/user_icon.png">
-      <ng-container *ngIf="is_reset_done then reset_succes_content else forgot_form_content">
-      </ng-container>
-      <ng-template #forgot_form_content>
         <div class="comment-text">
           <span class="comment-text-span">Iniciar sesión</span>
         </div>
@@ -33,7 +30,6 @@
           <button type="submit" class="submit-btn" mat-raised-button>Iniciar sesión</button>
         </form>
           <label class="notify pointer" (click)="go_to_forgot()" ><font color="#fff">¿Has olvidado la contraseña?</font></label>
-      </ng-template>
     </div>
   </div>
 </div>
