@@ -51,11 +51,28 @@ export class ConquerComponent implements OnInit {
     this.remain_days = dayDifference;
     console.log("remain days",this.remain_days)
   }
+
   is_joined():boolean{
     if(this.user){
       return  ((this.user.joined_clan!=-1 && this.user.joined_clan != null ) || (this.user.admin_clan!=-1 && this.user.admin_clan!=null));
     }
     return false;
+  }
+
+  clan_to_change():boolean{
+    var now = new Date();
+    var starting_date = new Date(this.territory.starting_date);
+    
+    var timeDiff = Math.abs(now.getTime() - starting_date.getTime());
+    var dayDiff = Math.ceil(timeDiff / (1000 * 3600 * 24));
+
+    if (dayDiff >= 7)
+    {
+      return false;
+    }
+    else {
+      return true;
+    }
   }
 }
 

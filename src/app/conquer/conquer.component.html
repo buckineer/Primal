@@ -16,10 +16,10 @@
 			</div>
 			<div style="padding-top: 20px">
 				<span class="content-text"> 
-					<span class="key"> Inicio misión: </span>
+					<span class="key"> Mision final: </span>
 					<span class="value">{{remain_days}} días</span>
 					<br><br>
-					<span class="key"> Recompensa: </span>
+					<span class="key"> Puntos mínimos: </span>
 					<span class="value">{{territory.reaching_min_points}}</span>
 				</span>
 			</div>		
@@ -31,13 +31,13 @@
 		</div>
 		<div class="w-100" style="position: absolute;bottom: 13.2%;">
 			<div class="col-sm-6 h-100" style="padding-left: 5.22%;position: relative;">
-				<a *ngIf="is_joined()">
+				<a *ngIf="!clan_to_change() || is_joined()">
 					<button mat-raised-button class= "lock-button" style="padding-left: 2px" color="primary">
 						<img src="/assets/images/icons/lock small.png">
 						<span style="padding-left: 0px;">UNIRSE A CLAN</span>
 					</button>
 				</a>
-				<a routerLink="/clan/home" *ngIf="!is_joined()">
+				<a routerLink="/clan/home" *ngIf="clan_to_change() && !is_joined()">
 					<button mat-raised-button class= "unlock-button" color="primary">
 						<img src="/assets/images/icons/lock small.png" >
 						<span>UNIRSE A CLAN</span>
@@ -45,13 +45,13 @@
 				</a>
 			</div>
 			<div class="col-sm-6 w-100" style="position: relative;text-align: center;">
-				<a *ngIf="!is_joined()">
+				<a *ngIf="clan_to_change()">
 					<button mat-raised-button class= "lock-button" color="primary">
 						<img src="/assets/images/icons/lock small.png" >
 						<span>CONQUISTAR</span>
 					</button>
 				</a>
-				<a routerLink="/clan/ranking" *ngIf="is_joined()">
+				<a routerLink="/clan/ranking" *ngIf="!clan_to_change()">
 					<button mat-raised-button class= "unlock-button" color="primary">
 						<img src="/assets/images/icons/lock small.png" >
 						<span>CONQUISTAR</span>
