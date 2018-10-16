@@ -7,4 +7,5 @@ export const environment = {
   production: false,
   api_base_url:"http://localhost:8000/api",
   asset_base_url:"http://localhost:8000/static",
+  event_url:"http://localhost:8000/notification/myevents/",
 };
