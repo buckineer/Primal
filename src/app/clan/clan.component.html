@@ -5,13 +5,13 @@
         <div class="col-sm-4">
           <span class="title-text">CLAN</span>
         </div>
-        <div *ngIf="is_admin_clan()" class="col-sm-2" style="margin-left: 35%;">
+        <div *ngIf="clan_to_change() && is_admin_clan()" class="col-sm-2" style="margin-left: 35%;">
           <a routerLink = "/invite">
             <button class="button-invite" mat-raised-button>Invitar Luchadores</button>
           </a>
         </div>
 
-        <div *ngIf="!is_admin_clan()" class="col-sm-2" style="margin-left: 35%;">
+        <div *ngIf="clan_to_change() && !is_admin_clan()" class="col-sm-2" style="margin-left: 35%;">
           <a routerLink = "/clan/home">
             <button class="button-change" mat-raised-button>Cambiar clan</button>
           </a> 

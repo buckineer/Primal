@@ -14,7 +14,7 @@ export class Territory {
     clan_img: string;
 
     constructor(id?:number,
-                title?: string, 
+                title?: string,
                 reaching_min_points?:number,
                 image_url?: string, 
                 starting_date?: Date,

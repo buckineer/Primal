@@ -6,6 +6,8 @@ import { User } from '../models/user.model';
 import { UserService } from '../services/user.service';
 import { environment } from '../../environments/environment';
 import {GlobalState} from '../state';
+import { TerritoryService } from '../services/territory.service';
+import { Territory } from '../models/territory.model';
 @Component({
   selector: 'app-clan',
   templateUrl: './clan.component.html',
@@ -17,20 +19,27 @@ export class ClanComponent implements OnInit {
   joined_users: User[] = [];
   environment = environment
   admin_user:User = new User;
-
+  current_mission = new Territory;
 
   constructor(private route: ActivatedRoute,
     private clanService: ClanService, private userService: UserService,
+    private missionService: TerritoryService,
     public globalState:GlobalState) { }
 
   ngOnInit() {
     this.getClan();
+    this.get_current_mission(); 
   }
 
   getClan(): void {
     const id:number = +this.route.snapshot.paramMap.get('id');
   	this.clanService.getClan(id)
 		.subscribe(ret_item=>{this.selected_clan = ret_item; this.getUsers();});
+  }
+
+  get_current_mission(): void {
+    this.missionService.getCurrentMission().subscribe(ret_item=>{this.current_mission = ret_item;})
+    console.log("Mission Details------------------------")
   }
 
   getUsers(): void {
@@ -48,5 +57,23 @@ export class ClanComponent implements OnInit {
   }
   get_user_image(user:User):string{
     return this.userService.get_avatar_url(user);
+  }
+
+  clan_to_change():boolean{
+    var now = new Date();
+    var starting_date = new Date(this.current_mission.starting_date);
+    
+    var timeDiff = Math.abs(now.getTime() - starting_date.getTime());
+    var dayDiff = Math.ceil(timeDiff / (1000 * 3600 * 24));    
+
+    if (dayDiff > 7 || dayDiff == NaN)
+    {
+      return false;
+    }
+    
+    if (dayDiff <= 7 && dayDiff != NaN)
+    {
+      return true;
+    }
   }
 }
