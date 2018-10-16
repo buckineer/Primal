@@ -13,6 +13,7 @@ export class User {
     admin_clan:number;
     badge_list:any[];
     image_url:string;
+    total_points: number;
     constructor(id: number=0,
     			first_name: string="",
     			last_name:string="",
@@ -25,7 +26,8 @@ export class User {
                 email:string = "default@default.com",
                 phone:string = "000-000-000",
                 admin_clan:number =-1,
-                badge_list:any[] = []
+                badge_list:any[] = [],
+                total_points: number=0,
                 ){
         this.id = id;
         this.first_name = first_name;
@@ -40,6 +42,7 @@ export class User {
         this.phone_number = phone;
         this.admin_clan = admin_clan
         this.badge_list = badge_list
+        this.total_points = total_points
     }
 
 }
