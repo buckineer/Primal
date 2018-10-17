@@ -40,8 +40,8 @@ export class UserService {
         var url = "/images/avatars Final/"+user.avatar + AVATAR_IMAGE_NAMES[user.level]+".png"
         return url;
     }
-  getUser(id: number): Observable<User>{
-    return this.http.get<User>(this.api_base_url+"/user/"+id +"/").pipe(
+  getUser(id: number): Observable<User>{    
+    return this.http.get<User>(this.api_base_url+"/user/"+id+"/").pipe(
       catchError(this.handleError('get_user_by_id',new User))
       );
   	// return of(users.find(item => item.id === id))

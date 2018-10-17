@@ -39,7 +39,7 @@ export class CommonService {
   }
 
   getGifts(): Observable<Gift[]>{
-    return this.http.get<Gift[]>(this.api_base_url+"/gifts/"+this.globalState.Current_User_Id).pipe(
+    return this.http.get<Gift[]>(this.api_base_url+"/gifts/"+this.globalState.Current_User_Id+"/").pipe(
       catchError(this.handleError('Get Gifts By User Id',[]))
       );
   }
