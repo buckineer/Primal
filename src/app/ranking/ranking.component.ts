@@ -21,7 +21,7 @@ export class RankingComponent implements OnInit {
   }
 
   sort_user_by_point(){
-  	this.users.sort((a,b):number => {if(a.points>b.points) {return -1;} if(a.points==b.points&&a.id<b.id)return -1; return 1;})
+  	this.users.sort((a,b):number => {if(a.total_points>b.total_points) {return -1;} if(a.total_points==b.total_points&&a.id<b.id)return -1; return 1;})
     var index = this.users.findIndex(user=>{return user.id === this.globalState.Current_User_Id})
     // if(index >5)
     //   this.users[4] = this.users[index];
