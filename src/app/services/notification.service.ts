@@ -15,7 +15,8 @@ export class NotificationService {
   private api_base_url = environment.api_base_url;
 
   notifications:Notification[];
-  url:string = 'http://localhost:8000/notification/myevents/';
+  // url:string = 'http://localhost:8000/notification/myevents/';
+  url:string = environment.event_url;
   eventSource:EventSource;
   constructor(private globalState:GlobalState,private http: HttpClient) { }
 
