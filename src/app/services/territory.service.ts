@@ -20,7 +20,7 @@ export class TerritoryService {
       );
   }
   getTerritory(id:number):Observable<Territory>{
-    return this.http.get<Territory>(this.api_base_url+"/missions/"+id).pipe(
+    return this.http.get<Territory>(this.api_base_url+"/missions/"+id+"/").pipe(
       catchError(this.handleError('getTerritorybyId',new Territory))
       );
   }
