@@ -40,7 +40,7 @@ export class UserService {
         return url;
     }
   getUser(id: number): Observable<User>{    
-    return this.http.get<User>(this.api_base_url+"/user/"+id).pipe(
+    return this.http.get<User>(this.api_base_url+"/user/"+id+"/").pipe(
       catchError(this.handleError('get_user_by_id',new User))
       );
   	// return of(users.find(item => item.id === id))

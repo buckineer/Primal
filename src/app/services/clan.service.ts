@@ -17,7 +17,7 @@ export class ClanService {
       );
   }
   getClan(id:number):Observable<Clan>{
-    return this.http.get<Clan>(this.api_base_url+"/clan/"+id).pipe(
+    return this.http.get<Clan>(this.api_base_url+"/clan/"+id+"/").pipe(
       catchError(this.handleError('getClanbyId',new Clan))
       );
   }
