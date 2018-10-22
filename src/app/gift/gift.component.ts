@@ -4,6 +4,7 @@ import { CommonService } from '../services/common.service';
 import {MatDialog} from '@angular/material';
 import {BuyDialogComponent} from '../buy-dialog/buy-dialog.component';
 import {GlobalState} from '../state';
+import { environment } from '../../environments/environment';
 @Component({
   selector: 'app-gift',
   templateUrl: './gift.component.html',
@@ -12,8 +13,8 @@ import {GlobalState} from '../state';
 export class GiftComponent implements OnInit {
 
   gifts: Gift[];
-
-  constructor(public commonService: CommonService,public dialog: MatDialog,private globalState:GlobalState) { }
+  environment = environment;
+  constructor(public commonService: CommonService, public dialog: MatDialog, private globalState:GlobalState) { }
 
   ngOnInit() {
     this.commonService.getGifts().subscribe(item=> this.gifts = item);

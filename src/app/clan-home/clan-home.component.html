@@ -17,7 +17,7 @@
 			<div style="width: 90%;">
 				<div class="ul">
 					<ng-template ngFor let-item [ngForOf]="clans" let-i="index">
-						<div class="row li-item align-items-center">
+						<div *ngIf="item.id!=user.joined_clan" class="row li-item align-items-center">
 							<div class="col-sm-2">
 								<img *ngIf="item.image" class="clan-img" src={{environment.asset_base_url}}{{item.image}}>
 							</div>
@@ -27,14 +27,14 @@
 								<span class="content-text">{{item.joined_members + 1}}/{{item.max_members}}</span>
 								<span *ngIf="item.joined_members == item.max_members" class="content-text">COMPLETO</span>
 							</div>
-							<div class="col" *ngIf="item.max_members> item.joined_members">
+							<div class="col" *ngIf="item.max_members> item.joined_members + 1">
 								<a routerLink="/clan/added/{{item.id}}" style="float: right;">
 									<button mat-raised-button class="join-clan-button main-button	" color="primary">
 										<span>UNIRSE A CLAN</span>
 									</button>
 								</a>
 							</div>
-							<div class="col" *ngIf="item.max_members == item.joined_members">
+							<div class="col" *ngIf="item.max_members == item.joined_members + 1">
 								<a style="float: right;">
 									<button mat-raised-button class=" lock-join-clan-button main-button">
 										<img src="/assets/images/icons/lock small.png">

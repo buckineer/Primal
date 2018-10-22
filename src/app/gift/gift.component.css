@@ -78,6 +78,12 @@
     padding: 0 0 0 30px;
     line-height: 50px;
 }
+
+.gift_img {
+    width: 85px;
+    height: 85px;
+}
+
 @media only screen and (min-width: 1280px){
     .lock-button-join,.button-join{
         font-size: 24px;
@@ -103,3 +109,4 @@
     vertical-align: middle;
     font-weight: 900;
 }
+

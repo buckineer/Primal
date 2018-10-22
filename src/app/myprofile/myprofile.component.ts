@@ -48,6 +48,6 @@ export class MyProfileComponent implements OnInit {
       this.clanService.getClan(clan_id).subscribe(ret_value=>this.clan = ret_value);  
     }else{
       this.clan = new Clan;
-    }  	
+    } 	
   }
 }

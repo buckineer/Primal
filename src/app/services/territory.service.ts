@@ -30,7 +30,7 @@ export class TerritoryService {
   	return of(results);
   }
   getCurrentMission(): Observable<Territory>{
-    return this.http.get<any>(this.api_base_url+"/current_mission").pipe();
+    return this.http.get<any>(this.api_base_url+"/current_mission" +"/").pipe();
   }
   private handleError<T> (operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {

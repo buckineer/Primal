@@ -20,8 +20,13 @@
         <div style="padding-left: 5%;" class="hidden-scroll">
           <ng-template ngFor let-item [ngForOf]="gifts" let-i="index">
             <div class="row align-items-center" style="width: 95%;margin-top: 3%">
-              <div class="col-sm-8">
+              <div class="col-sm-2">
+               <img src="{{environment.asset_base_url}}{{ item.image }}" class="gift_img">
+              </div>
+              <div class="col-sm-6">
                 <label class="content-text"> {{ item.title }} </label>
+                <br>
+                <label class="content-text"> {{ item.description }} </label>
                 <br>
                 <label class="item-title-text"> {{ item.points }} &nbsp;</label>
                 <label class="item-title-value"> monedas </label>
