@@ -13,7 +13,8 @@ import {UserService} from '../services/user.service';
 export class ConquerComponent implements OnInit {
 
   territory:Territory;
-	remain_days:number;
+  remain_days:number;
+  starting_days: number;
 	user:User;
   constructor(private route: ActivatedRoute,
   			private territoryService: TerritoryService,
@@ -64,9 +65,12 @@ export class ConquerComponent implements OnInit {
     var starting_date = new Date(this.territory.starting_date);
     
     var timeDiff = Math.abs(now.getTime() - starting_date.getTime());
+
     var dayDiff = Math.ceil(timeDiff / (1000 * 3600 * 24));
 
-    if (dayDiff >= 7)
+    this.starting_days = 8 - dayDiff;
+
+    if (dayDiff > 7 )
     {
       return false;
     }

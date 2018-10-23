@@ -12,20 +12,27 @@
 		<div class="col-sm-6 h-100" style="padding-top: 5.6%;padding-left: 5.22%;position: relative;">
 			
 			<div >
-				<span class="title-text">ISLAND</span>
+				<span class="title-text">{{territory.title}}</span>
 			</div>
 			<div style="padding-top: 20px">
-				<span class="content-text"> 
-					<span class="key"> Mision final: </span>
-					<span class="value">{{remain_days}} días</span>
-					<br><br>
+				<span class="content-text">
+					<a *ngIf="clan_to_change()">
+						<span class="key"> INICIO DE MISIÓN EN: </span>
+						<span class="value">{{starting_days}} DÍAS</span>
+						<br><br>
+					</a>
+					<a *ngIf="!clan_to_change()">
+						<span class="key"> LA MISIÓN TERMINA EN: </span>
+						<span class="value">{{remain_days}} DÍAS</span>
+						<br><br>
+					</a>
 					<span class="key"> Puntos mínimos: </span>
 					<span class="value">{{territory.reaching_min_points}}</span>
 				</span>
 			</div>		
 		</div>
 		<div class="col-sm-6 h-100" style="padding-top: 5.6%;">
-			<div style="width: 80%;max-height:60%;margin-left: 10%;">
+			<div style="width: 70%;max-height:50%;margin-left: 10%;">
 				<app-territory [territory]="territory"></app-territory>
 			</div>			
 		</div>
