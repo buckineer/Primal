@@ -1,0 +1,80 @@
+<div class="background-fx">
+	<app-user-header></app-user-header>
+	<div style="position:relative; height:50px;" class="top">
+		<div class="row section-header">
+		</div>
+		<div class="row " style="height:100%;">
+			<div class="col-sm-4 vertical-child-center">
+        <a class="vertical-child-center" routerLink="/profile">
+				  <span class="section-text">Mi perfil</span>
+        </a>
+			</div>
+			<div class="col-sm-4 vertical-child-center">
+				<a *ngIf= "clan?.id != -1" class="vertical-child-center" routerLink="/clan/{{clan?.id}}">
+					<span class="section-text">Mi clan</span>
+				</a>
+				<span *ngIf= "clan?.id == -1" class="section-text">Mi clan</span>
+			</div>
+			<div class="col-sm-4 vertical-child-center" style="background: #fe8d00;">
+				<span class="section-text">Mis regalos</span>
+			</div>
+		</div>
+	</div>
+
+  <div class="content container" style="position: relative;">
+		<div class="row align-items-center">
+			<div class="col-sm-4">
+				<span class="content-text">Total regalos  &nbsp; <font size=20px, color=#fe8d00>{{total_gift}}</font></span>
+			</div>
+      <div class="col-sm-4">
+				<span class="content-text">Total gastado &nbsp; <font size=20px, color=#fe8d00>{{total_spent}}</font></span>	
+			</div>
+      <div class="col-sm-3">
+
+      </div>
+      <div class="col-sm-1" style="float: right;">
+        <a routerLink="/map">
+          <i class="material-icons md-bold cross-size md-white" >close</i>
+        </a>
+      </div>
+		</div>
+    <div class="row align-items-center">
+			<div class="col-sm-4">
+				<span class="info-text">Regalos</span>
+			</div>
+      <div class="col-sm-4">
+
+      </div>
+      <div class="col-sm-4">
+				<span class="info-text">Fecha</span>	
+			</div>
+		</div>
+
+    <div class="scroll-height" style="width: 98%; overflow: hidden; padding-left: 3%;">
+      <div class="hidden-scroll">
+        <ng-template ngFor let-item [ngForOf]="gifttrack" let-i="index">
+          <div class="row align-items-center" style="width: 100%;margin-top: 3%">
+            <div class="col-sm-2">
+              <img src="{{environment.asset_base_url}}{{ getItemUrl(item.gift.image) }}" class="gift_img">
+              <!-- <label>{{ getItemUrl(item.image) }}</label> -->
+            </div>
+            <div class="col-sm-6">
+              <label class="info-text"> {{ item.gift.title }} </label>
+              <br>
+              
+              <label class="section-text"> <font color = #fe8d00>{{ item.gift.points }}</font> &nbsp;</label>
+              <label class="section-text"> monedas </label>
+            </div>
+            
+            <div class="col-sm-4">
+              <label class="info-text"> {{ item.bought_date }} </label>
+            </div>    
+            <!-- <div *ngIf=" (item.state == 'can buy') " class="col-sm-2">
+              <button (click)="openDialog(item)" class="button-join" mat-raised-button>COMPRAR</button>
+            </div> -->
+          </div>
+        </ng-template>
+      </div>
+    </div>
+  </div>
+</div>

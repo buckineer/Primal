@@ -15,6 +15,8 @@ import { Territory } from '../models/territory.model';
 })
 export class ClanComponent implements OnInit {
 
+  user:User = new User;
+  clan:Clan = new Clan;
   selected_clan: Clan = new Clan;
   joined_users: User[] = [];
   environment = environment
@@ -28,7 +30,14 @@ export class ClanComponent implements OnInit {
 
   ngOnInit() {
     this.getClan();
-    this.get_current_mission(); 
+    this.get_current_mission();
+    this.userService.getUser(this.globalState.Current_User_Id).
+  								subscribe(ret_value=>
+  									{	
+  										this.user = ret_value;
+                      // this.user_image_url = this.userService.get_avatar_url(this.user)
+  										this.getClanByUser(ret_value);
+  									});
   }
 
   getClan(): void {
@@ -57,6 +66,19 @@ export class ClanComponent implements OnInit {
   }
   get_user_image(user:User):string{
     return this.userService.get_avatar_url(user);
+  }
+
+  getClanByUser(user:User){
+    var clan_id = -1;
+    if(user.admin_clan!= -1 && user.admin_clan!=null)
+      clan_id = user.admin_clan
+    else 
+      clan_id = user.joined_clan
+    if(clan_id != -1 && clan_id!=null){
+      this.clanService.getClan(clan_id).subscribe(ret_value=>this.clan = ret_value);  
+    }else{
+      this.clan = new Clan;
+    } 	
   }
 
   clan_to_change():boolean{

@@ -6,6 +6,7 @@ import { color_list, clan_avatar_list, clans, info, gift, user_avatar_list } fro
 import { Clan } from '../models/clan.model';
 import { Info } from '../models/info.model';
 import { Gift } from '../models/gift.model';
+import { GiftTrack } from '../models/gifttrack.model';
 
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError, map, tap } from 'rxjs/operators';
@@ -47,13 +48,24 @@ export class CommonService {
     return this.http.post(this.api_base_url+"/gifts/"+this.globalState.Current_User_Id+"/",{'gift':gift_id}).pipe(
       catchError(this.handleError('purchase gift','error'))
       );
+  }
 
+  getGiftsByUser(): Observable<any>{
+    return this.http.get<GiftTrack[]>(this.api_base_url+"/gifttrack/"+this.globalState.Current_User_Id+"/").pipe(
+      catchError(this.handleError('get Gifts by user', 'error'))
+    );
   }
 
   getAvatarImages():Observable<any[]>{
   	return of(user_avatar_list);
   }
 
+  getGiftById(gift_id): Observable<any>{
+    return this.http.get<Gift>(this.api_base_url+"/gift/"+gift_id+"/").pipe(
+      catchError(this.handleError('get Gift by Id', 'error'))
+    );
+  }
+  
   private handleError<T> (operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
 
