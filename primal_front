@@ -1,0 +1,18 @@
+server {
+    listen 80;
+    server_name 51.75.194.237 primal.lxr.me;
+    root /var/www/primal;
+    location = /favicon.ico { access_log off; log_not_found off; }
+    location /static/{
+        root /home/ubuntu/primal-admin;
+    }
+    location /media/{
+        root /home/ubuntu/primal-admin;
+    }
+    location / {
+        try_files $uri $uri/ /index.html;
+    }
+}
+
+
+
