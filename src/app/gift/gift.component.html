@@ -21,7 +21,8 @@
           <ng-template ngFor let-item [ngForOf]="gifts" let-i="index">
             <div class="row align-items-center" style="width: 95%;margin-top: 3%">
               <div class="col-sm-2">
-               <img src="{{environment.asset_base_url}}{{ item.image }}" class="gift_img">
+               <img src="{{environment.asset_base_url}}{{ getItemUrl(item.image) }}" class="gift_img">
+               <!-- <label>{{ getItemUrl(item.image) }}</label> -->
               </div>
               <div class="col-sm-6">
                 <label class="content-text"> {{ item.title }} </label>
@@ -31,10 +32,15 @@
                 <label class="item-title-text"> {{ item.points }} &nbsp;</label>
                 <label class="item-title-value"> monedas </label>
               </div>     
-              <div *ngIf=" (item.state == 'can buy') " class="col-sm-2">
+              <!-- <div *ngIf=" (item.state == 'can buy') " class="col-sm-2">
                 <button (click)="openDialog(item)" class="button-join" mat-raised-button>COMPRAR</button>
+              </div> -->
+
+              <div *ngIf=" (item.state == 'can buy') " class="col-sm-2">
+                <button (click)="openCheckDialog(item)" class="button-join" mat-raised-button>COMPRAR</button>
               </div>
-              <div *ngIf=" item.state == 'can\'t buy' " class="col-sm-2"> 
+
+              <div *ngIf=" item.state == 'can\'t buy' " class="col-sm-2">
                   <button type="submit" class="lock-button-join" mat-raised-button>COMPRAR</button>
                   <img src="../assets/images/icons/lock small.png" id="input_img">
               </div>

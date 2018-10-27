@@ -8,6 +8,8 @@ import {GlobalState} from '../state';
 import { Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
 import {environment} from '../../environments/environment';
+import {ClanService} from '../services/clan.service';
+import {Clan} from '../models/clan.model';
 
 var AVATAR_IMAGE_NAMES={
   1:'a Autralophitecus Head',
@@ -31,7 +33,8 @@ export class EditProfileComponent implements OnInit {
   user: User = new User;
   environment = environment
   user_image_url:string;
-  constructor(fb: FormBuilder,private authService: AuthService,public userService:UserService,public globalState:GlobalState,public dialog: MatDialog,private router: Router) { 
+  clan:Clan = new Clan;
+  constructor(fb: FormBuilder,private authService: AuthService,private clanService:ClanService, public userService:UserService,public globalState:GlobalState,public dialog: MatDialog,private router: Router) { 
   	this.myForm = fb.group({
   		'first_name': ['',Validators.required],
   		'last_name': ['',Validators.required],
@@ -65,8 +68,15 @@ export class EditProfileComponent implements OnInit {
     this.authService.logout();
   }
   ngOnInit() {
-  	this.userService.getUser(this.globalState.Current_User_Id)
-  									.subscribe(ret_value=> {this.user = ret_value;this.InitForm(ret_value)});
+  	// this.userService.getUser(this.globalState.Current_User_Id)
+  	// 								.subscribe(ret_value=> {this.user = ret_value;this.InitForm(ret_value)});
+    this.userService.getUser(this.globalState.Current_User_Id)
+                    .subscribe(ret_value=>
+  									{	
+  										this.user = ret_value;
+                      this.user_image_url = this.userService.get_avatar_url(this.user)
+  										this.getClanByUser(ret_value);
+  									});
   }
   InitForm(user:User){
     console.log("Init form ",user)
@@ -113,5 +123,18 @@ export class EditProfileComponent implements OnInit {
     }else{
       this.validateAllFormFields(this.myForm);
     }
+  }
+
+  getClanByUser(user:User){
+    var clan_id = -1;
+    if(user.admin_clan!= -1 && user.admin_clan!=null)
+      clan_id = user.admin_clan
+    else 
+      clan_id = user.joined_clan
+    if(clan_id != -1 && clan_id!=null){
+      this.clanService.getClan(clan_id).subscribe(ret_value=>this.clan = ret_value);  
+    }else{
+      this.clan = new Clan;
+    } 	
   }
 }

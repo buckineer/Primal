@@ -53,6 +53,8 @@ import {GlobalState} from './state';
 
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TokenInterceptor } from './token.interceptor';
+import { BuyCheckComponent } from './buy-check/buy-check.component';
+import { UserGiftComponent } from './user-gift/user-gift.component';
 
 
 
@@ -90,6 +92,8 @@ import { TokenInterceptor } from './token.interceptor';
     JoinMessageDialogComponent,
     ResetPasswordComponent,
     UpdatePasswordComponent,
+    BuyCheckComponent,
+    UserGiftComponent,
 
   ],
   imports: [
@@ -106,6 +110,7 @@ import { TokenInterceptor } from './token.interceptor';
   entryComponents: [
     UserAvatarSelectDialogBodyComponent,
     BuyDialogComponent,
+    BuyCheckComponent,
     JoinMessageDialogComponent,
   ],
   providers: [

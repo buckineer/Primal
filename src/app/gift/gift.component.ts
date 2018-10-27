@@ -5,6 +5,7 @@ import {MatDialog} from '@angular/material';
 import {BuyDialogComponent} from '../buy-dialog/buy-dialog.component';
 import {GlobalState} from '../state';
 import { environment } from '../../environments/environment';
+import { BuyCheckComponent } from '../buy-check/buy-check.component';
 @Component({
   selector: 'app-gift',
   templateUrl: './gift.component.html',
@@ -19,18 +20,31 @@ export class GiftComponent implements OnInit {
   ngOnInit() {
     this.commonService.getGifts().subscribe(item=> this.gifts = item);
   }
-  openDialog(gift:Gift) {
 
-    this.commonService.buyGifts(gift['id']).subscribe(resp=>{
-      if(resp=="success")
-      {
-        this.globalState.current_user.coins -= gift.points;
-        gift.state = "already bought";
-        const dialogRef = this.dialog.open(BuyDialogComponent, {
-          panelClass:'select-avatar-dialog',
-          data:gift['title']
-        });
-      }
-    });
+  getItemUrl(resUrl: string){
+    var ret = resUrl.replace('/media','');
+    return ret;
   }
+
+  openCheckDialog(gift:Gift) {
+    const dialogRef = this.dialog.open(BuyCheckComponent, {
+      panelClass: 'gift-check-dialog',
+      data:gift
+    })
+  }
+
+  // openDialog(gift:Gift) {
+
+  //   this.commonService.buyGifts(gift['id']).subscribe(resp=>{
+  //     if(resp=="success")
+  //     {
+  //       this.globalState.current_user.coins -= gift.points;
+  //       // gift.state = "already bought";
+  //       const dialogRef = this.dialog.open(BuyDialogComponent, {
+  //         panelClass:'select-avatar-dialog',
+  //         data:gift['title']
+  //       });
+  //     }
+  //   });
+  // }
 }

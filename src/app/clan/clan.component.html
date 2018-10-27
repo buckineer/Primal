@@ -1,5 +1,27 @@
 <div class="background-fx">
     <app-user-header></app-user-header>
+    <div style="position:relative; height:50px;" class="top">
+      <div class="row section-header">
+      </div>
+      <div class="row " style="height:100%;">
+        <div class="col-sm-4 vertical-child-center" >
+          <a class="vertical-child-center" routerLink="/profile">
+            <span class="section-text">Mi perfil</span>
+          </a>
+        </div>
+        <div class="col-sm-4 vertical-child-center" style="background: #fe8d00;">
+          <a *ngIf= "clan?.id != -1" class="vertical-child-center" routerLink="/clan/{{clan?.id}}">
+            <span class="section-text">Mi clan</span>
+          </a>
+          <span *ngIf= "clan?.id == -1" class="section-text">Mi clan</span>
+        </div>
+        <div class="col-sm-4 vertical-child-center">
+          <a class="vertical-child-center" routerLink="/user-gift/{{user?.id}}">
+            <span class="section-text">Mis regalos</span>
+          </a> 
+			</div>
+		  </div>
+	  </div>
     <div class="content">
       <div class="row align-items-center" style="padding-top: 0%;">
         <div class="col-sm-4">
@@ -14,7 +36,7 @@
         <div *ngIf="clan_to_change() && !is_admin_clan()" class="col-sm-2" style="margin-left: 35%;">
           <a routerLink = "/clan/home">
             <button class="button-change" mat-raised-button>Cambiar clan</button>
-          </a> 
+          </a>
         </div>
       </div>
       <div style="width: 100%; overflow: hidden; margin-top: -1%;">

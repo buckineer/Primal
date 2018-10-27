@@ -1,9 +1,27 @@
 <div class="background-fx">
 	<app-user-header></app-user-header>
+	<div style="position:relative; height:50px;" class="top">
+		<div class="row section-header">
+		</div>
+		<div class="row " style="height:100%;">
+			<div class="col-sm-4 vertical-child-center" style="background: #fe8d00;">
+				<span class="section-text">Mi perfil</span>
+			</div>
+			<div class="col-sm-4 vertical-child-center">
+				<a *ngIf= "clan?.id != -1" class="vertical-child-center" routerLink="/clan/{{clan?.id}}">
+					<span class="section-text">Mi clan</span>
+				</a>
+				<span *ngIf= "clan?.id == -1" class="section-text">Mi clan</span>
+			</div>
+			<div class="col-sm-4 vertical-child-center">
+				<span class="section-text">Mis regalos</span>
+			</div>
+		</div>
+	</div>
 	<div class="content container" style="position: relative;">
 		<div class="row align-items-center">
 			<div class="col">
-				<span class="title-text">MI PERFIL</span>	
+				<!-- <span class="title-text">MI PERFIL</span>	 -->
 			</div>
 	        <div style="float: right;">
 	        	<a routerLink="/map">
@@ -45,25 +63,25 @@
 					</div>
 					-->
 
-					<div class="row">
+					<!-- <div class="row">
 						<label for="email" class="col-sm-4 col-form-label">Telefono</label>
 						
 						<div class="col-sm-8" [class.is-invalid]="!myForm.controls['phone'].valid && myForm.controls['phone'].touched">
 					    	<input type="text" class="form-control" [formControl]="myForm.controls['phone']">
 							
 							<div *ngIf="(!myForm.controls['phone'].valid && myForm.controls['phone'].touched)" class="is-invalid">
-								<!--
+								
 								<div *ngIf="myForm.controls['phone'].errors.required"  class="invalid-feedback">
 									required
 								</div>
-								--> 
+								 
 								<div *ngIf="myForm.controls['phone'].errors.pattern" class="invalid-feedback">
 									"El número de teléfono debe ser ingresado en el formato: '+999999999'. Se permiten hasta 15 dígitos."
 								</div>
 							</div>
 							
 						</div>
-					</div>
+					</div> -->
 					<div style="margin-top: 20px;">
 						<button class="button-store" mat-raised-button type="submit">
 						GUARDAR</button>
@@ -85,8 +103,8 @@
 		<div class="row second-top">
 			<span class="my-text pointer" [routerLink]="['/update_password']">Cambiar la contraseña</span>
 		</div>
-		<div class="row" class="top">
+		<!-- <div class="row" class="top">
 			<span (click)="logout()" class="my-text pointer" >Desconectar</span>
-		</div>
+		</div> -->
 	</div>
 </div>

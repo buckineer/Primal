@@ -105,6 +105,12 @@ button{
     width: 577px;
     height: 240px;
 }
+
+.gift-check-dialog .mat-dialog-container{
+    border-radius: 25px;
+    width: 600px;
+    height: 300px;
+}
 .dialog .mat-dialog-container{
     border-radius: 25px;
     width: 577px;
@@ -119,6 +125,10 @@ button{
         width: 653px;
         height: 330px;
     }
+    .gift-check-dialog .mat-dialog-container{
+        width: 700px;
+        height: 400px;
+    }
 }
 @media only screen and (min-width:1400px){
     .dialog .mat-dialog-container{
@@ -128,6 +138,10 @@ button{
     .select-avatar-dialog .mat-dialog-container{
         width: 800px;
         height: 399px;
+    }
+    .gift-check-dialog .mat-dialog-container{
+        width: 1200px;
+        height: 500px;
     }
 }
 .btn-font1{
