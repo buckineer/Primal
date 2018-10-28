@@ -36,10 +36,15 @@ export class AuthService {
       )     
   }
   logout(): any {
-    this.notificationService.closeStream();
-    localStorage.removeItem('token');
-    localStorage.removeItem('currentUser');    
-    this.router.navigate(['/login'])
+    this.http.post(this.api_base_url+"/logout/",{}).subscribe(ret_value=>{
+      if(ret_value['type']=="success"){
+        this.notificationService.closeStream();
+        localStorage.removeItem('token');
+        localStorage.removeItem('currentUser'); 
+        this.router.navigate([''])
+      }
+    })
+
   }
 
   getUser(): any {
