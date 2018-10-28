@@ -9,7 +9,7 @@
 				  <span class="section-text">Mi perfil</span>
         </a>
 			</div>
-			<div class="col-sm-4 vertical-child-center">
+			<div class="col-sm-4 vertical-child-center" style="border-left-width: 2px; border-left-style: solid; border-right-width: 2px; border-right-style:solid; border-color: white;">
 				<a *ngIf= "clan?.id != -1" class="vertical-child-center" routerLink="/clan/{{clan?.id}}">
 					<span class="section-text">Mi clan</span>
 				</a>
@@ -21,17 +21,17 @@
 		</div>
 	</div>
 
-  <div class="content container" style="position: relative;">
+  <div class="content container" style="width: 99%; position: relative;">
 		<div class="row align-items-center">
-			<div class="col-sm-4">
-				<span class="content-text">Total regalos  &nbsp; <font size=20px, color=#fe8d00>{{total_gift}}</font></span>
+			<div class="col-sm-5">
+				<span class="content-text">Total regalos  &nbsp; <font size=10px, color=#fe8d00>{{total_gift}}</font></span>
 			</div>
-      <div class="col-sm-4">
-				<span class="content-text">Total gastado &nbsp; <font size=20px, color=#fe8d00>{{total_spent}}</font></span>	
+      <div class="col-sm-6">
+				<span class="content-text">Total gastado &nbsp; <font size=10px, color=#fe8d00>{{total_spent}}</font></span>	
 			</div>
-      <div class="col-sm-3">
+      <!-- <div class="col-sm-1">
 
-      </div>
+      </div> -->
       <div class="col-sm-1" style="float: right;">
         <a routerLink="/map">
           <i class="material-icons md-bold cross-size md-white" >close</i>
@@ -45,12 +45,13 @@
       <div class="col-sm-4">
 
       </div>
-      <div class="col-sm-4">
-				<span class="info-text">Fecha</span>	
+      <div class="col-sm-4 vertical-child-center">
+				<span class="info-text" style="margin-left:-10%;">Fecha</span>
 			</div>
 		</div>
 
     <div class="scroll-height" style="width: 98%; overflow: hidden; padding-left: 3%;">
+    <!-- <div class="row align-items-center"> -->
       <div class="hidden-scroll">
         <ng-template ngFor let-item [ngForOf]="gifttrack" let-i="index">
           <div class="row align-items-center" style="width: 100%;margin-top: 3%">
@@ -66,8 +67,8 @@
               <label class="section-text"> monedas </label>
             </div>
             
-            <div class="col-sm-4">
-              <label class="info-text"> {{ item.bought_date }} </label>
+            <div class="col-sm-4 vertical-child-center">
+              <label class="info-text"> {{ purchasedDate[i] }} </label>
             </div>    
             <!-- <div *ngIf=" (item.state == 'can buy') " class="col-sm-2">
               <button (click)="openDialog(item)" class="button-join" mat-raised-button>COMPRAR</button>

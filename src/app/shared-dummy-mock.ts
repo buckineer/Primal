@@ -3,7 +3,7 @@ import { Clan } from './models/clan.model';
 import { Notification } from './models/notification.model';
 import { User } from './models/user.model';
 import { Progress } from './models/progress.model';
-import { Info } from './models/info.model';
+// import { Info } from './models/info.model';
 import { Gift } from './models/gift.model';
 
 export const current_user_conquered_territory_id = 6;
@@ -172,13 +172,13 @@ export const notification: Notification[] = [
   { id: 3, clan_id: 3, clan_name: 'CLAN C', clan_image: '/images/clans/object9.png'},
 ];
 
-export const info: Info[] = [
-  {item: "Lorem ipsum", description: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa."},
-  {item: "Lorem ipsum", description: "Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim."},
-  {item: "Lorem ipsum", description: "Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu."},
-  {item: "Lorem ipsum", description: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa."},
-  {item: "Lorem ipsum", description: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit."}
-]
+// export const info: Info[] = [
+//   {item: "Lorem ipsum", description: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa."},
+//   {item: "Lorem ipsum", description: "Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim."},
+//   {item: "Lorem ipsum", description: "Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu."},
+//   {item: "Lorem ipsum", description: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa."},
+//   {item: "Lorem ipsum", description: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit."}
+// ]
 
 export const gift: Gift[] = [
   // { item: "REGALO 1", description: "500 monedas", purchasable: true},

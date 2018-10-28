@@ -109,7 +109,7 @@ button{
 .gift-check-dialog .mat-dialog-container{
     border-radius: 25px;
     width: 600px;
-    height: 300px;
+    height: 320px;
 }
 .dialog .mat-dialog-container{
     border-radius: 25px;
@@ -126,8 +126,8 @@ button{
         height: 330px;
     }
     .gift-check-dialog .mat-dialog-container{
-        width: 700px;
-        height: 400px;
+        width: 653px;
+        height: 350px;
     }
 }
 @media only screen and (min-width:1400px){
@@ -140,8 +140,8 @@ button{
         height: 399px;
     }
     .gift-check-dialog .mat-dialog-container{
-        width: 1200px;
-        height: 500px;
+        width: 800px;
+        height: 400px;
     }
 }
 .btn-font1{

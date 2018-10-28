@@ -1,10 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../services/user.service';
 import {User} from '../models/user.model';
+import { Clan } from '../models/clan.model';
 import { Router } from '@angular/router';
 import {environment} from '../../environments/environment';
 import {CommonService} from '../services/common.service';
+import { ClanService } from '../services/clan.service';
 import {GlobalState} from '../state';
+
 @Component({
   selector: 'app-invite',
   templateUrl: './invite.component.html',
@@ -14,15 +17,27 @@ export class InviteComponent implements OnInit {
   selectedUsers: any[];
   users:User[];
   environment = environment;
+  clan_id:number;
   constructor(private commonService:CommonService,
     public userService:UserService,
     public globalState:GlobalState,
+    private clanService: ClanService,
     private router: Router) { 
   	this.selectedUsers=[];
   }
 
   ngOnInit() {
-  	this.userService.getUsers().subscribe(ret_value => this.users= ret_value);
+  	this.userService.getUsers().subscribe(ret_value => {
+      this.users= ret_value;
+      console.log("************* Checking users");
+      console.log(this.users);
+      });
+    this.userService.getUser(this.globalState['Current_User_Id']).subscribe(ret => {
+      this.clan_id = ret.admin_clan;
+      console.log("%%%%%%%%%%%%% clan_id ");
+      console.log(this.clan_id);
+    })
+    
   }
   selectAll(event){
   	if(event.checked){

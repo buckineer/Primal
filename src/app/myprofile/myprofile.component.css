@@ -1,8 +1,6 @@
 .content {
     margin-top: 2%;
-	margin-left: 5%;
-	margin-right: 5%;
-	width: 90%;
+	width: 100%;
 }
 
 div.section-header {
@@ -23,7 +21,7 @@ div.section-header {
     font-weight: 600;
     vertical-align: middle;
     padding: 10px;
-    font-size: 18px;
+    font-size: 22px;
 }
 
 

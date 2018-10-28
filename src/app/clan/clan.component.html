@@ -9,7 +9,7 @@
             <span class="section-text">Mi perfil</span>
           </a>
         </div>
-        <div class="col-sm-4 vertical-child-center" style="background: #fe8d00;">
+        <div class="col-sm-4 vertical-child-center" style="background: #fe8d00; border-left-width: 2px; border-left-style: solid; border-right-width: 2px; border-right-style:solid; border-color: white;">
           <a *ngIf= "clan?.id != -1" class="vertical-child-center" routerLink="/clan/{{clan?.id}}">
             <span class="section-text">Mi clan</span>
           </a>
@@ -20,20 +20,20 @@
             <span class="section-text">Mis regalos</span>
           </a> 
 			</div>
+      
 		  </div>
 	  </div>
     <div class="content">
       <div class="row align-items-center" style="padding-top: 0%;">
-        <div class="col-sm-4">
+        <div class="col-sm-9">
           <span class="title-text">CLAN</span>
         </div>
-        <div *ngIf="clan_to_change() && is_admin_clan()" class="col-sm-2" style="margin-left: 35%;">
+        <div *ngIf="clan_to_change() && is_admin_clan()" class="col-sm-2" style="margin-left: -5%;">
           <a routerLink = "/invite">
             <button class="button-invite" mat-raised-button>Invitar Luchadores</button>
           </a>
         </div>
-
-        <div *ngIf="clan_to_change() && !is_admin_clan()" class="col-sm-2" style="margin-left: 35%;">
+        <div *ngIf="clan_to_change() && !is_admin_clan()" class="col-sm-2">
           <a routerLink = "/clan/home">
             <button class="button-change" mat-raised-button>Cambiar clan</button>
           </a>
@@ -104,7 +104,6 @@
                       <label class="user-name-text">{{ item.first_name }} {{ item.last_name }}</label> 
                     </div>
                   </div>
-                    
                 </ng-template>
               </div>
 

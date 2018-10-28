@@ -32,6 +32,7 @@ export class UserGiftComponent implements OnInit {
   gifts: Gift[]=[];
   total_gift: number;
   total_spent: number = 0;
+  purchasedDate: string[] = [];
   
   constructor(private globalState:GlobalState,
   				private userService:UserService,
@@ -50,16 +51,36 @@ export class UserGiftComponent implements OnInit {
     this.commonService.getGiftsByUser().subscribe(ret=>
                   {
                     var sum = 0;
+                    var boughtDate = [];
                     this.gifttrack = ret;
                     console.log("23193-10293-01293-01923-091230-")
                     console.log(this.gifttrack);
                     this.total_gift = this.gifttrack.length;
                     this.gifttrack.forEach(function (value){
-                      console.log("4444444444444444444444444")
-                      console.log(value.gift.points);
+                      // console.log("4444444444444444444444444")
+                      // console.log(value.gift.points);
                       sum += value.gift.points;
+
+                      // this.purchasedDate.push(this.convertDate(value.bought_date));
+                      // console.log("**********  Date Converting *************");
+                      // console.log(typeof(value.bought_date));
+
+                      var bought_date = value.bought_date;
+                      var res = bought_date.split("-");
+
+                      bought_date = res[2] + "/" + res[1] + "/" + res[0];
+
+                      // console.log(bought_date);
+
+                      boughtDate.push(bought_date);
+                      
+                      // console.log(boughtDate);
+
                     });                 
                     this.total_spent = sum;
+                    this.purchasedDate = boughtDate;
+
+                    console.log(this.purchasedDate);
                     
                   });
   }
@@ -80,6 +101,15 @@ export class UserGiftComponent implements OnInit {
   getItemUrl(resUrl: string){
     var ret = resUrl.replace('/media','');
     return ret;
+  }
+
+  convertDate(date: Date): string{
+    var year = date.getFullYear(),
+    month = date.getMonth() + 1,
+    day = date.getDate();
+    var result = day +"/" + month + "/" + year;
+
+    return result;
   }
 
 }
