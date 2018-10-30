@@ -38,8 +38,8 @@ export class EditProfileComponent implements OnInit {
   	this.myForm = fb.group({
   		'first_name': ['',Validators.required],
   		'last_name': ['',Validators.required],
-  		'email': ['',Validators.required],      
-  		'phone':['',[Validators.pattern('^\\+?1?\\d{9,15}$')]],
+  		// 'email': ['',Validators.required],      
+  		// 'phone':['',[Validators.pattern('^\\+?1?\\d{9,15}$')]],
   	})
   }
   openDialog() {
@@ -103,24 +103,26 @@ export class EditProfileComponent implements OnInit {
     if(this.myForm.valid){
       this.user.first_name = form.first_name;
       this.user.last_name = form.last_name;
-      this.user.email = form.email;
-      this.user.phone_number = form.phone;
+      // this.user.email = form.email;
+      // this.user.phone_number = form.phone;
       var data = {
         'first_name':form.first_name,
         'last_name': form.last_name,
-        'email': form.email,
-        'phone_number':form.phone
+        // 'email': form.email,
+        // 'phone_number':form.phone
       }
       this.userService.updateUser(this.user.id, data)
         .subscribe( resp=>{
           if(resp=="success")
+            console.log("Submit");
             this.globalState.current_user.first_name = this.user.first_name
             this.globalState.current_user.last_name = this.user.last_name
-            this.globalState.current_user.email = this.user.email
-            this.globalState.current_user.phone_number = this.user.phone_number
+            // this.globalState.current_user.email = this.user.email
+            // this.globalState.current_user.phone_number = this.user.phone_number
             this.router.navigate(['/profile']);
         });
     }else{
+      console.log("Validation Fail");
       this.validateAllFormFields(this.myForm);
     }
   }
