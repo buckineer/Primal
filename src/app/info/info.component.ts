@@ -9,14 +9,19 @@ import { CommonService } from '../services/common.service';
 })
 export class InfoComponent implements OnInit {
 
-  info: Info[];
+  info: Info[] = [];
 
   constructor(public commonService: CommonService) {
 
   }
 
   ngOnInit() {
-    this.commonService.getInfo().subscribe(item=> this.info = item);
+    this.commonService.getInformation().subscribe(item => {
+      this.info = item;
+      console.log("%%%%%%%%%%%% Information %%%%%%%%%%%");
+      console.log(this.info);
+    });
+    
   }
 
 }

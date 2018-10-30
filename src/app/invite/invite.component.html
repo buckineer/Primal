@@ -21,7 +21,7 @@
 					<checkbox-group [(ngModel)]="selectedUsers">										
 					<!-- <p>Selected items - {{selectedUsers | json}}</p> -->
 					<ng-template ngFor let-item [ngForOf]="users" let-i="index">
-						<div *ngIf="item['id']!=globalState['Current_User_Id']" class="row align-items-center" style="padding-top: 20px;">
+						<div *ngIf="item['id']!=globalState['Current_User_Id'] && item['admin_clan']==null && item['joined_clan']!=clan_id" class="row align-items-center" style="padding-top: 20px;">
 							<div class="col-sm-4 row" style="padding-left: 30px;">
 								<div class="vertical-child-center" style="width: 50px; text-align: center;">
 									<checkbox value="{{item['id']}}"> </checkbox>	

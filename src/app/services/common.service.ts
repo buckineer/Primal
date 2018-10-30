@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { of } from 'rxjs/observable/of';
-import { color_list, clan_avatar_list, clans, info, gift, user_avatar_list } from '../shared-dummy-mock';
+import { color_list, clan_avatar_list, clans, gift, user_avatar_list } from '../shared-dummy-mock';
 
 import { Clan } from '../models/clan.model';
 import { Info } from '../models/info.model';
 import { Gift } from '../models/gift.model';
 import { GiftTrack } from '../models/gifttrack.model';
+
 
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError, map, tap } from 'rxjs/operators';
@@ -31,9 +32,9 @@ export class CommonService {
   	return of(clan_avatar_list);
   }
 
-  getInfo(): Observable<Info[]>{
-    return of(info);
-  }
+  // getInfo(): Observable<Info[]>{
+  //   return of(info);
+  // }
 
   getClans(): Observable<Clan[]>{
     return of(clans);
@@ -63,6 +64,12 @@ export class CommonService {
   getGiftById(gift_id): Observable<any>{
     return this.http.get<Gift>(this.api_base_url+"/gift/"+gift_id+"/").pipe(
       catchError(this.handleError('get Gift by Id', 'error'))
+    );
+  }
+
+  getInformation(): Observable<any>{
+    return this.http.get<Info[]>(this.api_base_url+"/info/").pipe(
+      catchError(this.handleError('Get Information', 'Error'))
     );
   }
   

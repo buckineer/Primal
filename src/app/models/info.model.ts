@@ -1,4 +1,5 @@
 export class Info {
-    item: string;
-    description: string;
+    id: string;
+    title: string;
+    content: string;
 }
