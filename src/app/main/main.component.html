@@ -1,11 +1,37 @@
-<div class="container-fluid" style="height: 100%;position: relative;">
+
+<!--<div class="container-fluid" style="height: 100%;position: relative;">
+	
 	<div style="height: 8%;">
 	  <app-header></app-header>
 	</div>
+	-->
+	
+	
+	<!--
 	<div style="height: 92%;overflow-x: hidden;overflow-y:auto; ">
 		<router-outlet></router-outlet>
 	</div>
-	<div style="height: 100%;width:100%;position: absolute;left: 0;top: 0;z-index: -1;overflow: hidden;">
+	-->
+	<!--
+	<main id="content">
+		<button class="close" name="close" type="submit" value="close">close</button>
+		<h2>Simulación</h2>
+		<div id="inner-content">
+		</div>
+		<div id="main-actions">
+			<button>Sin Clan</button>
+			<button>Con Clan</button>
+		</div>
+	</main>
+	-->
+	
+	<app-header></app-header>
+	<app-user-header></app-user-header>
+	<router-outlet></router-outlet>
+	
+	
+		
+	<div style="height: 100%;width:100%;position: absolute;left: 0;top: 0;z-index: 1;overflow: hidden;">
 		<div style="position: relative;height: 100%;width:100%;">
 			<div class="first_image">
 				<img src="assets/images/clouds.png" style="width: 100%;">
@@ -15,7 +41,3 @@
 			<img src="assets/images/clouds.png" class="second_image">
 		</div>
 	</div>
-
-<div>
-
-

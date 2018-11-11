@@ -1,8 +1,7 @@
-.content {
+/* .content {
 	margin: 5.39%;
 	margin-left: 11.2%;
 	margin-right: 11.2%;
-	/*height: 500px;*/
     height: 60.6%;
 	width: 76.6%;
 	background-color: rgba(0,0,0,0.60);
@@ -77,14 +76,14 @@
 }
 .unlock-button span{
     color: #fff;
-    /*font-family: Raleway;*/
+    
     font-weight: 700;
     font-size: 18px !important;
     text-align: left;
 }
 .lock-button img{
     width: 14.8%;
-    /*position: absolute;*/
+    
     left:15px;
     top: 10px;
     display: relative;
@@ -94,7 +93,6 @@
 }
 .lock-button span{
     color: rgb(255, 255, 255);
-    /*font-family: Raleway;*/
     padding-left: 10px;
     font-weight: 700;
     font-size: 18px !important;
@@ -111,4 +109,4 @@
     .content-text .value{
         font-size: 36px;
     }
-}
+} */
