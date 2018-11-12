@@ -1,9 +1,8 @@
 #map{
-
-    position: relative;
+    position: fixed;
     overflow: auto;
     width: 90%;
-	height: 600px;
+	height: 80%;
     margin: 128px auto auto auto;
     /* -webkit-border-radius: 6px;
             border-radius: 6px;
