@@ -1,3 +1,4 @@
+<!--
 <div class="background-fx">
 	<app-user-header></app-user-header>
 	<div class="content" style="position: relative;">
@@ -64,4 +65,75 @@
 	</div>
 </div>
 
+-->
 
+<main id="content">
+	<button class="close" name="close" type="submit" value="close">close</button>
+	<h2>Clanes listos para la Mission</h2>
+	<div id="inner-content">
+		<!-- <div id="inner-content"> -->
+			<ng-template ngFor let-item [ngForOf]="clans" let-i="index">
+				<div class="item">
+					<div class="clan-color" [style.background-color]="item.clan_color"></div>
+					<img class="item-img" src={{environment.asset_base_url}}{{item.image}}>
+					<h3>{{item.name}}</h3>
+					<p>{{item.joined_members + 1}}/{{item.max_members}}</p>
+					<button disabled>UNIRSE A CLAN</button>
+				</div>	
+			</ng-template>
+			
+			<!--
+			<div class="item">
+				<div class="clan-color" style="background-color: #24894F"></div>
+				<img class="item-img" src="assets/img/avatars/t5d.png">
+				<h3>Inner Content Name</h3>
+				<p>content info</p>
+				<button disabled>ACTION</button>
+			</div>
+			<div class="item">
+				<div class="clan-color" style="background-color: #5E55C9"></div>
+				<img class="item-img" src="assets/img/avatars/t4c.png">
+				<h3>Inner Content Name</h3>
+				<p>content info</p>
+				<button disabled>ACTION</button>
+			</div>
+			<div class="item">
+				<div class="clan-color" style="background-color: #DBA220"></div>
+				<img class="item-img" src="assets/img/avatars/t2b.png">
+				<h3>Inner Content Name</h3>
+				<p>content info</p>
+				<button>ACTION</button>
+			</div>
+			<div class="item">
+				<div class="clan-color" style="background-color: #B8F851"></div>
+				<img class="item-img" src="assets/img/avatars/t5d.png">
+				<h3>Inner Content Name</h3>
+				<p>content info</p>
+				<button>ACTION</button>
+			</div>
+			<div class="item">
+				<div class="clan-color" style="background-color: #24894F"></div>
+				<img class="item-img" src="assets/img/avatars/t6d.png">
+				<h3>Inner Content Name</h3>
+				<p>content info</p>
+				<button>ACTION</button>
+			</div>
+			-->
+		<!--</div> #inner-content -->
+
+
+	</div><!-- #container -->
+
+
+	<div id="main-actions">
+		<div class="col-sm-2">
+			<img src="assets/images/icons/question-mark.png" style="width:100%;">
+		</div>
+		<div class="col-sm-6">
+			<label><font size="3px">Crea tu propio Clan</font></label>
+		</div>
+		<div class="col-sm-4">
+			<button style="position: relative; margin-left: -70%; margin-top: -10%;">CREAR CLAN</button>
+		</div>
+	</div>
+</main>

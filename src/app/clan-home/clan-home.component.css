@@ -1,8 +1,8 @@
-.content {
+/* .content {
     margin-top: 2%;
     margin-left: 9.2%;
     margin-right: 9.2%;
-    /*height: 500px;*/
+    
     height: 78.55%;
     width: 82.5%;
     background-color: rgba(0,0,0,0.60);
@@ -11,7 +11,7 @@
     min-height: 130px;
 }
 .ul{
-    /*height: 285.39px;*/
+    
     height: 100%;
     width: 100%;
     border-bottom-style: solid;
@@ -110,4 +110,4 @@
     .create_btn{
         width: 212.84px;
     }
-}
+} */

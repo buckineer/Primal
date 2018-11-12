@@ -1,68 +1,16 @@
 <div class="Main">
-	<app-gis></app-gis>
-	<app-user-header></app-user-header>
-
-	<main id="content">
-		<button class="close" name="close" type="submit" value="close">close</button>
-		<h2>Content Title</h2>
-		<div id="inner-content">
-			<!-- <div id="inner-content"> -->
-
-
-
-				<div class="item">
-					<div class="clan-color" style="background-color: #CE3535"></div>
-					<img class="item-img" src="assets/img/avatars/t6d.png">
-					<h3>Inner Content Name</h3>
-					<p>content info</p>
-					<button disabled>ACTION</button>
-				</div>
-				<div class="item">
-					<div class="clan-color" style="background-color: #24894F"></div>
-					<img class="item-img" src="assets/img/avatars/t5d.png">
-					<h3>Inner Content Name</h3>
-					<p>content info</p>
-					<button disabled>ACTION</button>
-				</div>
-				<div class="item">
-					<div class="clan-color" style="background-color: #5E55C9"></div>
-					<img class="item-img" src="assets/img/avatars/t4c.png">
-					<h3>Inner Content Name</h3>
-					<p>content info</p>
-					<button disabled>ACTION</button>
-				</div>
-				<div class="item">
-					<div class="clan-color" style="background-color: #DBA220"></div>
-					<img class="item-img" src="assets/img/avatars/t2b.png">
-					<h3>Inner Content Name</h3>
-					<p>content info</p>
-					<button>ACTION</button>
-				</div>
-				<div class="item">
-					<div class="clan-color" style="background-color: #B8F851"></div>
-					<img class="item-img" src="assets/img/avatars/t5d.png">
-					<h3>Inner Content Name</h3>
-					<p>content info</p>
-					<button>ACTION</button>
-				</div>
-				<div class="item">
-					<div class="clan-color" style="background-color: #24894F"></div>
-					<img class="item-img" src="assets/img/avatars/t6d.png">
-					<h3>Inner Content Name</h3>
-					<p>content info</p>
-					<button>ACTION</button>
-				</div>
-
-			<!--</div> #inner-content -->
-
-
-		</div><!-- #container -->
-
-
-		<div id="main-actions">
-			<button disabled>OPTION 1</button>
-			<button>OPTION 2</button>
+	<app-gis></app-gis>	
+	<app-user-header></app-user-header>	
+	<router-outlet></router-outlet>
+		
+	<div style="height: 100%;width:100%;position: absolute;left: 0;top: 0;z-index: -1;overflow: hidden;">
+		<div style="position: relative;height: 100%;width:100%;">
+			<div class="first_image">
+				<img src="assets/images/clouds.png" style="width: 100%;">
+				<img src="assets/images/clouds.png" style="width: 100%;">
+				
+			</div>
+			<img src="assets/images/clouds.png" class="second_image">
 		</div>
-	</main>
+	</div>
 </div>
-

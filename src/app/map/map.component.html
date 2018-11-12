@@ -1,17 +1,19 @@
-<div class="background-fx" style="position: relative;">
+<!-- <div class="background-fx" style="position: relative;">
 	<app-user-header></app-user-header>
-	<div style="width: 90%;position: relative;margin-left: 5%; " class="map-height">
+	-->
+<div id="map" style="margin-top: 10%;">
+	<div style="width: 70%;position: relative; margin: auto; " class="map-height">
 		<ng-template ngFor let-item [ngForOf]="territories" let-i="index">
 
-	  		<div style="width:17.4%;height: 17.8%;position: absolute;" [style.left.%] = "get_left_position(i)" [style.top.%]="get_top_position(i)">
+	  		<div style="width:18%;height: 17.8%;position: absolute;" [style.left.%] = "get_left_position(i)" [style.top.%]="get_top_position(i)">
 	  			<a *ngIf="!item.lock_state" routerLink="/conquer/{{item.id}}" style="text-decoration: none">
-	  				<div style="position: relative;" class="w-100 h-100">
+	  				<div style="position: relative;">
 	    				<app-territory [territory]="territories[i]" [state]="true"></app-territory>
 	    			</div>
 				</a>
-				<div *ngIf="item.lock_state" style="position: relative;" class="w-100 h-100">
+				<div *ngIf="item.lock_state" style="position: relative;">
 					<app-territory [territory]="territories[i]" [state]="true"></app-territory>
-				</div>
+				</div> 
 	    	</div>
 		</ng-template>
 	</div>

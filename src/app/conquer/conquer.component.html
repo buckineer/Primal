@@ -1,3 +1,4 @@
+<!--
 <div class="background-fx">
 	<app-user-header></app-user-header>
 	<div class="content" style="position: relative;">
@@ -42,7 +43,7 @@
 					<button mat-raised-button class= "lock-button" style="padding-left: 2px" color="primary">
 						<img src="/assets/images/icons/lock small.png">
 						<span style="padding-left: 0px;">UNIRSE A CLAN</span>
-					</button>
+					</button> 
 				</a>
 				<a routerLink="/clan/home" *ngIf="clan_to_change() && !is_joined()">
 					<button mat-raised-button class= "unlock-button" color="primary">
@@ -68,3 +69,46 @@
 		</div>
 	</div>
 </div>
+-->
+<main id="content">
+	<button class="close" name="close" type="submit" value="close">close</button>
+	<h2>{{territory.title}}</h2>
+	<div style="margin: auto; text-align: center;">
+		<label style="font-style: normal; font-weight: normal;font-family: 'Fira Sans', sans-serif;color:white;"><font size="3vm">{{avatar_title}}</font></label>
+	</div>
+	
+	
+	
+	<div id="inner-content">
+		<div style="width:50%; margin: auto;text-align: center;">
+			<app-territory [territory]="territory"></app-territory>		
+		</div>
+		<div style="width:40%; margin: auto;">
+			<div class="col-sm-7" >
+				<label style="font-style: normal; font-weight: normal; color: white;"><font size="2vm">Incio Misión:</font></label>
+			</div>
+			<div class="col-sm-5">
+				<label style="font-style: normal; font-weight: normal; color: white;"><font size="3vm">{{remain_days}} dias</font></label>
+			</div>	
+		</div>
+		<div style="width:40%; margin: auto;">
+			<div class="col-sm-7">
+				<label style="font-style: normal; font-family: 'Fira Sans', sans-serif;font-weight: normal; color: white;"><font size="2vm">Puntos mínimos:</font></label>
+			</div>
+			<div class="col-sm-5">
+				<label style="font-style: normal; font-weight: normal;font-family: 'Fira Sans', sans-serif;color:white;"><font size="3vm">{{territory.reaching_min_points}}</font></label>
+			</div>
+		</div>
+		
+		<div style="width:85%; margin: auto; text-align:center;">
+			<label style="margin-top: 5%;font-style: normal; font-weight: normal;font-family: 'Fira Sans', sans-serif;color:white;line-height: 1.6;"><font size="3vm">En esta primera misión deberán aprender a colaborar. El equipo que gane este territorio tendrá una gran ventaja sobre los demás. <br/>Una ventaja mortal ...</font></label>
+		</div>
+		
+	</div>
+	<div id="main-actions"> 
+		<button *ngIf="!clan_to_change() || is_joined()" disabled>UNISRE A CLAN</button>
+		<button *ngIf="clan_to_change() && !is_joined()" routerLink="/clan/home">UNISRE A CLAN</button>
+		<button *ngIf="clan_to_change()" disabled>CONQUISTAR</button>
+		<button routerLink="/clan/ranking" *ngIf="!clan_to_change()">CONQUISTAR</button>
+	</div>
+</main>
