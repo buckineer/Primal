@@ -1,31 +1,31 @@
-<div style="position:relative; overflow: hidden;" class="top">
-  <div class="row header">
-  </div>
-  <div class="row" style="height: 100%;">
-    <div class="col-sm-1">
-    </div>
-    <div class="col-sm-1 vertical-child-center">
-      <a routerLink="/profile">
-        <img *ngIf= "user.image_url" src="{{environment.asset_base_url}}{{user.image_url}}" alt="blank" class="avatar-img"> 
-      </a>
-    </div>
-    <div class="col-sm-6 vertical-child-center">
-      <div style="float: left;margin-left: -10px;">
-        <label class="username">{{user.first_name}} {{user.last_name}}</label>
-        <br>
-        <label class="levelname">{{user.level_name}}</label>  
-      </div>
-    </div>
-    <div class="col-sm-1">
-    </div>
-    <div class="col vertical-child-center" style="margin-left: -1%;">
-      <div style="float: left;">
-        <label class="key">Puntos&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-        <label class="value"> {{user.total_points}} </label>
-        <br>
-        <label class="key">Monedas&nbsp;&nbsp;</label>
-        <label class="value"> {{user.coins}} </label>
-      </div>
+<header id="player-stats">
+  <div id="player-id">
+    <a id="profile-pic" href="/profile">
+      <img src="assets/img/avatars/t7h.png">
+    </a>
+    <div id="player-name">
+      <h1>
+        Sergio Palomeque
+      </h1>
+      <p class="subtitle">
+        Homo Sapiens
+      </p>
     </div>
   </div>
-</div>
+  <p id="player-points">
+    <span class="label">
+      Puntos
+    </span>
+    <span class="score">
+      21000
+    </span>
+  </p>
+  <p id="player-coins">
+    <span class="label">
+      Monedas
+    </span>
+    <span class="score">
+      535
+    </span>
+  </p>
+</header>

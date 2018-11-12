@@ -1,41 +1,31 @@
-<div style="height: 100%;"  >
-    <div style="float: left; height: 100%;margin-left: 8.2%;" class="vertical-child-center">
-        <a routerLink="/map">
-            <img src="/assets/images/logo/logo-b&w.png " class="logo-img">
-        </a>
-    </div>
-    <div style="float: right;height: 100%;margin-right: 8.2%;"  class="vertical-child-center">
-        <div>
-            <div style="display: inline-block;">
-                <a routerLink="/notification" >
-                    <div style="position: relative;" class="header-icon">
-                        <img src="../assets/images/icons/notification.png" style="height: 100%;">
-                        <div class ="vertical-child-center" style="position: absolute;right: 0;top: 5%;color: #fff;width: 60%;height: 60%;border-radius: 50%;background-color: #f00;text-align: center;font-size: 12px;" *ngIf="alarmCount > 0">
-                            <span>{{alarmCount}}</span>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div style="display: inline-block;">
-                <a routerLink="/gift">
-                    <img src="../assets/images/icons/present.png" class="header-icon">
-                </a>
-            </div>
-            <div style="display: inline-block;">
-                <a routerLink="/info">
-                    <img src="../assets/images/icons/info.png" class="header-icon">
-                </a>
-            </div>
-
-            <div style="display: inline-block;">
-                <a routerLink="/ranking">
-                    <img src="../assets/images/icons/ranking.png" class="header-icon">
-                </a>
-            </div>
-            <div style="display: inline-block;" (click)="logout()">
-                <img  src="../assets/images/icons/disconnect.png" class="header-icon">        
-            </div>
-        </div>
-    </div>
-
-</div>
+<nav id="main-nav">
+    <a id="logo" href="#"><img src="assets/img/logos/logo.png"></a>
+    <ul id="nav-elements">
+        <li>
+            <a href="/notifications">
+                <img src="/assets/img/icons/notifications.png">
+                <div id="new-notifications">2</div>
+            </a>
+        </li>
+        <li>
+            <a href="/presents">
+                <img src="/assets/img/icons/presents.png">
+            </a>
+        </li>
+        <li>
+            <a href="/info">
+                <img src="/assets/img/icons/info.png">
+            </a>
+        </li>
+        <li>
+            <a href="/ranking">
+                <img src="/assets/img/icons/ranking.png">
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <img src="/assets/img/icons/logout.png">
+            </a>
+        </li>
+    </ul>
+</nav>
