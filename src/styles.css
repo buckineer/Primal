@@ -150,7 +150,146 @@
         .close:hover {
                 background-size: 120%;
             }
+/*Main Body*/
+.Main:before{
+    z-index: -2;
+    content:'';
+    display: block;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top:0;
+    left: 0;
+    background: url('/assets/img/bg/map.jpg') no-repeat center fixed;
+    background-size: cover;
+    -webkit-box-shadow:inset 0 0 200px 25px #14130f;
+            box-shadow:inset 0 0 200px 25px #14130f;
+}
+#content{
+        /*display: none;*/
+        z-index: 2;
+        position: relative;
+        overflow: auto;
+        background-color: rgba(0,0,0,.8);
+        width: 700px;
+        height: 600px;
+        margin: 128px auto 64px auto;
+        -webkit-border-radius: 6px;
+                border-radius: 6px;
+        -webkit-box-shadow: 0 5px 6px 0 rgba(0,0,0,.16);
+                box-shadow: 0 5px 6px 0 rgba(0,0,0,.16);
+    }
 
+
+        #content .close{
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+
+        h2{
+            margin-top: 20px;
+            height: 30px;
+        }
+        #inner-content{
+            margin: 20px 30px 10px 55px;
+            position: relative;
+            width:610px;
+            height: 422px;
+            overflow-y: auto;
+        }
+        #main-actions{
+            width: 100%;
+            height: 108px;
+            position:absolute;
+            left: 0;
+            bottom: 0;
+            padding: 20px 120px 40px 120px;
+
+        }
+
+        /* #inner-content */
+            .scroller:before,
+            .scroller:after{
+                content: '';
+                height: 1px;
+                width: 80%;
+                position: absolute;
+                left: 10%;
+                background-color: $707070;
+                background: -moz-linear-gradient(left,  rgba(112,112,112,0) 0%, rgba(112,112,112,1) 50%, rgba(112,112,112,0) 100%);
+                background: -webkit-linear-gradient(left,  rgba(112,112,112,0) 0%,rgba(112,112,112,1) 50%,rgba(112,112,112,0) 100%);
+                background: linear-gradient(to right,  rgba(112,112,112,0) 0%,rgba(112,112,112,1) 50%,rgba(112,112,112,0) 100%);
+                filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00707070', endColorstr='#00707070',GradientType=1 );
+            }
+                .scroller:before{
+                    top:70px;
+                }
+                .scroller:after{
+                    bottom:108px;
+                }
+                .item{
+                    position:relative;
+                    margin: 10px;
+                     height: auto; 
+                     padding: 10px;
+                }
+
+                    .item img{
+                        width: 60px;
+                        height: auto;
+                        position: absolute;
+                        left: 10px;
+                        top:10px;
+                    }
+                    .item .clan-color{
+                        width: 40px;
+                        height: 40px;
+                        position: absolute;
+                        left: 20px;
+                        top:20px;
+                        -webkit-border-radius: 100px;
+                                border-radius: 100px;
+                    }
+                    .item h3{
+                        position: relative;
+                        margin-left: 90px;
+                        margin-top:0px;
+                    }
+                    .item p{
+                        position: relative;
+                        margin-left: 90px;
+                        margin-top: 44px;
+                        margin-top: 10px;
+
+                    }
+                    .item button{
+                        position: absolute;
+                        right: 10px;
+                        top: 0;
+                        bottom:0;
+                        margin: auto 0;
+                    }
+
+
+        /* #main-actions */
+            #main-actions button:first-of-type{
+                position: absolute;
+                top: 20px;
+                left: 120px;
+            }
+            #main-actions button:nth-of-type(2){
+                position: absolute;
+                top: 20px;
+                right: 120px;
+            }
+            /*RESPONSIVE*/
+                /* MAIN */
+    @media screen and (min-height: 790px){
+        #content{
+            margin-top: 20vh;
+        }
+    }
 /* TRANSITIONS */
     a,
     button, 

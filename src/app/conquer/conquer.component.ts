@@ -5,6 +5,7 @@ import {TerritoryService} from '../services/territory.service';
 import {GlobalState} from '../state';
 import {User} from '../models/user.model';
 import {UserService} from '../services/user.service';
+import * as Scroll from '../../assets/js/quasi/scroll.js';
 @Component({
   selector: 'app-conquer',
   templateUrl: './conquer.component.html',
@@ -31,7 +32,10 @@ export class ConquerComponent implements OnInit {
     this.userService.getUser(this.state.Current_User_Id)
                       .subscribe(ret_value=>{this.user = ret_value;});
 	}
-	
+	ngAfterViewInit()
+  {
+    Scroll.run_scroll()
+  }
   getTerritory():void {
   	const id:number = +this.route.snapshot.paramMap.get('id');
   	this.territoryService.getTerritory(id)

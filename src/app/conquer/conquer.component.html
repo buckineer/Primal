@@ -83,7 +83,7 @@
 		<div style="width:50%; margin: auto;text-align: center;">
 			<app-territory [territory]="territory"></app-territory>		
 		</div>
-		<div style="width:40%; margin: auto;">
+		<div style="width:40%; margin: auto;" class="row">
 			<div class="col-sm-7" >
 				<label style="font-style: normal; font-weight: normal; color: white;"><font size="2vm">Incio Misión:</font></label>
 			</div>
@@ -91,7 +91,7 @@
 				<label style="font-style: normal; font-weight: normal; color: white;"><font size="3vm">{{remain_days}} dias</font></label>
 			</div>	
 		</div>
-		<div style="width:40%; margin: auto;">
+		<div style="width:40%; margin: auto;" class="row">
 			<div class="col-sm-7">
 				<label style="font-style: normal; font-family: 'Fira Sans', sans-serif;font-weight: normal; color: white;"><font size="2vm">Puntos mínimos:</font></label>
 			</div>
@@ -109,6 +109,6 @@
 		<button *ngIf="!clan_to_change() || is_joined()" disabled>UNISRE A CLAN</button>
 		<button *ngIf="clan_to_change() && !is_joined()" routerLink="/clan/home">UNISRE A CLAN</button>
 		<button *ngIf="clan_to_change()" disabled>CONQUISTAR</button>
-		<button routerLink="/clan/ranking" *ngIf="!clan_to_change()">CONQUISTAR</button>
+		<button routerLink="/clan/ranking" *ngIf="!clan_to_change()" >CONQUISTAR</button>
 	</div>
-</main>
+</main> 
