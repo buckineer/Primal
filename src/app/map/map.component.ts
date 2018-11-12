@@ -30,7 +30,8 @@ export class MapComponent implements OnInit {
   }
   get_top_position(index: number):number{
     var nth = Math.floor(index/4);
-    return 16.34*(index % 4 + nth);
+    // return 16.34*(index % 4 + nth);
+    return 19.34 * (index % 4 + nth)
   }
 
 

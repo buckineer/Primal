@@ -72,11 +72,16 @@
 -->
 <main id="content">
 	<button class="close" name="close" type="submit" value="close">close</button>
-	<h2>Lucha mortal por la {{territory.title}}</h2>
-	<hr style="background-color: white; width: 80%;">
+	<h2>{{territory.title}}</h2>
+	<div style="margin: auto; text-align: center;">
+		<label style="font-style: normal; font-weight: normal;font-family: 'Fira Sans', sans-serif;color:white;"><font size="3vm">{{avatar_title}}</font></label>
+	</div>
+	
+	
+	
 	<div id="inner-content">
 		<div style="width:50%; margin: auto;text-align: center;">
-			<app-territory [territory]="territory"></app-territory>			
+			<app-territory [territory]="territory"></app-territory>		
 		</div>
 		<div style="width:40%; margin: auto;">
 			<div class="col-sm-7" >

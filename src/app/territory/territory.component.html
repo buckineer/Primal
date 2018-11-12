@@ -3,6 +3,8 @@
 	<ng-container *ngIf="state">
 		<img  *ngIf="is_clan_exists()" class="territory-clan-avatar"  src="{{ environment.asset_base_url}}{{territory.clan_img }}">
 		<img *ngIf="territory.lock_state" class="territory-lock-icon"  src="../assets/images/icons/lock small.png">
-		<label *ngIf="!territory.lock_state" class="territory-state-txt"><strong  >¡CONQUISTAR!</strong></label>
+		<!--
+		<label *ngIf="!territory.lock_state" class="territory-state-txt"><strong  >¡CONQUISTAR!</strong></label> {% endcomment %}
+		-->
 	</ng-container>
 </div>

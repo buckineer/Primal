@@ -16,6 +16,7 @@ export class ConquerComponent implements OnInit {
   remain_days:number;
   starting_days: number;
 	user:User;
+  avatar_title: string;
   constructor(private route: ActivatedRoute,
   			private territoryService: TerritoryService,
         private state:GlobalState,
@@ -35,7 +36,7 @@ export class ConquerComponent implements OnInit {
   	const id:number = +this.route.snapshot.paramMap.get('id');
   	this.territoryService.getTerritory(id)
 		.subscribe(ret_item=>{this.territory=ret_item;
-                          this.state.Current_Territory_Id = ret_item.id; this.getLeftDay();
+                          this.state.Current_Territory_Id = ret_item.id; this.getLeftDay(); this.getAvatarTitle();
     });
 	}
 	
@@ -51,6 +52,18 @@ export class ConquerComponent implements OnInit {
   	var dayDifference = Math.ceil(timeDiff / (1000 * 3600 * 24));
     this.remain_days = dayDifference;
     console.log("remain days",this.remain_days)
+  }
+
+  getAvatarTitle(): void {
+    var avatar = this.territory.image_url;
+  
+    var res = avatar.split("/");
+    
+    var image_title = res[3];
+    
+    var ava_title = image_title.replace(".png", "");
+    console.log(ava_title);
+    this.avatar_title = ava_title;
   }
 
   is_joined():boolean{

@@ -64,23 +64,25 @@
 		</div>
 	</div>
 </div>
+
 -->
 
 <main id="content">
 	<button class="close" name="close" type="submit" value="close">close</button>
-	<h2>Content Title</h2>
+	<h2>Clanes listos para la Mission</h2>
 	<div id="inner-content">
 		<!-- <div id="inner-content"> -->
-
-
-
-			<div class="item">
-				<div class="clan-color" style="background-color: #CE3535"></div>
-				<img class="item-img" src="assets/img/avatars/t6d.png">
-				<h3>Inner Content Name</h3>
-				<p>content info</p>
-				<button disabled>ACTION</button>
-			</div>
+			<ng-template ngFor let-item [ngForOf]="clans" let-i="index">
+				<div class="item">
+					<div class="clan-color" [style.background-color]="item.clan_color"></div>
+					<img class="item-img" src={{environment.asset_base_url}}{{item.image}}>
+					<h3>{{item.name}}</h3>
+					<p>{{item.joined_members + 1}}/{{item.max_members}}</p>
+					<button disabled>UNIRSE A CLAN</button>
+				</div>	
+			</ng-template>
+			
+			<!--
 			<div class="item">
 				<div class="clan-color" style="background-color: #24894F"></div>
 				<img class="item-img" src="assets/img/avatars/t5d.png">
@@ -116,7 +118,7 @@
 				<p>content info</p>
 				<button>ACTION</button>
 			</div>
-
+			-->
 		<!--</div> #inner-content -->
 
 
@@ -124,7 +126,9 @@
 
 
 	<div id="main-actions">
-		<button disabled>OPTION 1</button>
-		<button>OPTION 2</button>
+		
+		<img src="assets/images/icons/question-mark.png" style="width:10%;">
+		<label>Crea tu propio Clan</label>
+		<button>CREAR CLAN</button>
 	</div>
 </main>
