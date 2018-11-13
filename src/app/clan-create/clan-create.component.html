@@ -1,4 +1,5 @@
 <!-- <app-invite></app-invite> -->
+<!--
 <div *ngIf="clan_added" class="background-fx">
 	<app-user-header></app-user-header>
 	<div class="content-created container" style="position: relative;">
@@ -18,10 +19,10 @@
 			</div>
 			<div class="row justify-content-center">
 				<div class="col-sm-6">
-					<!-- <img src="/assets/images/clans/object6.png" style="width: 40%;"> -->
+					
 					<img src="{{environment.asset_base_url}}{{clan.image}}" style="width: 28%;">
 					<span class="congratulation-text">{{clan.name}}</span>
-					<!-- <span class="congratulation-text"> Elefantes </span> -->
+					
 				</div>				
 			</div>
 			<div class="row justify-content-center">
@@ -145,3 +146,67 @@
 		</div>
 	</div>
 </div>
+-->
+
+<main id="content">
+	<button class="close" name="close" type="submit" value="close">close</button>
+	<h2>Crear Clan</h2>
+	<div id="inner-content">
+		<form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm.value)">
+			<div class="row" style="width: 100%; margin:auto;">
+				<div class="col-sm-9">
+					<label><font size="3px">Nombre</font></label>
+					<input type="text" placeholder="Nombre de clan">					
+					<label><font size="3px">Descripción</font></label>
+					<input type="text" placeholder="Breve descripción del clan">
+					<label><font size="3px">Lema</font></label>
+					<input type="text" placeholder="Frase contundente que expresa la ideologia del clan">
+					<label><font size="3px">Color</font></label>
+					
+					<div class="row">
+						<ng-template ngFor let-item [ngForOf]="colors" let-i="index">
+							<div class="col-sm-2" style="padding-right:75px;">
+								<label class="color-container">
+									<input type="radio" id='{{"color" + i}}' formControlName="color" value="{{item}}" [checked] = "i==0">
+									<span class="checkmark" [ngStyle]="{'background-color':item}"></span>
+								</label>
+							</div>
+						</ng-template>
+					</div>
+					<div class="row">
+						<label class="open-container">Clan abierto
+							<input type="checkbox">
+							<span class="open-checkmark"></span>
+						</label>
+					</div>
+					
+				</div>
+				<div class="col-sm-3">
+					<label><font size="3px">Pictograma</font></label>
+					<div class="row">
+						<ng-template ngFor let-item [ngForOf]="clan_images" let-i="index">
+							<label class="image-container">
+								<input type="radio" [checked] = "i==0" id='{{"avatar" + i}}' formControlName="avatar" value="{{item}}">
+								<label for='{{"avatar"+i}}'>
+									<img class="clan-img selected" [class.selected]= "item === myForm.value.avatar" src={{environment.asset_base_url}}{{item}}>
+								</label>
+							</label>
+						</ng-template>
+					</div>
+				</div>
+			</div>
+		</form>
+
+	</div><!-- #container -->
+	<div id="main-actions">
+		
+		<div class="row">
+			<div class="col">
+
+			</div>
+			<div class="col-sm-4">
+				<button routerLink="/clan/create" style="position: relative; margin-left: -70%; margin-top: -10%;">GURADAR</button>
+			</div>
+		</div>
+	</div>
+</main>
