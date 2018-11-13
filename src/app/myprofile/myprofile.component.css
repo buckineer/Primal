@@ -1,215 +1,31 @@
-.content {
-    margin-top: 2%;
-	width: 100%;
-}
-
-div.section-header {
-  background-color: #A88F66;
-  opacity: 0.7;
-  position: absolute;
-  /* top: 0;
-  left: 0; */
-  width: 100%;
-  height: 100%;
-}
-
-.section-text {
-    color: white;
-    height: 40px;
-    text-align: center;
-    font-family: Raleway;
-    font-weight: 600;
-    vertical-align: middle;
-    padding: 10px;
-    font-size: 22px;
-}
-
-
-
 .user-image{
-    /* position:absolute; */
-    max-width: 100%;
-    height: 100%;
+    width: 100px;
 }
-.user-avatar {
+.user-avatar{
     width:80px;
     height: 80px;
+    align-items: center;
 }
-@media only screen and (min-width:1280px){
-    .user-avatar {
-        width:120px;
-        height: 120px;
-    }
+.avatar-circle{
+    border-radius: 50%;
+    background-color: #5E55C9
 }
-@media only screen and (min-width:1400px){
-    .user-avatar {
-        width:144px;
-        height: 144px;
-    }
-}
-.button-edit {
-    background-color: #fe8d00;
-    color: white;
-    height: 40px;
-    text-align: left;
-    font-family: Raleway;
-    font-weight: 600;
-}
-.button-edit strong{
-    color: #fff;
+.item-button{
     font-size: 18px;
+    line-height: 38px;
+    height: 38px;
 }
-@media only screen and (min-width:1280px){
-    .button-edit {
-        height: 48x;
-    }
-    .button-edit strong{
-        font-size: 24px;
-    }
+#badge-content{
+    height: 196px;
+    width: 158px;
 }
-@media only screen and (min-width:1400px){
-    .button-edit {
-        height: 55x;
-    }
-    .button-edit strong{
-        font-size: 28px;
-    }
+.scroller:before{
+    top:25px;
 }
-.points-text{
-    font-family: Raleway;
-    line-height: 29px;
+.scroller:after{
+    bottom:-15px;
 }
-.points-text .key{
-    font-size: 22px;
-    font-weight: 500;
-    color: white;
-}
-.points-text .value{
-    font-size: 30px;
-    font-weight: 800;
-    color: #fe8d00;
-}
-@media only screen and (min-width:1280px){
-    .points-text{
-        line-height: 34px;
-    }
-    .points-text .key{
-        font-size: 28px;
-        font-weight: 500;
-        color: white;
-    }
-    .points-text .value{
-        font-size: 36px;
-        font-weight: 800;
-        color: #fe8d00;
-    }
-}
-@media only screen and (min-width:1400px){
-    .points-text .key{
-        font-size: 32px;
-    }
-    .points-text .value{
-        font-size: 40px;
-    }
-}
-.user-section{
-	margin-top: 30px;
-	border-bottom-style: solid;
-	border-bottom-color: #fff;
-}
-.map-badge{
-	width: 80px;
-	height: 80px;
-}
-.map-badge-text{
-    line-height: 29px;
-    letter-spacing: 0px;
-    color: rgb(255, 255, 255);
-    font-family: 'Raleway', serif;
-    font-weight: 600;
-    font-size: 20px;
-    text-align: left;
-}
-@media only screen and (min-width:1280px){
-    .map-badge{
-        width: 100px;
-        height: 100px;
-    }
-    .map-badge-text{
-        font-size: 24px;
-    }
-}
-@media only screen and (min-width:1400px){
-    .map-badge-text{
-        font-size: 28px;
-    }
-}
-.clan-avatar{
-	width: 80px;
-    height: 80px;
-}
-@media only screen and (min-width:1280px){
-    .clan-avatar{
-        width: 100px;
-        height: 100px;
-    }
-}
-@media only screen and (min-width:1400px){
-    .clan-avatar{
-        width: 125px;
-        height: 125px;
-    }
-}
-.clan-text{
-    line-height: 34px;
-    letter-spacing: 0px;
-    color: rgb(255, 255, 255);
-    font-family: 'Raleway', serif;
-    font-weight: 600;
-    font-size: 20px;
-    text-align: left;
-}
-.clan-text .value{
-    font-weight: 800;
-    font-size: 22px;
-    color: #fe8d00;
-}
-@media only screen and (min-width:1280px){
-    .clan-text{
-        font-size: 24px;
-        font-weight: 700;
-    }
-    .clan-text .value{
-        font-size: 36px;
-    }
-}
-@media only screen and (min-width:1400px){
-    .clan-text{
-        font-size: 28px;
-    }
-    .clan-text .value{
-        font-size: 40px;
-    }
-}
-.first-name-text{
-    font-family: Raleway;
-    font-size: 24px;
-    font-weight: 300;
-    color: white;
-}
-.second-name-text{
-    font-family: Raleway;
-    font-size: 24px;
-    font-weight: 500;
-    color: white;
-}
-@media only screen and (min-width:1280px){
-    .first-name-text,.second-name-text{
-        font-size: 28px;
-    }
-}
-@media only screen and (min-width:1400px){
-    .first-name-text,.second-name-text{
-        font-size: 32px;
-    }
+.clan-img{
+    width: 70px;
+    height: 70px;
 }

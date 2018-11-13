@@ -1,144 +1,125 @@
-<div class="background-fx">
-	<app-user-header></app-user-header>
-	<div style="position:relative; height:50px;" class="top">
-		<div class="row section-header">
-		</div>
-		<div class="row " style="height:100%;">
-			<div class="col-sm-4 vertical-child-center" style="background: #fe8d00;">
-				<span class="section-text">Mi perfil</span>
-			</div>
-			<div class="col-sm-4 vertical-child-center" style="border-left-width: 2px; border-left-style: solid; border-right-width: 2px; border-right-style:solid; border-color: white;">
-				<a *ngIf= "clan?.id != -1" class="vertical-child-center" routerLink="/clan/{{clan?.id}}">
-					<span class="section-text">Mi clan</span>
-				</a>
-				<span *ngIf= "clan?.id == -1" class="section-text">Mi clan</span>
-			</div>
-			<div class="col-sm-4 vertical-child-center">
-				<a class="vertical-child-center" routerLink="/user-gift/{{user?.id}}">
-					<span class="section-text">Mis regalos</span>
-				</a> 
-				
-			</div>
-		</div>
-	</div>
-	
-
-	<div class="content container" style="position: relative;">
-		<!-- <div class="row">
-			<div class="col">
-				<span class="title-text">MI PERFIL</span>	
-			</div>
-	        <div style="float: right;">
-	        	<a routerLink="/map">
-	        		<i class="material-icons md-bold cross-size md-white" >close</i>
-	        	</a>
-	        </div>
-		</div> -->
-		<div class="row user-section" >
-         	 <div class="col-sm-7" style="display: flex;">
-                <div class="user-avatar vertical-child-center">
+<main id="content">
+	<button class="close" name="close" type="submit" value="close" routerLink="/map">close</button>
+	<h2>Mi Perfil</h2>
+	<div id="inner-content">
+		<div class="row" style="margin:auto;">
+			<div class="col-sm-3 mr-3">
+                <div class="user-avatar vertical-child-center avatar-circle" >
                 	<img src="{{environment.asset_base_url}}{{user_image_url}}" class="user-image">
                 </div>
-				<div class="vertical-child-center" style="margin-left: 3%;">
-					<div>
-						<span class="first-name-text">{{user?.first_name}} </span>
-						<span class="second-name-text">
-							{{user?.last_name}}
-						</span>
-					</div>
-					<div style="margin-top: 10px;">
-						<a routerLink="/profile/edit">
-							<button class="button-edit" mat-raised-button><strong>EDITAR</strong></button>
-						</a>
-					</div>
-				</div>
-            </div>
-			<div class="col-sm-4">
-				<div>
-					<span class="points-text">
-						<span class="key">PUNTOS: </span>
-						<span class="value">{{user?.total_points}} </span>
-					</span>	
-				</div>
-				<div>
-					<span class="points-text">
-						<span class="key">
-							MONEDAS: 	
-						</span>
-						<span class="value">
-							{{user?.coins}} 	
-						</span>
-					</span>
-				</div>
-				<div>
-					<span class="points-text">
-						<span class="key">
-							NIVEL: 	
-						</span>
-						<span class="value">
-							{{user?.level}} 	
-						</span>
-						
-					</span>	
-				</div>
+				
 			</div>
-			<div class="col" style="vertical-align:top;">
-	        	<a routerLink="/map">
-	        		<i class="material-icons md-bold cross-size md-white" >close</i>
-	        	</a>
-	        </div>
-					
+			<div class="col-sm-4">
+				<p class="label">Nombre</p>
+				<h3>{{user?.first_name}}  {{user?.last_name}}</h3>
+			</div>
+			<div class="col-sm-4">
+				<a routerLink="/profile/edit">
+					<button class="item-button" style="position: absolute;right: 10px;bottom: 0px;top: 10px;">EDITAR</button>
+				</a>
+			</div>
 		</div>
-		<div class="row" style="margin-top: 10px;">
-			<div class="col-sm-6" >
-				<div class="row">
-						<label class="content-text"><font color=white>Progreso Personal</font></label>
+		<div class="row mt-3" style="margin:auto;">
+			<div class="col-sm-3 mr-3">
+				<span class="label mr-2">Puntos</span>
+				<span class="score"> {{user?.total_points}}</span>
+			</div>
+			<div class="col-sm-3 " style="margin:auto;">
+				<span class="label mr-2">Monedas</span>
+				<span class="score"> {{user?.coins}} </span>
+			</div>
+			<div class="col-sm-4">
+				<span class="label mr-2">Nivel</span>
+				<span class="score mr-2"> {{user?.level}}</span>
+				<span class="label ">{{user?.level_name}}</span>
+			</div>
+		</div>
+		<div class="row mt-5" style="margin:auto;">
+			<div class="col-sm-3 mr-3" id="badge-list" style="height: 222px;">
+				<div>
+					<p class="label">Progreso Personal</p>	
 				</div>
-				<div class="row" style="margin-top:20px; border-right-style: solid;border-right-color: #fff;min-height: 80%;">
-
-<!-- 					<div class="col-sm-6" style="text-align: center;">
-						<img src="/assets/images/icons/badge9.png" class="map-badge">
-						<div>
-							<span class="map-badge-text">Insignia LAND</span>	
-						</div>						
-					</div> -->
+				
+				<div id="badge-content" style="position: absolute;" class="mt-2">
 					<ng-template ngFor let-item [ngForOf]="user.badge_list" let-i="index">
-						<div class="col-sm-4" style="text-align: center;">
-							<img src="{{item.icon}}" class="map-badge">
-							<div>
-								<span class="map-badge-text">{{item.title}}</span>	
-							</div>						
+						<div class="badge-item mt-2">
+							<img src="{{item.icon}}" style="width: 32px;height: 32px;display: inline-block;margin-right: 5px;">
+							<span class="label">{{item.title}}</span>
 						</div>
 					</ng-template>
-				</div>				
+					<div class="badge-item mt-2">
+						<img src="/assets/images/icons/badge9.png" style="width: 32px;height: 32px;display: inline-block;margin-right: 5px;">
+						<span class="label">Isla del Volcan</span>
+					</div>
+					<div class="badge-item mt-2">
+						<img src="/assets/images/icons/badge9.png" style="width: 32px;height: 32px;display: inline-block;margin-right: 5px;">
+						<span class="label">Isla del Volcan</span>
+					</div>
+										<div class="badge-item mt-2">
+						<img src="/assets/images/icons/badge9.png" style="width: 32px;height: 32px;display: inline-block;margin-right: 5px;">
+						<span class="label">Isla del Volcan</span>
+					</div>
+					<div class="badge-item mt-2">
+						<img src="/assets/images/icons/badge9.png" style="width: 32px;height: 32px;display: inline-block;margin-right: 5px;">
+						<span class="label">Isla del Volcan</span>
+					</div>
+										<div class="badge-item mt-2">
+						<img src="/assets/images/icons/badge9.png" style="width: 32px;height: 32px;display: inline-block;margin-right: 5px;">
+						<span class="label">Isla del Volcan</span>
+					</div>
+					<div class="badge-item mt-2">
+						<img src="/assets/images/icons/badge9.png" style="width: 32px;height: 32px;display: inline-block;margin-right: 5px;">
+						<span class="label">Isla del Volcan</span>
+					</div>
+										<div class="badge-item mt-2">
+						<img src="/assets/images/icons/badge9.png" style="width: 32px;height: 32px;display: inline-block;margin-right: 5px;">
+						<span class="label">Isla del Volcan</span>
+					</div>
+					<div class="badge-item mt-2">
+						<img src="/assets/images/icons/badge9.png" style="width: 32px;height: 32px;display: inline-block;margin-right: 5px;">
+						<span class="label">Isla del Volcan</span>
+					</div>
+				</div>
 			</div>
-			<div class="col-sm-6">
-				<ng-container *ngIf= "clan?.id != -1">
-					<div class="row">
-						<label class="content-text"><font color=white>Clan</font></label>
+			<div class="col ml-2">
+				<p class="label mr-2">Clan</p>
+
+				<ng-container *ngIf= "clan?.id != -1; else no_clan ">
+					<div>
+						<img src="{{environment.asset_base_url}}{{clan?.image}}" class="clan-img" style="display: inline-block;">
+						<h4 style="display: inline-block;" class="ml-1">Las Calaveras Hambrientas</h4>
 					</div>
-					<div class="row align-items-center" style="margin-top:20px;" >
-						<div class="col-sm-6" style="text-align: left;">
-							<img src="{{environment.asset_base_url}}{{clan?.image}}" class="clan-avatar">
-							<div>
-								<span class="clan-text">{{clan?.name}}</span>	
-							</div>
-							<div>
-								<span class="clan-text">
-									<span class="key">PUNTOS </span>
-									<span class="value">{{clan?.points}}</span>
-								</span>	
-							</div>						
-						</div>	
+					<div class="mt-4" style="width: 170px;height: 40px;">
+						<span class="label" style="float: left;">Puntos</span>
+						<span class="score" style="float: right;">{{clan?.points}} </span>
 					</div>
-					<div class="row" style="margin-left: 10px;">
-							<a routerLink="/clan/{{clan?.id}}">
-								<button class="button-edit" mat-raised-button style="text-align: center;"><font color="#FE8D00"><strong>VER</strong></font></button>
-							</a>						
+					<div style="width: 170px;height: 40px;">
+						<span class="label" style="float: left;">Puntos Aportados</span>
+						<span style="font-size: 18px;float: right;"> {{clan?.points}} </span>
+					</div>
+					<div>
+						<button class="item-button" style="display: inline-block;">CAMBIAR CLAN</button>
+						<button class="item-button" routerLink="/clan/{{clan?.id}}" style="display: inline-block;">VER CLAN</button>
 					</div>
 				</ng-container>
-			</div>
 
+				<ng-template  #no_clan>
+					<div class="mt-4">
+						<span style="font-weight: bold;display: inline-block;">No esta en ningún Clan</span>
+						<button class="item-button" style="display: inline-block;margin-left: 80px;">UNIRSE A CLAN</button>
+						
+					</div>
+					<p class="mt-4">
+						<span class="label">Puntos Por Aportar</span>
+						<span style="font-size: 18px;">105</span>
+					</p>
+				</ng-template>
+
+
+			</div>
 		</div>
+	</div><!-- #container -->
+	<div id="main-actions">		
+		<button style="position: absolute; top: 10px; left:60%;font-size: 22px; ">DESCONECTAR</button>
 	</div>
-</div>
+</main>

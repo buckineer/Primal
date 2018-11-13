@@ -11,6 +11,7 @@ import {ClanService} from '../services/clan.service';
 import {environment} from '../../environments/environment';
 
 import {GlobalState} from '../state';
+import * as Scroll from '../../assets/js/quasi/scroll.js';
 @Component({
   selector: 'app-myprofile',
   templateUrl: './myprofile.component.html',
@@ -27,7 +28,10 @@ export class MyProfileComponent implements OnInit {
   				private userService:UserService,
   				private territoryService:TerritoryService,
   				private clanService:ClanService,) { }
-
+  ngAfterViewInit()
+  {
+    Scroll.run_scroll("#badge-content","#badge-list");
+  }
   ngOnInit() {
   	this.userService.getUser(this.globalState.Current_User_Id).
   								subscribe(ret_value=>

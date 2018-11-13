@@ -1,6 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 /*@import "css.css";*/
 @import "/assets/css/perfect-scrollbar.css";
+@import "/assets/css/font_format.css";
 /*Quasi CSS*/
 
     *, *:before, *:after {
