@@ -40,7 +40,29 @@ div.overlay-lock{
     height: 45%;
     left: 5%;
     top:25%;
-    z-index: 3
+    z-index: 4
+}
+
+.mist-icon {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0%;
+    left: 5%;
+    z-index: 3;
+}
+
+.territory-title {
+    position: absolute;
+    width: 40%;
+    height: 50%;
+    top: 30%;
+    left: 30%;
+    z-index: 5;
+    font-style: normal;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
 }
 .territory-state-txt{
     background-color: white;
@@ -70,7 +92,7 @@ div.overlay-lock{
     height: 100%;
     z-index: 2
 }
-.territory-outline{
+.territory-outline {
     -webkit-mask-image: url("/assets/images/outline-mask.png");
     -webkit-mask-size: 100% 100%;
     background-color: #f00;

@@ -14,6 +14,7 @@ export class TerritoryComponent implements OnInit {
   @Input() state: boolean;
   is_conquering:boolean;
   environment = environment;
+  avatar_title: string;
   constructor() {
   	this.is_conquering = false;
     this.state = false;
@@ -27,6 +28,19 @@ export class TerritoryComponent implements OnInit {
 
   is_clan_exists():boolean{
   	return this.territory.clan_color!=null;
+  }
+
+  getAvatarTitle(): string {
+    var avatar = this.territory.image_url;
+
+    var res = avatar.split("/");
+    
+    var image_title = res[3];
+    
+    var ava_title = image_title.replace(".png", "");
+    console.log(ava_title);
+    this.avatar_title = ava_title;
+    return this.avatar_title;
   }
 
 }
