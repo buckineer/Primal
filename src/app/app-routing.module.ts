@@ -40,7 +40,7 @@ const mainRoutes: Routes = [
 	{ path: 'gift', component: GiftComponent},
 	{ path: 'clan/:id', component: ClanComponent },
 	{ path: 'user-gift/:id', component: UserGiftComponent },
-	{ path: 'update_password',component:UpdatePasswordComponent}
+	{ path: 'update_password',component:UpdatePasswordComponent},
 	];
 
 const routes: Routes = [

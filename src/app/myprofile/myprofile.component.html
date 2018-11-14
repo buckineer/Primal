@@ -28,7 +28,7 @@
 				<span class="label mr-2">Monedas</span>
 				<span class="score"> {{user?.coins}} </span>
 			</div>
-			<div class="col-sm-4">
+			<div class="col-sm-5">
 				<span class="label mr-2">Nivel</span>
 				<span class="score mr-2"> {{user?.level}}</span>
 				<span class="label ">{{user?.level_name}}</span>
@@ -98,6 +98,7 @@
 						<span style="font-size: 18px;float: right;"> {{clan?.points}} </span>
 					</div>
 					<div>
+						<button class="item-button" style="display: inline-block;" >DEJAR CLAN</button>
 						<button class="item-button" style="display: inline-block;">CAMBIAR CLAN</button>
 						<button class="item-button" routerLink="/clan/{{clan?.id}}" style="display: inline-block;">VER CLAN</button>
 					</div>

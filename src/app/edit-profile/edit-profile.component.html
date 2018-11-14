@@ -1,110 +1,43 @@
-<div class="background-fx">
-	<app-user-header></app-user-header>
-	<div style="position:relative; height:50px;" class="top">
-		<div class="row section-header">
-		</div>
-		<div class="row " style="height:100%;">
-			<div class="col-sm-4 vertical-child-center" style="background: #fe8d00;">
-				<span class="section-text">Mi perfil</span>
-			</div>
-			<div class="col-sm-4 vertical-child-center">
-				<a *ngIf= "clan?.id != -1" class="vertical-child-center" routerLink="/clan/{{clan?.id}}">
-					<span class="section-text">Mi clan</span>
-				</a>
-				<span *ngIf= "clan?.id == -1" class="section-text">Mi clan</span>
-			</div>
-			<div class="col-sm-4 vertical-child-center">
-				<span class="section-text">Mis regalos</span>
-			</div>
-		</div>
-	</div>
-	<div class="content container" style="position: relative;">
-		<div class="row align-items-center">
-			<div class="col">
-				<!-- <span class="title-text">MI PERFIL</span>	 -->
-			</div>
-	        <div style="float: right;">
-	        	<a routerLink="/map">
-	        		<i class="material-icons md-bold cross-size md-white" >close</i>
-	        	</a>
-	        </div>
-		</div>
-		<div class="row" style="margin-top: 20px;border-bottom-style: solid; border-bottom-color: #fff;padding-bottom:20px">
-			<div class="col-sm-7">
-				<form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm.value)">
-					<div class="row">
-						<label for="name" class="col-sm-4 col-form-label">Nombre</label>
-						<div class="col-sm-8" [class.is-invalid]="!myForm.controls['first_name'].valid && myForm.controls['first_name'].touched">
-							<input type="text" class="form-control" [formControl]="myForm.controls['first_name']" name="name">
-							<div class="invalid-feedback">
-								required
-							</div>
-						</div>
+<main id="content">
+	<button class="close" name="close" type="submit" value="close" routerLink="/map">close</button>
+	<h2>Mi Perfil</h2>
+	<form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm.value)">
+	<div id="inner-content">
+		
+			<div class="row justify-content-between" style="width: 100%; margin:auto;">
+				<div class="col-sm-7" style="position: relative;">
+					<div [class.is-invalid]="!myForm.controls['first_name'].valid && myForm.controls['first_name']. touched">
+						<label><font size="3px">Nombre</font></label>
+						<label *ngIf="!myForm.controls['first_name'].valid && myForm.controls['first_name']. touched">(required)</label>
+						<input type="text" style="border-radius:0px;" [formControl]="myForm.controls['first_name']" placeholder="Nombre de clan">
 					</div>
-					<div class="row">
-						<label for="last-name" class="col-sm-4 col-form-label">Apellido</label>
-						<div class="col-sm-8" [class.is-invalid]="!myForm.controls['last_name'].valid && myForm.controls['last_name']. touched">
-					    	<input type="text" class="form-control " [formControl]="myForm.controls['last_name']" >
-							<div class="invalid-feedback">
-								required
-							</div>
-						</div>
+					<div [class.is-invalid]="!myForm.controls['last_name'].valid && myForm.controls['last_name']. touched">
+						<label><font size="3px">Apellido</font></label>
+						<label *ngIf="!myForm.controls['last_name'].valid && myForm.controls['last_name']. touched">(required)</label>
+						<input type="text" style="border-radius:0px;" [formControl]="myForm.controls['last_name']" placeholder="Apellido">
 					</div>
-					<!--
-					
-					<div class="row" style="margin-top: 20px;">
-						<label for="email" class="col-sm-4 col-form-label">Estado</label>
-						<div class="col-sm-8" [class.is-invalid]="!myForm.controls['email'].valid && myForm.controls['email']. touched">
-					    	<input type="text" class="form-control" [formControl]="myForm.controls['email']">
-							<div class="invalid-feedback">
-								required
-							</div>
-						</div>
+					<div style="position: absolute;bottom: -50px;left:10px;">
+						<button class="item-button" [routerLink]="['/update_password']">CAMBIAR CONTRASEÑA</button>
 					</div>
-					-->
-
-					<!-- <div class="row">
-						<label for="email" class="col-sm-4 col-form-label">Telefono</label>
-						
-						<div class="col-sm-8" [class.is-invalid]="!myForm.controls['phone'].valid && myForm.controls['phone'].touched">
-					    	<input type="text" class="form-control" [formControl]="myForm.controls['phone']">
-							
-							<div *ngIf="(!myForm.controls['phone'].valid && myForm.controls['phone'].touched)" class="is-invalid">
-								
-								<div *ngIf="myForm.controls['phone'].errors.required"  class="invalid-feedback">
-									required
-								</div>
-								 
-								<div *ngIf="myForm.controls['phone'].errors.pattern" class="invalid-feedback">
-									"El número de teléfono debe ser ingresado en el formato: '+999999999'. Se permiten hasta 15 dígitos."
+				</div>
+				<div class="col-sm-4">
+					<label><font size="3px">Avatar</font></label>
+					<div class="row" style="width: 135px;">
+						<ng-template ngFor let-item [ngForOf]="avatars" let-i="index">
+							<div style="display: inline-block;">
+								<div class="vertical-child-center user-avatar" (click)="set_selected(item)" [class.selected]="item.value==selected?.avatar">	
+									<img src="{{environment.asset_base_url}}{{item.images[selected.level]}}" style="width: 100%;">
 								</div>
 							</div>
-							
-						</div>
-					</div> -->
-					<div style="margin-top: 20px;">
-						<button class="button-store" mat-raised-button type="submit">
-						GUARDAR</button>
+						</ng-template>
 					</div>
-				</form>
+				</div>
 			</div>
-			<div class="col-sm-1">
-				
-			</div>
-			<div class="col-sm-4" align="center">
-                <div class="user-avatar vertical-child-center">
-                	<img src="{{environment.asset_base_url}}{{user_image_url}}" class="user-image">
-                </div>
-                <div style="margin-top: 20px;">
-					<button (click)="openDialog()" class="button-store" mat-raised-button>EDITAR</button>
-                </div>
-			</div>
-		</div>
-		<div class="row second-top">
-			<span class="my-text pointer" [routerLink]="['/update_password']">Cambiar la contraseña</span>
-		</div>
-		<!-- <div class="row" class="top">
-			<span (click)="logout()" class="my-text pointer" >Desconectar</span>
-		</div> -->
+		
+	</div><!-- #container -->
+	<div id="main-actions">		
+		<button routerLink="/profile" type="button">CANCELAR</button>
+		<button type="submit">GUARDAR</button>
 	</div>
-</div>
+	</form>
+</main>

@@ -56,10 +56,6 @@ import { TokenInterceptor } from './token.interceptor';
 import { BuyCheckComponent } from './buy-check/buy-check.component';
 import { UserGiftComponent } from './user-gift/user-gift.component';
 
-
-
-
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -94,7 +90,6 @@ import { UserGiftComponent } from './user-gift/user-gift.component';
     UpdatePasswordComponent,
     BuyCheckComponent,
     UserGiftComponent,
-
   ],
   imports: [
     BrowserModule,

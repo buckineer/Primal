@@ -10,7 +10,7 @@ import { AuthService } from '../services/auth.service';
 import {environment} from '../../environments/environment';
 import {ClanService} from '../services/clan.service';
 import {Clan} from '../models/clan.model';
-
+import {CommonService} from '../services/common.service';
 var AVATAR_IMAGE_NAMES={
   1:'a Autralophitecus Head',
   2:'b Hábilis Head',
@@ -34,13 +34,17 @@ export class EditProfileComponent implements OnInit {
   environment = environment
   user_image_url:string;
   clan:Clan = new Clan;
-  constructor(fb: FormBuilder,private authService: AuthService,private clanService:ClanService, public userService:UserService,public globalState:GlobalState,public dialog: MatDialog,private router: Router) { 
+  avatars:string[];
+  selected:{};
+  constructor(fb: FormBuilder,private commonService:CommonService,private authService: AuthService,private clanService:ClanService, public userService:UserService,public globalState:GlobalState,public dialog: MatDialog,private router: Router) { 
   	this.myForm = fb.group({
   		'first_name': ['',Validators.required],
   		'last_name': ['',Validators.required],
   		// 'email': ['',Validators.required],      
   		// 'phone':['',[Validators.pattern('^\\+?1?\\d{9,15}$')]],
   	})
+    
+    this.selected = {'avatar':'','level':-1};
   }
   openDialog() {
     const dialogRef = this.dialog.open(UserAvatarSelectDialogBodyComponent, {
@@ -58,8 +62,7 @@ export class EditProfileComponent implements OnInit {
             this.globalState.current_user.avatar = data['avatar'];
             this.globalState.current_user.image_url = this.userService.get_avatar_url(this.globalState.current_user)
             this.user = this.globalState.current_user
-            this.user_image_url = this.globalState.current_user.image_url
-            
+            this.user_image_url = this.globalState.current_user.image_url  
         });
 
     });
@@ -70,12 +73,17 @@ export class EditProfileComponent implements OnInit {
   ngOnInit() {
   	// this.userService.getUser(this.globalState.Current_User_Id)
   	// 								.subscribe(ret_value=> {this.user = ret_value;this.InitForm(ret_value)});
+    this.commonService.getAvatarImages().subscribe(ret_value=>this.avatars=ret_value);
     this.userService.getUser(this.globalState.Current_User_Id)
                     .subscribe(ret_value=>
   									{	
   										this.user = ret_value;
                       this.user_image_url = this.userService.get_avatar_url(this.user)
   										this.getClanByUser(ret_value);
+                      this.selected = {'avatar':this.user.avatar,'level':this.user.level}
+                      console.log("========",this.selected);
+                      console.log(this.avatars)
+
   									});
   }
   InitForm(user:User){
@@ -108,6 +116,7 @@ export class EditProfileComponent implements OnInit {
       var data = {
         'first_name':form.first_name,
         'last_name': form.last_name,
+        'avatar':this.selected['avatar']
         // 'email': form.email,
         // 'phone_number':form.phone
       }
@@ -117,6 +126,9 @@ export class EditProfileComponent implements OnInit {
             console.log("Submit");
             this.globalState.current_user.first_name = this.user.first_name
             this.globalState.current_user.last_name = this.user.last_name
+
+            this.globalState.current_user.avatar = this.selected['avatar'];
+            this.globalState.current_user.image_url = this.userService.get_avatar_url(this.globalState.current_user)
             // this.globalState.current_user.email = this.user.email
             // this.globalState.current_user.phone_number = this.user.phone_number
             this.router.navigate(['/profile']);
@@ -126,7 +138,9 @@ export class EditProfileComponent implements OnInit {
       this.validateAllFormFields(this.myForm);
     }
   }
-
+  set_selected(item:any){
+    this.selected['avatar'] = item.value;
+  }
   getClanByUser(user:User){
     var clan_id = -1;
     if(user.admin_clan!= -1 && user.admin_clan!=null)

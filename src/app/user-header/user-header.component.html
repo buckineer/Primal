@@ -1,14 +1,15 @@
 <header id="player-stats">
   <div id="player-id">
     <a id="profile-pic" routerLink="/profile">
-      <img src="assets/img/avatars/t7h.png">
+      <img src="{{environment.asset_base_url}}{{user.image_url}}">
+      <!-- <img src="assets/img/avatars/t7h.png"> -->
     </a>
     <div id="player-name">
       <h1>
-        Sergio Palomeque
+        {{user.first_name}} {{user.last_name}}
       </h1>
       <p class="subtitle">
-        Homo Sapiens
+        {{user.level_name}}
       </p>
     </div>
   </div>
@@ -17,7 +18,7 @@
       Puntos
     </span>
     <span class="score">
-      21000
+      {{user.total_points}}
     </span>
   </p>
   <p id="player-coins">
@@ -25,7 +26,7 @@
       Monedas
     </span>
     <span class="score">
-      535
+      {{user.coins}}
     </span>
   </p>
 </header>
