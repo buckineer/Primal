@@ -7,7 +7,7 @@ import { Progress } from './models/progress.model';
 import { Gift } from './models/gift.model';
 
 export const current_user_conquered_territory_id = 6;
-export const color_list=['#CE3535','#DBA220','#B8F851','#24894F','#5E55C9',];
+export const color_list=['CE3535','DBA220','B8F851','24894F','5E55C9',];
 
 export const clan_avatar_list=['/images/clans/object1.png',
                                 '/images/clans/object2.png',

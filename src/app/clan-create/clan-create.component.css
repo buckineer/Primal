@@ -76,10 +76,11 @@ form input[type=text] {
   border-bottom-color:  #FF870D;
 	padding: 5px;
   padding-left: 5px;
+  margin-left: 5px;
   width: 100%;
   height: 30px;
   margin-bottom: 25px;
-  margin-top: -25px;
+  margin-top: 0px;
   color: white;
   font-family: 'Fira Sans', sans-serif;
 }
@@ -129,6 +130,8 @@ form input[type=text]:focus {
 /* When the radio button is checked, add a blue background */
 .color-container input:checked ~ .checkmark {
     background-color: #2196F3;
+    border-color: white;
+
 }
 
 /* Create the indicator (the dot/circle - hidden when not checked) */
@@ -233,11 +236,13 @@ form input[type=text]:focus {
 }
 
 /* image check css */
-.color-container {
+.image-container {
     display: block;
     position: relative;
-    padding-left: 35px;
-    margin-bottom: 12px;
+    /* padding-left: 20px; */
+    margin-right: 40px;
+    margin-left: -10px;
+    margin-bottom: 80px;
     cursor: pointer;
     font-size: 22px;
     -webkit-user-select: none;
@@ -247,55 +252,59 @@ form input[type=text]:focus {
 }
 
 /* Hide the browser's default radio button */
-.color-container input {
+.image-container input {
     position: absolute;
     opacity: 0;
     cursor: pointer;
 }
-
-/* Create a custom radio button */
-.checkmark {
+.image-avatar {
     position: absolute;
     top: 0;
     left: 0;
-    height: 18px;
-    width: 75px;
-    border-radius: 12%;
+    height: 60px;
+    width: 60px;
+    
+}
+/* Create a custom radio button */
+.image-checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 60px;
+    width: 60px;
+    
 }
 
 /* On mouse-over, add a grey background color */
-.color-container:hover input ~ .checkmark {
-    background-color: #ccc;
+.image-container:hover input ~ .image-checkmark {
+    background-color:none;
 }
 
 /* When the radio button is checked, add a blue background */
-.color-container input:checked ~ .checkmark {
-    background-color: #2196F3;
+.image-container input:checked ~ .image-checkmark {
+    src:'/assets/images/clans/CE3535.png';      
 }
 
 /* Create the indicator (the dot/circle - hidden when not checked) */
-.checkmark:after {
+.image-checkmark:after {
     content: "";
     position: absolute;
     display: none;
 }
 
 /* Show the indicator (dot/circle) when checked */
-.color-container input:checked ~ .checkmark:after {
+.image-container input:checked ~ .image-checkmark:after {
     display: block;
 }
 
 /* Style the indicator (dot/circle) */
-.color-container .checkmark:after {
+.image-container .image-checkmark:after {
  	position: absolute;
   top: 0;
   left: 0;
   height: 19px;
-  width: 75px;
-	border-radius: 12%;
-  border: 2px solid;
-  /* box-shadow: 0 0 13px #FF870D; */
-  z-index: 2;
+  width: 75px;  
+  
 }
 
 
@@ -320,14 +329,14 @@ form input[type=text]:focus {
     text-align: left;  
 }
 
-.clan-img{
+/* .clan-img{
   margin-top: 5px;
   margin-bottom: 5px;
   width: 100%;
 }
 .clan-img.selected{
   width: 100%;background-color: #333333a8;border-radius: 50%;
-}
+} */
 /* 
 .custom-radios div {
     align-items: center;
@@ -365,7 +374,7 @@ form input[type=text]:focus {
 .custom-radios input[type="radio"]:checked + label span img {
   opacity: 1;
 } */
-.is-invalid input{
+/* .is-invalid input{
   border-color: #dc3545;
   border-style: solid;
   border-width: 2px;
@@ -377,11 +386,28 @@ form input[type=text]:focus {
     line-height: 25px;
     font-size: 15px;
     font-weight: 600;
-     /*font-family: Raleway;*/
+    
     color: #dc3545;
     background-color: rgb(0,0,0,0.5);
     margin-bottom: .25rem;
-}
+} */
 .is-invalid > .invalid-feedback{
   display: block;
 }
+
+.is-invalid input[type=text]{
+  
+  outline: none;
+  box-shadow: 0 0 10px red;
+  caret-color:white;
+  color: white;
+  border: none;
+  font-family: 'Fira Sans', sans-serif;
+  -webkit-input-placeholder: 'Required'; 
+}
+
+.is-invalid label {
+  color: red;
+}
+
+
