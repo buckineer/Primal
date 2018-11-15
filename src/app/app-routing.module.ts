@@ -22,7 +22,7 @@ import { ResetPasswordComponent } from './reset-password/reset-password.componen
 import { UpdatePasswordComponent } from './update-password/update-password.component';
 import { UserGiftComponent } from './user-gift/user-gift.component';
 import { LoginCollectionComponent } from './login-collection/login-collection.component';
-
+import {BuyCheckComponent} from './buy-check/buy-check.component';
 const mainRoutes: Routes = [
 	{ path: '', redirectTo: '/map', pathMatch: 'full' },
 	{ path: 'map', component: MapComponent },
@@ -38,6 +38,7 @@ const mainRoutes: Routes = [
 	// { path: 'clan/join', component: ClanJoinComponent },
 	{ path: 'notification', component: NotificationComponent },
 	{ path: 'info', component: InfoComponent},
+	{ path: 'gift/buy', component: BuyCheckComponent},
 	{ path: 'gift', component: GiftComponent},
 	{ path: 'clan/:id', component: ClanComponent },
 	{ path: 'user-gift/:id', component: UserGiftComponent },

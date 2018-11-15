@@ -41,10 +41,9 @@ export class AuthService {
         this.notificationService.closeStream();
         localStorage.removeItem('token');
         localStorage.removeItem('currentUser'); 
-        this.router.navigate([''])
+        this.router.navigate(['/login'])
       }
     })
-
   }
 
   getUser(): any {

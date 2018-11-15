@@ -13,7 +13,7 @@ export class GisComponent implements OnInit {
   alarmCount:number;
   constructor(public notificationService: NotificationService,private router: Router, private authService: AuthService) { this.alarmCount = 0;}
 
-  logout(){    
+  logout(){        
     this.authService.logout();
   }
   ngOnInit() {

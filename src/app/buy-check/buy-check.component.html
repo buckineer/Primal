@@ -1,33 +1,17 @@
-<div class="container">
-	<div class="row align-items-center" style="position: relative; margin-top: 20px;">
-    <div style="position: absolute; right: 3px; top: -20px;color: #efba1f;z-index: 1" (click)="close()">
-      <i class="pointer material-icons md-bold cross-size">close</i>
-    </div>
-
-		<div class="col" style="text-align: center;">
-      <span class="head-text">¿Estás seguro de que quieres <br> comprar este regalo?</span>		
-		</div>
-	</div>
-	<div class="row">
-		
-	</div>
-	<div class="row justify-content-center" style="margin-top: 40px;">
-		<div class="vertical-child-center" >
-			<img class="gift-img" src="/assets/images/icons/gift.svg">
-		</div>
-		<div class="vertical-child-center" >
-			<span class="head-text" style="margin-left:20px; font-weight:700;color: #000">{{gift_name}}</span>
-		</div>
-	</div>
-  <div class="row justify-content-center">
-    <div style="margin-top: 20px; text-align: center;">
-      <button (click)="openDialog(gift)" class="button-store" mat-raised-button>Sí</button>
-    </div>
-    <div class="col-sm-1">
-
-    </div>
-    <div style="margin-top: 20px;">
-      <button (click)="close()" class="button-store" mat-raised-button>No</button>
-    </div>
+<main id="content">
+  <button class="close" name="close" type="submit" value="close" routerLink="/map">close</button>
+  <h2>Comprar Regalo</h2>
+  <div id="inner-content">
+  	<img src="/assets/images/icons/present.png" class="gift-img">
+  	<p style="subtitle" style="text-align: center;">
+  		Confirma la compra del regalo
+  	</p>
+  	<h3 style="text-align: center;">
+  		Cafetera Nespresso "{{gift['title']}}"
+  	</h3>
+  </div><!-- #container -->
+  <div id="main-actions">   
+    <button (click)="close()">CANCELAR</button>
+    <button (click)="confirm()">CONFIRMAR</button>
   </div>
-</div>
+</main>

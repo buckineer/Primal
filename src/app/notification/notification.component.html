@@ -1,37 +1,17 @@
-<div class="background-fx">
-  <app-user-header></app-user-header>
-  <div class="content" style="position: relative;">
-    <div style="position: absolute; right: 2.5%;top: 0px;z-index: 2">
-      <a routerLink="/map">
-        <div>
-          <i class="material-icons md-bold md-white cross-size" >close</i>
-        </div>        
-      </a>
-    </div>
-    <div class="row align-items-center" style="padding-top: 20px;">
-      <div class="col-sm-8">
-        <span class="title-text">NOTIFICACIONES</span>
-      </div>
-    </div>
-    <div style="width: 95%; overflow: hidden;height: 88%;">
-      <div style="padding-left: 12%;" class="hidden-scroll">
+<main id="content">
+  <button class="close" name="close" type="submit" value="close" routerLink="/map">close</button>
+  <h2>Notificaciones</h2>
+  <div id="inner-content" style="height: 460px;">
+      <ng-template ngFor let-item [ngForOf]="notifications" let-i="index">
+        <div class="item">
+          <div class="clan-color" style="background-color: #CE3535;width: 50px;height: 50px;top: 15px;margin-top: 20px;"></div>
+          <img class="item-img" src={{environment.asset_base_url}}{{item.clan_image}} style="width: 70px;height: 70px;top:0px;margin-top: 20px;">
+          <p style="color:#ADADAD;font-size: 10px;">Ayer, 13:43</p>
+          <h3 style="width: 320px;">¡Únete al Clan de las {{ item.clan_name }}!</h3>
+          <p>Te han invitado a participar en un clan.</p>
+          <button (click)="join(item)">UNIRSE A CLAN</button>
+        </div>
+      </ng-template>     
+  </div><!-- #container -->
 
-        <ng-template ngFor let-item [ngForOf]="notifications" let-i="index">
-          <div class="row align-items-center" style="padding-top: 20px;">
-            <div class="col-sm-2" style="margin-left: -10%">
-              <img class="clan-img" src={{environment.asset_base_url}}{{item.clan_image}}>
-            </div>
-            <div class="col-sm-8">
-              <span class="content-text">¡Únete al clan de {{ item.clan_name }}!</span>
-              <br>
-              <span class="content-text">Te han invitado a participar en un clan. </span>
-            </div>
-            <div class="col-sm-1">
-              <button (click)="join(item)" class="button-join content-text" mat-raised-button >Unirse</button>
-            </div>
-          </div>
-        </ng-template>
-      </div>
-    </div>
-  </div>
-</div>
+</main>

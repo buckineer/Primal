@@ -8,6 +8,7 @@ import { ClanService } from '../services/clan.service';
 import { UserService } from '../services/user.service';
 import {GlobalState} from '../state';
 import { environment } from '../../environments/environment';
+import * as Scroll from '../../assets/js/quasi/scroll.js';
 @Component({
   selector: 'app-notification',
   templateUrl: './notification.component.html',
@@ -26,6 +27,11 @@ export class NotificationComponent implements OnInit {
     this.notificationService.getNotifications()
       .subscribe(items => {this.notifications = items; this.mark_as_read()}); 
   }
+    ngAfterViewInit()
+  {
+    Scroll.run_scroll();
+  }
+
   mark_as_read(){
     if (this.notifications.length >0 ) {
       var data=[];
