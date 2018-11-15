@@ -16,6 +16,24 @@
   line-height: 20px;
 }
 
+.before-hr {
+  position:absolute;
+  top: 80px;
+  border-color: white;
+  margin-left: 68px;
+  border-width: 1px;
+  width: 83%;
+}
+
+.after-hr {
+  position:absolute;
+  bottom: 126px;
+  border-color: white;
+  margin-left: 68px;
+  border-width: 1px;
+  width: 83%;
+}
+
 /* .content {
     
 	min-height: 620px;
