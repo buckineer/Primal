@@ -1,7 +1,25 @@
-.content {
-    /*margin: 50px;*/
+
+.scroller:before {
+  top: 95px;
+}
+
+.scroller:after {
+  bottom: 143px;
+}
+
+.view-clan-button {
+  width:70px;
+  height: 20px;
+  font-size: 14px;
+  padding: 0px;
+  top: 0px;
+  line-height: 20px;
+}
+
+/* .content {
+    
 	min-height: 620px;
-	/*width: 90%;*/
+	
 	background-color: rgba(0,0,0,0.30);
 	float: left
 }
@@ -16,7 +34,6 @@
     box-sizing: content-box;     
 }
 .clan-image{
-    /* position:absolute; */
     width: 70px;
     height: 70px;
 }
@@ -114,4 +131,4 @@
   .border-bottom{
     padding-bottom: 20px;
   }
-}
+} */

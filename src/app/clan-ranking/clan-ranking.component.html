@@ -1,3 +1,4 @@
+<!--
 <div class="background-ranking">
 	<app-user-header></app-user-header>
 		<div class="row top" style="margin-left: 10px;margin-bottom: 20px;">
@@ -53,5 +54,258 @@
 			</div>
 		</div>
 </div>
+-->
+
+<main id="content">
+	<button routerLink="/map" class="close" name="close" type="submit" value="close">close</button>
+	<h2>Progreso Mision</h2>
+
+	<div class="row" style="margin-left: 30px; padding-top: 15px; width: 90%;">
+		<div class="col-9" style="padding-left: 80px;">
+			<p style="font-style: Italic;">Ranking Clanes</p>
+		</div>
+		<div class="col-3" style="padding-left: 50px">
+			<p style="font-style: Italic;">Puntos</p>
+		</div>
+	</div>
+
+	<div id="inner-content" style="height: 360px; margin-top:10px; margin-bottom: 10px;">
+		<ng-template ngFor let-item [ngForOf]="clans" let-i="index">
+			<div class="row" style="width:95%; margin-left: 30px;">
+				<div class="col-1">
+					<h3 style="margin: 10px; margin-top: 35px;">{{i+1}}</h3>
+				</div>
+				<div class="col-2">
+					<img style="width:50px; height: 50px; margin-left: -10px; margin-top: 20px;" src={{getClanImg(item.clan_color)}}>
+					<img style="position: absolute; width: 60px; height: 60px; top: 20px; left: -5px;" src={{environment.asset_base_url}}{{item.image}}>
+				</div>
+				<div class="col-6">
+					<div style="margin-left: -20px; margin-top: 20px;">
+						<h3>{{item.name}}</h3>
+					</div>
+					<div class="row" style="margin-top: 5px;">
+						<div class="col-4" style="margin-left: -20px;">
+							<p>{{item.joined_members + 1}}/{{item.max_members}}</p>
+						</div>
+						<div class="col-4">
+							<button class="view-clan-button">Ver Clan</button>
+						</div>
+						<div class="col">
+
+						</div>						
+					</div>
+				</div>
+
+				<div class="col-3" style="margin-top: 30px; padding-left: 50px;">
+					<h3>{{item.points}}</h3>
+				</div>
+			</div>
+			
+		</ng-template>
+
+		<ng-template ngFor let-item [ngForOf]="clans" let-i="index">
+			<div class="row" style="width:95%; margin-left: 30px;">
+				<div class="col-1">
+					<h3 style="margin: 10px; margin-top: 35px;">{{i+1}}</h3>
+				</div>
+				<div class="col-2">
+					<img style="width:50px; height: 50px; margin-left: -10px; margin-top: 20px;" src={{getClanImg(item.clan_color)}}>
+					<img style="position: absolute; width: 60px; height: 60px; top: 20px; left: -5px;" src={{environment.asset_base_url}}{{item.image}}>
+				</div>
+				<div class="col-6">
+					<div style="margin-left: -20px; margin-top: 20px;">
+						<h3>{{item.name}}</h3>
+					</div>
+					<div class="row" style="margin-top: 5px;">
+						<div class="col-4" style="margin-left: -20px;">
+							<p>{{item.joined_members + 1}}/{{item.max_members}}</p>
+						</div>
+						<div class="col-4">
+							<button class="view-clan-button">Ver Clan</button>
+						</div>
+						<div class="col">
+
+						</div>						
+					</div>
+				</div>
+
+				<div class="col-3" style="margin-top: 30px; padding-left: 50px;">
+					<h3>{{item.points}}</h3>
+				</div>
+			</div>
+			
+		</ng-template>
+
+		<ng-template ngFor let-item [ngForOf]="clans" let-i="index">
+			<div class="row" style="width:95%; margin-left: 30px;">
+				<div class="col-1">
+					<h3 style="margin: 10px; margin-top: 35px;">{{i+1}}</h3>
+				</div>
+				<div class="col-2">
+					<img style="width:50px; height: 50px; margin-left: -10px; margin-top: 20px;" src={{getClanImg(item.clan_color)}}>
+					<img style="position: absolute; width: 60px; height: 60px; top: 20px; left: -5px;" src={{environment.asset_base_url}}{{item.image}}>
+				</div>
+				<div class="col-6">
+					<div style="margin-left: -20px; margin-top: 20px;">
+						<h3>{{item.name}}</h3>
+					</div>
+					<div class="row" style="margin-top: 5px;">
+						<div class="col-4" style="margin-left: -20px;">
+							<p>{{item.joined_members + 1}}/{{item.max_members}}</p>
+						</div>
+						<div class="col-4">
+							<button class="view-clan-button">Ver Clan</button>
+						</div>
+						<div class="col">
+
+						</div>						
+					</div>
+				</div>
+
+				<div class="col-3" style="margin-top: 30px; padding-left: 50px;">
+					<h3>{{item.points}}</h3>
+				</div>
+			</div>
+			
+		</ng-template>
+
+		<ng-template ngFor let-item [ngForOf]="clans" let-i="index">
+			<div class="row" style="width:95%; margin-left: 30px;">
+				<div class="col-1">
+					<h3 style="margin: 10px; margin-top: 35px;">{{i+1}}</h3>
+				</div>
+				<div class="col-2">
+					<img style="width:50px; height: 50px; margin-left: -10px; margin-top: 20px;" src={{getClanImg(item.clan_color)}}>
+					<img style="position: absolute; width: 60px; height: 60px; top: 20px; left: -5px;" src={{environment.asset_base_url}}{{item.image}}>
+				</div>
+				<div class="col-6">
+					<div style="margin-left: -20px; margin-top: 20px;">
+						<h3>{{item.name}}</h3>
+					</div>
+					<div class="row" style="margin-top: 5px;">
+						<div class="col-4" style="margin-left: -20px;">
+							<p>{{item.joined_members + 1}}/{{item.max_members}}</p>
+						</div>
+						<div class="col-4">
+							<button class="view-clan-button">Ver Clan</button>
+						</div>
+						<div class="col">
+
+						</div>						
+					</div>
+				</div>
+
+				<div class="col-3" style="margin-top: 30px; padding-left: 50px;">
+					<h3>{{item.points}}</h3>
+				</div>
+			</div>
+			
+		</ng-template>
+
+		<ng-template ngFor let-item [ngForOf]="clans" let-i="index">
+			<div class="row" style="width:95%; margin-left: 30px;">
+				<div class="col-1">
+					<h3 style="margin: 10px; margin-top: 35px;">{{i+1}}</h3>
+				</div>
+				<div class="col-2">
+					<img style="width:50px; height: 50px; margin-left: -10px; margin-top: 20px;" src={{getClanImg(item.clan_color)}}>
+					<img style="position: absolute; width: 60px; height: 60px; top: 20px; left: -5px;" src={{environment.asset_base_url}}{{item.image}}>
+				</div>
+				<div class="col-6">
+					<div style="margin-left: -20px; margin-top: 20px;">
+						<h3>{{item.name}}</h3>
+					</div>
+					<div class="row" style="margin-top: 5px;">
+						<div class="col-4" style="margin-left: -20px;">
+							<p style="font-size: 14px;">{{item.joined_members + 1}}/{{item.max_members}}</p>
+						</div>
+						<div class="col-4">
+							<button class="view-clan-button">Ver Clan</button>
+						</div>
+						<div class="col">
+
+						</div>						
+					</div>
+				</div>
+
+				<div class="col-3" style="margin-top: 30px; padding-left: 50px;">
+					<h3>{{item.points}}</h3>
+				</div>
+			</div>
+			
+		</ng-template>
+
+
+		<!---->	
+		<div class="item" style="padding: 5px;">
+			<div class="clan-color" style="background-color: #24894F"></div>
+			<img class="item-img" src="assets/img/avatars/t5d.png">
+			<h3>Inner Content Name</h3>
+			<p>content info</p>
+			<button disabled>ACTION</button>
+		</div>
+		<div class="item" style="padding: 5px;" >
+			<div class="clan-color" style="background-color: #5E55C9"></div>
+			<img class="item-img" src="assets/img/avatars/t4c.png">
+			<h3>Inner Content Name</h3>
+			<p>content info</p>
+			<button disabled>ACTION</button>
+		</div>
+		<div class="item" style="padding: 5px;">
+			<div class="clan-color" style="background-color: #DBA220"></div>
+			<img class="item-img" src="assets/img/avatars/t2b.png">
+			<h3>Inner Content Name</h3>
+			<p>content info</p>
+			<button>ACTION</button>
+		</div>
+		<div class="item" style="padding: 5px;">
+			<div class="clan-color" style="background-color: #B8F851"></div>
+			<img class="item-img" src="assets/img/avatars/t5d.png">
+			<h3>Inner Content Name</h3>
+			<p>content info</p>
+			<button>ACTION</button>
+		</div>
+		<div class="item" style="padding: 5px;">
+			<div class="clan-color" style="background-color: #24894F"></div>
+			<img class="item-img" src="assets/img/avatars/t6d.png">
+			<h3>Inner Content Name</h3>
+			<p>content info</p>
+			<button>ACTION</button>
+		</div>
+	</div><!-- #container -->
+
+	<div id="main-actions" style="padding-right: 50px;">
+		<div class="row" style="width:95%; margin-left: 30px;">
+			<div class="col-1">
+				<h3 style="margin: 10px; margin-top: 35px;">1</h3>
+			</div>
+			<div class="col-2">
+				<img style="width:50px; height: 50px; margin-left: -10px; margin-top: 20px;" src={{getClanImg(current_clan.clan_color)}}>
+				<label>{{current_clan.clan_color}}</label>
+				<img style="position: absolute; width: 60px; height: 60px; top: 20px; left: -5px;" src={{environment.asset_base_url}}{{current_clan.image}}>
+			</div>
+			<div class="col-6">
+				<div style="margin-left: -20px; margin-top: 20px;">
+					<h3>{{current_clan.name}}</h3>
+				</div>
+				<div class="row" style="margin-top: 5px;">
+					<div class="col-4" style="margin-left: -20px;">
+						<p style="font-size: 14px;">{{current_clan.joined_members + 1}}/{{current_clan.max_members}}</p>
+					</div>
+					<div class="col-4">
+						<button class="view-clan-button">Ver Clan</button>
+					</div>
+					<div class="col">
+
+					</div>						
+				</div>
+			</div>
+
+			<div class="col-3" style="margin-top: 30px; padding-left: 50px;">
+				<h3>{{current_clan.points}}</h3>
+			</div>
+		</div>
+	</div>
+</main>
 
 

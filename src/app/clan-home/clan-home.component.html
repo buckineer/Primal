@@ -68,7 +68,7 @@
 -->
 
 <main id="content">
-	<button class="close" name="close" type="submit" value="close">close</button>
+	<button routerLink="/map" class="close" name="close" type="submit" value="close">close</button>
 	<h2>Clanes listos para la Mission</h2>
 	<div id="inner-content">
 		<!-- <div id="inner-content"> -->
@@ -125,7 +125,9 @@
 	</div><!-- #container -->
 
 
-	<div id="main-actions">
+	
+
+		<!--
 		<div class="row">
 			<div class="col-sm-2">
 				<img src="assets/images/icons/new Clan.png" style="width:100%;">
@@ -137,5 +139,20 @@
 				<button routerLink="/clan/create" style="position: relative; margin-left: -70%; margin-top: -10%;">CREAR CLAN</button>
 			</div>
 		</div>
+		-->
+	<div id="main-actions" style="padding-right: 50px;">
+	
+		<div class="row">
+			<div class="col-2">
+				<img src="assets/images/icons/new Clan.png" style="width:50px;">
+			</div>
+			<div class="col-6">
+				<label style="margin-top: 15px;font-style:normal;color:white;"><font size="3px">Crea tu propio Clan</font></label>
+			</div>
+			<div class="col-4">
+				<button routerLink="/clan/create" style="left: -20px; top: 0px;">CREAR CLAN</button>
+			</div>
+		</div>
 	</div>
+	
 </main>

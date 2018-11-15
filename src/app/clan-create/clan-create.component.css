@@ -94,9 +94,9 @@ form input[type=text]:focus {
 
 .color-container {
     display: block;
-    position: relative;
+    position: absolute;
     padding-left: 35px;
-    margin-bottom: 12px;
+    margin: 12px;
     cursor: pointer;
     font-size: 22px;
     -webkit-user-select: none;
@@ -104,6 +104,8 @@ form input[type=text]:focus {
     -ms-user-select: none;
     user-select: none;
 }
+
+
 
 /* Hide the browser's default radio button */
 .color-container input {

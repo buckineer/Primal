@@ -155,25 +155,25 @@
 	<div id="inner-content">
 		
 			<div class="row" style="width: 100%;">
-				<div class="col-sm-9">
+				<div class="col-9">
 					
 					<div [class.is-invalid]="!myForm.controls['name'].valid && myForm.controls['name']. touched">
 						<label><font size="3px">Nombre</font></label>
-						<label *ngIf="!myForm.controls['name'].valid && myForm.controls['name']. touched">(required)</label>
+						<label *ngIf="!myForm.controls['name'].valid && myForm.controls['name']. touched">(obligatorio)</label>
 						<input type="text" class="form-control" style="border-radius:0px;" [formControl]="myForm.controls['name']" name="name" placeholder="Nombre de clan">
 					</div>
 
 					
 					<div [class.is-invalid]="!myForm.controls['description'].valid && myForm.controls['description']. touched">
 						<label><font size="3px">Descripción</font></label>
-						<label *ngIf="!myForm.controls['description'].valid && myForm.controls['description']. touched">(required)</label>
+						<label *ngIf="!myForm.controls['description'].valid && myForm.controls['description']. touched">(obligatorio)</label>
 						<input type="text" class="form-control" style="border-radius:0px;" [formControl]="myForm.controls['description']" placeholder="Breve descripción del clan">
 					</div>
 
 					
 					<div [class.is-invalid]="!myForm.controls['motto'].valid && myForm.controls['motto']. touched">
 						<label><font size="3px">Lema</font></label>
-						<label *ngIf="!myForm.controls['motto'].valid && myForm.controls['motto']. touched">(required)</label>
+						<label *ngIf="!myForm.controls['motto'].valid && myForm.controls['motto']. touched">(obligatorio)</label>
 						<input type="text" class="form-control" style="border-radius:0px;" [formControl]="myForm.controls['motto']" placeholder="Frase contundente que expresa la ideologia del clan">
 					</div>
 					<label><font size="3px">Color</font></label>
@@ -184,7 +184,7 @@
 
 					<div class="row">
 						<ng-template ngFor let-item [ngForOf]="colors" let-i="index">
-							<div class="col-sm-2" style="padding-right:75px;">
+							<div class="col-2" style="padding-right:75px;">
 								<label class="color-container">
 									<input type="radio" id='{{"color" + i}}' formControlName="color" value="{{item}}" [checked] = "i==0" (ngModelChange)="color=$event">
 									<span class="checkmark" [ngStyle]="{'background-color':getBcolor(item)}"></span>
@@ -201,11 +201,11 @@
 					</div>
 					
 				</div>
-				<div class="col-sm-3">
+				<div class="col-3">
 					<label><font size="3px">Pictograma</font></label>
 					<div class="row">
 						<ng-template ngFor let-item [ngForOf]="clan_images" let-i="index">
-							<div class="col-sm -6">
+							<div class="col-6">
 								<label class="image-container">
 									<input  type="radio" [checked]="i==0" id='{{"avatar" + i}}' formControlName="avatar" value="{{item}}" (ngModelChange)="avatar=$event">
 									
@@ -227,7 +227,7 @@
 			<div class="col">
 
 			</div>
-			<div class="col-sm-4">
+			<div class="col-4">
 				<button type="submit" routerLink="/clan/create" style="position: relative; margin-left: -70%; margin-top: -10%;">GURADAR</button>
 			</div>
 		</div>
