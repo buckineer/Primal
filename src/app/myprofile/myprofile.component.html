@@ -83,7 +83,7 @@
 			</div>
 			<div class="col ml-2">
 				<p class="label mr-2">Clan</p>
-				<div *ngIf="is_loaded">
+				<div *ngIf="is_loaded == true">
 				<ng-container *ngIf= "clan?.id != -1; else no_clan ">
 					<div>
 						<img src="{{environment.asset_base_url}}{{clan?.image}}" class="clan-img" style="display: inline-block;">
