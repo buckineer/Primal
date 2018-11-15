@@ -21,7 +21,8 @@ import { ClanAddedComponent } from './clan-added/clan-added.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
 import { UpdatePasswordComponent } from './update-password/update-password.component';
 import { UserGiftComponent } from './user-gift/user-gift.component';
-
+import { LoginCollectionComponent } from './login-collection/login-collection.component';
+import {BuyCheckComponent} from './buy-check/buy-check.component';
 const mainRoutes: Routes = [
 	{ path: '', redirectTo: '/map', pathMatch: 'full' },
 	{ path: 'map', component: MapComponent },
@@ -37,16 +38,19 @@ const mainRoutes: Routes = [
 	// { path: 'clan/join', component: ClanJoinComponent },
 	{ path: 'notification', component: NotificationComponent },
 	{ path: 'info', component: InfoComponent},
+	{ path: 'gift/buy', component: BuyCheckComponent},
 	{ path: 'gift', component: GiftComponent},
 	{ path: 'clan/:id', component: ClanComponent },
 	{ path: 'user-gift/:id', component: UserGiftComponent },
 	{ path: 'update_password',component:UpdatePasswordComponent},
 	];
-
+const loginRoutes:Routes=[
+	{path:'login',component:LoginComponent},
+	{path:'reset_password',component: ResetPasswordComponent}
+];
 const routes: Routes = [
-	{ path: 'login', component: LoginComponent },
-	{ path: 'reset_password', component: ResetPasswordComponent },
-	{ path: '', component:MainComponent, children:mainRoutes, canActivate: [LoggedInGuard]}
+	{ path: '', component:MainComponent, children:mainRoutes, canActivate: [LoggedInGuard]},
+	{path:'',component:LoginCollectionComponent,children:loginRoutes},
 ];
 
 @NgModule({

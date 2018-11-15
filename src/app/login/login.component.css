@@ -1,132 +1,126 @@
-.login{
-    width: 33.2%;
-    height: 80%;
-    left: 5.3%;
-    top: 12%;
+#block{
+        /*display: none;*/
+        z-index: 2;
+        position: relative;
+        overflow: auto;
+        background-color: rgba(0,0,0,.8);
+        width: 438px;
+        height: 528px;
+        /*margin: 128px auto 64px auto;*/
+        margin-top: 208px;
+        margin-right: 170px;
+        margin-left: auto;
+        -webkit-border-radius: 6px;
+                border-radius: 6px;
+        -webkit-box-shadow: 0 5px 6px 0 rgba(0,0,0,.16);
+                box-shadow: 0 5px 6px 0 rgba(0,0,0,.16);
+    }
+.log-img{
+    width: 205px;
+    height: 90px;
+    margin:90px auto 90px auto;
+}
+form input[type=text],form input[type=password] {
+  border: none;
+    background: none;  
+    border-bottom: 2px solid;
+  border-bottom-color:  #FF870D;
+    padding: 5px;
+  padding-left: 5px;
+  width: 100%;
+  height: 30px;
+  margin-bottom: 25px;
+  margin-top: -25px;
+  color: white;
+  font-family: 'Fira Sans', sans-serif;
+}
+form input[type=text]:focus,form input[type=password]:focus {
+  outline: none;
+  box-shadow: 0 0 10px #FF870D;
+  caret-color:white;
+  color: white;
+  font-family: 'Fira Sans', sans-serif;
+}
+.formContent{
+    width: 305px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.actions{
     position: absolute;
+    bottom: 10px;
+    height: 48px;
+    left: 66.5px;
+    right: 66.5px;
+    width: 305px;
 }
-.logo{
-    width: 36.3%;
-    height: 41%;
-    left: 51%;
-    top: -5%;
-    position: absolute;
-}
-.login-form{
-    width: 30%;
-    height: 60%;
-    left:54%;
-    top: 25%;
-    background-color: #88C27E;
-    border-radius: 10px;
-    position: absolute;
-
-}
-.login img{
-    width: 80%;
-    height: 83%;
-    margin-left: 20%;
-    margin-top: 10%;
-}
-.logo img{
-    width: 50%;
-    height: 45%;
-    margin-left: 25%;
-    margin-top: 20%;
-}
-
-img.user-icon {
-    width: 40%;
-    height: 40%;
-    display: block;
-    margin: auto;
-}
-.login-form-content{
-    margin-left: 10%;
-    margin-right: 10%;
-    margin-top: 5%;
-}
-.comment-text{
-    margin-top: 5%;
-    /* margin-bottom: 30px; */
-    text-align: center;
-}
-.comment-text-span{
-    font-size: 14px;
-    color: #5c5c5c
-}
-.input_container{
-    margin-top: 5%;
+/* checkbox css*/
+.open-container {
+    /*display: block;*/
     position: relative;
+    padding-left: 35px;
+    cursor: pointer;
+    font-size: 12px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
-.input_container input{
-    padding-right: 20%;
-    padding-left: 5%;
-    padding-top: 3.5%;
-    padding-bottom: 3.5%;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    font-size: 10px;
-    /* height: 50%; */
-    width: 100%;
-}
-.input_container span{
+
+/* Hide the browser's default checkbox */
+.open-container input {
     position: absolute;
-    height: 100%;
-    width: 30px;
-    right: 5px;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+/* Create a custom checkbox */
+.open-checkmark {
+    position: absolute;
     top: 0;
-    align-items: center;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background: none;
+    border: 2px solid;
+    border-color: #FF870D;
+    border-radius: 20%;
 }
-.input_container .material-icons{
-    font-size: 20px;
-    color: #666666;
-}
-.submit-btn{
-    background-color: #3F9D2F;
-    color: white;
-    margin-top: 15px;
-    width: 100%;    
-}
-label.notify {
-    margin-top: 5%;
-    margin-left: 10%;
-    font-size:  13px;
-    width: 100%;  
+/* On mouse-over, add a grey background color */
+.open-container:hover input ~ .open-checkmark {
+    background-color: none;
 }
 
-@media only screen and (min-width:1280px){
-	label.notify {
-        margin-left: 23%;
-        font-size: 14px;   
-	}
+/* When the checkbox is checked, add a blue background */
+.open-container input:checked ~ .open-checkmark {
+    background: none;
+    border: 2px solid;
+    border-color: #FF870D;
 }
 
-@media only screen and (min-width:1400px){
-    
-    .comment-text-span{
-        font-size: 20px;
-        color: #5c5c5c
-    }
+/* Create the checkmark/indicator (hidden when not checked) */
+.open-checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
 
-    .input_container input{
-        padding-right: 20%;
-        padding-left: 5%;
-        padding-top: 4%;
-        padding-bottom: 4%;
-        border-radius: 5px;
-        border: 1px solid #ccc;
-        font-size: 14px;
-        /* height: 50%; */
-        width: 100%;
-    }
-    .submit-btn{
-        padding-top: 5px;
-        padding-bottom: 5px;
-        font-size: 20px;
-    }
-	label.notify {
-        margin-left: 10%;
-        font-size: 20px;   
-	}
+/* Show the checkmark when checked */
+.open-container input:checked ~ .open-checkmark:after {
+    display: block;
+}
+
+/* Style the checkmark/indicator */
+.open-container .open-checkmark:after {
+    left: 6px;
+    top: 2px;
+    width: 5px;
+    height: 10px;
+    border: solid #FF870D;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
 }

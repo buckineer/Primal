@@ -24,6 +24,7 @@ export class MyProfileComponent implements OnInit {
   clan:Clan = new Clan;
   environment = environment
   user_image_url:string;
+  is_loaded:boolean;
   constructor(private globalState:GlobalState,
   				private userService:UserService,
   				private territoryService:TerritoryService,
@@ -31,6 +32,7 @@ export class MyProfileComponent implements OnInit {
   ngAfterViewInit()
   {
     Scroll.run_scroll("#badge-content","#badge-list");
+    this.is_loaded = false;
   }
   ngOnInit() {
   	this.userService.getUser(this.globalState.Current_User_Id).
@@ -49,9 +51,10 @@ export class MyProfileComponent implements OnInit {
     else 
       clan_id = user.joined_clan
     if(clan_id != -1 && clan_id!=null){
-      this.clanService.getClan(clan_id).subscribe(ret_value=>this.clan = ret_value);  
+      this.clanService.getClan(clan_id).subscribe(ret_value=>{this.clan = ret_value;this.is_loaded=true;});  
     }else{
       this.clan = new Clan;
+      this.is_loaded=true;
     } 	
   }
 }

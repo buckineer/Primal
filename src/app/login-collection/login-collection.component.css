@@ -1,0 +1,23 @@
+#body:before{
+    z-index: -2;
+    content:'';
+    display: block;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top:0;
+    left: 0;
+    background: url('/assets/images/login/login.jpg') no-repeat center fixed;
+
+    background-size: cover;
+
+}
+#shadow{
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top:0;
+    left: 0;
+    background: linear-gradient(rgba(47,0,0,1),rgba(20,0,0,.05),rgba(18,0,0,0));
+
+}

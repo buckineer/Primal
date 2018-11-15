@@ -55,6 +55,9 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TokenInterceptor } from './token.interceptor';
 import { BuyCheckComponent } from './buy-check/buy-check.component';
 import { UserGiftComponent } from './user-gift/user-gift.component';
+import { LoginCollectionComponent } from './login-collection/login-collection.component';
+import { GiftDetailComponent } from './gift-detail/gift-detail.component';
+import { MyGiftListComponent } from './my-gift-list/my-gift-list.component';
 
 @NgModule({
   declarations: [
@@ -90,6 +93,9 @@ import { UserGiftComponent } from './user-gift/user-gift.component';
     UpdatePasswordComponent,
     BuyCheckComponent,
     UserGiftComponent,
+    LoginCollectionComponent,
+    GiftDetailComponent,
+    MyGiftListComponent,
   ],
   imports: [
     BrowserModule,

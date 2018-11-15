@@ -35,7 +35,7 @@ export class ResetPasswordComponent implements OnInit {
     		});
     }else{
   		if (this.myForm.controls['email'].errors.required){
-  			this.message="required";
+  			this.message="Email is required";
   		}else if(this.myForm.controls['email'].errors.email){
   			this.message="Insert Correct Email!";
   		}

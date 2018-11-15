@@ -38,7 +38,7 @@ export class TerritoryComponent implements OnInit {
     var image_title = res[3];
     
     var ava_title = image_title.replace(".png", "");
-    console.log(ava_title);
+    
     this.avatar_title = ava_title;
     return this.avatar_title;
   }

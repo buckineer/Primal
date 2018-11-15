@@ -1,24 +1,18 @@
-<div class="container">
-	<div class="row align-items-center top" style="position: relative;">
-			<div style="position: absolute; right: 10px;top: 0px;color: #efba1f;z-index: 1" (click)="close()">
-				<i class="pointer material-icons md-bold cross-size">close</i>	
-			</div>
-		<div class="col" style="text-align: center;">
-			<span class="head-text">¡Felicidades!<br><br></span>
-
-			<span class="head-text">Has comprado un regalo</span>			
-		</div>
-		
-	</div>
-	<div class="row">
-		
-	</div>
-	<div class="row justify-content-center" style="margin-top: 40px;">
-		<div class="vertical-child-center" >
-			<img class="gift-img" src="/assets/images/icons/gift.svg">
-		</div>
-		<div class="vertical-child-center" >
-			<span class="head-text" style="margin-left:20px; font-weight:700;color: #000">{{gift_name}}</span>
-		</div>
-	</div>
-</div>
+<main id="content">
+  <button class="close" name="close" type="submit" value="close" routerLink="/map">close</button>
+  <h2>¡Felicidades!</h2>
+  <div id="inner-content">
+  	<img src="/assets/images/icons/present.png" class="gift-img">
+  	<p style="subtitle" style="text-align: center;">
+  		¡Haz comprado un Regalo!
+  	</p>
+  	<h3 style="text-align: center;">
+  		Cafetera Nespresso "{{gift.title}}"
+  	</h3>
+  </div><!-- #container -->
+  <div id="main-actions">   
+    <!-- <button (click)="view_detail()">VER REGALO</button> -->
+    <button style="display: none;"></button>
+    <button (click)="view_list()">REGALOS</button>
+  </div>
+</main>

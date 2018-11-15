@@ -1,36 +1,29 @@
-<div class="background-fx">
-	<app-user-header></app-user-header>
-	<div class="row align-items-center" style="margin-top: 2%;">
-		<div class="col-sm-8">
-			<span class="ranking-text">CLASIFICACIÓN</span>
-		</div>
-		<div class="col-sm-3" style="padding-top: 3%;">
-			<span class="points-text">Puntos</span>
-		</div>
-		<div class="col-sm-1">
-			<a routerLink="/map">
-				<div>
-					<i class="material-icons md-bold md-60 md-white" style="margin-left: -40%;">close</i>
-				</div>				
-			</a>
-		</div>
-	</div>
-	<div class ="hidden-scroll">
+<main id="content">
+	<button class="close" name="close" type="submit" value="close">close</button>
+	<h2>Ranking</h2>
+	<label style="margin-top: 25px;margin-left: 510px;">Puntos</label>
+	<div id="inner-content">
 		<ng-template ngFor let-item [ngForOf]="users" let-i="index">
-			<div class="row align-items-center" [class.selected]="item.id === current_user_id" style="height: 15%; margin-top: 1.5%;">
-				<div class="col-sm-1" style="margin-left: 6%;">
-					<span class="content-text"><font size="6px">{{i+1}}.</font></span>
-				</div>	
-				<div class="col-sm-2" style="margin-left: -5%;">
-					<img class="avatar-img" src={{environment.asset_base_url}}{{get_image_url(item)}}>
-				</div>
-				<div class="col-sm-6" style="margin-left: -5%;">
-					<span class="content-text">{{item.first_name}} {{item.last_name}}</span>
-				</div>
-				<div class="col-sm-1" style="margin-left: 5%;">
-					<span class="content-text">{{item.total_points}}</span>
-				</div>
+			<div class="item" style="height: 60px;">
+				<h3 style="margin-left: 10px;margin-top: 7px;display: inline-block;"> {{i+1}} </h3>
+				<div class="clan-color" style="background-color: #CE3535; margin-left:35px;top:5px;"></div>
+				<img class="item-img" src={{environment.asset_base_url}}{{get_image_url(item)}} style="margin-left: 35px;top: -5px;">
+				<h3 style="display: inline-block;width: 200px;">{{item.first_name}}&nbsp;{{item.last_name}}</h3>
+				<h4 style="display: inline-block; margin-left: 120px;">{{item.total_points}}</h4>
 			</div>
 		</ng-template>
+
+
 	</div>
-</div>
+	<div style="margin-left: 55px;margin-top: 40px;">
+		<div class="item" style="height: 60px;">
+			<h3 style="margin-left: 10px;margin-top: 7px;display: inline-block;"> {{current_user_ranking + 1}} </h3>
+			<div class="clan-color" style="background-color: #CE3535; margin-left:35px;top:5px;"></div>
+			<img class="item-img" src="assets/img/avatars/t6d.png" style="margin-left: 35px;top: -5px;">
+			<h3 style="display: inline-block;width: 200px;">{{current_user.first_name}}&nbsp;{{current_user.last_name}}</h3>
+			<h4 style="display: inline-block; margin-left: 120px;">{{current_user.total_points}}</h4>
+		</div>
+	</div>
+
+
+</main>
