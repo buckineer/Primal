@@ -242,7 +242,7 @@ form input[type=text]:focus {
     /* padding-left: 20px; */
     margin-right: 40px;
     margin-left: -10px;
-    margin-bottom: 80px;
+    margin-bottom: 60px;
     cursor: pointer;
     font-size: 22px;
     -webkit-user-select: none;

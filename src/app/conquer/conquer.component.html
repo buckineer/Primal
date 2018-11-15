@@ -71,13 +71,13 @@
 </div>
 -->
 <main id="content">
-	<button class="close" name="close" type="submit" value="close">close</button>
+	<button routerLink="/map" class="close" name="close" type="submit" value="close">close</button>
 	<h2>{{territory.title}}</h2>
 	<div style="margin: auto; text-align: center;">
 		<label style="font-style: normal; font-weight: normal;font-family: 'Fira Sans', sans-serif;color:white;"><font size="3vm">{{avatar_title}}</font></label>
 	</div>
 	<div id="inner-content">
-		<div style="width:50%; margin: auto;text-align: center;">
+		<div style="width:50%; margin: auto;text-align: center; margin-top:-20px;">
 			<app-territory [territory]="territory"></app-territory>		
 		</div>
 		<div style="width:40%; margin: auto;" class="row">
@@ -103,9 +103,14 @@
 		
 	</div>
 	<div id="main-actions"> 
-		<button *ngIf="!clan_to_change() || is_joined()" disabled>UNISRE A CLAN</button>
-		<button *ngIf="clan_to_change() && !is_joined()" routerLink="/clan/home">UNISRE A CLAN</button>
-		<button *ngIf="clan_to_change()" disabled>CONQUISTAR</button>
-		<button routerLink="/clan/ranking" *ngIf="!clan_to_change()" >CONQUISTAR</button>
+		<div class="row">
+			<div class="col">
+
+			</div>
+			<div class="col-sm-6" style="margin-top: -20px;">
+				<button routerLink="/clan/ranking">CONQUISTAR</button>
+			</div>
+		</div>
+		
 	</div>
 </main> 
