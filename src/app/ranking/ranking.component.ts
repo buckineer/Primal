@@ -15,7 +15,7 @@ export class RankingComponent implements OnInit {
   current_user_id:Number;
   environment = environment
   current_user:User;
-  current_user_ranking:Number;
+  current_user_ranking:number;
   constructor(public userService:UserService,private globalState:GlobalState) { }
 
   ngOnInit() {
