@@ -6,10 +6,14 @@ import { CheckboxGroupComponent } from './checkbox-group.component';
 // </div>`
 @Component({
     selector: 'checkbox',
-    template: `         
-        <mat-checkbox (change)="changed($event)" [checked]="isChecked()" color="white" > </mat-checkbox>    
-        <ng-content></ng-content>`
+    templateUrl: './checkbox.component.html',
+    styleUrls: ['./checkbox.component.css'],
+    // template: `         
+    //     <mat-checkbox (change)="changed($event)" [checked]="isChecked()" color="white" > </mat-checkbox>    
+    //     <ng-content></ng-content>`
 })
+  
+  
 export class CheckboxComponent {
     @Input() value: any;
 

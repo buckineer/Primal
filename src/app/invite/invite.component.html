@@ -2,31 +2,48 @@
 <main id="content">
 	<button routerLink="/map" class="close" name="close" type="submit" value="close">close</button>
 	<h2>Invitar a Las Calaveras Hambrientas</h2>
+	<checkbox-group [(ngModel)]="selectedUsers">
 	<div id="inner-content">
 		<!-- <div id="inner-content"> -->
-			<ng-template ngFor let-item [ngForOf]="clans" let-i="index">
-				<div class="item">
-					<div class="clan-color" [style.background-color]="item.clan_color"></div>
-					<img class="item-img" src={{environment.asset_base_url}}{{item.image}}>
-					<h3>{{item.name}}</h3>
-					<p>{{item.joined_members + 1}}/{{item.max_members}}</p>
-					<button disabled>UNIRSE A CLAN</button>
-				</div>	
+		
+			<ng-template ngFor let-item [ngForOf]="users" let-i="index">
+				<div class="item" >
+					<div class="check-box">
+						<checkbox value="{{item['id']}}"> </checkbox>	
+					</div>
+					<img class="item-img" src="{{environment.asset_base_url}}{{get_image_url(item)}}">
+					<h3>C{{item['first_name']}} {{item['last_name']}}</h3>
+					<p>2503</p>
+					<button >INVITAR</button>
+				</div>
 			</ng-template>
+			<div class="item">
+				<div class="check-box">
+					<checkbox value="100"> </checkbox>	
+				</div>
+				<img class="item-img" src="/assets/images/avatars/avatar1.png">
+				<h3>Cristina Rodriguez</h3>
+				<p>2503</p>
+				<button >INVITAR</button>
+			</div>
+
+		
 	</div>
-	<div id="main-actions" style="padding-right: 50px;">
-	
-		<div class="row">
-			<div class="col-2">
-				<img src="assets/images/icons/new Clan.png" style="width:50px;">
-			</div>
-			<div class="col-6">
-				<label style="margin-top: 15px;font-style:normal;color:white;"><font size="3px">Crea tu propio Clan</font></label>
-			</div>
-			<div class="col-4">
-				<button routerLink="/clan/create" style="left: -20px; top: 0px;">CREAR CLAN</button>
-			</div>
+</checkbox-group>
+	<div style="margin-left: 100px;">
+		<p>Total invitados: {{selectedUsers.length}}/5</p>
+
+	</div>
+
+	<div id="main-actions">
+		<div style="margin-top: 10px;">
+			<label class="open-container" (change)="selectAll($event)">Seleccionar todos
+				<input type="checkbox" >
+				<span class="open-checkmark"></span>
+			</label>
 		</div>
+		<button style="display: none"></button>	
+		<button (click) = "store()">GUARDAR</button>
 	</div>
 	
 </main>
