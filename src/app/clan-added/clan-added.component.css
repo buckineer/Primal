@@ -1,8 +1,8 @@
-.content {
+/* .content {
 	margin: 5.39%;
 	margin-left: 11.2%;
 	margin-right: 11.2%;
-	/*height: 500px;*/
+	
     height: 60.6%;
 	width: 76.6%;
 	background-color: rgba(0,0,0,0.60);
@@ -55,4 +55,23 @@ button{
 	border-radius: 40px;
 	height: 50px;
 	width: 200px;
+} */
+
+
+.clan-color{
+    width: 200px;
+    height: 200px;
+    margin: auto;
+    margin-top: 70px;
+}
+
+.clan-img {
+    position: absolute;
+    width: 150px;
+    left: 270px;
+    top:150px;
+}
+
+.verClan {
+    margin: auto;
 }

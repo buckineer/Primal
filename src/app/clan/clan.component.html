@@ -4,7 +4,8 @@
   <div id="inner-content">
     <div class="row" style="margin:auto;">
       <div class="col-sm-3 mr-3" style="padding: 0;">
-        <div class="user-avatar vertical-child-center avatar-circle" >
+        <div class="user-avatar vertical-child-center" >
+          <img class="clan-color" src={{current_clan_color}}>
           <img src="{{environment.asset_base_url}}{{selected_clan.image}}" class="clan-image">
         </div>
         <div style="margin-top: 40px;">
@@ -17,7 +18,7 @@
         <p class="label">Descripción</p>
         <h3>{{ selected_clan.description }}</h3>
         <p class="label" style="margin-top: 20px;">Lema</p>
-        <h3 style="word-break: break-all;">{{ selected_clan.motto}}</h3>
+        <h3 style="word-break: break-all;">{{selected_clan.motto}}</h3>
       </div>
 
     </div>
@@ -34,34 +35,14 @@
               <img src="{{item.territory_image_url}}" style="width: 32px;height: 32px;display: inline-block;margin-right: 5px;">
               <span class="label">{{item.territory_name}}</span>
             </div>
-          </ng-template>          
-          <div class="badge-item mt-2">
-            <img src="/assets/images/icons/badge9.png" style="width: 32px;height: 32px;display: inline-block;margin-right: 5px;">
-            <span class="label">Isla del Volcan</span>
-          </div>
-          <div class="badge-item mt-2">
-            <img src="/assets/images/icons/badge9.png" style="width: 32px;height: 32px;display: inline-block;margin-right: 5px;">
-            <span class="label">Isla del Volcan</span>
-          </div>
-                    <div class="badge-item mt-2">
-            <img src="/assets/images/icons/badge9.png" style="width: 32px;height: 32px;display: inline-block;margin-right: 5px;">
-            <span class="label">Isla del Volcan</span>
-          </div>
-          <div class="badge-item mt-2">
-            <img src="/assets/images/icons/badge9.png" style="width: 32px;height: 32px;display: inline-block;margin-right: 5px;">
-            <span class="label">Isla del Volcan</span>
-          </div>
-          <div class="badge-item mt-2">
-            <img src="/assets/images/icons/badge9.png" style="width: 32px;height: 32px;display: inline-block;margin-right: 5px;">
-            <span class="label">Isla del Volcan</span>
-          </div>
+          </ng-template>
         </div>
       </div>
       <div class="col ml-2">
         <p class="label mr-2">Miembros &nbsp; &nbsp; <font style="font-style: unset;">{{ 1 + joined_users.length}}/5</font>  </p>
           <div style="display: inline-block;width: 145px; margin-left:10px">
             <div style="position: relative; display: inline-block;" class="clan-img">
-              <img src="/assets/images/clans/clan-a-large.png" class="clan-img" style="position: absolute;top: 10px;left: 0;">
+              <img src={{current_clan_color}} class="clan-img" style="position: absolute;top: 10px;left: 0;">
               <img src="{{environment.asset_base_url}}{{get_user_image(admin_user)}}" class="clan-img" style="position: absolute;top: 10px;left: 0">
             </div>
             <span style="display: inline-block;" class="ml-1">{{ admin_user.first_name }} {{ admin_user.last_name }}<br><font style="font-style: italic;">Admin</font></span>
@@ -69,7 +50,7 @@
           <ng-template ngFor let-item [ngForOf]="joined_users" let-i="index">
             <div style="display: inline-block; margin-left:10px;width: 145px;">
               <div style="position: relative; display: inline-block;" class="clan-img">
-                <img src="/assets/images/clans/clan-a-large.png" class="clan-img" style="position: absolute;top: 10px;left: 0;">
+                <img src={{current_clan_color}} class="clan-img" style="position: absolute;top: 10px;left: 0;">
                 <img src="{{environment.asset_base_url}}{{get_user_image(item)}}" class="clan-img" style="position: absolute;top: 10px;left: 0">
               </div>
               <span style="display: inline-block;" class="ml-1">{{ item.first_name }} {{ item.last_name }}</span>
