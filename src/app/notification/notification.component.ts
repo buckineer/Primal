@@ -43,6 +43,7 @@ export class NotificationComponent implements OnInit {
     }
   }
   join(item:Notification){
+    
     var clanId = item.clan_id;
     console.log(this.globalState.current_user.admin_clan);
     if(this.globalState.current_user.admin_clan < 1){

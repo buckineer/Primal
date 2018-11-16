@@ -43,6 +43,7 @@ export class MyProfileComponent implements OnInit {
   										this.user = ret_value;
                       this.user_image_url = this.userService.get_avatar_url(this.user)
   										this.getClanByUser(ret_value);
+
                       
   									});
   }

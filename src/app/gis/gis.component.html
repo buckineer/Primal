@@ -4,7 +4,7 @@
         <li>
             <a routerLink="/notification">
                 <img src="/assets/img/icons/notifications.png">
-                <div id="new-notifications">2</div>
+                <div *ngIf="alarmCount>0"id="new-notifications">{{alarmCount}}</div>
             </a>
         </li>
         <li>

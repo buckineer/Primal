@@ -17,10 +17,10 @@ export class GisComponent implements OnInit {
     this.authService.logout();
   }
   ngOnInit() {
-  	// this.notificationService.getNotificationStream()
-   //  	.subscribe(resp=>{
-   //  		this.alarmCount = resp;
-   //  	});
+  	this.notificationService.getNotificationStream()
+    	.subscribe(resp=>{
+    		this.alarmCount = resp;
+    	});
   }
   
 }

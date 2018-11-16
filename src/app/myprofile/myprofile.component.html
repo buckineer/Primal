@@ -5,7 +5,7 @@
 		<div class="row" style="margin:auto;">
 			<div class="col-sm-3 mr-3">
                 <div class="user-avatar vertical-child-center" >
-					<img class="clan_color" src={{current_clan_color}}>
+					<img *ngIf="is_joined()" class="clan_color" src={{current_clan_color}}>
                 	<img src="{{environment.asset_base_url}}{{user_image_url}}" class="user-image">
                 </div>
 				
@@ -108,7 +108,7 @@
 				<ng-template  #no_clan>
 					<div class="mt-4">
 						<span style="font-weight: bold;display: inline-block;">No esta en ningún Clan</span>
-						<button class="item-button" style="display: inline-block;margin-left: 80px;">UNIRSE A CLAN</button>
+						<button routerLink="/clan/home" class="item-button" style="display: inline-block;margin-left: 80px;">UNIRSE A CLAN</button>
 						
 					</div>
 					<p class="mt-4">
