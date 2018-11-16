@@ -25,10 +25,12 @@ export class MyProfileComponent implements OnInit {
   environment = environment
   user_image_url:string;
   is_loaded:boolean;
+  current_clan_color: string;
+
   constructor(private globalState:GlobalState,
   				private userService:UserService,
   				private territoryService:TerritoryService,
-  				private clanService:ClanService,) { }
+  				private clanService:ClanService,) {this.clan = new Clan;}
   ngAfterViewInit()
   {
     Scroll.run_scroll("#badge-content","#badge-list");
@@ -41,8 +43,24 @@ export class MyProfileComponent implements OnInit {
   										this.user = ret_value;
                       this.user_image_url = this.userService.get_avatar_url(this.user)
   										this.getClanByUser(ret_value);
+                      
   									});
   }
+
+  is_joined():boolean{
+    if(this.user){
+      return  ((this.user.joined_clan!=-1 && this.user.joined_clan != null ) || (this.user.admin_clan!=-1 && this.user.admin_clan!=null));
+      }
+    return false;
+  }
+
+  getClanImg(item: string): string{
+    var img = item;
+    
+    var imgUrl = img.replace("#","");
+    return '/assets/images/clans/'+ imgUrl +'.png';
+  }
+
 
   getClanByUser(user:User){
     var clan_id = -1;
@@ -51,10 +69,20 @@ export class MyProfileComponent implements OnInit {
     else 
       clan_id = user.joined_clan
     if(clan_id != -1 && clan_id!=null){
-      this.clanService.getClan(clan_id).subscribe(ret_value=>{this.clan = ret_value;this.is_loaded=true;});  
+      this.clanService.getClan(clan_id).subscribe(ret_value=>{this.clan = ret_value;this.is_loaded=true;
+      this.getCurrentCol();});  
     }else{
       this.clan = new Clan;
       this.is_loaded=true;
-    } 	
+    }	
+  }
+
+  getCurrentCol(): void{
+    var itemUrl = this.clan.clan_color;
+
+    
+    var imgUrl = itemUrl.replace("#", "");
+    this.current_clan_color = '/assets/images/clans/'+ imgUrl +'.png';
+    console.log(this.current_clan_color);
   }
 }
