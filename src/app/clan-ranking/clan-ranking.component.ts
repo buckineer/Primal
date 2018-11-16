@@ -27,6 +27,7 @@ export class ClanRankingComponent implements OnInit {
   clan_is_loaded:boolean;
   clans_is_loaded: boolean;
   filtered:boolean;
+  
   constructor(public clanService:ClanService, private state:GlobalState, private userService:UserService,) {
     this.current_clan = new Clan;
     this.user = new User;
