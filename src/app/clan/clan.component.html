@@ -9,7 +9,7 @@
         </div>
         <div style="margin-top: 40px;">
           <span class="label mr-4">Puntos</span>
-          <span class="score"> {{selected_clan.points}}232</span>
+          <span class="score"> {{selected_clan.points}}</span>
           
         </div>
       </div>
@@ -58,7 +58,7 @@
         </div>
       </div>
       <div class="col ml-2">
-        <p class="label mr-2">Miembros &nbsp; &nbsp; <font style="font-style: unset;">3/5</font>  </p>
+        <p class="label mr-2">Miembros &nbsp; &nbsp; <font style="font-style: unset;">{{ 1 + joined_users.length}}/5</font>  </p>
           <div style="display: inline-block;width: 145px; margin-left:10px">
             <div style="position: relative; display: inline-block;" class="clan-img">
               <img src="/assets/images/clans/clan-a-large.png" class="clan-img" style="position: absolute;top: 10px;left: 0;">
