@@ -1,132 +1,87 @@
-<div class="background-fx">
-    <app-user-header></app-user-header>
-    <div style="position:relative; height:50px;" class="top">
-      <div class="row section-header">
-      </div>
-      <div class="row " style="height:100%;">
-        <div class="col-sm-4 vertical-child-center" >
-          <a class="vertical-child-center" routerLink="/profile">
-            <span class="section-text">Mi perfil</span>
-          </a>
+<main id="content">
+  <button class="close" name="close" type="submit" value="close" routerLink="/map">close</button>
+  <h2>{{ selected_clan.name }} </h2>
+  <div id="inner-content">
+    <div class="row" style="margin:auto;">
+      <div class="col-sm-3 mr-3" style="padding: 0;">
+        <div class="user-avatar vertical-child-center avatar-circle" >
+          <img src="{{environment.asset_base_url}}{{selected_clan.image}}" class="clan-image">
         </div>
-        <div class="col-sm-4 vertical-child-center" style="background: #fe8d00; border-left-width: 2px; border-left-style: solid; border-right-width: 2px; border-right-style:solid; border-color: white;">
-          <a *ngIf= "clan?.id != -1" class="vertical-child-center" routerLink="/clan/{{clan?.id}}">
-            <span class="section-text">Mi clan</span>
-          </a>
-          <span *ngIf= "clan?.id == -1" class="section-text">Mi clan</span>
-        </div>
-        <div class="col-sm-4 vertical-child-center">
-          <a class="vertical-child-center" routerLink="/user-gift/{{user?.id}}">
-            <span class="section-text">Mis regalos</span>
-          </a> 
-			</div>
-      
-		  </div>
-	  </div>
-    <div class="content">
-      <div class="row align-items-center" style="padding-top: 0%;">
-        <div class="col-sm-9">
-          <span class="title-text">CLAN</span>
-        </div>
-        <div *ngIf="clan_to_change() && is_admin_clan()" class="col-sm-2" style="margin-left: -5%;">
-          <a routerLink = "/invite">
-            <button class="button-invite" mat-raised-button>Invitar Luchadores</button>
-          </a>
-        </div>
-        <div *ngIf="clan_to_change() && !is_admin_clan()" class="col-sm-2">
-          <a routerLink = "/clan/home">
-            <button class="button-change" mat-raised-button>Cambiar clan</button>
-          </a>
+        <div style="margin-top: 40px;">
+          <span class="label mr-4">Puntos</span>
+          <span class="score"> {{selected_clan.points}}</span>
+          
         </div>
       </div>
-      <div style="width: 100%; overflow: hidden; margin-top: -1%;">
-        <div class="hidden-scroll">
-            <div class="row " style="padding-top: 25px;">
-              <div class="col-sm-2">
-                <div class="clan-avatar">
-                  <img src={{environment.asset_base_url}}{{selected_clan.image}} class="clan-image">
-                </div>
-              </div>
-              <div class="col-sm-8" style="margin-top: 0%; margin-left: -4%;">
-                <label class="key">Nombre &nbsp;</label>
-                <label class="value">{{ selected_clan.name }} </label><br>
+      <div class="col-sm-8">
+        <p class="label">Descripción</p>
+        <h3>{{ selected_clan.description }}</h3>
+        <p class="label" style="margin-top: 20px;">Lema</p>
+        <h3 style="word-break: break-all;">{{ selected_clan.motto}}</h3>
+      </div>
 
-                <label class="key">Descripción &nbsp;</label>
-                <label class="value">{{ selected_clan.description }}</label><br>
-                <label class="key">Lema &nbsp;</label>
-                <label class="value"> {{ selected_clan.motto }}</label>
-              </div>
-              <div class="col-sm-3" style="margin-left: -10%;">
-                <span class="points-text">
-                  <span class="key">Puntos:</span>
-                  <span class="value">{{ selected_clan.points }}</span>
-                </span>
-              </div>
+    </div>
+
+    <div class="row mt-4" style="margin:auto;">
+      <div class="col-sm-3 mr-3" id="badge-list" style="height: 222px;">
+        <div>
+          <p class="label">Progreso Personal</p>  
+        </div>
+        
+        <div id="badge-content" style="position: absolute;" class="mt-2">
+          <ng-template ngFor let-item [ngForOf]="selected_clan.territory_info" let-i="index">
+            <div class="badge-item mt-2">
+              <img src="{{item.territory_image_url}}" style="width: 32px;height: 32px;display: inline-block;margin-right: 5px;">
+              <span class="label">{{item.territory_name}}</span>
             </div>
-
-            <hr color=white>
-            
-            <label class="content-text"><font color="white">Progreso</font></label>
-
-            <div class="row align-items-center" style="padding-top: 20px;">
-              <ng-template ngFor let-item [ngForOf]="selected_clan.territory_info" let-i="index">
-                <div class="col-sm-3 algin-items-center" style="margin-left: 0%">
-                  <img src={{item.territory_image_url}} style="width: 80%;">
-                  <label class="territory-name-text">{{ item.territory_name }}</label>
-                </div>
-              </ng-template>
-
-            </div>
-
-            <hr color=white>
-
-            <label class="content-text"><font color=antiquewhite>Miembros:</font></label>
-
-            <div class="row align-items-center members-show" style="padding-top: 2px;">
-                <div class="col-sm-6 row algin-items-center" style="margin-top: 1%;">
-                  <div class="col-3">
-                    <div class="user-avatar">
-                      <img src={{environment.asset_base_url}}{{get_user_image(admin_user)}} class="user-image"> 
-                    </div>
-                  </div>
-                  <div class="col-8 vertical-child">
-                    <label class="user-name-text">{{ admin_user.first_name }} {{ admin_user.last_name }}<br> Admin</label>
-                  </div>
-                </div>
-                <ng-template ngFor let-item [ngForOf]="joined_users" let-i="index">
-                  <div class="col-sm-6 row algin-items-center" style="margin-top: 1%;">
-                    <div class="col-3">
-                      <div class="user-avatar">
-                        <img src={{environment.asset_base_url}}{{get_user_image(item)}} class="user-image">
-                      </div>
-                    </div>
-                    <div class="col-8 vertical-child">
-                      <label class="user-name-text">{{ item.first_name }} {{ item.last_name }}</label> 
-                    </div>
-                  </div>
-                </ng-template>
-              </div>
-
-              <!--
-                <div class="align-items-center members-sm-show" style="padding-top: 1px;">
-                  <div class="style="float: left;">
-                    <div class="user-avatar">
-                      <img src={{environment.asset_base_url}}{{get_user_image(admin_user)}} class="user-image"> 
-                    </div>
-                    <label class="user-name-text" style="width: 200px;">{{ admin_user.first_name }} {{ admin_user.last_name }}<br> Admin</label> 
-                  </div>
-                  <ng-template ngFor let-item [ngForOf]="joined_users" let-i="index">
-                    <div style="float: left;margin-left: 2%;text-align: center;">
-                      <div class="user-avatar">
-                        <img src={{environment.asset_base_url}}{{get_user_image(item)}} class="user-image"> 
-                      </div>
-                      <label class="user-name-text">{{ item.first_name }} {{ item.last_name }}</label> 
-                    </div>
-                  </ng-template>
-              </div>
-            -->
-
+          </ng-template>          
+          <div class="badge-item mt-2">
+            <img src="/assets/images/icons/badge9.png" style="width: 32px;height: 32px;display: inline-block;margin-right: 5px;">
+            <span class="label">Isla del Volcan</span>
+          </div>
+          <div class="badge-item mt-2">
+            <img src="/assets/images/icons/badge9.png" style="width: 32px;height: 32px;display: inline-block;margin-right: 5px;">
+            <span class="label">Isla del Volcan</span>
+          </div>
+                    <div class="badge-item mt-2">
+            <img src="/assets/images/icons/badge9.png" style="width: 32px;height: 32px;display: inline-block;margin-right: 5px;">
+            <span class="label">Isla del Volcan</span>
+          </div>
+          <div class="badge-item mt-2">
+            <img src="/assets/images/icons/badge9.png" style="width: 32px;height: 32px;display: inline-block;margin-right: 5px;">
+            <span class="label">Isla del Volcan</span>
+          </div>
+          <div class="badge-item mt-2">
+            <img src="/assets/images/icons/badge9.png" style="width: 32px;height: 32px;display: inline-block;margin-right: 5px;">
+            <span class="label">Isla del Volcan</span>
+          </div>
         </div>
       </div>
-    
+      <div class="col ml-2">
+        <p class="label mr-2">Miembros &nbsp; &nbsp; <font style="font-style: unset;">{{ 1 + joined_users.length}}/5</font>  </p>
+          <div style="display: inline-block;width: 145px; margin-left:10px">
+            <div style="position: relative; display: inline-block;" class="clan-img">
+              <img src="/assets/images/clans/clan-a-large.png" class="clan-img" style="position: absolute;top: 10px;left: 0;">
+              <img src="{{environment.asset_base_url}}{{get_user_image(admin_user)}}" class="clan-img" style="position: absolute;top: 10px;left: 0">
+            </div>
+            <span style="display: inline-block;" class="ml-1">{{ admin_user.first_name }} {{ admin_user.last_name }}<br><font style="font-style: italic;">Admin</font></span>
+          </div>
+          <ng-template ngFor let-item [ngForOf]="joined_users" let-i="index">
+            <div style="display: inline-block; margin-left:10px;width: 145px;">
+              <div style="position: relative; display: inline-block;" class="clan-img">
+                <img src="/assets/images/clans/clan-a-large.png" class="clan-img" style="position: absolute;top: 10px;left: 0;">
+                <img src="{{environment.asset_base_url}}{{get_user_image(item)}}" class="clan-img" style="position: absolute;top: 10px;left: 0">
+              </div>
+              <span style="display: inline-block;" class="ml-1">{{ item.first_name }} {{ item.last_name }}</span>
+            </div>
+          </ng-template>
+
+      </div>
+    </div>
+  </div><!-- #container -->
+  <div id="main-actions"> 
+    <button style="display: none;"></button>  
+   <button *ngIf="clan_to_change() && is_admin_clan()"  >INVITAR A CLAN</button>
+   <button *ngIf="clan_to_change() && !is_admin_clan()" >CAMBIAR CLAN</button>
   </div>
+</main>

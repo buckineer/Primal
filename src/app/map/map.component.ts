@@ -33,6 +33,4 @@ export class MapComponent implements OnInit {
     // return 16.34*(index % 4 + nth);
     return 17 * (index % 4 + nth)
   }
-
-
 }
