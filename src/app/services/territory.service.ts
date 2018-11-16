@@ -17,7 +17,7 @@ export class TerritoryService {
   getTerritories(): Observable<Territory[]> {
     return this.http.get<Territory[]>(this.api_base_url+"/missions/").pipe(
       catchError(this.handleError('getTerritories',[]))
-      );
+    );
   }
   getTerritory(id:number):Observable<Territory>{
     return this.http.get<Territory>(this.api_base_url+"/missions/"+id+"/").pipe(
