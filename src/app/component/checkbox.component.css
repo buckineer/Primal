@@ -1,29 +1,9 @@
-.check-box{
-    position: absolute;
-    left: 30px;
-    top: 28px;
-}
-.scroller:after{
-    bottom: 145px;
-}
-.item-img{
-    left:50px;
-}
-.item{
-    margin-top: 0px;
-    margin-bottom: 0px;
-}
-#inner-content{
-    height: 380px;
-}
-.item h3,.item p{
-    margin-left: 130px;
-}
-/* checkbox css*/
+checkbox css*/
 .open-container {
     display: block;
     position: relative;
     padding-left: 35px;
+    margin-top: 50px;
     margin-left: 18px;
     margin-bottom: 12px;
     cursor: pointer;

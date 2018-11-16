@@ -7,7 +7,7 @@ import {environment} from '../../environments/environment';
 import {CommonService} from '../services/common.service';
 import { ClanService } from '../services/clan.service';
 import {GlobalState} from '../state';
-
+import * as Scroll from '../../assets/js/quasi/scroll.js';
 @Component({
   selector: 'app-invite',
   templateUrl: './invite.component.html',
@@ -39,17 +39,27 @@ export class InviteComponent implements OnInit {
     })
     
   }
+  ngAfterViewInit()
+  {
+       setTimeout( ()=>{
+   Scroll.run_scroll();
+   }, 500)
+    
+  }
   selectAll(event){
-  	if(event.checked){
+    console.log("111111111111111111111111111111111");
+    console.log(event.target.checked);
+  	if(event.target.checked){
   		this.selectedUsers=this.users.slice(0,5).map(item => String(item['id']))
   	}else{
   		this.selectedUsers=[];
   	}
+    console.log(this.selectedUsers);
   }
   store(){
     this.commonService.sendInvite(this.selectedUsers).subscribe(resp=>{
       if(resp=="success")
-        this.router.navigate(['map']);
+        this.router.navigate(['/clan/'+this.clan_id]);
     });
   }
   get_image_url(user:User){
