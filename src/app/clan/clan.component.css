@@ -1,264 +1,31 @@
-
-.content {
-    margin-top: 2%;
-    margin-left: 5%;
-    margin-right: 5%;
-    width: 90%;
-}
-
-div.section-header {
-  background-color: #A88F66;
-  opacity: 0.7;
-  position: absolute;
-  /* top: 0;
-  left: 0; */
-  width: 100%;
-  height: 100%;
-}
-
-.section-text {
-    color: white;
-    height: 40px;
-    text-align: center;
-    font-family: Raleway;
-    font-weight: 600;
-    vertical-align: middle;
-    padding: 10px;
-    font-size: 22px;
-}
-
-
-
-.hidden-scroll{
-    height: 100%;
-    width: 105%;
-/*    border-bottom-style: solid;
-    border-bottom-color: #fff;
-*/
-    overflow-x:hidden;
-    overflow-y:auto;
-    box-sizing: content-box;     
-}
-
-.button-change {
-    background-color: #fe8d00;
-    color: #fff;
-    width: 120%;
-    /*height: 50px;*/
-    text-align: left;
-    font-family: Raleway;
-    font-size: 20px;
-    font-weight: 600;
-    }
-.button-invite {
-    background-color: #fe8d00;
-    color: #fff;
-    width: 170%;
-    /*height: 50px;*/
-    text-align: center;
-    font-size: 20px;
-    font-weight: 600;
-    font-family: Raleway;
-}
-@media only screen and (min-width:1280px){
-    .button-change,.button-invite{
-        font-size: 24px;
-        height: 50px;
-    }
-}
-@media only screen and (min-width:1400px){
-    .button-change,.button-invite{
-        font-size: 28px;
-        height: 66px;
-    }
-}
-
-
 .clan-image{
-    /* position:absolute; */
-    width: 120%;
-    margin-left: -10%;
-    margin-top: -10%;
-}
-
-.clan-avatar {
-    width:70px;
-    height: 70px;
-    border-radius: 60%;
-    background-color:antiquewhite;
-    border: 2px solid rgb(54, 53, 53);
-}
-@media only screen and (min-width:1280px){
-    .clan-avatar{
-        width: 100px;
-        height: 100px;
-    }
-}
-@media only screen and (min-width:1400px){
-    .clan-avatar{
-        width: 112px;
-        height: 112px;
-    }
-}
-label.key{
-  font-family: Raleway;
-  font-size: 18px;
-  color:#e2e2e2;
-  font-weight: 300;
-}
-label.value{
-  font-family: Raleway;
-  font-size: 20px;
-  color:#fff;
-  font-weight: 500;
-
-}
-@media only screen and (min-width:1280px){
-    label.key{
-      font-size: 24px;
-    }
-    label.value{
-      font-size: 26px;
-    }
-}
-@media only screen and (min-width:1400px){
-    label.key{
-      font-size: 28px;
-    }
-    label.value{
-      font-size: 30px;
-    }
-}
-
-.user-avatar {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background-color:antiquewhite;
-    margin-left: 0%;
-}
-.user-image {
-    max-width: 100%;
-    height: 100%;
-}
-
-@media only screen and (min-width:1280px){
-    .user-avatar{
-        width: 70px;
-        height: 70px;
-    }
-}
-@media only screen and (min-width:1400px){
-    .user-avatar{
-        width: 80px;
-        height:80px;
-    }
-}
-
-
-
-.points-text .key{
-    font-size: 20px;
-    font-weight: 600;
-    color: white;
-}
-.points-text .value{
-    font-size: 30px;
-    font-weight: 800;
-    color: #fe8d00;
-}
-@media only screen and (min-width:1280px){
-    .points-text .key{
-        font-size: 28px;
-        font-weight: 600;
-        color: white;
-    }
-    .points-text .value{
-        font-size: 36px;
-        font-weight: 800;
-        color: #fe8d00;
-    }
-}
-
-@media only screen and (min-width:1400px){
-    .points-text .key{
-        font-size: 32px;
-        font-weight: 600;
-        color: white;
-    }
-    .points-text .value{
-        font-size: 40px;
-        font-weight: 800;
-        color: #fe8d00;
-    }
-}
-
-.territory-name-text {
-    letter-spacing: 0px;
-    color: rgb(255, 255, 255);
-    font-family: 'Raleway', serif;
-    font-weight: 400;
-    font-size: 16px;
-    text-align: center;
-    width: 80%;
-}
-.territory-img{
     width: 100px;
-    height: 67px;
 }
-
-@media only screen and (min-width:1280px){
-    .territory-name-text{
-        font-size: 20px;
-    }
+.user-avatar{
+    width:80px;
+    height: 80px;
+    align-items: center;
 }
-@media only screen and (min-width:1400px){
-    .territory-name-text{
-        font-size: 24px;
-    }
+.avatar-circle{
+    border-radius: 50%;
+    background-color: #5E55C9
 }
-.user-name-text {
-    letter-spacing: 0px;
-    color: rgb(255, 255, 255);
-    font-family: 'Raleway', serif;
-    font-weight: 500;
-    line-height: 17px;
-    font-size: 14px;
-    text-align: center;
+.item-button{
+    font-size: 18px;
+    line-height: 38px;
+    height: 38px;
 }
-@media only screen and (min-width:1280px){
-    .user-name-text {
-        font-size: 20px;
-        line-height: 24px;
-    }
+#badge-content{
+    height: 196px;
+    width: 158px;
 }
-@media only screen and (min-width:1400px){
-    .user-name-text {
-        font-size: 24px;
-        line-height: 29px;
-    }
+.scroller:before{
+    top:25px;
 }
-.members-sm-show{
-    display: block;
+.scroller:after{
+    bottom:-15px;
 }
-.members-show{
-    display: none;
-}
-@media only screen and (min-width:1280px){
-
-    .members-sm-show{
-        display: none;
-    }
-    .members-show{
-        display: block;
-    }
-}
-@media only screen and (min-width:1400px){
-
-    .members-sm-show{
-        display: none;
-    }
-    .members-show{
-        display: block;
-    }
+.clan-img{
+    width: 48px;
+    height: 48px;
 }

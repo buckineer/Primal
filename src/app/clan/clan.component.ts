@@ -8,6 +8,7 @@ import { environment } from '../../environments/environment';
 import {GlobalState} from '../state';
 import { TerritoryService } from '../services/territory.service';
 import { Territory } from '../models/territory.model';
+import * as Scroll from '../../assets/js/quasi/scroll.js';
 @Component({
   selector: 'app-clan',
   templateUrl: './clan.component.html',
@@ -39,7 +40,10 @@ export class ClanComponent implements OnInit {
   										this.getClanByUser(ret_value);
   									});
   }
-
+  ngAfterViewInit()
+  {
+    Scroll.run_scroll("#badge-content","#badge-list");
+  }
   getClan(): void {
     const id:number = +this.route.snapshot.paramMap.get('id');
   	this.clanService.getClan(id)
@@ -82,20 +86,21 @@ export class ClanComponent implements OnInit {
   }
 
   clan_to_change():boolean{
-    var now = new Date();
-    var starting_date = new Date(this.current_mission.starting_date);
+    return true;
+    // var now = new Date();
+    // var starting_date = new Date(this.current_mission.starting_date);
     
-    var timeDiff = Math.abs(now.getTime() - starting_date.getTime());
-    var dayDiff = Math.ceil(timeDiff / (1000 * 3600 * 24));    
+    // var timeDiff = Math.abs(now.getTime() - starting_date.getTime());
+    // var dayDiff = Math.ceil(timeDiff / (1000 * 3600 * 24));    
 
-    if (dayDiff > 7 || dayDiff == NaN)
-    {
-      return false;
-    }
+    // if (dayDiff > 7 || dayDiff == NaN)
+    // {
+    //   return false;
+    // }
     
-    if (dayDiff <= 7 && dayDiff != NaN)
-    {
-      return true;
-    }
+    // if (dayDiff <= 7 && dayDiff != NaN)
+    // {
+    //   return true;
+    // }
   }
 }
