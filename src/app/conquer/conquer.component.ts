@@ -32,10 +32,12 @@ export class ConquerComponent implements OnInit {
     this.userService.getUser(this.state.Current_User_Id)
                       .subscribe(ret_value=>{this.user = ret_value;});
 	}
+
 	ngAfterViewInit()
   {
     Scroll.run_scroll()
   }
+  
   getTerritory():void {
   	const id:number = +this.route.snapshot.paramMap.get('id');
   	this.territoryService.getTerritory(id)
