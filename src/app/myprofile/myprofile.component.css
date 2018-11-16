@@ -1,6 +1,7 @@
 .user-image{
     position: absolute;
-    width: 100px;
+    width: 70px;
+    top: 10px;
 }
 .user-avatar{
     width:80px;

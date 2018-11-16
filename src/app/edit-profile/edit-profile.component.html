@@ -25,7 +25,8 @@
 					<div class="row" style="width: 135px;">
 						<ng-template ngFor let-item [ngForOf]="avatars" let-i="index">
 							<div style="display: inline-block;">
-								<div class="vertical-child-center user-avatar" (click)="set_selected(item)" [class.selected]="item.value==selected?.avatar">	
+								<div class="vertical-child-center user-avatar" (click)="set_selected(item)" [class.selected]="item.value==selected?.avatar" style="position: relative;">
+									<img _ngcontent-c7="" class="selected-bg-img" src="/assets/images/clans/24894F.png">
 									<img src="{{environment.asset_base_url}}{{item.images[selected.level]}}" style="width: 100%;">
 								</div>
 							</div>
