@@ -16,7 +16,7 @@
 						<label *ngIf="!myForm.controls['last_name'].valid && myForm.controls['last_name']. touched">(required)</label>
 						<input type="text" style="border-radius:0px;" [formControl]="myForm.controls['last_name']" placeholder="Apellido">
 					</div>
-					<div style="position: absolute;bottom: -50px;left:10px;">
+					<div style="position: absolute;bottom: 10px;left:30px;">
 						<button class="item-button" [routerLink]="['/update_password']">CAMBIAR CONTRASEÑA</button>
 					</div>
 				</div>
