@@ -9,7 +9,8 @@
           <p style="color:#ADADAD;font-size: 10px;">Ayer, 13:43</p>
           <h3 style="width: 320px;">¡Únete al Clan de las {{ item.clan_name }}!</h3>
           <p>Te han invitado a participar en un clan.</p>
-          <button (click)="join(item)">UNIRSE A CLAN</button>
+          <!-- <button (click)="join(item)">UNIRSE A CLAN</button> -->
+          <button routerLink="/clan/added/{{item.clan_id}}/">UNIRSE A CLAN</button>
         </div>
       </ng-template>     
   </div><!-- #container -->

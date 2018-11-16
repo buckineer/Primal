@@ -43,29 +43,29 @@ export class NotificationComponent implements OnInit {
     }
   }
   join(item:Notification){
-    
-    var clanId = item.clan_id;
-    console.log(this.globalState.current_user.admin_clan);
-    if(this.globalState.current_user.admin_clan < 1){
-      this.userService.JoinClanToUserFromNotification(this.globalState.Current_User_Id,clanId)
-      .subscribe(resp=>{
-        if(resp!="error"){
-          const dialogRef = this.dialog.open(JoinMessageDialogComponent, {
-            height: '380px',
-            minWidth:"800px",
-            panelClass:'select-avatar-dialog',
-            data:item
-          })
-        }
-      })
-    }else{
-      item.clan_id = -1;
-      const dialogRef = this.dialog.open(JoinMessageDialogComponent, {
-            height: '380px',
-            minWidth:"800px",
-            panelClass:'select-avatar-dialog',
-            data:item
-          })
-    }
+        
+    // var clanId = item.clan_id;
+    // console.log(this.globalState.current_user.admin_clan);
+    // if(this.globalState.current_user.admin_clan < 1){
+    //   this.userService.JoinClanToUserFromNotification(this.globalState.Current_User_Id,clanId)
+    //   .subscribe(resp=>{
+    //     if(resp!="error"){
+    //       const dialogRef = this.dialog.open(JoinMessageDialogComponent, {
+    //         height: '380px',
+    //         minWidth:"800px",
+    //         panelClass:'select-avatar-dialog',
+    //         data:item
+    //       })
+    //     }
+    //   })
+    // }else{
+    //   item.clan_id = -1;
+    //   const dialogRef = this.dialog.open(JoinMessageDialogComponent, {
+    //         height: '380px',
+    //         minWidth:"800px",
+    //         panelClass:'select-avatar-dialog',
+    //         data:item
+    //       })
+    // }
   }
 }
