@@ -412,4 +412,22 @@ form input[type=text]:focus {
   color: red;
 }
 
+.clan-color{
+    width: 200px;
+    height: 200px;
+    margin: auto;
+    margin-top: 70px;
+}
+
+.clan-img {
+    position: absolute;
+    width: 150px;
+    left: 270px;
+    top:150px;
+}
+
+.verClan {
+    margin: auto;
+}
+
 

@@ -147,8 +147,31 @@
 	</div>
 </div>
 -->
-
-<main id="content">
+<main *ngIf="clan_added==true" id="content">
+  <button class="close" name="close" value="close" routerLink="/map">close</button>
+  <h2>¡Felicidades!</h2>
+  <div style="margin-top: 30px;">
+	  <img class="clan-color" src={{current_clan_color}}>
+	  <img src="{{environment.asset_base_url}}{{clan.image}}" class="clan-img">
+  </div>
+  
+  
+  <div id="inner-content" style="height: 200px;">
+	
+  	<p style="subtitle" style="text-align: center;">
+  		Acabas de crear un clan
+  	</p>
+  	<h3 style="text-align: center;">
+  		{{clan.name}}
+  	</h3>
+  </div><!-- #container -->
+  <div id="main-actions">   
+    <!-- <button (click)="view_detail()">VER REGALO</button> -->
+    <button style="display: none;"></button>
+    <button routerLink={{getClanLink(clan.id)}}>VER CLAN</button>
+  </div>
+</main>
+<main *ngIf= "clan_added!=true" id="content">
 	<button routerLink="/map" class="close" name="close" type="submit" value="close">close</button>
 	<h2>Crear Clan</h2>
 	<form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm.value)">
@@ -228,7 +251,7 @@
 
 			</div>
 			<div class="col-4">
-				<button type="submit" routerLink="/map" style="position: relative; margin-left: -70%; margin-top: -10%;">GURADAR</button>
+				<button type="submit" style="position: relative; margin-left: -70%; margin-top: -10%;">GURADAR</button>
 			</div>
 		</div>
 	</div>

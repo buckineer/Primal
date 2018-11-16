@@ -25,6 +25,7 @@ export class ClanCreateComponent implements OnInit {
   environment = environment;
   color = 'CE3535';
   avatar = '/images/clans/object1.png';
+  current_clan_color: string;
 
   constructor(fb: FormBuilder,public commonService:CommonService,
               public clanService:ClanService,private state:GlobalState) {
@@ -81,10 +82,12 @@ export class ClanCreateComponent implements OnInit {
           console.log("=addd clan",ret_value)
           this.clan = ret_value; 
           this.clan_added=false;
-          if(ret_value.admin_user!=-1)
+          if(ret_value.admin_user!=-1){
             this.clan_added=true;
+            this.getCurrentCol();
+          }
+          console.log("00000000000000000000000",this.clan_added);
         });
-
     }else{
        this.validateAllFormFields(this.myForm);
     }
@@ -99,4 +102,16 @@ export class ClanCreateComponent implements OnInit {
   getBurl(item: string): string{
     return '/assets/images/clans/'+ item +'.png';
   }
+
+  getCurrentCol(): void{
+    var itemUrl = this.clan.clan_color;
+    var imgUrl = itemUrl.replace("#", "");
+    this.current_clan_color = '/assets/images/clans/'+ imgUrl +'.png';
+    console.log(this.current_clan_color);
+  }
+
+  getClanLink(item: number): string{
+    return '/clan/' + item + '/';
+  }
+
 }
