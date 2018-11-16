@@ -14,7 +14,9 @@ import { environment } from '../../environments/environment';
 export class ClanAddedComponent implements OnInit {
   
   clan:Clan;
-  environment = environment
+  environment = environment;
+  current_clan_color: string;
+
   constructor(private route: ActivatedRoute,
     private clanService: ClanService, private userService: UserService,public globalState:GlobalState) { 
     this.clan = new Clan()
@@ -27,11 +29,23 @@ export class ClanAddedComponent implements OnInit {
   getClan(): void {
     const id:number = +this.route.snapshot.paramMap.get('id');
   	this.clanService.getClan(id)
-		.subscribe(ret_item=>{this.clan = ret_item;});
+		.subscribe(ret_item=>{this.clan = ret_item;
+    this.getCurrentCol();});
   }
   JoinClanToCurrentUser(){
   	const id:number = +this.route.snapshot.paramMap.get('id');
   	this.userService.JoinClanToUser(this.globalState.Current_User_Id,id);
+  }
+
+  getCurrentCol(): void{
+    var itemUrl = this.clan.clan_color;
+    var imgUrl = itemUrl.replace("#", "");
+    this.current_clan_color = '/assets/images/clans/'+ imgUrl +'.png';
+    console.log(this.current_clan_color);
+  }
+
+  getClanLink(item: number): string{
+    return '/clan/' + item + '/';
   }
 
 }

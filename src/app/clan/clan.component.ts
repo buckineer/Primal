@@ -23,6 +23,7 @@ export class ClanComponent implements OnInit {
   environment = environment
   admin_user:User = new User;
   current_mission = new Territory;
+  current_clan_color: string;
 
   constructor(private route: ActivatedRoute,
     private clanService: ClanService, private userService: UserService,
@@ -47,7 +48,9 @@ export class ClanComponent implements OnInit {
   getClan(): void {
     const id:number = +this.route.snapshot.paramMap.get('id');
   	this.clanService.getClan(id)
-		.subscribe(ret_item=>{this.selected_clan = ret_item; this.getUsers();});
+		.subscribe(ret_item=>{this.selected_clan = ret_item; this.getUsers();
+    this.getCurrentCol();
+    });
   }
 
   get_current_mission(): void {
@@ -79,10 +82,18 @@ export class ClanComponent implements OnInit {
     else 
       clan_id = user.joined_clan
     if(clan_id != -1 && clan_id!=null){
-      this.clanService.getClan(clan_id).subscribe(ret_value=>this.clan = ret_value);  
+      this.clanService.getClan(clan_id).subscribe(ret_value=>this.clan = ret_value);
     }else{
       this.clan = new Clan;
     } 	
+  }
+
+  getCurrentCol(): void{
+    var itemUrl = this.selected_clan.clan_color;    
+    var imgUrl = itemUrl.replace("#", "");
+    this.current_clan_color = '/assets/images/clans/'+ imgUrl +'.png';
+    console.log("$$$$$$$$$$$$$$$$$$$$$$$");
+    console.log(this.current_clan_color);
   }
 
   clan_to_change():boolean{

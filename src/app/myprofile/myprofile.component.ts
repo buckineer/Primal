@@ -78,9 +78,7 @@ export class MyProfileComponent implements OnInit {
   }
 
   getCurrentCol(): void{
-    var itemUrl = this.clan.clan_color;
-
-    
+    var itemUrl = this.clan.clan_color;    
     var imgUrl = itemUrl.replace("#", "");
     this.current_clan_color = '/assets/images/clans/'+ imgUrl +'.png';
     console.log(this.current_clan_color);

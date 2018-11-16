@@ -1,3 +1,4 @@
+<!--
 <div class="background-fx">
 	<app-user-header></app-user-header>
 	<div class="content container" style="position: relative;">
@@ -17,10 +18,10 @@
 			</div>
 			<div class="row justify-content-center">
 				<div class="col-sm-6" style="text-align: center;">
-					<!-- <img src="/assets/images/clans/object6.png" style="width: 40%;"> -->
+					
 					<img src="{{environment.asset_base_url}}{{clan.image}}" style="width: 28%;">
 					<span class="congratulation-text" style="margin-left: 3%">{{clan.name}}</span>
-					<!-- <span class="congratulation-text"> Elefantes </span> -->
+					
 				</div>				
 			</div>
 			<div class="row justify-content-center">
@@ -41,3 +42,30 @@
 		</div>
 	</div>
 </div>
+
+-->
+
+<main id="content">
+  <button class="close" name="close" type="submit" value="close" routerLink="/map">close</button>
+  <h2>¡Felicidades!</h2>
+  <div style="margin-top: 30px;">
+	  <img class="clan-color" src={{current_clan_color}}>
+	  <img src="{{environment.asset_base_url}}{{clan.image}}" class="clan-img">
+  </div>
+  
+  
+  <div id="inner-content">
+	
+  	<p style="subtitle" style="text-align: center;">
+  		Te has unido al clan de
+  	</p>
+  	<h3 style="text-align: center;">
+  		{{clan.name}}
+  	</h3>
+  </div><!-- #container -->
+  <div id="main-actions">   
+    <!-- <button (click)="view_detail()">VER REGALO</button> -->
+    <button style="display: none;"></button>
+    <button routerLink={{getClanLink(clan.id)}}>VER CLAN</button>
+  </div>
+</main>
