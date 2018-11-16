@@ -18,6 +18,8 @@ export class InviteComponent implements OnInit {
   users:User[];
   environment = environment;
   clan_id:number;
+  
+
   constructor(private commonService:CommonService,
     public userService:UserService,
     public globalState:GlobalState,
@@ -64,5 +66,28 @@ export class InviteComponent implements OnInit {
   }
   get_image_url(user:User){
     return this.userService.get_avatar_url(user);
+  }
+
+  getClanColor(user: User){
+    var user_clan_id: number;
+    var user_clan = new Clan;
+    var itemUrl;
+    var imgUrl;
+
+    if (user.joined_clan!=-1 && user.joined_clan != null ){
+      user_clan_id = user.joined_clan;
+    }
+    else if (user.admin_clan!=-1 && user.admin_clan!=null){
+      user_clan_id = user.admin_clan;
+    }
+
+    this.clanService.getClan(user_clan_id).subscribe(item=>{
+      user_clan = item;
+      itemUrl = user_clan.clan_color;
+      imgUrl = itemUrl.replace("#", "");
+      return '/assets/images/clans/'+ imgUrl +'.png';
+      
+    });
+    
   }
 }
