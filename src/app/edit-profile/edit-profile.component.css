@@ -43,8 +43,19 @@ form input[type=text]:focus {
   width: 65px;
   height: 65px;
 }
-.user-avatar.selected{
+.user-avatar.selected{/*
   border-radius: 50%;
   border: 2px solid rgb(54, 53, 53);
-    border-color: #fe8d00;
+    border-color: #fe8d00;*/
+}
+.selected-bg-img{
+  position: absolute;
+  width: 70px;
+  z-index: -1;
+  top:-13px;
+  display: none;
+}
+.selected .selected-bg-img{
+  display: block;
+
 }

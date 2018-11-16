@@ -37,7 +37,8 @@ export class UserService {
         if(user.level<0){
             return "";
         }
-        var url = "/images/avatars Final/"+user.avatar + AVATAR_IMAGE_NAMES[user.level]+".png"
+        // var url = "/images/avatars Final/"+user.avatar + AVATAR_IMAGE_NAMES[user.level]+".png"
+        var url = "/images/avatars Final/"+user.avatar + AVATAR_IMAGE_NAMES[1]+".png"
         return url;
     }
   getUser(id: number): Observable<User>{    
