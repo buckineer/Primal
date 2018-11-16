@@ -88,7 +88,7 @@
 				<ng-container *ngIf= "clan?.id != -1; else no_clan ">
 					<div>
 						<img src="{{environment.asset_base_url}}{{clan?.image}}" class="clan-img" style="display: inline-block;">
-						<h4 style="display: inline-block;" class="ml-1">Las Calaveras Hambrientas</h4>
+						<h4 style="display: inline-block;" class="ml-1">{{clan?.name}}</h4>
 					</div>
 					<div class="mt-4" style="width: 170px;height: 40px;">
 						<span class="label" style="float: left;">Puntos</span>
